@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* MicrolendingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
+		31D13658145E360E00DD3A43 /* CollageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D13656145E360E00DD3A43 /* CollageViewController.xib */; };
+		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
+		CD2B9B82144F698D0020AECA /* CodyKo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2B9B7F144F698D0020AECA /* CodyKo.jpg */; };
+		CD2B9B83144F698D0020AECA /* KevinWang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2B9B80144F698D0020AECA /* KevinWang.jpg */; };
+		CD2B9B84144F698D0020AECA /* ShunFan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD2B9B81144F698D0020AECA /* ShunFan.jpg */; };
+		CD308A68144E2C32000A44C8 /* Lender.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A67144E2C32000A44C8 /* Lender.m */; };
+		CD308A8B144E3916000A44C8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A89144E3916000A44C8 /* ProfileViewController.m */; };
+		CD308A8C144E3916000A44C8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308A8A144E3916000A44C8 /* ProfileViewController.xib */; };
+		CD308AB1144E3E74000A44C8 /* SamBaek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD308AB0144E3E74000A44C8 /* SamBaek.jpg */; };
+		CD308AEB144E4EB3000A44C8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308AE9144E4EB3000A44C8 /* LoginViewController.m */; };
+		CD308AEC144E4EB3000A44C8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308AEA144E4EB3000A44C8 /* LoginViewController.xib */; };
+		CD308B66144E566B000A44C8 /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308B64144E566B000A44C8 /* BadgeViewController.m */; };
+		CD308B67144E566B000A44C8 /* BadgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308B65144E566B000A44C8 /* BadgeViewController.xib */; };
+		CD308B99144E5858000A44C8 /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308B98144E5858000A44C8 /* badge.png */; };
+		CD308BB0144E5FB0000A44C8 /* icon_blog.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308BAB144E5FB0000A44C8 /* icon_blog.png */; };
+		CD308BB1144E5FB0000A44C8 /* icon_box_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308BAC144E5FB0000A44C8 /* icon_box_mail.png */; };
+		CD308BB2144E5FB0000A44C8 /* icon_credit_card.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308BAD144E5FB0000A44C8 /* icon_credit_card.png */; };
+		CD308BB3144E5FB0000A44C8 /* icon_hat.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308BAE144E5FB0000A44C8 /* icon_hat.png */; };
+		CD308BB4144E5FB0000A44C8 /* icon_user.png in Resources */ = {isa = PBXBuildFile; fileRef = CD308BAF144E5FB0000A44C8 /* icon_user.png */; };
+		CD308BDC144E62A6000A44C8 /* Borrower.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308BDB144E62A6000A44C8 /* Borrower.m */; };
+		CD308C1B144E6F3E000A44C8 /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308C19144E6F3E000A44C8 /* MPViewController.m */; };
+		CD308C1C144E6F3E000A44C8 /* MPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308C1A144E6F3E000A44C8 /* MPViewController.xib */; };
+		CD308C43144E72B1000A44C8 /* BorrowerSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308C41144E72B1000A44C8 /* BorrowerSingleViewController.m */; };
+		CD308C6E144E7C47000A44C8 /* InvestmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */; };
+		CD308C6F144E7C47000A44C8 /* InvestmentTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308C6D144E7C47000A44C8 /* InvestmentTableViewController.xib */; };
+		CD308C82144E7D8F000A44C8 /* BorrowerSingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD308C81144E7D8F000A44C8 /* BorrowerSingleViewController.xib */; };
+		CD4C03701470CEB0003C601A /* MicroLending.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4C036F1470CEB0003C601A /* MicroLending.png */; };
+		CD67FBEA143BD2B8006E0CC8 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBD2143BD2B8006E0CC8 /* NSObject+SBJson.m */; };
+		CD67FBEB143BD2B8006E0CC8 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBD5143BD2B8006E0CC8 /* SBJsonParser.m */; };
+		CD67FBEC143BD2B8006E0CC8 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBD7143BD2B8006E0CC8 /* SBJsonStreamParser.m */; };
+		CD67FBED143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBD9143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.m */; };
+		CD67FBEE143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBDB143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.m */; };
+		CD67FBEF143BD2B8006E0CC8 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBDD143BD2B8006E0CC8 /* SBJsonStreamParserState.m */; };
+		CD67FBF0143BD2B8006E0CC8 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBDF143BD2B8006E0CC8 /* SBJsonStreamWriter.m */; };
+		CD67FBF1143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBE1143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.m */; };
+		CD67FBF2143BD2B8006E0CC8 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBE3143BD2B8006E0CC8 /* SBJsonStreamWriterState.m */; };
+		CD67FBF3143BD2B8006E0CC8 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBE5143BD2B8006E0CC8 /* SBJsonTokeniser.m */; };
+		CD67FBF4143BD2B8006E0CC8 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBE7143BD2B8006E0CC8 /* SBJsonUTF8Stream.m */; };
+		CD67FBF5143BD2B8006E0CC8 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD67FBE9143BD2B8006E0CC8 /* SBJsonWriter.m */; };
+		CD85849B145F9FA300EA8DF5 /* MicroLending.png in Resources */ = {isa = PBXBuildFile; fileRef = CD85849A145F9FA300EA8DF5 /* MicroLending.png */; };
+		CDB3E17A14635E010047108F /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3E17914635E010047108F /* CustomNavBar.m */; };
+		CDB3E1831463614B0047108F /* NavBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = CDB3E1821463614B0047108F /* NavBarImage.png */; };
+		CDB50496146B322500F15B88 /* blueprint.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDB50495146B322500F15B88 /* blueprint.jpg */; };
+		CDC3D6B11460748E00360097 /* Sender.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC3D6B01460748E00360097 /* Sender.m */; };
+		CDDEA1C614677D3200A387B1 /* cake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDDEA1C514677D3200A387B1 /* cake.jpg */; };
+		CDDEA25014678F1900A387B1 /* mpbackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDDEA24F14678F1900A387B1 /* mpbackground.jpg */; };
+		CDDEA2881468809100A387B1 /* whiteButton4.png in Resources */ = {isa = PBXBuildFile; fileRef = CDDEA2871468809100A387B1 /* whiteButton4.png */; };
+		CDDEA2B7146887DD00A387B1 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDEA2B6146887DD00A387B1 /* Transaction.m */; };
+		CDDEA33A1469FBE200A387B1 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDEA3381469FBE200A387B1 /* LeaderboardViewController.m */; };
+		CDDEA33B1469FBE200A387B1 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDEA3391469FBE200A387B1 /* LeaderboardViewController.xib */; };
+		CDE418351460E14C00FD1B8D /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE418341460E14C00FD1B8D /* Badge.m */; };
+		CDE41966146100AA00FD1B8D /* CollageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE41965146100AA00FD1B8D /* CollageViewController.m */; };
+		CDF6DBF814676FCE00A9030D /* topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF6DBF714676FCE00A9030D /* topbar.png */; };
+		CDF6DC0C1467721600A9030D /* MPCategoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF6DC0A1467721600A9030D /* MPCategoryPage.m */; };
+		CDF6DC0D1467721600A9030D /* MPCategoryPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF6DC0B1467721600A9030D /* MPCategoryPage.xib */; };
+		CDF6DC231467726800A9030D /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDF6DC221467726800A9030D /* Background.jpg */; };
+		CDF6DC2F146773D100A9030D /* self-help.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF6DC2C146773D100A9030D /* self-help.png */; };
+		CDF6DC30146773D100A9030D /* fish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDF6DC2D146773D100A9030D /* fish.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrolendingAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrolendingAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Microlending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Microlending.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31C3FBE1145E3CAC00688CE7 /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
+		31C3FBE2145E3CAC00688CE7 /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grabber.m; sourceTree = "<group>"; };
+		31D13656145E360E00DD3A43 /* CollageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollageViewController.xib; path = Classes/CollageViewController.xib; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
+		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CD2B9B7F144F698D0020AECA /* CodyKo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CodyKo.jpg; sourceTree = "<group>"; };
+		CD2B9B80144F698D0020AECA /* KevinWang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KevinWang.jpg; sourceTree = "<group>"; };
+		CD2B9B81144F698D0020AECA /* ShunFan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ShunFan.jpg; sourceTree = "<group>"; };
+		CD308A66144E2C32000A44C8 /* Lender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lender.h; sourceTree = "<group>"; };
+		CD308A67144E2C32000A44C8 /* Lender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lender.m; sourceTree = "<group>"; };
+		CD308A88144E3916000A44C8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CD308A89144E3916000A44C8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CD308A8A144E3916000A44C8 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Classes/ProfileViewController.xib; sourceTree = "<group>"; };
+		CD308AB0144E3E74000A44C8 /* SamBaek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SamBaek.jpg; sourceTree = "<group>"; };
+		CD308AE8144E4EB3000A44C8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CD308AE9144E4EB3000A44C8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CD308AEA144E4EB3000A44C8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Classes/LoginViewController.xib; sourceTree = "<group>"; };
+		CD308B63144E566B000A44C8 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		CD308B64144E566B000A44C8 /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
+		CD308B65144E566B000A44C8 /* BadgeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BadgeViewController.xib; path = Classes/BadgeViewController.xib; sourceTree = "<group>"; };
+		CD308B98144E5858000A44C8 /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
+		CD308BAB144E5FB0000A44C8 /* icon_blog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_blog.png; sourceTree = "<group>"; };
+		CD308BAC144E5FB0000A44C8 /* icon_box_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_box_mail.png; sourceTree = "<group>"; };
+		CD308BAD144E5FB0000A44C8 /* icon_credit_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_credit_card.png; sourceTree = "<group>"; };
+		CD308BAE144E5FB0000A44C8 /* icon_hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_hat.png; sourceTree = "<group>"; };
+		CD308BAF144E5FB0000A44C8 /* icon_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_user.png; sourceTree = "<group>"; };
+		CD308BDA144E62A6000A44C8 /* Borrower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Borrower.h; sourceTree = "<group>"; };
+		CD308BDB144E62A6000A44C8 /* Borrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Borrower.m; sourceTree = "<group>"; };
+		CD308C18144E6F3E000A44C8 /* MPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
+		CD308C19144E6F3E000A44C8 /* MPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
+		CD308C1A144E6F3E000A44C8 /* MPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MPViewController.xib; path = Classes/MPViewController.xib; sourceTree = "<group>"; };
+		CD308C40144E72B1000A44C8 /* BorrowerSingleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowerSingleViewController.h; sourceTree = "<group>"; };
+		CD308C41144E72B1000A44C8 /* BorrowerSingleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowerSingleViewController.m; sourceTree = "<group>"; };
+		CD308C6B144E7C47000A44C8 /* InvestmentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvestmentTableViewController.h; path = ../InvestmentTableViewController.h; sourceTree = "<group>"; };
+		CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvestmentTableViewController.m; path = ../InvestmentTableViewController.m; sourceTree = "<group>"; };
+		CD308C6D144E7C47000A44C8 /* InvestmentTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvestmentTableViewController.xib; sourceTree = "<group>"; };
+		CD308C81144E7D8F000A44C8 /* BorrowerSingleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BorrowerSingleViewController.xib; sourceTree = "<group>"; };
+		CD4C036F1470CEB0003C601A /* MicroLending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MicroLending.png; sourceTree = "<group>"; };
+		CD67FBD1143BD2B8006E0CC8 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "Classes/NSObject+SBJson.h"; sourceTree = "<group>"; };
+		CD67FBD2143BD2B8006E0CC8 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "Classes/NSObject+SBJson.m"; sourceTree = "<group>"; };
+		CD67FBD3143BD2B8006E0CC8 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = Classes/SBJson.h; sourceTree = "<group>"; };
+		CD67FBD4143BD2B8006E0CC8 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Classes/SBJsonParser.h; sourceTree = "<group>"; };
+		CD67FBD5143BD2B8006E0CC8 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = Classes/SBJsonParser.m; sourceTree = "<group>"; };
+		CD67FBD6143BD2B8006E0CC8 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = Classes/SBJsonStreamParser.h; sourceTree = "<group>"; };
+		CD67FBD7143BD2B8006E0CC8 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = Classes/SBJsonStreamParser.m; sourceTree = "<group>"; };
+		CD67FBD8143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAccumulator.h; path = Classes/SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		CD67FBD9143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAccumulator.m; path = Classes/SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		CD67FBDA143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = Classes/SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		CD67FBDB143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = Classes/SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		CD67FBDC143BD2B8006E0CC8 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = Classes/SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		CD67FBDD143BD2B8006E0CC8 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = Classes/SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		CD67FBDE143BD2B8006E0CC8 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = Classes/SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		CD67FBDF143BD2B8006E0CC8 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriter.m; path = Classes/SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		CD67FBE0143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterAccumulator.h; path = Classes/SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		CD67FBE1143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterAccumulator.m; path = Classes/SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		CD67FBE2143BD2B8006E0CC8 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = Classes/SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		CD67FBE3143BD2B8006E0CC8 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterState.m; path = Classes/SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		CD67FBE4143BD2B8006E0CC8 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = Classes/SBJsonTokeniser.h; sourceTree = "<group>"; };
+		CD67FBE5143BD2B8006E0CC8 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = Classes/SBJsonTokeniser.m; sourceTree = "<group>"; };
+		CD67FBE6143BD2B8006E0CC8 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonUTF8Stream.h; path = Classes/SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		CD67FBE7143BD2B8006E0CC8 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = Classes/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		CD67FBE8143BD2B8006E0CC8 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Classes/SBJsonWriter.h; sourceTree = "<group>"; };
+		CD67FBE9143BD2B8006E0CC8 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Classes/SBJsonWriter.m; sourceTree = "<group>"; };
+		CD85849A145F9FA300EA8DF5 /* MicroLending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MicroLending.png; sourceTree = "<group>"; };
+		CDB3E17814635E010047108F /* CustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBar.h; sourceTree = "<group>"; };
+		CDB3E17914635E010047108F /* CustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBar.m; sourceTree = "<group>"; };
+		CDB3E1821463614B0047108F /* NavBarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarImage.png; sourceTree = "<group>"; };
+		CDB50495146B322500F15B88 /* blueprint.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueprint.jpg; sourceTree = "<group>"; };
+		CDC3D6AF1460748E00360097 /* Sender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sender.h; sourceTree = "<group>"; };
+		CDC3D6B01460748E00360097 /* Sender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sender.m; sourceTree = "<group>"; };
+		CDDEA1C514677D3200A387B1 /* cake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cake.jpg; sourceTree = "<group>"; };
+		CDDEA24F14678F1900A387B1 /* mpbackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mpbackground.jpg; sourceTree = "<group>"; };
+		CDDEA2871468809100A387B1 /* whiteButton4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton4.png; sourceTree = "<group>"; };
+		CDDEA2B5146887DD00A387B1 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		CDDEA2B6146887DD00A387B1 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		CDDEA3371469FBE200A387B1 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		CDDEA3381469FBE200A387B1 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		CDDEA3391469FBE200A387B1 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LeaderboardViewController.xib; path = Classes/LeaderboardViewController.xib; sourceTree = "<group>"; };
+		CDE418331460E14C00FD1B8D /* Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Badge.h; path = ../Badge.h; sourceTree = "<group>"; };
+		CDE418341460E14C00FD1B8D /* Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Badge.m; path = ../Badge.m; sourceTree = "<group>"; };
+		CDE41964146100AA00FD1B8D /* CollageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollageViewController.h; sourceTree = "<group>"; };
+		CDE41965146100AA00FD1B8D /* CollageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollageViewController.m; sourceTree = "<group>"; };
+		CDF6DBF714676FCE00A9030D /* topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar.png; sourceTree = "<group>"; };
+		CDF6DC091467721600A9030D /* MPCategoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCategoryPage.h; sourceTree = "<group>"; };
+		CDF6DC0A1467721600A9030D /* MPCategoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCategoryPage.m; sourceTree = "<group>"; };
+		CDF6DC0B1467721600A9030D /* MPCategoryPage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MPCategoryPage.xib; path = Classes/MPCategoryPage.xib; sourceTree = "<group>"; };
+		CDF6DC221467726800A9030D /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
+		CDF6DC2C146773D100A9030D /* self-help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self-help.png"; sourceTree = "<group>"; };
+		CDF6DC2D146773D100A9030D /* fish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fish.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CDDEA3371469FBE200A387B1 /* LeaderboardViewController.h */,
+				CDDEA3381469FBE200A387B1 /* LeaderboardViewController.m */,
+				CDE41964146100AA00FD1B8D /* CollageViewController.h */,
+				CDE41965146100AA00FD1B8D /* CollageViewController.m */,
+				CDC3D6AF1460748E00360097 /* Sender.h */,
+				CDC3D6B01460748E00360097 /* Sender.m */,
+				31C3FBE1145E3CAC00688CE7 /* Grabber.h */,
+				31C3FBE2145E3CAC00688CE7 /* Grabber.m */,
+				CDDEA2B5146887DD00A387B1 /* Transaction.h */,
+				CDDEA2B6146887DD00A387B1 /* Transaction.m */,
+				CDE418331460E14C00FD1B8D /* Badge.h */,
+				CDE418341460E14C00FD1B8D /* Badge.m */,
+				CD308A66144E2C32000A44C8 /* Lender.h */,
+				CD308A67144E2C32000A44C8 /* Lender.m */,
+				CD308BDA144E62A6000A44C8 /* Borrower.h */,
+				CD308BDB144E62A6000A44C8 /* Borrower.m */,
+				1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */,
+				CDF6DC091467721600A9030D /* MPCategoryPage.h */,
+				CDF6DC0A1467721600A9030D /* MPCategoryPage.m */,
+				CD308C18144E6F3E000A44C8 /* MPViewController.h */,
+				CD308C19144E6F3E000A44C8 /* MPViewController.m */,
+				CD308AE8144E4EB3000A44C8 /* LoginViewController.h */,
+				CD308AE9144E4EB3000A44C8 /* LoginViewController.m */,
+				CD308A88144E3916000A44C8 /* ProfileViewController.h */,
+				CD308A89144E3916000A44C8 /* ProfileViewController.m */,
+				CD308B63144E566B000A44C8 /* BadgeViewController.h */,
+				CD308B64144E566B000A44C8 /* BadgeViewController.m */,
+				CD308C40144E72B1000A44C8 /* BorrowerSingleViewController.h */,
+				CD308C41144E72B1000A44C8 /* BorrowerSingleViewController.m */,
+				CD308C6B144E7C47000A44C8 /* InvestmentTableViewController.h */,
+				CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */,
+				CDB3E17814635E010047108F /* CustomNavBar.h */,
+				CDB3E17914635E010047108F /* CustomNavBar.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Microlending.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				488A48AA145CABB900225D47 /* api.rtf */,
+				CD67FBFA143BD419006E0CC8 /* JSON */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CDB50495146B322500F15B88 /* blueprint.jpg */,
+				CDDEA2871468809100A387B1 /* whiteButton4.png */,
+				CDDEA24F14678F1900A387B1 /* mpbackground.jpg */,
+				CDF6DC2C146773D100A9030D /* self-help.png */,
+				CDDEA1C514677D3200A387B1 /* cake.jpg */,
+				CDF6DC2D146773D100A9030D /* fish.jpg */,
+				CDF6DC221467726800A9030D /* Background.jpg */,
+				CDF6DBF714676FCE00A9030D /* topbar.png */,
+				CDB3E1821463614B0047108F /* NavBarImage.png */,
+				CD85849A145F9FA300EA8DF5 /* MicroLending.png */,
+				CD4C036F1470CEB0003C601A /* MicroLending.png */,
+				CD308BAB144E5FB0000A44C8 /* icon_blog.png */,
+				CD308BAC144E5FB0000A44C8 /* icon_box_mail.png */,
+				CDF6DC0B1467721600A9030D /* MPCategoryPage.xib */,
+				31D13656145E360E00DD3A43 /* CollageViewController.xib */,
+				CD308BAD144E5FB0000A44C8 /* icon_credit_card.png */,
+				CD308BAE144E5FB0000A44C8 /* icon_hat.png */,
+				CD308BAF144E5FB0000A44C8 /* icon_user.png */,
+				CD308B98144E5858000A44C8 /* badge.png */,
+				CD2B9B7F144F698D0020AECA /* CodyKo.jpg */,
+				CD2B9B80144F698D0020AECA /* KevinWang.jpg */,
+				CD2B9B81144F698D0020AECA /* ShunFan.jpg */,
+				CD308AB0144E3E74000A44C8 /* SamBaek.jpg */,
+				CDDEA3391469FBE200A387B1 /* LeaderboardViewController.xib */,
+				CD308C81144E7D8F000A44C8 /* BorrowerSingleViewController.xib */,
+				CD308C1A144E6F3E000A44C8 /* MPViewController.xib */,
+				CD308B65144E566B000A44C8 /* BadgeViewController.xib */,
+				CD308AEA144E4EB3000A44C8 /* LoginViewController.xib */,
+				CD308A8A144E3916000A44C8 /* ProfileViewController.xib */,
+				CD308C6D144E7C47000A44C8 /* InvestmentTableViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Microlending-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD67FBFA143BD419006E0CC8 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				CD67FBD1143BD2B8006E0CC8 /* NSObject+SBJson.h */,
+				CD67FBD2143BD2B8006E0CC8 /* NSObject+SBJson.m */,
+				CD67FBD3143BD2B8006E0CC8 /* SBJson.h */,
+				CD67FBD4143BD2B8006E0CC8 /* SBJsonParser.h */,
+				CD67FBD5143BD2B8006E0CC8 /* SBJsonParser.m */,
+				CD67FBD6143BD2B8006E0CC8 /* SBJsonStreamParser.h */,
+				CD67FBD7143BD2B8006E0CC8 /* SBJsonStreamParser.m */,
+				CD67FBD8143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.h */,
+				CD67FBD9143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.m */,
+				CD67FBDA143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.h */,
+				CD67FBDB143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.m */,
+				CD67FBDC143BD2B8006E0CC8 /* SBJsonStreamParserState.h */,
+				CD67FBDD143BD2B8006E0CC8 /* SBJsonStreamParserState.m */,
+				CD67FBDE143BD2B8006E0CC8 /* SBJsonStreamWriter.h */,
+				CD67FBDF143BD2B8006E0CC8 /* SBJsonStreamWriter.m */,
+				CD67FBE0143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.h */,
+				CD67FBE1143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.m */,
+				CD67FBE2143BD2B8006E0CC8 /* SBJsonStreamWriterState.h */,
+				CD67FBE3143BD2B8006E0CC8 /* SBJsonStreamWriterState.m */,
+				CD67FBE4143BD2B8006E0CC8 /* SBJsonTokeniser.h */,
+				CD67FBE5143BD2B8006E0CC8 /* SBJsonTokeniser.m */,
+				CD67FBE6143BD2B8006E0CC8 /* SBJsonUTF8Stream.h */,
+				CD67FBE7143BD2B8006E0CC8 /* SBJsonUTF8Stream.m */,
+				CD67FBE8143BD2B8006E0CC8 /* SBJsonWriter.h */,
+				CD67FBE9143BD2B8006E0CC8 /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Microlending */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Microlending" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Microlending;
+			productName = Microlending;
+			productReference = 1D6058910D05DD3D006BFB54 /* Microlending.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Microlending" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Microlending */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				CD308A8C144E3916000A44C8 /* ProfileViewController.xib in Resources */,
+				CD308AB1144E3E74000A44C8 /* SamBaek.jpg in Resources */,
+				CD308AEC144E4EB3000A44C8 /* LoginViewController.xib in Resources */,
+				CD308B67144E566B000A44C8 /* BadgeViewController.xib in Resources */,
+				CD308B99144E5858000A44C8 /* badge.png in Resources */,
+				CD308BB0144E5FB0000A44C8 /* icon_blog.png in Resources */,
+				CD308BB1144E5FB0000A44C8 /* icon_box_mail.png in Resources */,
+				CD308BB2144E5FB0000A44C8 /* icon_credit_card.png in Resources */,
+				CD308BB3144E5FB0000A44C8 /* icon_hat.png in Resources */,
+				CD308BB4144E5FB0000A44C8 /* icon_user.png in Resources */,
+				CD308C1C144E6F3E000A44C8 /* MPViewController.xib in Resources */,
+				CD308C6F144E7C47000A44C8 /* InvestmentTableViewController.xib in Resources */,
+				CD308C82144E7D8F000A44C8 /* BorrowerSingleViewController.xib in Resources */,
+				CD2B9B82144F698D0020AECA /* CodyKo.jpg in Resources */,
+				CD2B9B83144F698D0020AECA /* KevinWang.jpg in Resources */,
+				CD2B9B84144F698D0020AECA /* ShunFan.jpg in Resources */,
+				488A48AB145CABB900225D47 /* api.rtf in Resources */,
+				31D13658145E360E00DD3A43 /* CollageViewController.xib in Resources */,
+				CD85849B145F9FA300EA8DF5 /* MicroLending.png in Resources */,
+				CDB3E1831463614B0047108F /* NavBarImage.png in Resources */,
+				CDF6DBF814676FCE00A9030D /* topbar.png in Resources */,
+				CDF6DC0D1467721600A9030D /* MPCategoryPage.xib in Resources */,
+				CDF6DC231467726800A9030D /* Background.jpg in Resources */,
+				CDF6DC2F146773D100A9030D /* self-help.png in Resources */,
+				CDF6DC30146773D100A9030D /* fish.jpg in Resources */,
+				CDDEA1C614677D3200A387B1 /* cake.jpg in Resources */,
+				CDDEA25014678F1900A387B1 /* mpbackground.jpg in Resources */,
+				CDDEA2881468809100A387B1 /* whiteButton4.png in Resources */,
+				CDDEA33B1469FBE200A387B1 /* LeaderboardViewController.xib in Resources */,
+				CDB50496146B322500F15B88 /* blueprint.jpg in Resources */,
+				CD4C03701470CEB0003C601A /* MicroLending.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* MicrolendingAppDelegate.m in Sources */,
+				CD67FBEA143BD2B8006E0CC8 /* NSObject+SBJson.m in Sources */,
+				CD67FBEB143BD2B8006E0CC8 /* SBJsonParser.m in Sources */,
+				CD67FBEC143BD2B8006E0CC8 /* SBJsonStreamParser.m in Sources */,
+				CD67FBED143BD2B8006E0CC8 /* SBJsonStreamParserAccumulator.m in Sources */,
+				CD67FBEE143BD2B8006E0CC8 /* SBJsonStreamParserAdapter.m in Sources */,
+				CD67FBEF143BD2B8006E0CC8 /* SBJsonStreamParserState.m in Sources */,
+				CD67FBF0143BD2B8006E0CC8 /* SBJsonStreamWriter.m in Sources */,
+				CD67FBF1143BD2B8006E0CC8 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				CD67FBF2143BD2B8006E0CC8 /* SBJsonStreamWriterState.m in Sources */,
+				CD67FBF3143BD2B8006E0CC8 /* SBJsonTokeniser.m in Sources */,
+				CD67FBF4143BD2B8006E0CC8 /* SBJsonUTF8Stream.m in Sources */,
+				CD67FBF5143BD2B8006E0CC8 /* SBJsonWriter.m in Sources */,
+				CD308A68144E2C32000A44C8 /* Lender.m in Sources */,
+				CD308A8B144E3916000A44C8 /* ProfileViewController.m in Sources */,
+				CD308AEB144E4EB3000A44C8 /* LoginViewController.m in Sources */,
+				CD308B66144E566B000A44C8 /* BadgeViewController.m in Sources */,
+				CD308BDC144E62A6000A44C8 /* Borrower.m in Sources */,
+				CD308C1B144E6F3E000A44C8 /* MPViewController.m in Sources */,
+				CD308C43144E72B1000A44C8 /* BorrowerSingleViewController.m in Sources */,
+				CD308C6E144E7C47000A44C8 /* InvestmentTableViewController.m in Sources */,
+				31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */,
+				CDC3D6B11460748E00360097 /* Sender.m in Sources */,
+				CDE418351460E14C00FD1B8D /* Badge.m in Sources */,
+				CDE41966146100AA00FD1B8D /* CollageViewController.m in Sources */,
+				CDB3E17A14635E010047108F /* CustomNavBar.m in Sources */,
+				CDF6DC0C1467721600A9030D /* MPCategoryPage.m in Sources */,
+				CDDEA2B7146887DD00A387B1 /* Transaction.m in Sources */,
+				CDDEA33A1469FBE200A387B1 /* LeaderboardViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Microlending_Prefix.pch;
+				INFOPLIST_FILE = "Microlending-Info.plist";
+				PRODUCT_NAME = Microlending;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Microlending_Prefix.pch;
+				INFOPLIST_FILE = "Microlending-Info.plist";
+				PRODUCT_NAME = Microlending;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Microlending" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Microlending" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

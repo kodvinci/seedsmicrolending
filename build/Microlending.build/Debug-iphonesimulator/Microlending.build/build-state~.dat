@@ -1,0 +1,190 @@
+TMicrolending
+v7
+r0
+t339384324.280451
+cCheck dependencies
+cProcessInfoPlistFile /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Info.plist Microlending-Info.plist
+cCompileXIB /Users/Code/Documents/Developer/Microlending/MainWindow.xib
+cProcessPCH /var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch.gch Microlending_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/main.o /Users/Code/Documents/Developer/Microlending/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/MicrolendingAppDelegate.o /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
+c000000004CC128950000000000000110
+t1287727253
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC12246000000000029B310
+t1287725638
+s2732816
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC1226D000000000029D5D0
+t1287725677
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC1225F0000000000001466
+t1287725663
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC1281F0000000000000AA1
+t1287727135
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC12883000000000074D7B0
+t1287727235
+s7657392
+
+N/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h
+c000000004E8A5FFF00000000000001C4
+t1317691391
+s452
+i<UIKit/UIKit.h>
+
+N/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m
+c000000004E8A607D0000000000000A4E
+t1317691517
+s2638
+i"MicrolendingAppDelegate.h"
+
+N/Users/Code/Documents/Developer/Microlending/MainWindow.xib
+c000000004E8A606B0000000000006348
+t1317691499
+s25416
+
+N/Users/Code/Documents/Developer/Microlending/Microlending_Prefix.pch
+c000000004E8A5F0F00000000000000C1
+t1317691151
+s193
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app
+t2
+s0
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app.dSYM
+t2
+s0
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Info.plist
+t1317691518
+s611
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/MainWindow.nib
+t1317691521
+s1586
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Microlending
+t2
+s0
+
+N/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/PkgInfo
+t1317691518
+s8
+
+N/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/Microlending.LinkFileList
+c000000004E8A607E0000000000000127
+t1317691518
+s295
+
+N/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/MicrolendingAppDelegate.o
+t2
+s0
+
+N/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/main.o
+t1317691524
+s6316
+
+N/Users/Code/Documents/Developer/Microlending/main.m
+c000000004E8A5F0F0000000000000173
+t1317691151
+s371
+i<UIKit/UIKit.h>
+
+N/var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch.gch
+t1317691523
+s15453392
+
+NMicrolending-Info.plist
+c000000004E8A5F0F000000000000038D
+t1317691151
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies339384318#339384318#0(0"0(0#1#0"27866456492998768#0"0#
+
+CCompileC build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/MicrolendingAppDelegate.o /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s339384324.091385
+e339384324.280110
+r0
+xCompileC
+xbuild/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/MicrolendingAppDelegate.o
+x/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m:9:
+o/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h:17: error: expected specifier-qualifier-list before 'tabBarController'
+o/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m:14: error: no declaration of property 'tabBarController' found in the interface
+lSLF07#2@86"Compile /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m339384324#339384324#0(413"In file included from /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m:9:/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h:17: error: expected specifier-qualifier-list before 'tabBarController'/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m:14: error: no declaration of property 'tabBarController' found in the interface2(4@59"Expected specifier-qualifier-list before 'tabBarController'339384324#104#150#2(7@100"In file included from /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m339384324#18446744073709551615#0#0(6@78"/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m339384317#9#0#9#0#0"0(13@141"Expected specifier-qualifier-list before 'tabBarController' in /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h339384324#18446744073709551615#0#0(6@78"/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h339384191#17#0#17#0#0"0(6@78"/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.h339384191#17#0#17#0#19"expected * before *0(4@68"No declaration of property 'tabBarController' found in the interface339384324#254#159#0(6@78"/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m339384317#14#0#14#0#0"0(0#0#78"/Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m8609381088#2126"    cd /Users/Code/Documents/Developer/Microlending    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-generated-files.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-own-target-headers.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-all-target-headers.hmap -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-project-headers.hmap -F/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator -I/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/include -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources/i386 -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources -include /var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch -c /Users/Code/Documents/Developer/Microlending/Classes/MicrolendingAppDelegate.m -o /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/MicrolendingAppDelegate.o1#
+
+CCompileC build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/main.o /Users/Code/Documents/Developer/Microlending/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s339384324.065765
+e339384324.280390
+r1
+xCompileC
+xbuild/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/main.o
+x/Users/Code/Documents/Developer/Microlending/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Users/Code/Documents/Developer/Microlending/main.m339384324#339384324#0(0"0(0#0#51"/Users/Code/Documents/Developer/Microlending/main.m8609806176#2080"    cd /Users/Code/Documents/Developer/Microlending    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-generated-files.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-own-target-headers.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-all-target-headers.hmap -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-project-headers.hmap -F/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator -I/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/include -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources/i386 -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources -include /var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch -c /Users/Code/Documents/Developer/Microlending/main.m -o /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/Code/Documents/Developer/Microlending/MainWindow.xib
+s339384318.982676
+e339384321.212707
+r1
+xCompileXIB
+x/Users/Code/Documents/Developer/Microlending/MainWindow.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+lSLF07#2@25"CompileXIB MainWindow.xib339384318#339384321#0(84"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)0(0#0#59"/Users/Code/Documents/Developer/Microlending/MainWindow.xib8611734912#593"    cd /Users/Code/Documents/Developer/Microlending    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/MainWindow.nib /Users/Code/Documents/Developer/Microlending/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
+
+CGenerateDSYMFile /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app.dSYM /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Microlending
+r0
+
+CLd /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Microlending normal i386
+r0
+
+CProcessInfoPlistFile /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Info.plist Microlending-Info.plist
+s339384318.912350
+e339384318.982587
+r1
+xProcessInfoPlistFile
+x/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Info.plist
+xMicrolending-Info.plist
+lSLF07#2@31"Process Microlending-Info.plist339384318#339384318#0(0"0(0#0#68"/Users/Code/Documents/Developer/Microlending/Microlending-Info.plist27303270316179568#512"    cd /Users/Code/Documents/Developer/Microlending    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Microlending-Info.plist -genpkginfo /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app/Info.plist0#
+
+CProcessPCH /var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch.gch Microlending_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s339384321.212956
+e339384324.065519
+r1
+xProcessPCH
+x/var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch.gch
+xMicrolending_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@34"Precompile Microlending_Prefix.pch339384321#339384324#0(0"0(0#0#68"/Users/Code/Documents/Developer/Microlending/Microlending_Prefix.pch8610646272#1961"    cd /Users/Code/Documents/Developer/Microlending    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-generated-files.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-own-target-headers.hmap -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-all-target-headers.hmap -iquote /Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/Microlending-project-headers.hmap -F/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator -I/Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/include -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources/i386 -I/Users/Code/Documents/Developer/Microlending/build/Microlending.build/Debug-iphonesimulator/Microlending.build/DerivedSources -c /Users/Code/Documents/Developer/Microlending/Microlending_Prefix.pch -o /var/folders/NB/NBAtlEObEvqAISbT+5A6R++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Microlending_Prefix-aafvepjjmxboilfmfpyrzmekxncj/Microlending_Prefix.pch.gch0#
+
+CTouch /Users/Code/Documents/Developer/Microlending/build/Debug-iphonesimulator/Microlending.app
+r0
+

@@ -1,0 +1,6 @@
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:16: error: expected '{' before 'CGRect'
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:18: error: 'frame' undeclared here (not in a function)
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:18: error: initializer element is not constant
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:20: error: expected identifier or '(' before '[' token
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:25: error: expected identifier or '(' before '[' token
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/../CustomTabBar.m:26: error: expected identifier or '(' before '[' token

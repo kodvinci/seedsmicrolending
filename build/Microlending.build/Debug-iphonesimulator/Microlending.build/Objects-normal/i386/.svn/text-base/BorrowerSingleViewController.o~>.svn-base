@@ -1,0 +1,5 @@
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/BorrowerSingleViewController.m: In function '-[BorrowerSingleViewController actionSheet:clickedButtonAtIndex:]':
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/BorrowerSingleViewController.m:56: warning: no '-initFromLender:toBorrower:withThisAmount:' method found
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/BorrowerSingleViewController.m:56: warning: (Messages without a matching method signature
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/BorrowerSingleViewController.m:56: warning: will be assumed to return 'id' and accept
+/Users/Code/Documents/Developer/MicroLendingSVN/trunk/Microlending 2/Classes/BorrowerSingleViewController.m:56: warning: '...' as arguments.)

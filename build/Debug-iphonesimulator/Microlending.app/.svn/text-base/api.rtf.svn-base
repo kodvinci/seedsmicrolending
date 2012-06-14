@@ -1,0 +1,126 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs20 \cf0 Backend API\
+\
+url = http://gentle-sword-9952.heroku.com/\
+\
+Tables details can be found in later part of the document.\
+\
+general api usage:\
+GET:\
+In order to get the whole table. you can call url/\{tableName\}.json This will return an array containing dictionaries.\
+\
+CREATE:\
+make a post request to url/\{tableName\}.json with a json object representing all the fields in the table type. For example, if you want to create a new borrower you will create a json dictionary with keys of buid, first_name, last_name, category,and description. You don't need to care about id, created_at, or updated_at because thats managed by rails.\
+\
+UPDATE:\
+make a put request with correct id, and the attributes you want to modify. I haven't tried this yet so if you need help give me a call, but i think for example: if you want to update the badge name of a particular badge, you need to creat a json object with just the id field and the name field, and make a put request to url/\{tableName\}.json with the json object.\
+\
+delete:\
+just make a http delete call to url/\{tableName\}.json/\{id\}\
+\
+\
+\
+Special API:\
+\
+Get borrower badge list : url/badge_lists/byUid.json?uid=\{value\} where value is the id of the Lender. \
+This will return an array of badge objects.\
+\
+Get borrowers by category: url/borrowers/byCategory.json?category=\{value\} where value is the category name.\
+Will return an array of borrower objects.\
+\
+Get friends of a lender: url/friends/byUid.json?uid=\{value\} where value is the uid of the lender.\
+Will return an array of lender objects.\
+\
+Get a lender data by its uid: url/lenders/byUid.json?uid=\{value\} where value is the uid of the lender.\
+Will return an array containing either one or zero lender objects.\
+\
+Get transactions by uid: url/transactions/byUid.json?uid=\{value\} where value is the lender uid.\
+Will return an array containing borrow objects but with an extra field of amount.\
+\
+\
+\
+TABLE DETAILS:\
+\
+\
+badge_lists\
++------------+----------+------+-----+---------+----------------+\
+| Field      | Type     | Null | Key | Default | Extra          |\
++------------+----------+------+-----+---------+----------------+\
+| id         | int(11)  | NO   | PRI | NULL    | auto_increment |\
+| luid       | int(11)  | YES  |     | NULL    |                |\
+| bid        | int(11)  | YES  |     | NULL    |                |\
+| created_at | datetime | YES  |     | NULL    |                |\
+| updated_at | datetime | YES  |     | NULL    |                |\
++------------+----------+------+-----+---------+----------------+\
+\
+badges\
++-------------+--------------+------+-----+---------+----------------+\
+| Field       | Type         | Null | Key | Default | Extra          |\
++-------------+--------------+------+-----+---------+----------------+\
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |\
+| bid         | int(11)      | YES  |     | NULL    |                |\
+| name        | varchar(255) | YES  |     | NULL    |                |\
+| description | text         | YES  |     | NULL    |                |\
+| created_at  | datetime     | YES  |     | NULL    |                |\
+| updated_at  | datetime     | YES  |     | NULL    |                |\
++-------------+--------------+------+-----+---------+----------------+\
+\
+\
+borrowers\
++-------------+--------------+------+-----+---------+----------------+\
+| Field       | Type         | Null | Key | Default | Extra          |\
++-------------+--------------+------+-----+---------+----------------+\
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |\
+| buid        | int(11)      | YES  |     | NULL    |                |\
+| first_name  | varchar(255) | YES  |     | NULL    |                |\
+| last_name   | varchar(255) | YES  |     | NULL    |                |\
+| category    | varchar(255) | YES  |     | NULL    |                |\
+| description | text         | YES  |     | NULL    |                |\
+| created_at  | datetime     | YES  |     | NULL    |                |\
+| updated_at  | datetime     | YES  |     | NULL    |                |\
++-------------+--------------+------+-----+---------+----------------+\
+\
+friends\
++------------+----------+------+-----+---------+----------------+\
+| Field      | Type     | Null | Key | Default | Extra          |\
++------------+----------+------+-----+---------+----------------+\
+| id         | int(11)  | NO   | PRI | NULL    | auto_increment |\
+| uid        | int(11)  | YES  |     | NULL    |                |\
+| fuid       | int(11)  | YES  |     | NULL    |                |\
+| created_at | datetime | YES  |     | NULL    |                |\
+| updated_at | datetime | YES  |     | NULL    |                |\
++------------+----------+------+-----+---------+----------------+\
+\
+lenders\
++------------+--------------+------+-----+---------+----------------+\
+| Field      | Type         | Null | Key | Default | Extra          |\
++------------+--------------+------+-----+---------+----------------+\
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |\
+| luid       | int(11)      | YES  |     | NULL    |                |\
+| first_name | varchar(255) | YES  |     | NULL    |                |\
+| last_name  | varchar(255) | YES  |     | NULL    |                |\
+| class_type | varchar(255) | YES  |     | NULL    |                |\
+| experience | int(11)      | YES  |     | NULL    |                |\
+| created_at | datetime     | YES  |     | NULL    |                |\
+| updated_at | datetime     | YES  |     | NULL    |                |\
++------------+--------------+------+-----+---------+----------------+\
+\
+transactions\
++------------+---------------+------+-----+---------+----------------+\
+| Field      | Type          | Null | Key | Default | Extra          |\
++------------+---------------+------+-----+---------+----------------+\
+| id         | int(11)       | NO   | PRI | NULL    | auto_increment |\
+| luid       | int(11)       | YES  |     | NULL    |                |\
+| buid       | int(11)       | YES  |     | NULL    |                |\
+| amount     | decimal(10,0) | YES  |     | NULL    |                |\
+| date       | datetime      | YES  |     | NULL    |                |\
+| created_at | datetime      | YES  |     | NULL    |                |\
+| updated_at | datetime      | YES  |     | NULL    |                |\
++------------+---------------+------+-----+---------+----------------+\
+\
+\
+}
