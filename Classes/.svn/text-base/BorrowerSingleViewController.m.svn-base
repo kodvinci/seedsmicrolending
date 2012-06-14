@@ -1,0 +1,130 @@
+//
+//  BorrowerSingleViewController.m
+//  Microlending
+//
+//  Created by guest user on 10/18/11.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "BorrowerSingleViewController.h"
+#import "Borrower.h"
+#import "SBJson.h"
+#import "MicrolendingAppDelegate.h"
+#import "Sender.h"
+#import "Lender.h"
+#import "Badge.h"
+#import "Transaction.h"
+
+@class Borrower;
+@class Sender;
+@class Lender;
+@class Badge;
+@class Transaction;
+
+@implementation BorrowerSingleViewController
+
+@synthesize borrowerImage, nameLabel, categoryLabel, loansRecievedLabel, description;
+
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+-(IBAction)pressedInvest {
+	
+	UIActionSheet *asheet = [[UIActionSheet alloc] initWithTitle:@"Select an amount" 
+														delegate:self 
+											   cancelButtonTitle:@"Cancel" 
+										  destructiveButtonTitle:nil 
+											   otherButtonTitles:@"$10", @"$20", @"$50",@"$100",@"Custom", nil];
+    [asheet showFromTabBar:appDelegate.tabBarController.tabBar];
+    [asheet release];
+	
+	
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	
+	if (buttonIndex != actionSheet.cancelButtonIndex) {
+		
+		Transaction *newTransaction = [[Transaction alloc] initFromLender:appDelegate.currentLender.uid 
+															   toBorrower:@"5" 
+														   withThisAmount:@"100"];
+		
+		[appDelegate.currentLender addTransaction:newTransaction];
+		[newTransaction release];
+						
+	
+		int x = 0;
+		
+		if (buttonIndex == 0) {
+			x = 20;
+		} else if (buttonIndex == 1) {
+			x = 50;
+		} else if (buttonIndex == 2) {
+			x = 100;
+		} else if (buttonIndex == 3) {
+			[appDelegate.currentLender addBadge:@"3"];
+			x = 200;
+		}
+		
+		
+		[appDelegate.currentLender addXP:x];
+		[appDelegate.currentLender addBadge:@"1"];
+		
+					
+		//[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:@"1"];
+
+		
+		//Takes you back to profile page automatically
+		
+	
+		//appDelegate.tabBarController.selectedIndex = 0;
+		
+		
+
+		
+	}
+	
+	
+	
+	
+}
+
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+	 appDelegate = [[UIApplication sharedApplication] delegate];
+	
+    [borrowerImage setImage:[[UIImage imageNamed:@"SamBaek.jpg"] autorelease]];
+    [super viewDidLoad];
+    
+    // Do any additional setup after loading the view from its nib.
+}
+
+
+- (void)viewDidUnload
+{
+    [borrowerImage release];
+	[nameLabel release];
+	[categoryLabel release];
+	[loansRecievedLabel release];
+	[description release];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+@end

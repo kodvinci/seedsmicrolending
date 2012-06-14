@@ -1,0 +1,35 @@
+//
+//  LoginViewController.h
+//  Microlending
+//
+//  Created by Cody Kolodziejzyk on 10/18/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "Grabber.h"
+#import "MicrolendingAppDelegate.h"
+#import "Lender.h"
+
+@class MicrolendingAppDelegate;
+
+@interface LoginViewController : UIViewController <GrabberDelegate, LenderDelegate> {
+	
+	IBOutlet UITextField *usernameField;
+	IBOutlet UITextField *passwordField;
+	IBOutlet UIActivityIndicatorView *spinner;
+	NSString *tempUserID;
+	MicrolendingAppDelegate *appDelegate;
+
+}
+
+
+
+@property (nonatomic, retain) UITextField *usernameField;
+@property (nonatomic, retain) UITextField *passwordField;
+@property (nonatomic, retain) NSString *tempUserID;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+
+-(IBAction)pressedLogin;
+
+@end

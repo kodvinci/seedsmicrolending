@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes
+END
+SBJson.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJson.h
+END
+BorrowerSingleViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/BorrowerSingleViewController.h
+END
+CustomNavBar.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/CustomNavBar.h
+END
+SBJsonStreamWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriter.h
+END
+BorrowerSingleViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/BorrowerSingleViewController.m
+END
+SBJsonStreamWriterState.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriterState.h
+END
+CustomNavBar.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/CustomNavBar.m
+END
+Lender.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/micro-lending/!svn/ver/39/trunk1/Microlending%202/Classes/Lender.h
+END
+SBJsonParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonParser.h
+END
+SBJsonStreamWriter.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriter.m
+END
+SBJsonStreamWriterState.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriterState.m
+END
+Lender.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/micro-lending/!svn/ver/38/trunk1/Microlending%202/Classes/Lender.m
+END
+SBJsonParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonParser.m
+END
+SBJsonStreamParserAdapter.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserAdapter.h
+END
+SBJsonStreamParserAdapter.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserAdapter.m
+END
+CollageViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/CollageViewController.xib
+END
+LoginViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LoginViewController.xib
+END
+Grabber.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Grabber.h
+END
+Profile.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Profile.m
+END
+CollageViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/CollageViewController.h
+END
+SBJsonStreamWriterAccumulator.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriterAccumulator.h
+END
+LoginViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LoginViewController.h
+END
+Grabber.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Grabber.m
+END
+CollageViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/CollageViewController.m
+END
+SBJsonStreamWriterAccumulator.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamWriterAccumulator.m
+END
+LoginViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LoginViewController.m
+END
+Sender.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Sender.h
+END
+Sender.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Sender.m
+END
+SBJsonStreamParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParser.h
+END
+SBJsonStreamParserState.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserState.h
+END
+ProfileViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/ProfileViewController.xib
+END
+SBJsonStreamParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParser.m
+END
+BadgeViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/BadgeViewController.xib
+END
+SBJsonStreamParserState.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserState.m
+END
+LeaderboardViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LeaderboardViewController.xib
+END
+ProfileViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/ProfileViewController.h
+END
+BadgeViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/BadgeViewController.h
+END
+LeaderboardViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LeaderboardViewController.h
+END
+ProfileViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/ProfileViewController.m
+END
+BadgeViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/BadgeViewController.m
+END
+LeaderboardViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/LeaderboardViewController.m
+END
+SBJsonTokeniser.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonTokeniser.h
+END
+Transaction.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Transaction.h
+END
+SBJsonTokeniser.m
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonTokeniser.m
+END
+SBJsonStreamParserAccumulator.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserAccumulator.h
+END
+Transaction.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/Transaction.m
+END
+SBJsonWriter.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonWriter.h
+END
+SBJsonStreamParserAccumulator.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonStreamParserAccumulator.m
+END
+SBJsonWriter.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonWriter.m
+END
+Borrower.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/micro-lending/!svn/ver/40/trunk1/Microlending%202/Classes/Borrower.h
+END
+NSObject+SBJson.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/NSObject+SBJson.h
+END
+MPCategoryPage.xib
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPCategoryPage.xib
+END
+NSObject+SBJson.m
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/NSObject+SBJson.m
+END
+Borrower.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/micro-lending/!svn/ver/41/trunk1/Microlending%202/Classes/Borrower.m
+END
+MPViewController.xib
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPViewController.xib
+END
+MicrolendingAppDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MicrolendingAppDelegate.h
+END
+MPCategoryPage.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPCategoryPage.h
+END
+JSON.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/JSON.h
+END
+MPViewController.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPViewController.h
+END
+MicrolendingAppDelegate.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MicrolendingAppDelegate.m
+END
+MPCategoryPage.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPCategoryPage.m
+END
+MPViewController.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/MPViewController.m
+END
+SBJsonUTF8Stream.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonUTF8Stream.h
+END
+SBJsonUTF8Stream.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/micro-lending/!svn/ver/37/trunk1/Microlending%202/Classes/SBJsonUTF8Stream.m
+END

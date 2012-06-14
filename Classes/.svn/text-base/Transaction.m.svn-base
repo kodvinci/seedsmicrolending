@@ -1,0 +1,97 @@
+//
+//  Transaction.m
+//  Microlending
+//
+//  Created by Cody Kolodziejzyk on 11/7/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "Transaction.h"
+#import "Grabber.h"
+
+@class Grabber;
+
+
+@implementation Transaction
+
+@synthesize fromUID, toUID, amount, dateAndTime, fromUsername, toUsername, transactionDelegate; 
+
+-(id)initFromLender:(NSString *)thisFromUID 
+		 toBorrower:(NSString *)thisBorrower 
+	 withThisAmount:(NSString *)thisAmount {
+	
+	if (self = [super init]) {
+	
+		self.fromUID = thisFromUID;
+		self.toUID = thisBorrower;
+		self.amount = thisAmount;
+		self.dateAndTime = [[NSDate alloc] init];
+		
+		//Grabber *newGrabber = [[Grabber alloc] initWithParams:@"lenders" 
+//													  apiName:@"byUid" 
+//													 argument:self.fromUID 
+//													  apiCall:@"GET" 
+//												typeOfGrabber:@"lender"];
+//		
+//		newGrabber.grabberDelegate = self;
+//		[newGrabber release];
+		
+		
+	}
+	
+	return self;
+}
+
+//-(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
+//	
+//	
+//	if ([thisType isEqualToString:@"lender"]) {
+//		
+//		NSDictionary *newDic = [recievedData objectAtIndex:0];
+//		self.fromUsername = [newDic objectForKey:@"first_name"];
+//		
+//		Grabber *newGrabberTwo = [[Grabber alloc] initWithParams:@"borrowers" 
+//														 apiName:@"" 
+//														argument:@""
+//														 apiCall:@"GET" 
+//												   typeOfGrabber:@"borrower"];
+//		
+//		newGrabberTwo.grabberDelegate = self;
+//		[newGrabberTwo release];
+//
+//	}
+//	
+//	if ([thisType isEqualToString:@"borrower"]) {
+//		for (int x = 0; x < [recievedData count]; x++) {
+//			NSDictionary *newDicTwo = [recievedData objectAtIndex:x];
+//			if ([self.toUID intValue] == [[newDicTwo objectForKey:@"buid"] intValue]) {
+//				self.toUsername = [newDicTwo objectForKey:@"first_name"];
+//			}
+//		}
+//		
+//		[self.transactionDelegate didFinishSettingUpTransaction:YES withTransaction:self];
+//		
+//	}	
+//	
+//	
+//}
+
+
+- (NSComparisonResult)compare:(Transaction *)otherTrans {
+	if ([self.amount intValue] > [otherTrans.amount intValue])
+		return NSOrderedAscending;
+	else if ([self.amount intValue] < [otherTrans.amount intValue])
+		return NSOrderedDescending;
+	else 
+		return NSOrderedSame;
+}
+
+-(NSString *)getTransactionLender {
+	
+	
+	return self.fromUID;
+	
+}
+
+
+@end

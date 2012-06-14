@@ -1,0 +1,63 @@
+//
+//  ProfileViewController.h
+//  Microlending
+//
+//  Created by Cody Kolodziejzyk on 10/18/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "Lender.h"
+#import "Grabber.h"
+
+@class MicrolendingAppDelegate;
+
+
+@interface ProfileViewController : UIViewController <GrabberDelegate> {
+	
+	IBOutlet UIImageView *userImage;
+	IBOutlet UILabel *roundedCorners;
+	IBOutlet UILabel *roundedCorners2;
+	IBOutlet UILabel *usernameLabel;
+	IBOutlet UILabel *userClassLabel;
+	IBOutlet UILabel *totalInvestmentsLabel;
+	IBOutlet UILabel *totalXPLabel;
+	IBOutlet UILabel *statusBar;
+	IBOutlet UILabel *statusBar2;
+	IBOutlet UILabel *creditLabel;
+	IBOutlet UIButton *buttonOne;
+	IBOutlet UIButton *buttonTwo;
+	IBOutlet UIButton *buttonThree;
+	IBOutlet UIButton *buttonFour;
+
+	Grabber *newGrabber;
+	MicrolendingAppDelegate *appDelegate;
+
+	Lender *currentUser;
+
+}
+
+@property (nonatomic, retain) UIImageView *userImage;
+@property (nonatomic, retain) UILabel *roundedCorners;
+@property (nonatomic, retain) UILabel *roundedCorners2;
+@property (nonatomic, retain) Lender *currentUser;
+@property (nonatomic, retain) UILabel *usernameLabel;
+@property (nonatomic, retain) UILabel *userClassLabel;
+@property (nonatomic, retain) UILabel *totalInvestmentsLabel;
+@property (nonatomic, retain) UILabel *totalXPLabel;
+@property (nonatomic, retain) UILabel *statusBar;
+@property (nonatomic, retain) UILabel *statusBar2;
+@property (nonatomic, retain) UILabel *creditLabel;
+@property (nonatomic, retain) UIButton *buttonOne;
+@property (nonatomic, retain) UIButton *buttonTwo;
+@property (nonatomic, retain) UIButton *buttonThree;
+@property (nonatomic, retain) UIButton *buttonFour;
+
+
+
+-(IBAction)viewBadges;
+-(IBAction)viewInvestments;
+-(IBAction)viewFriends;
+
+@end

@@ -1,0 +1,177 @@
+//
+//  LoginViewController.m
+//  Microlending
+//
+//  Created by Cody Kolodziejzyk on 10/18/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "LoginViewController.h"
+#import "MicrolendingAppDelegate.h"
+#import "SBJson.h"
+#import "SBJsonParser.h"
+#import "Grabber.h"
+#import "Lender.h"
+#import "Badge.h"
+
+@class MicrolendingAppDelegate;
+@class Grabber;
+@class Badge;
+
+
+@implementation LoginViewController
+
+@synthesize usernameField;
+@synthesize passwordField;
+@synthesize tempUserID;
+@synthesize spinner;
+
+
+
+-(void)userWasFound:(NSArray *)dictionaries {
+	
+	NSDictionary *userInfo = [dictionaries objectAtIndex:0];
+		
+	Lender *newLender = [[Lender alloc] initWithUserID:[userInfo valueForKey:@"luid"]];
+	newLender.lenderDelegate = self;
+	[newLender initializeEverythingFromServer];
+	
+	
+}
+
+//This is called by the Lender Delegate to make sure the everything is finished
+//loading from the databse before the login screen is dismissed
+
+-(void)didFinishSettingUpLender:(BOOL)result withLender:(id)thisLender {
+	
+	[spinner stopAnimating];
+
+	
+	if (result) {
+		
+		
+		appDelegate.currentLender = thisLender;
+		[self.parentViewController dismissModalViewControllerAnimated:YES];
+		
+	} else {
+		
+		UIAlertView *warningMessage;
+		warningMessage = [[UIAlertView alloc] initWithTitle:@"Error setting up user" 
+													message:nil 
+												   delegate:nil cancelButtonTitle:@"Ok" 
+										  otherButtonTitles:nil];
+		[warningMessage show];
+		[warningMessage release];
+	}
+	
+	
+}
+
+//If the user was not found, create a warning message		
+
+-(void)userWasNotFound {
+	
+	[spinner stopAnimating];
+
+	
+	UIAlertView *warningMessage;
+	warningMessage = [[UIAlertView alloc] initWithTitle:@"Not Found" 
+												message:@"Enter in a different userID" 
+											   delegate:nil cancelButtonTitle:@"Ok" 
+									  otherButtonTitles:nil];
+	[warningMessage show];
+	[warningMessage release];
+	
+	
+	
+}
+
+-(IBAction)pressedLogin {
+	
+	[spinner startAnimating];
+	
+	// Creates a new Grabber with the specified parameters and then sets the grabber delegate to itself
+	
+	Grabber *newGrabber = [[Grabber alloc] initWithParams:@"lenders" 
+												  apiName:@"byUid" 
+												 argument:usernameField.text 
+												  apiCall:@"GET" 
+											typeOfGrabber:@"user"];
+    newGrabber.grabberDelegate = self;
+	[newGrabber release];
+	
+	
+}
+
+// This is the delegate method that is automatically 
+// called when the grabber recieves the data from the server.
+// Do what you want with the resulting array of NSDictionaries
+
+-(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
+		
+if ([thisType isEqualToString:@"user"]) {
+	if ([recievedData count] == 0) {
+		[self userWasNotFound];
+	} else {
+		[self userWasFound:recievedData];
+	}
+}	
+	
+}
+
+
+
+// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+/*
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization.
+    }
+    return self;
+}
+*/
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+	[spinner stopAnimating];
+	appDelegate = [[UIApplication sharedApplication] delegate];
+
+	[usernameField becomeFirstResponder];
+    [super viewDidLoad];
+}
+
+
+/*
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations.
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+*/
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc. that aren't in use.
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+
+- (void)dealloc {
+	[tempUserID release];
+	[usernameField release];
+	[passwordField release];
+	[spinner release];
+    [super dealloc];
+}
+
+
+@end
