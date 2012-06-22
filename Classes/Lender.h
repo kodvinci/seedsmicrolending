@@ -27,6 +27,7 @@
 	NSString *totalXP;
 	NSString *uid;
 	NSString *realid;
+    NSString *gender;
 	NSMutableArray *badges;
 	NSMutableArray *friends;
 	NSMutableArray *transactions;
@@ -37,7 +38,7 @@
 	NSInteger categoriesObserved;
 	NSInteger currentLevel;
 	NSInteger credit;
-    NSInteger useriden;
+//    NSInteger useriden;
 	id lenderDelegate;
 
 
@@ -49,6 +50,7 @@
 @property (nonatomic, retain) NSString *totalXP;
 @property (nonatomic, retain) NSString *uid;
 @property (nonatomic, retain) NSString *realid;
+@property (nonatomic, retain) NSString *gender;
 @property (nonatomic, retain) NSMutableArray *badges;
 @property (nonatomic, retain) NSMutableArray *friends;
 @property (nonatomic, retain) NSMutableArray *transactions;
@@ -59,7 +61,6 @@
 @property (nonatomic, assign) NSInteger currentLevel;
 @property (nonatomic, assign) NSInteger categoriesObserved;
 @property (nonatomic, assign) NSInteger credit;
-@property (nonatomic, assign) NSInteger useriden;
 @property (nonatomic, assign) id<LenderDelegate> lenderDelegate;
 
 -(id)initWithUserID:(NSString *)userID;

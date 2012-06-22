@@ -14,7 +14,7 @@
 
 @implementation DecisionViewController
 
-@synthesize storyLabel, decisionOneLabel, decisionTwoLabel, choices;
+@synthesize storyLabel, decisionOneLabel, decisionTwoLabel, choices; //, level;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -28,34 +28,41 @@
 */
 
 -(void)viewDidAppear:(BOOL)animated {
+    
+	NSLog (@"%@", @"Decision View appeared!");
+	NSString *level = [[NSString alloc] initWithFormat:@"%i", appDelegate.currentLender.currentLevel + 3];
+//    level = [[NSString alloc] initWithFormat:@"%@",appDelegate.currentLender.currentLevel + 3]; //appDelegate.currentLender.currentLevel + 3];
+
+	NSLog (@"%@\n", level);
+    NSLog(@"%@\n", [[[appDelegate.tabBarController.tabBar items]objectAtIndex:2]badgeValue]);
 	
-	NSString *level = [[NSString alloc] initWithFormat:@"%i",appDelegate.currentLender.currentLevel + 1];
-	
-	
-	if ([[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] badgeValue] isEqualToString:@"1"]) {
-		
+//	if ([[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] badgeValue] isEqualToString:@"1"]) {
+        
+		NSLog (@"%@", @"we are IN!!");
+        
 		storyLabel.text = @"";
 		decisionOneLabel.text = @"";
 		decisionTwoLabel.text = @"";
 		
-		[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:nil];
+		[[[appDelegate.tabBarController.tabBar items] objectAtIndex:2] setBadgeValue:nil];
 
 		
 		[UIView beginAnimations:nil context:nil];
-		[UIView setAnimationDuration:0.7];
+        [UIView setAnimationDuration:0.7];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
 							   forView:self.view
 								 cache:YES];
 		[self.navigationItem.titleView	 setAlpha:1.00];
 		
 		[UIView commitAnimations];
-	}
+//	}
 	
-	Grabber *grabber = [[Grabber alloc] initWithParams:@"stories" 
-													apiName:@"byId" 
-												   argument:level 
-													apiCall:@"GET" 
-											  typeOfGrabber:@""];
+    NSLog (@"%@", @"We're out!!");
+
+  //  NSString *level = 1;
+    
+	Grabber *grabber = [[Grabber alloc] initWithParams:@"stories" apiName:@"byId" argument:level apiCall:@"GET" typeOfGrabber:@""];
+    
 	grabber.grabberDelegate = self;
 	[grabber release];
 	[level release];
@@ -66,29 +73,50 @@
 	
 }
 
--(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
-	
+-(void)didGetData:(NSArray *) recievedData withType:(NSString *)thisType {
+//	NSLog (@"%@", @"Did we get any data...");
 	[choices removeAllObjects];	
-	
-	NSDictionary *newDic = [recievedData objectAtIndex:0];
-	NSString *story = [[NSString alloc] initWithString:[newDic objectForKey:@"description"]];
+    NSLog(@"ReceivedData is: %@",recievedData);
+ 
+  //  NSDictionary *newDic = [recievedData objectAtIndex: 0];
+    
+//    NSDictionary *newDic = [recievedData objectForKey:@"description"];
+    
+//	NSString *story = [[NSString alloc] initWithString:[newDic objectForKey:@"description"]];//objectForKey
+    
+    NSString *story = [[NSString alloc] initWithString:[recievedData objectForKey:@"description"]];
 	self.storyLabel.text = story;
 	[story release];
 	
-	NSArray *decisions = [newDic objectForKey:@"decisions"];
-	
-	NSLog(@"this is how big decisions is: %i",[decisions count]);
-	
-	for (int x = 0; x < [decisions count]; x++) {
-		NSDictionary *decisionsDic = [decisions objectAtIndex:x];
-		[choices addObject:[decisionsDic objectForKey:@"choices"]];
-	}
-	
-	self.decisionOneLabel.text = [choices objectAtIndex:0];
-	self.decisionTwoLabel.text = [choices objectAtIndex:1];
+	NSInteger decision1 = [recievedData objectForKey:@"decision_id_1"];
+    NSInteger decision2 = [recievedData objectForKey:@"decision_id_2"];
+    self.decisionOneLabel.tag = decision1;
+    self.decisionTwoLabel.tag = decision2;
 
+    NSLog(@"decision 1 is: %@",decision1);
+    NSLog(@"decision 2 is: %@",decision2);
+
+//    NSString *decision1 = [[NSString alloc] initWithString:[recievedData objectForKey:@"decision_id_1"]];
+//    NSString *decision2 = [[NSString alloc] initWithString:[recievedData objectForKey:@"decision_id_2"]];
+//    self.decisionOneLabel.tag = *(decision1);
+//    self.decisionTwoLabel.tag = *(decision2);
+    
+//    [decision1 release];
+//    [decision2 release];
+//	NSLog(@"this is how big decisions is: %i",[decisions count]);
 	
+//    if ([decisions count] == 0) {
+//        NSLog (@"%@", @"We've got no decisions!");
+//    }
+//    else {
+ //       for (int x = 0; x < [decisions count]; x++) {
+ //           NSDictionary *decisionsDic = [decisions objectAtIndex:x];
+ //           [choices addObject:[decisionsDic objectForKey:@"choices"]];
+ //       }
 	
+ //       self.decisionOneLabel.text = [choices objectAtIndex:0];
+ //       self.decisionTwoLabel.text = [choices objectAtIndex:1];
+//    }
 	
 }
 
@@ -145,6 +173,8 @@
 	[decisionOneLabel release];
 	[decisionTwoLabel release];
 	[choices release];
+//    [level release];
+//    [shouldUpdate release];
     [super dealloc];
 }
 

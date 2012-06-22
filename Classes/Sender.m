@@ -19,10 +19,10 @@
 		NSString *urlFormat;
 		
 		if ([tableName isEqualToString:@"badge_lists"] || [tableName isEqualToString:@"transactions"]) {
-			 urlFormat = [[NSString alloc] initWithFormat:@"http://gentle-sword-9952.heroku.com/%@/",tableName]; 
+			 urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.heroku.com/%@/",tableName]; 
 
 		} else {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://gentle-sword-9952.heroku.com/%@/%@.json",tableName,thisID]; 
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.heroku.com/%@/%@.json",tableName,thisID]; 
 		}
 	
 	

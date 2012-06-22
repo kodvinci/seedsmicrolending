@@ -62,15 +62,16 @@
 }
 
 
-//- (void)viewDidAppear:(BOOL)animated {
+//UNCOMMENTED THIS SECTION! 
+//it seems to have fixed the problem of the same badges duplicating themselves. but now it takes awhile to reload the badges...does it reload the information from the server??
+- (void)viewDidAppear:(BOOL)animated {
 	
-	//[badges removeAllObjects];
-	//[self.tableView reloadData];
+	[badges removeAllObjects];
+	[self.tableView reloadData];
 	
-	
-//	
-//    [super viewDidAppear:animated];
-//}
+		
+    [super viewDidAppear:animated];
+}
 
 -(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
 	

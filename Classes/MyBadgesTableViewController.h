@@ -12,12 +12,13 @@
 @class MicrolendingAppDelegate;
 
 
-@interface MyBadgesModalViewController : UITableViewController {
+@interface MyBadgesTableViewController : UITableViewController {
 	
 	NSMutableArray *badges;
+    NSUInteger numBadges;
 	MicrolendingAppDelegate *appDelegate;
-
-
 }
+
+@property (nonatomic, retain) NSMutableArray *badges;
 
 @end

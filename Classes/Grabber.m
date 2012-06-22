@@ -44,7 +44,7 @@
 
 		
 		if ([thisApiName isEqualToString:@"byUid"]) {
-			 urlFormat = [[NSString alloc] initWithFormat:@"http://radiant-night-1016.herokuapp.com/%@/%@.json?uid=%@",
+			 urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?uid=%@",
 								   currentTableName,currentAPIName,currentArgument];
 			
 			NSLog(@"%@",urlFormat);
@@ -52,14 +52,14 @@
 		}
 		
 		if ([thisApiName isEqualToString:@"getBorrowersByUid"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://radiant-night-1016.herokuapp.com/%@/%@.json?uid=%@",
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?uid=%@",
 						 currentTableName,currentAPIName,currentArgument];
 			
 			NSLog(@"%@",urlFormat);
 		}
 		
 		if ([thisApiName isEqualToString:@"byId"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://radiant-night-1016.herokuapp.com/%@/%@.json?id=%@",
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?story_id=%@",
 						 currentTableName,currentAPIName,currentArgument];
 			
 			NSLog(@"%@",urlFormat);
@@ -67,13 +67,20 @@
 		}
 			
 		if ([thisApiName isEqualToString:@"byCategory"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://radiant-night-1016.herokuapp.com/%@/%@.json?category=%@",
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?category=%@",
 								   currentTableName,currentAPIName,currentArgument];
 			
 		}
+        
+        if ([thisApiName isEqualToString:@"byBid"]) {
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?bid=%@",
+						 currentTableName,currentAPIName,currentArgument];
+			NSLog(@"%@",urlFormat);
+            
+		}
 		
 		if ([thisApiName isEqualToString:@""]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://radiant-night-1016.herokuapp.com/%@.json",
+			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@.json",
 						 currentTableName];
 			NSLog(@"%@",urlFormat);
 
@@ -152,6 +159,7 @@
 	results = [parser objectWithData:receivedData];
 	[parser release];
 	
+   // NSLog (@"The content is%@",results);
 	
 	[self.grabberDelegate didGetData:results withType:currentType];
 	

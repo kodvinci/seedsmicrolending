@@ -32,7 +32,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-	
+    NSLog (@"%@", @"In MicroLApp launch!");
+
 	ipaddress = [[NSString alloc] initWithString:@"10.180.135.109"];
 	userID = [[NSString alloc] init];
 	
@@ -48,7 +49,7 @@
 	loginView = [[LoginViewController alloc] init];
 	[window addSubview:tabBarController.view];
 	
-	[self.tabBarController presentModalViewController:loginView animated:NO];
+	[self.tabBarController presentModalViewController:loginView animated:NO]; //NO
 
     
     return YES;
@@ -94,6 +95,10 @@
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+    //save changes
+  //  [[PossessionStore defaultStore] saveChanges]
+    [super applicationWillTerminate:application];
+    NSLog(@"Application Will Terminate");
 }
 
 

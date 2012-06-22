@@ -24,12 +24,14 @@
 
 
 - (void)viewDidLoad {
+    NSLog (@"%@", @"Investment View Loaded!");
 	
 	MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
 	
 	results = [[NSMutableArray alloc] initWithArray:appDelegate.currentLender.transactions];
-	
+    NSLog(@"Content of results: %@",results);
+
 	self.navigationItem.title = @"My Investments";
 	
 		
@@ -40,16 +42,16 @@
 }
 
 
-/*
+//UNCOMMENTED
  - (void)viewWillAppear:(BOOL)animated {
  [super viewWillAppear:animated];
  }
- */
-/*
+
+//UNCOMMENTED TOO
  - (void)viewDidAppear:(BOOL)animated {
  [super viewDidAppear:animated];
  }
- */
+ 
 /*
  - (void)viewWillDisappear:(BOOL)animated {
  [super viewWillDisappear:animated];

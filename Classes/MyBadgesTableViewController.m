@@ -6,13 +6,22 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MyBadgesModalViewController.h"
+#import "MyBadgesTableViewController.h"
 #import "MicrolendingAppDelegate.h"
+#import "SBJson.h"
+#import "SBJsonParser.h"
+#import "Lender.h"
+#import "Grabber.h"
+#import "Badge.h"
+#import "SingleBadgeViewController.h"
 
-@class MicrolendingAppDelegate;
+@class SingleBadgeViewController;
+@class Grabber;
+@class Badge;
 
+@implementation MyBadgesTableViewController
 
-@implementation MyBadgesModalViewController
+@synthesize badges;
 
 
 #pragma mark -
@@ -35,26 +44,60 @@
 
 
 - (void)viewDidLoad {
+    NSLog (@"%@", @"MyBadges View DidLoad!!");
+   
+//    MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    
 	badges = [[NSMutableArray alloc] initWithArray:appDelegate.currentLender.badges];
+    NSLog(@"The content of badges is: %@",badges);
+
 	NSLog(@"appdeli: %i",[appDelegate.currentLender.badges count]);
-	appDelegate = [[UIApplication sharedApplication] delegate];
+	numBadges = [appDelegate.currentLender.badges count];
+    NSLog(@"The size of numBadges is %i",numBadges);
+
+  //  appDelegate = [[UIApplication sharedApplication] delegate]; //deleted
+    //addition
+    self.navigationItem.title = @"My Badges";
+    
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+//UNCOMMENTED IT...
 
-/*
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog (@"%@", @"MyBadges viewWillAppear Loaded!!");
+    /*
+    MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if (numBadges > 0) {
+        for (int x=0; x < numBadges; x++) {
+            Grabber *newGrabber = [[Grabber alloc] initWithParams:@"badges" apiName:@"byBid" argument:[badges objectAtIndex:x] apiCall:@"GET" typeOfGrabber:@"badge"];
+  
+    //        newGrabber.grabberDelegate = self;
+        
+            [newGrabber release];
+            [[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:nil];
+        }
+	}
+    else {
+        NSLog (@"%@", @"NOTHING!!");
+    }
+//	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:nil];
+    */
     [super viewWillAppear:animated];
-}
-*/
-/*
+} 
+
+
 - (void)viewDidAppear:(BOOL)animated {
+//    [badges removeAllObjects];
+//	[self.tableView reloadData];
+    
     [super viewDidAppear:animated];
 }
-*/
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -85,7 +128,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	NSLog(@"%i",[badges count]);
+//	NSLog(@"%i",[badges count]);
     return [badges count];
 }
 
@@ -101,6 +144,17 @@
     }
     
     // Configure the cell...
+    //STUFF GOES HERE
+    [cell.imageView setImage:[UIImage imageNamed:@"badge.png"]];
+
+ /*   if ([appDelegate.currentLender.badges containsObject:[[badges objectAtIndex:indexPath.row] getBadgeBID]]) {
+        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+	}   */
+//    NSLog (@"%@", @"No badges!!");
+
+//	[cell.textLabel setText:[[badges objectAtIndex:indexPath.row] getBadgeTitle]];
+//	[cell.detailTextLabel setText:[[badges objectAtIndex:indexPath.row] getBadgeDescription]];
     
     return cell;
 }

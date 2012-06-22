@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A46168E1588A834004C66EB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A46168D1588A834004C66EB /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		0A4616911588A882004C66EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4616901588A882004C66EB /* SystemConfiguration.framework */; };
-		0A4616931588A897004C66EB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4616921588A897004C66EB /* MobileCoreServices.framework */; };
-		0A4616951588A8C1004C66EB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4616941588A8C1004C66EB /* libz.dylib */; };
+		0A7090EC158F835D00235DBE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7090EB158F835D00235DBE /* QuartzCore.framework */; };
+		0AA6434B15905D71007F8664 /* female_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AA6434A15905D71007F8664 /* female_avatar.png */; };
+		0AA6434E15905DA8007F8664 /* male_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AA6434D15905DA8007F8664 /* male_avatar.png */; };
 		1D3623260D0F684500981E51 /* MicrolendingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -65,7 +64,7 @@
 		CDB50496146B322500F15B88 /* blueprint.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDB50495146B322500F15B88 /* blueprint.jpg */; };
 		CDBCCFE6147349E40028EE9A /* DecisionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBCCFE4147349E40028EE9A /* DecisionViewController.m */; };
 		CDBCCFE7147349E40028EE9A /* DecisionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBCCFE5147349E40028EE9A /* DecisionViewController.xib */; };
-		CDBE13D51475BF5200F12B3C /* MyBadgesModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE13D41475BF5200F12B3C /* MyBadgesModalViewController.m */; };
+		CDBE13D51475BF5200F12B3C /* MyBadgesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */; };
 		CDBE97051472059000A4D8DB /* canvas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CDBE97041472059000A4D8DB /* canvas.jpg */; };
 		CDBE97471472114800A4D8DB /* SingleBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE97451472114800A4D8DB /* SingleBadgeViewController.m */; };
 		CDBE97481472114800A4D8DB /* SingleBadgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBE97461472114800A4D8DB /* SingleBadgeViewController.xib */; };
@@ -89,10 +88,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A46168D1588A834004C66EB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		0A4616901588A882004C66EB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		0A4616921588A897004C66EB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0A4616941588A8C1004C66EB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0A7090EB158F835D00235DBE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0AA6434A15905D71007F8664 /* female_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_avatar.png; sourceTree = "<group>"; };
+		0AA6434D15905DA8007F8664 /* male_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_avatar.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrolendingAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrolendingAppDelegate.m; sourceTree = "<group>"; };
@@ -177,8 +175,8 @@
 		CDBCCFE3147349E40028EE9A /* DecisionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecisionViewController.h; sourceTree = "<group>"; };
 		CDBCCFE4147349E40028EE9A /* DecisionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecisionViewController.m; sourceTree = "<group>"; };
 		CDBCCFE5147349E40028EE9A /* DecisionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DecisionViewController.xib; path = Classes/DecisionViewController.xib; sourceTree = "<group>"; };
-		CDBE13D31475BF5200F12B3C /* MyBadgesModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBadgesModalViewController.h; sourceTree = "<group>"; };
-		CDBE13D41475BF5200F12B3C /* MyBadgesModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBadgesModalViewController.m; sourceTree = "<group>"; };
+		CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBadgesTableViewController.h; sourceTree = "<group>"; };
+		CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBadgesTableViewController.m; sourceTree = "<group>"; };
 		CDBE97041472059000A4D8DB /* canvas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = canvas.jpg; sourceTree = "<group>"; };
 		CDBE97441472114800A4D8DB /* SingleBadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleBadgeViewController.h; sourceTree = "<group>"; };
 		CDBE97451472114800A4D8DB /* SingleBadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleBadgeViewController.m; sourceTree = "<group>"; };
@@ -213,11 +211,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4616951588A8C1004C66EB /* libz.dylib in Frameworks */,
+				0A7090EC158F835D00235DBE /* QuartzCore.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				0A4616931588A897004C66EB /* MobileCoreServices.framework in Frameworks */,
-				0A4616911588A882004C66EB /* SystemConfiguration.framework in Frameworks */,
-				0A46168E1588A834004C66EB /* CFNetwork.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				CDBF7A8E14746B5200C408C8 /* MessageUI.framework in Frameworks */,
@@ -270,8 +265,8 @@
 				CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */,
 				CDB3E17814635E010047108F /* CustomNavBar.h */,
 				CDB3E17914635E010047108F /* CustomNavBar.m */,
-				CDBE13D31475BF5200F12B3C /* MyBadgesModalViewController.h */,
-				CDBE13D41475BF5200F12B3C /* MyBadgesModalViewController.m */,
+				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
+				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -287,10 +282,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				0A4616941588A8C1004C66EB /* libz.dylib */,
-				0A4616921588A897004C66EB /* MobileCoreServices.framework */,
-				0A4616901588A882004C66EB /* SystemConfiguration.framework */,
-				0A46168D1588A834004C66EB /* CFNetwork.framework */,
 				488A48AA145CABB900225D47 /* api.rtf */,
 				CD67FBFA143BD419006E0CC8 /* JSON */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -319,6 +310,8 @@
 				CDBE97041472059000A4D8DB /* canvas.jpg */,
 				CD3950541471D9D20003691C /* badge.png */,
 				CDB50495146B322500F15B88 /* blueprint.jpg */,
+				0AA6434A15905D71007F8664 /* female_avatar.png */,
+				0AA6434D15905DA8007F8664 /* male_avatar.png */,
 				CD3950501471D8F00003691C /* borrower.png */,
 				CDDEA2871468809100A387B1 /* whiteButton4.png */,
 				CDDEA24F14678F1900A387B1 /* mpbackground.jpg */,
@@ -339,6 +332,7 @@
 				CD2B9B80144F698D0020AECA /* KevinWang.jpg */,
 				CD2B9B81144F698D0020AECA /* ShunFan.jpg */,
 				CD308AB0144E3E74000A44C8 /* SamBaek.jpg */,
+				CD308A8A144E3916000A44C8 /* ProfileViewController.xib */,
 				CDF6DC0B1467721600A9030D /* MPCategoryPage.xib */,
 				CDBCCFE5147349E40028EE9A /* DecisionViewController.xib */,
 				31D13656145E360E00DD3A43 /* CollageViewController.xib */,
@@ -348,7 +342,6 @@
 				CD308C1A144E6F3E000A44C8 /* MPViewController.xib */,
 				CD308B65144E566B000A44C8 /* BadgeViewController.xib */,
 				CD308AEA144E4EB3000A44C8 /* LoginViewController.xib */,
-				CD308A8A144E3916000A44C8 /* ProfileViewController.xib */,
 				CD308C6D144E7C47000A44C8 /* InvestmentTableViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Microlending-Info.plist */,
@@ -359,6 +352,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A7090EB158F835D00235DBE /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -488,6 +482,8 @@
 				CDBCCFE7147349E40028EE9A /* DecisionViewController.xib in Resources */,
 				CDBF7A361474562900C408C8 /* quilt.png in Resources */,
 				CD2DF6251479B53700884EA0 /* lender.png in Resources */,
+				0AA6434B15905D71007F8664 /* female_avatar.png in Resources */,
+				0AA6434E15905DA8007F8664 /* male_avatar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +527,7 @@
 				CDBE97471472114800A4D8DB /* SingleBadgeViewController.m in Sources */,
 				CDBCCFE6147349E40028EE9A /* DecisionViewController.m in Sources */,
 				CD2E134614736E5B000A83FE /* PatchButton.m in Sources */,
-				CDBE13D51475BF5200F12B3C /* MyBadgesModalViewController.m in Sources */,
+				CDBE13D51475BF5200F12B3C /* MyBadgesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,13 +538,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Microlending_Prefix.pch;
 				INFOPLIST_FILE = "Microlending-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = Microlending;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -557,11 +558,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Microlending_Prefix.pch;
 				INFOPLIST_FILE = "Microlending-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = Microlending;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -571,10 +575,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -583,11 +590,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

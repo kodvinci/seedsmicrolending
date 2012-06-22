@@ -13,7 +13,6 @@
 #import "Grabber.h"
 #import "Lender.h"
 #import "Badge.h"
-//#import "ProfileViewController.h" 
 
 
 @class MicrolendingAppDelegate;
@@ -37,20 +36,14 @@
 	Lender *newLender = [[Lender alloc] initWithUserID:[userInfo valueForKey:@"luid"]]; 
 	newLender.lenderDelegate = self;
 	[newLender initializeEverythingFromServer];
-//	what happens next?
-	NSLog(@"The content is%@",userInfo);
-   //addition 
- //   appDelegate.currentLender = newLender;
- //   [self.parentViewController dismissModalViewControllerAnimated:YES];
-    
-    
+    NSLog(@"The content is: %@", userInfo);
+
 }
 
 //This is called by the Lender Delegate to make sure the everything is finished
 //loading from the database before the login screen is dismissed
 
 -(void)didFinishSettingUpLender:(BOOL)result withLender:(id)thisLender {
-	
     NSLog(result ? @"Yes" : @"No");
 	[spinner stopAnimating];
     
@@ -59,7 +52,9 @@
 	if (result) {
 	
 		appDelegate.currentLender = thisLender;
-		[self.parentViewController dismissModalViewControllerAnimated:YES];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
+//		[self.presentingViewController dismissModalViewControllerAnimated:YES];
 		
 	} else {
 		
@@ -146,11 +141,11 @@ if ([thisType isEqualToString:@"user"]) {
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+    NSLog (@"%@", @"Login view loaded!");
 	[spinner stopAnimating];
 	appDelegate = [[UIApplication sharedApplication] delegate];
 
 	[usernameField becomeFirstResponder];
-  //  [self ProfileViewController];
     [super viewDidLoad];
 }
 

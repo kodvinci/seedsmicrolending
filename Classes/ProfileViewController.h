@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Lender.h"
 #import "Grabber.h"
 
 @class MicrolendingAppDelegate;
 
-
-@interface ProfileViewController : UIViewController <GrabberDelegate> {
+@interface ProfileViewController : UIViewController <GrabberDelegate, UISplitViewControllerDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate > {
 	
 	IBOutlet UIImageView *userImage;
 	IBOutlet UILabel *roundedCorners;
@@ -59,5 +59,7 @@
 -(IBAction)viewBadges;
 -(IBAction)viewInvestments;
 -(IBAction)viewFriends;
+-(IBAction)sendInAppSMS;
+
 
 @end

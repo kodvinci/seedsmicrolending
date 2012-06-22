@@ -24,11 +24,10 @@
 @implementation Lender
 
 @synthesize firstName, lastName, userclass, totalXP, badges, totalLoans, 
-friends, uid, realid, lenderDelegate, transactions, totalCredit, profilesObserved, 
-currentLevel, categoriesObserved, borrowers, credit, useriden;
+friends, uid, realid, gender, lenderDelegate, transactions, totalCredit, profilesObserved, 
+currentLevel, categoriesObserved, borrowers, credit; 
 
--(id)initWithUserID:(NSString *)userID {
-	
+-(id)initWithUserID:(NSString *)userID { 	
 	if (self = [super init]) {
 		
         self.uid = userID;
@@ -39,59 +38,66 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 		currentLevel = 0;
 		categoriesObserved = 0;
 		credit = 0;
+
 				
     }
 	
-	return self;
+	return self; 
 		
 }
 
 //Grabs and sets everything appropriately
 
 -(void)initializeEverythingFromServer {
-	NSLog (@"%@", @"started initializing!");
+	NSLog (@"%@", @"started initializing everythingFromServer!");
 	Grabber *newGrabber = [[Grabber alloc] initWithParams:@"lenders" 
 												  apiName:@"byUid" 
 												 argument:self.uid
 												  apiCall:@"GET" 
 											typeOfGrabber:@"user"];
 	newGrabber.grabberDelegate = self;
-	[newGrabber release];
-	NSLog (@"%@", @"Finished initializing!");
+	[newGrabber release];    
+   // 		[self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
+    NSLog (@"%@", @"Finished initializing everythingFromServer!");
+
 }
 
 -(void)initializeExistingTransactions {
-	
+    NSLog (@"%@", @"started initializing existing Transactions!");
 	Grabber *thirdGrabber = [[Grabber alloc] initWithParams:@"transactions" 
-													apiName:@"byuid" 
+													apiName:@"byUid" 
 												   argument:self.uid 
 													apiCall:@"GET" 
 											  typeOfGrabber:@"transactions"];
 	thirdGrabber.grabberDelegate = self;
 	[thirdGrabber release];
-	
-	
-	
+    [self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
+    NSLog (@"%@", @"Finished initializing existing Transactions!");
+
 }
 
 //Create a grabber that will grab the existing user's badges
 
 -(void)initializeExistingBadges {
+    NSLog (@"%@", @"started initializing existing Badges!");
 	
 	Grabber *secondGrabber = [[Grabber alloc] initWithParams:@"badge_lists" 
-													 apiName:@"byuid" 
+													 apiName:@"byUid" 
 													argument:self.uid 
 													 apiCall:@"GET" 
 											   typeOfGrabber:@"badges"];
 	secondGrabber.grabberDelegate = self;
 	[secondGrabber release];
-	
+    NSLog (@"%@", @"Finished initializing existing Badges!");
+	//addition
+ //   [self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
+
 }
 
 -(void)initializeExistingBorrowers {
 	
 	Grabber *secondGrabber = [[Grabber alloc] initWithParams:@"lenders" 
-													 apiName:@"getBorrowersByuid" 
+													 apiName:@"getBorrowersByUid" 
 													argument:self.uid 
 													 apiCall:@"GET" 
 											   typeOfGrabber:@"borrowers"];
@@ -107,40 +113,71 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 	//Check if the Grabber was for the badges
 	
 	if ([thisType isEqualToString:@"badges"]) {
-		
+	    NSLog (@"%@", @"WE ARE IN BADGES!");
+	
 		//Grab each badge and stick the BID in the current Lender's badgelist
-		
-		for (int x = 0; x < [recievedData count]; x++) {
+
+        if (recievedData) {
+            NSLog(@"The receivedData for badges is: %@",recievedData);
+
+            for (int x = 0; x < [recievedData count]; x++) {
 						
-			NSDictionary *newDic = [recievedData objectAtIndex:x];
-			NSString *addString = [[NSString alloc] initWithFormat:@"%@",[newDic objectForKey:@"bid"]];
-			[self.badges addObject:addString];
-			[addString release];
-			
-		}
-		
+                NSDictionary *newDic = [recievedData objectAtIndex:x];
+                NSString *addString = [[NSString alloc] initWithFormat:@"%@",[newDic objectForKey:@"bid"]];
+                [self.badges addObject:addString];
+                [addString release];
+            }
 		[self initializeExistingTransactions];
+        }
+        else {
+            NSLog (@"%@", @"No badges!!");
+        }
 		
 	}
+    
+    //Individual Badge
+    if ([thisType isEqualToString:@"badge"]) {
+	    NSLog (@"%@", @"Do I have a badge?");
+        
+        if (recievedData) {   
+            NSDictionary *newDic = [recievedData objectAtIndex:0];
+            NSString *addString = [[NSString alloc] initWithFormat:@"%@",[newDic objectForKey:@"bid"]];
+            [self.badges addObject:addString];
+            [addString release];
+            [self initializeExistingTransactions];
+        }
+        else {
+            NSLog (@"%@", @"You have No badge!!");
+        }
+		
+	}
+
 	
 	if ([thisType isEqualToString:@"transactions"]) {
-		
-		NSLog(@"%i",[recievedData count]);
-		
-		for (int y = 0; y < [recievedData count]; y++) {
-			
-			NSDictionary *newDic = [recievedData objectAtIndex:y];
-			Transaction *newTrans = [[Transaction alloc] initFromLender:self.uid 
+        
+		if (recievedData) {
+       
+            NSLog(@"The receivedData for transactions is: %@",recievedData);
+            NSUInteger Mysize = [recievedData count];
+       //     NSLog(@"Size is: %i", Mysize);
+      //      NSLog(@"The receivedData for transactions is: %@",[recievedData count]);
+
+    //        for (int y = 0; y < [recievedData count]; y++) {
+            for (int y = 0; y < Mysize; y++) {
+                NSLog (@"%@", @"Inside of Loop!!");
+                NSDictionary *newDic = [recievedData objectAtIndex:y];
+                Transaction *newTrans = [[Transaction alloc] initFromLender:self.uid 
 															 toBorrower:[newDic objectForKey:@"buid"] 
 														 withThisAmount:[newDic objectForKey:@"amount"]];
 			
-			
-			[self.transactions addObject:newTrans];
-			[newTrans release];
-			
-		}
-		
-		[self initializeExistingBorrowers];
+                [self.transactions addObject:newTrans];
+                [newTrans release];
+            }
+            [self initializeExistingBorrowers];
+        }
+        else {
+            NSLog (@"%@", @"No matching transactions!");
+        }
 		
 	}
 	
@@ -154,9 +191,12 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 		self.totalXP = [userInfo valueForKey:@"exp"];
 		self.realid = [userInfo valueForKey:@"id"];
 		self.credit = [[userInfo valueForKey:@"credit"] intValue];
+        self.gender = [userInfo valueForKey:@"gender"];
+
 		
 		
 		[self initializeExistingBadges];
+      
 
 	}
 	
@@ -180,7 +220,6 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 		
 		
 	}
-	
 	
 }
 
@@ -262,7 +301,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 	[newSender release];
 	
 	MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:@"1"];
+	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:@"3"];
 	
 	
 }
@@ -308,7 +347,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 			[self setCurrentLevel:1];
 			
 			MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"1"];
+			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"3"];
 			
 		}
 		
@@ -327,7 +366,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 		
 		[self setCurrentLevel:2];
 		
-		[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"1"];
+		[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"3"];
 
 		
 		
@@ -342,7 +381,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 			[self setCurrentLevel:3];
 			
 			
-			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"1"];
+			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"3"];
 			
 		}
 		
@@ -360,7 +399,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 			[self setCurrentLevel:4];
 			
 			MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"1"];
+			[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:@"3"];
 			
 		}
 		
@@ -389,7 +428,7 @@ currentLevel, categoriesObserved, borrowers, credit, useriden;
 		//Create a dictionary with the correct badge
 		
 		NSDictionary *newBadge = [NSDictionary dictionaryWithObjectsAndKeys:badgeID,@"bid",
-								  self.uid,@"luid",
+								  self.uid,@"uid",
 								  nil];
 		NSString *jsonBadge = [newBadge JSONRepresentation];
 		

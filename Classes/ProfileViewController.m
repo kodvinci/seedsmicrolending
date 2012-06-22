@@ -2,7 +2,7 @@
 //  ProfileViewController.m
 //  Microlending
 //
-//  Created by Cody Kolodziejzyk on 10/18/11.
+//  Created by Leonard Ngeno on 06/22/2012.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -16,14 +16,14 @@
 #import "Grabber.h"
 #import "Sender.h"
 #import "CollageViewController.h"
-#import "MyBadgesModalViewController.h"
+#import "MyBadgesTableViewController.h"
 
 @class MicrolendingAppDelegate;
 @class BadgeViewController;
 @class Lender;
 @class Grabber;
 @class Sender;
-@class MyBadgesModalViewController;
+@class MyBadgesTableViewController;
 
 
 @implementation ProfileViewController
@@ -59,7 +59,7 @@
 
 
 -(void)pressedLogOff:(id)sender {
-	
+	exit(0); //addition.
 	LoginViewController *newLogin = [[LoginViewController alloc] init];
 	[appDelegate.tabBarController presentModalViewController:newLogin animated:YES];
 	[newLogin release];
@@ -79,9 +79,17 @@
 	}
 }
 
+//-(void)setProfileImage:(NSString *) gender {
+//	if ([gender isEqualToString:@"Male"]) {
+//		[userImage setImage:[UIImage imageNamed:@"male_avatar.png"]];
+//	} else if ([gender isEqualToString:@"Female"]) {
+//		[userImage setImage:[UIImage imageNamed:@"female_avatar.png"]];
+  //  }
+//}
+
 -(void)setLengthOfStatusBar {
 	
-	double boom = [[appDelegate.userClasses valueForKey:appDelegate.currentLender.userclass] doubleValue];
+	double boom = [[appDelegate.userClasses valueForKey:appDelegate.currentLender.userclass] doubleValue] + 0.0001; //added 0.0001 to stop it from being 0!
 	
 	double percent = [appDelegate.currentLender.totalXP intValue] / boom;
 	
@@ -92,11 +100,11 @@
 }
 
 -(void)pressedMyBadges:(id)sender {
-	
-//	MyBadgesModalViewController *myBadges = [[MyBadgesModalViewController alloc] init];
-//	[self presentModalViewController:myBadges animated:YES];
-//	[myBadges release];
-	
+/*	
+	MyBadgesModalViewController *myBadges = [[MyBadgesModalViewController alloc] init];
+	[self presentModalViewController:myBadges animated:YES];
+	[myBadges release];
+*/	
 	UIAlertView* dialog = [[UIAlertView alloc] init];
 	[dialog setDelegate:self];
 	[dialog setTitle:@"Doesn't work yet"];
@@ -105,20 +113,16 @@
 	[dialog show];
 	[dialog release];
 	
-	
-	
 }
-
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	NSLog (@"%@", @"Profile view loaded!");
+	appDelegate = [[UIApplication sharedApplication] delegate];			
 	
-	appDelegate = [[UIApplication sharedApplication] delegate];
-			
-	[self setProfileImage:[appDelegate.currentLender.uid intValue]];
+    [self setProfileImage:[appDelegate.currentLender.uid intValue]];
 
-	
 	//Graphical stuff
 				   
 	roundedCorners.layer.cornerRadius = 8;
@@ -185,7 +189,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	
+    NSLog (@"%@", @"Profile View did Appear!");
+
 	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:nil];
 
 	[self setLabels];
@@ -294,9 +299,16 @@
 
 -(IBAction)viewBadges {
 	
-	BadgeViewController *badgeView = [[BadgeViewController alloc] init];
+/*	BadgeViewController *badgeView = [[BadgeViewController alloc] init];
 	[self.navigationController pushViewController:badgeView animated:YES];
-	//[badgeView release];
+	//[badgeView release]; */
+//	MyBadgesModalViewController *myBadges = [[MyBadgesModalViewController alloc] init];
+//	[self presentModalViewController:myBadges animated:YES];
+//	[myBadges release];
+    
+    MyBadgesTableViewController *myBadges = [[MyBadgesTableViewController alloc] init];
+	[self.navigationController pushViewController:myBadges animated:YES];
+
 	
 }
 
@@ -315,6 +327,41 @@
 	[newCollage release];
 	
 	
+}
+
+- (IBAction)sendInAppSMS { //:(id)sender {
+    MFMessageComposeViewController *controller = [[[MFMessageComposeViewController alloc] init] autorelease];
+	if([MFMessageComposeViewController canSendText])
+	{
+		controller.body = @"Testing Application! By Leonard.";
+		controller.recipients = [NSArray arrayWithObjects:@"+17165360826", nil];
+		controller.messageComposeDelegate = self;
+		[self presentModalViewController:controller animated:YES];
+	}
+
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"MyApp" message:@"Unknown Error"
+                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    
+	switch (result) {
+		case MessageComposeResultCancelled:
+			NSLog(@"Cancelled");
+			break;
+		case MessageComposeResultFailed:
+			[alert show];
+			[alert release];
+			break;
+		case MessageComposeResultSent:
+            
+			break;
+		default:
+			break;
+	}
+    
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 

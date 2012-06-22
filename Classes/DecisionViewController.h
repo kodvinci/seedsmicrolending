@@ -19,8 +19,9 @@
 	IBOutlet UILabel *decisionOneLabel;
 	IBOutlet UILabel *decisionTwoLabel;
 	NSMutableArray *choices;
-	BOOL *shouldUpdate;
-	
+//	BOOL *shouldUpdate;
+//	NSString *level;
+    
 	MicrolendingAppDelegate *appDelegate;
 
 	
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) UILabel *decisionOneLabel;
 @property (nonatomic, retain) UILabel *decisionTwoLabel;
 @property (nonatomic, retain) NSMutableArray *choices;
+//@property (nonatomic, retain) NSString *level;
 
 
 @end
