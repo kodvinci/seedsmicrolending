@@ -39,7 +39,11 @@
 	
 	self.title = @"Badges";
 	
-	
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+											  initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+											  target:self
+											  action:@selector(actionRefresh:)];
+
 	
     [super viewDidLoad];
 
@@ -48,10 +52,16 @@
 }
 
 
-
+-(void)actionRefresh:(id)sender {
+	
+	
+	[self viewWillAppear:YES];
+	
+}
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [badges removeAllObjects];
 	Grabber *newGrabber = [[Grabber alloc] initWithParams:@"badges" apiName:@"" argument:@"" apiCall:@"GET" typeOfGrabber:@""];
     newGrabber.grabberDelegate = self;
 	[newGrabber release];
@@ -66,7 +76,7 @@
 //it seems to have fixed the problem of the same badges duplicating themselves. but now it takes awhile to reload the badges...does it reload the information from the server??
 - (void)viewDidAppear:(BOOL)animated {
 	
-	[badges removeAllObjects];
+	//[badges removeAllObjects];
 	[self.tableView reloadData];
 	
 		
@@ -145,16 +155,35 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
-	
-	[cell.imageView setImage:[UIImage imageNamed:@"badge.png"]];
+	if ([[[badges objectAtIndex:indexPath.row] getBadgeBID] isEqualToString:@"1"]) {
+        [cell.imageView setImage:[UIImage imageNamed:@"green.png"]];
+        NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
+    }
+    if ([[[badges objectAtIndex:indexPath.row] getBadgeBID] isEqualToString:@"2"]) {
+        [cell.imageView setImage:[UIImage imageNamed:@"red.png"]];
+        NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
+    }
+    if ([[[badges objectAtIndex:indexPath.row] getBadgeBID] isEqualToString:@"3"]) {
+        [cell.imageView setImage:[UIImage imageNamed:@"yellow.png"]];
+        NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
+    }
+    if ([[[badges objectAtIndex:indexPath.row] getBadgeBID] isEqualToString:@"4"]) {
+        [cell.imageView setImage:[UIImage imageNamed:@"orange.png"]];
+        NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
+    }
+    if ([[[badges objectAtIndex:indexPath.row] getBadgeBID] isEqualToString:@"5"] ) {
+        [cell.imageView setImage:[UIImage imageNamed:@"master.png"]];
+        NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
+    }
 		
-	if ([appDelegate.currentLender.badges containsObject:[[badges objectAtIndex:indexPath.row] getBadgeBID]]) {
+	//if ([appDelegate.currentLender.badges containsObject:[[badges objectAtIndex:indexPath.row] getBadgeBID]]) {
+      //  NSLog(@"bid is: %@", [[badges objectAtIndex:indexPath.row] getBadgeBID]);
 		//cell.accessoryType = UITableViewCellAccessoryCheckmark;
-	}
+	//}
 	
 	[cell.textLabel setText:[[badges objectAtIndex:indexPath.row] getBadgeTitle]];
 	[cell.detailTextLabel setText:[[badges objectAtIndex:indexPath.row] getBadgeDescription]];
-	
+	[cell.imageView setImage:[[badges objectAtIndex:indexPath.row] getBadgeImage]];
     
     // Configure the cell...
     
@@ -235,6 +264,7 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+    [super viewDidUnload];
 }
 
 

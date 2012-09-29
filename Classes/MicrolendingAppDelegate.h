@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "PayButtonViewController.h"
 
 @class Lender;
 @class LoginViewController;
@@ -21,6 +22,15 @@
 	Lender *currentLender;
 	NSMutableDictionary *userClasses;
 	NSMutableArray *badgeList;
+    NSDecimalNumber *myCredit;
+    NSString *email;
+	NSString *firstName;
+	NSString *lastName;
+	NSString *userclass;
+	NSString *totalXP;
+	NSString *uid;
+    int *credit;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -31,7 +41,15 @@
 @property (nonatomic, retain) Lender *currentLender;
 @property (nonatomic, retain) NSMutableDictionary *userClasses;
 @property (nonatomic, retain) NSMutableArray *badgeList;
-
+@property (nonatomic, assign, readwrite) NSDecimalNumber *myCredit;
+@property (nonatomic, retain) NSDecimalNumber *valueAmount;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *userclass;
+@property (nonatomic, retain) NSString *totalXP;
+@property (nonatomic, retain) NSString *uid;
+@property (nonatomic, assign) int *credit;
 
 @end
 

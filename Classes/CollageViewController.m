@@ -5,7 +5,7 @@
 //  Created by Leonard ngeno on 06/11/2012.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
-
+/*
 #import "CollageViewController.h"
 #import "BadgeViewController.h"
 #import "BorrowerSingleViewController.h"
@@ -190,7 +190,7 @@
 		//[tempButton release];
         [tempImage release];
     }
-    
+*/
     
     
     //for each image in list of pictures, determine position and add to wrapper view
@@ -205,7 +205,7 @@
     [wrapper_view addSubview:testButton];
     */
     
-    
+/*
     scroll.contentSize = CGSizeMake(width_of_picture*columns_of_pictures, rows_of_pictures*height_of_picture);
     scroll.scrollEnabled = YES;
     scroll.backgroundColor = [UIColor darkGrayColor];
@@ -216,7 +216,7 @@
     self.view = scroll;
     
     [scroll addSubview:wrapper_view];
-    [scroll release];    
+    [scroll release];    */
     
     /*
 	 UIImage* testImage = [UIImage imageNamed:@"CodyKo.jpg"] ;
@@ -248,8 +248,8 @@
 	 temp_position_x += 2;
 	 }*/
 	
-}
-
+//}
+/*
 - (IBAction)sendToBadge:(id)sender{
 	BadgeViewController* newBadgeView = [[BadgeViewController alloc] init];
 	[self.navigationController pushViewController:newBadgeView animated:YES];
@@ -314,3 +314,4 @@
 }
 
 @end
+*/

@@ -5,7 +5,7 @@
 //  Created by Leonard ngeno on 06/11/2012.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
-
+/*
 #import <UIKit/UIKit.h>
 #import "Lender.h"
 #import "MicrolendingAppDelegate.h"
@@ -24,4 +24,4 @@
 @property (nonatomic, retain) UIView *wrapper_view;
 @property (nonatomic, retain) Lender* current_lender;
 
-@end
+@end */

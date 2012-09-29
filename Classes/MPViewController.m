@@ -42,7 +42,7 @@
 														delegate:self 
 											   cancelButtonTitle:@"Cancel" 
 										  destructiveButtonTitle:nil 
-											   otherButtonTitles:@"fish", @"cake", @"self-help",@"all", nil];
+											   otherButtonTitles:@"Agriculture", @"Health", @"Handmade",@"Za-biashara", @"all", nil];
     [asheet showFromTabBar:appDelegate.tabBarController.tabBar];
     [asheet release];
 	

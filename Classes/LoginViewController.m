@@ -7,36 +7,62 @@
 //
 
 #import "LoginViewController.h"
-#import "MicrolendingAppDelegate.h"
 #import "SBJson.h"
 #import "SBJsonParser.h"
 #import "Grabber.h"
 #import "Lender.h"
 #import "Badge.h"
+#import "LoginGrabber.h"
+#import "GrabberTwo.h"
+#import "KeychainItemWrapper.h"
 
+/*
+enum {
+	kUsernameSection = 0,
+	kPasswordSection
+}; */
 
-@class MicrolendingAppDelegate;
+// Defined UI constants.
+// Tag table view cells that contain a text field to support secure text entry.
+//static NSInteger kPasswordTag	= 2;
+
 @class Grabber;
 @class Badge;
-
+@class LoginGrabber;
+@class GrabberTwo;
+@class KeychainItemWrapper;
 
 @implementation LoginViewController
 
-@synthesize usernameField;
+@synthesize emailField;
 @synthesize passwordField;
 @synthesize tempUserID;
 @synthesize spinner;
-
+@synthesize authentication_token;
+@synthesize myuid;
+@synthesize email;
+@synthesize password;
 
 
 -(void)userWasFound:(NSArray *)dictionaries {
+    NSLog (@"%@", @"in user was found");
 
-	NSDictionary *userInfo = [dictionaries objectAtIndex:0];
-		
-	Lender *newLender = [[Lender alloc] initWithUserID:[userInfo valueForKey:@"luid"]]; 
+  	Lender *newLender = [[Lender alloc] initWithUserID:[dictionaries valueForKey:@"id"]];
+    NSLog(@"userID is: %@", [dictionaries valueForKey:@"id"]);
 	newLender.lenderDelegate = self;
-	[newLender initializeEverythingFromServer];
-    NSLog(@"The content is: %@", userInfo);
+    
+    appDelegate.totalXP = [dictionaries valueForKey:@"exp"];
+    appDelegate.email =[dictionaries valueForKey:@"email"];
+    appDelegate.uid = [dictionaries valueForKey:@"id"];
+    appDelegate.credit = [[dictionaries valueForKey:@"credit"] intValue];
+    appDelegate.userclass = [dictionaries valueForKey:@"class_type"];
+    
+    NSLog(@"EMAIL is: %@", [dictionaries valueForKey:@"email"]);
+
+    [newLender initializeEverythingFromServer];
+//    [newLender initializeExistingBadges];
+//    [newLender initializeExistingBorrowers];
+//    [newLender initializeExistingTransactions];
 
 }
 
@@ -79,7 +105,7 @@
 	
 	UIAlertView *warningMessage;
 	warningMessage = [[UIAlertView alloc] initWithTitle:@"Not Found" 
-												message:@"Enter in a different uid or sign up" 
+												message:@"Enter in a different email/password or sign up" 
 											   delegate:nil cancelButtonTitle:@"Ok" 
 									  otherButtonTitles:nil];
 	[warningMessage show];
@@ -89,65 +115,130 @@
 	
 }
 
--(IBAction)pressedLogin {
-	
-	[spinner startAnimating];
-	
-	// Creates a new Grabber with the specified parameters and then sets the grabber delegate to itself
+-(IBAction)login
+{
+    [spinner startAnimating];
+    
+    KeychainItemWrapper *keychainItem1 = [[KeychainItemWrapper alloc] initWithIdentifier:@"SeedsLogin" accessGroup:nil];
+    
+/*    if ([keychainItem1 objectForKey:kSecValueData]!=nil)
+    {
+        email = [keychainItem1 objectForKey:kSecAttrAccount];
+        password = [keychainItem1 objectForKey:kSecValueData];
+    } */
+//    else
+ //   {
+        [keychainItem1 setObject:passwordField.text forKey:kSecValueData];
+        [keychainItem1 setObject:emailField.text forKey:kSecAttrAccount];
+        
+        email = [keychainItem1 objectForKey:kSecAttrAccount];
+        password = [keychainItem1 objectForKey:kSecValueData];
+//    }
+//    [keychainItem resetKeychainItem];
+    NSLog(@"The email is: %@", email);
+    NSLog(@"The password is: %@", password); 
 
-    Grabber *newGrabber = [[Grabber alloc] initWithParams:@"lenders" 
-												  apiName:@"byUid" 
-                                                argument:usernameField.text 
-												  apiCall:@"GET" 
-											typeOfGrabber:@"user"];
+    LoginGrabber *newGrabber = [[LoginGrabber alloc] initWithParams:@"users" apiName:@"login" argument1:email argument2:password apiCall:@"POST" typeOfGrabber:@"user"];
+    
+    newGrabber.logingrabberDelegate = self;
+	[newGrabber release];
 
     
-    newGrabber.grabberDelegate = self;
-	[newGrabber release];
-	
-	
+}
+
+-(IBAction)pressedSignUp {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://seedsmicroloans.herokuapp.com/users/sign_up"]];
 }
 
 // This is the delegate method that is automatically 
 // called when the grabber recieves the data from the server.
 // Do what you want with the resulting array of NSDictionaries
 
--(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
-		
-if ([thisType isEqualToString:@"user"]) {
-	if ([recievedData count] == 0) {
-		[self userWasNotFound];
-	} else {
-		[self userWasFound:recievedData];
-	}
-}	
+-(void)didGetUser:(NSArray *)recievedData withType:(NSString *)thisType {
+    
+    if ([thisType isEqualToString:@"user"]) {
+        if ([recievedData count] == 0) {
+            [self userWasNotFound];
+        } else {
+
+            self.authentication_token = [recievedData objectForKey:@"token"];
+            
+            NSLog(@"The authentication token is: %@", authentication_token);
+            NSLog(@"receivedData from didGetUser is %@", recievedData);
+            
+            GrabberTwo *newGrabber = [[GrabberTwo alloc] initWithParams:@"users" 
+                                                          apiName:@"byAuthToken" 
+                                                         argument:authentication_token
+                                                          apiCall:@"GET" 
+                                                    typeOfGrabber:@"user"];
+            
+            
+            newGrabber.grabbertwoDelegate = self;
+            [newGrabber release];
+
+        }
+    }	
 	
 }
 
+-(void)didGetUID:(NSArray *)recievedData withType:(NSString *)thisType {
+    NSLog (@"%@", @"Got to LoginViewController didGetUID!");
+    NSLog(@"recievedUID is: %@", recievedData);
+    if ([thisType isEqualToString:@"user"]) {
+        if ([recievedData count] == 0) {
+            [self userWasNotFound];
+        } else {
+            
+            self.myuid = [recievedData objectForKey:@"id"];
 
-
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-//REMOVED START COMMENT
+            [self userWasFound:recievedData];
 /*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+            
+            NSLog (@"%@", @"calling anotherGrabber!");
+
+            Grabber *anotherGrabber = [[Grabber alloc] initWithParams:@"users"
+                                                              apiName:@"show" 
+                                                             argument:myuid
+                                                              apiCall:@"GET" 
+                                                        typeOfGrabber:@"user"];
+            
+            
+            anotherGrabber.grabberDelegate = self;
+            [anotherGrabber release];
+*/            
+        }
+    }	
+	
 }
-//REMOVED END COMMENT
-*/
+
+-(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
+    NSLog (@"%@", @"Got to LoginViewController didGetData!");
+    NSLog(@"recievedData is: %@", recievedData);
+    if ([thisType isEqualToString:@"user"]) {
+        if ([recievedData count] == 0) {
+            [self userWasNotFound];
+        } else {
+            [self userWasFound:recievedData];
+            
+        }
+    }
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     NSLog (@"%@", @"Login view loaded!");
+
 	[spinner stopAnimating];
 	appDelegate = [[UIApplication sharedApplication] delegate];
-
-	[usernameField becomeFirstResponder];
+    [emailField becomeFirstResponder];
+    [passwordField becomeFirstResponder];
     [super viewDidLoad];
 }
+/*
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+
+} */
 
 /*
 //REMOVED START COMMENT
@@ -167,23 +258,29 @@ if ([thisType isEqualToString:@"user"]) {
 }
 
 - (void)viewDidUnload {
-    [usernameField release];
-    usernameField = nil;
+    NSLog (@"%@", @"At viewDidUnload!");
+    [emailField release];
+    emailField = nil;
+    [passwordField release];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
 
+
 - (void)dealloc {
 	[tempUserID release];
-	[usernameField release];
+	[emailField release];
 	[passwordField release];
 	[spinner release];
-    [usernameField release];
+    [authentication_token release];
+    [myuid release];
+    [email release];
+    [password release];
+    
     [super dealloc];
 }
-
 
 @end
 

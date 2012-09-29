@@ -3,13 +3,16 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/08/12.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "MicrolendingAppDelegate.h"
 #import "LoginViewController.h"
 #import "Badge.h"
 #import "Grabber.h"
+#import "PayPal.h"
+#import "PayButtonViewController.h"
+
 
 @class LoginViewController;
 @class Badge;
@@ -25,6 +28,14 @@
 @synthesize currentLender;
 @synthesize userClasses;
 @synthesize badgeList;
+@synthesize myCredit;
+@synthesize firstName;
+@synthesize lastName;
+@synthesize credit;
+@synthesize email;
+@synthesize userclass;
+@synthesize totalXP;
+@synthesize uid;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -32,33 +43,37 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
-    NSLog (@"%@", @"In MicroLApp launch!");
+    NSLog (@"%@", @"In MicroLendingApp launch!");
+    
+    //Remove the DecisionsController from the tab Bar
+    NSMutableArray *items = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+    [items removeObjectAtIndex:4];
+    [self.tabBarController setViewControllers:items];
 
 	ipaddress = [[NSString alloc] initWithString:@"10.180.135.109"];
 	userID = [[NSString alloc] init];
 	
-	userClasses = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"10000", @"Master",
-															 @"5000",@"Pro",
-															@"1000",@"Power User",
-															@"250",@"Novice",
-															@"100",@"Noobie",
+	userClasses = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"1000", @"Master",
+															 @"500",@"Pro",
+															@"100",@"Power User",
+															@"50",@"Novice",
+															@"25",@"Noobie",
 															nil];
 	
     
     [self.window makeKeyAndVisible];
 	loginView = [[LoginViewController alloc] init];
 	[window addSubview:tabBarController.view];
-	
-	[self.tabBarController presentModalViewController:loginView animated:NO]; //NO
 
-    
+    [NSThread detachNewThreadSelector:@selector(initializePayPal) toTarget:self withObject:nil];
+	
+	[self.tabBarController presentModalViewController:loginView animated:NO]; 
     return YES;
 }
 
-
-
-
-
+-(void)initializePayPal {
+    [PayPal initializeWithAppID:@"APP-2GM56961PP5201218" forEnvironment:ENV_LIVE];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -96,8 +111,8 @@
      See also applicationDidEnterBackground:.
      */
     //save changes
-  //  [[PossessionStore defaultStore] saveChanges]
-    [super applicationWillTerminate:application];
+
+//    [super applicationWillTerminate:application];
     NSLog(@"Application Will Terminate");
 }
 
@@ -121,6 +136,8 @@
 	[currentLender release];
 	[userClasses release];
 	[badgeList release];
+    [myCredit release];
+
     [super dealloc];
 }
 

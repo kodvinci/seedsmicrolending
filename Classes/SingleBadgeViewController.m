@@ -11,7 +11,7 @@
 
 @implementation SingleBadgeViewController
 
-@synthesize nameString, descriptionString, nameLabel, descriptionLabel;
+@synthesize nameString, descriptionString, nameLabel, imageLabel, descriptionLabel, myImage;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -35,6 +35,7 @@
 	
 	nameLabel.text = nameString;
 	descriptionLabel.text = descriptionString;
+    imageLabel.image = myImage;
     [super viewDidLoad];
 }
 

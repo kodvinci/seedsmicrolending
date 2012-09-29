@@ -3,7 +3,7 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/13/2012.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,3 +15,5 @@ int main(int argc, char *argv[]) {
     [pool release];
     return retVal;
 }
+
+

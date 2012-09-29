@@ -3,7 +3,7 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/12/12.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012__MyCompanyName__. All rights reserved.
 //
 
 /* in order to use this class, you must create a new Grabber object with a table name, 
@@ -43,8 +43,8 @@
 		NSString *urlFormat;
 
 		
-		if ([thisApiName isEqualToString:@"byUid"]) {
-			 urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?uid=%@",
+		if ([thisApiName isEqualToString:@"show"]) {
+			 urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json?uid=%@",
 								   currentTableName,currentAPIName,currentArgument];
 			
 			NSLog(@"%@",urlFormat);
@@ -52,64 +52,60 @@
 		}
 		
 		if ([thisApiName isEqualToString:@"getBorrowersByUid"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?uid=%@",
+			urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json?uid=%@",
 						 currentTableName,currentAPIName,currentArgument];
 			
-			NSLog(@"%@",urlFormat);
-		}
-		
-		if ([thisApiName isEqualToString:@"byId"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?story_id=%@",
-						 currentTableName,currentAPIName,currentArgument];
-			
-			NSLog(@"%@",urlFormat);
-			
-		}
-			
-		if ([thisApiName isEqualToString:@"byCategory"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?category=%@",
-								   currentTableName,currentAPIName,currentArgument];
-			
-		}
-        
-        if ([thisApiName isEqualToString:@"byBid"]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@/%@.json?bid=%@",
-						 currentTableName,currentAPIName,currentArgument];
-			NSLog(@"%@",urlFormat);
-            
-		}
-		
-		if ([thisApiName isEqualToString:@""]) {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.herokuapp.com/%@.json",
-						 currentTableName];
 			NSLog(@"%@",urlFormat);
 
 		}
 		
-		
-		NSURL *jsonurl = [NSURL URLWithString:urlFormat];
-		[urlFormat release];
-		
-		NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: jsonurl];
-		[request setHTTPMethod:thisAPICall];
-		NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-		
-		if (connection) {
+		if ([thisApiName isEqualToString:@"byId"]) {
+			urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json?story_id=%@",
+						 currentTableName,currentAPIName,currentArgument];
 			
-			// Create the NSMutableData to hold the received data.
+			NSLog(@"%@",urlFormat);
+            
+		}
 			
-			// receivedData is an instance variable declared elsewhere.
-			
-			receivedData = [[NSMutableData data] retain];
-			
-		} else {
-			NSLog (@"%@", @"No connection made!");
-			// Inform the user that the connection failed.
+		if ([thisApiName isEqualToString:@"byCategory"]) {
+			urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json?category=%@",
+								   currentTableName,currentAPIName,currentArgument];
+            NSLog(@"%@",urlFormat);
 			
 		}
+        
+        if ([thisApiName isEqualToString:@"byBid"]) {
+			urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json?bid=%@",
+						 currentTableName,currentAPIName,currentArgument];
+			NSLog(@"%@",urlFormat);
+		}
 		
-		[connection release];
-		[request release];
+		if ([thisApiName isEqualToString:@""]) {
+			urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@.json",
+						 currentTableName];
+			NSLog(@"%@",urlFormat);
+            
+		}
+        
+        NSURL *jsonurl = [NSURL URLWithString:urlFormat];
+        [urlFormat release];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: jsonurl];
+        [request setHTTPMethod:thisAPICall];
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        if (connection) {    
+            receivedData = [[NSMutableData data] retain];
+            
+        } else {
+            NSLog (@"%@", @"No connection made!");
+            // Inform the user that the connection failed.
+            
+        }
+        [connection release];
+        [request release];
+        
+
 	
 	}
 	
@@ -162,7 +158,7 @@
    // NSLog (@"The content is%@",results);
 	
 	[self.grabberDelegate didGetData:results withType:currentType];
-	
+
 }
 
 

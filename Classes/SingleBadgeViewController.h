@@ -13,8 +13,10 @@
 	
 	NSString *nameString;
 	NSString *descriptionString;
+    UIImage *myImage;
 	IBOutlet UILabel *nameLabel;
 	IBOutlet UITextView *descriptionLabel;
+    IBOutlet UIImageView *imageLabel;
 
 }
 
@@ -22,7 +24,7 @@
 @property (nonatomic, retain) NSString *descriptionString;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UITextView *descriptionLabel;
-
-
+@property (nonatomic, retain) UIImageView *imageLabel;
+@property (nonatomic, retain) UIImage *myImage;
 
 @end

@@ -3,7 +3,7 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/13/12.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 /* in order to use this class, you must create a new Grabber object with a table name, 
@@ -18,10 +18,7 @@
 
 -(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType;
 
-
 @end
-
-
 
 @interface Grabber : NSObject {
 	
@@ -32,8 +29,6 @@
 	NSString *currentType;
 	NSData *receivedData;
 	id grabberDelegate;
-
-		
 
 }
 

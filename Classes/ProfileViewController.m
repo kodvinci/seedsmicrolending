@@ -3,7 +3,7 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/22/2012.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "ProfileViewController.h"
@@ -17,6 +17,9 @@
 #import "Sender.h"
 #import "CollageViewController.h"
 #import "MyBadgesTableViewController.h"
+#import "Sender.h"
+#import "Logout.h"
+#import "PayButtonViewController.h"
 
 @class MicrolendingAppDelegate;
 @class BadgeViewController;
@@ -24,7 +27,9 @@
 @class Grabber;
 @class Sender;
 @class MyBadgesTableViewController;
-
+@class Sender;
+@class Logout;
+@class PayButtonViewController;
 
 @implementation ProfileViewController
 
@@ -43,88 +48,96 @@
 @synthesize buttonThree;
 @synthesize buttonFour;
 @synthesize creditLabel;
-
-
-
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
+@synthesize buttonFive;
+@synthesize buttonSix;
+@synthesize nameField;
+@synthesize thisAmount;
 
 
 -(void)pressedLogOff:(id)sender {
-	exit(0); //addition.
-	LoginViewController *newLogin = [[LoginViewController alloc] init];
-	[appDelegate.tabBarController presentModalViewController:newLogin animated:YES];
-	[newLogin release];
-	
+//	exit(0); //addition.
+    
+    Logout *newSender = [[Logout alloc] initWithParams:@"users" apiName:@"logout" tokenToBeDeleted:appDelegate.loginView.authentication_token apiCall:@"DELETE"];
+    
+    newSender.logDelegate = self;
+    [newSender release];
 	
 }
 
--(void)setProfileImage:(NSUInteger)userID {
-	if (userID == 11692) {
-		[userImage setImage:[UIImage imageNamed:@"CodyKo.jpg"]];
-	} else if (userID == 3) {
-		[userImage setImage:[UIImage imageNamed:@"SamBaek.jpg"]];
-	} else if (userID == 4) {
-		[userImage setImage:[UIImage imageNamed:@"ShunFan.jpg"]];
-	} else if (userID == 7) {
-		[userImage setImage:[UIImage imageNamed:@"KevinWang.jpg"]];
-	}
+-(void)tokenAck:(NSData *)recievedData {
+
+    NSString *receiver;
+    receiver = [recievedData valueForKey:@"message"];
+    
+      if ([receiver isEqualToString:@"Token destroyed"]) {
+          NSLog(@"message is: %@", receiver);
+          [receiver release];
+          
+          LoginViewController *newLogin = [[LoginViewController alloc] init];
+          
+          [appDelegate.tabBarController presentModalViewController:newLogin animated:NO];
+
+          [newLogin release];
+      } 
 }
 
-//-(void)setProfileImage:(NSString *) gender {
-//	if ([gender isEqualToString:@"Male"]) {
-//		[userImage setImage:[UIImage imageNamed:@"male_avatar.png"]];
-//	} else if ([gender isEqualToString:@"Female"]) {
-//		[userImage setImage:[UIImage imageNamed:@"female_avatar.png"]];
-  //  }
-//}
+
+-(void)setProfileImage:(NSUInteger)userID { 
+    if (userID) { 
+        [userImage setImage:[UIImage imageNamed:@"male_avatar.png"]];
+	} 
+}
 
 -(void)setLengthOfStatusBar {
 	
-	double boom = [[appDelegate.userClasses valueForKey:appDelegate.currentLender.userclass] doubleValue] + 0.0001; //added 0.0001 to stop it from being 0!
-	
-	double percent = [appDelegate.currentLender.totalXP intValue] / boom;
+  	double boom = [[appDelegate.userClasses valueForKey:appDelegate.userclass] doubleValue];
+
+    NSLog(@"boom: %f", boom);
+
+	double percent = [appDelegate.totalXP intValue] / boom;
 	
 	CGRect newFrame = statusBar.frame;
 	newFrame.size.width = 260 * percent;
 	statusBar.frame = newFrame;
-	
+	[super viewDidAppear:YES];
 }
 
 -(void)pressedMyBadges:(id)sender {
-/*	
-	MyBadgesModalViewController *myBadges = [[MyBadgesModalViewController alloc] init];
-	[self presentModalViewController:myBadges animated:YES];
-	[myBadges release];
-*/	
-	UIAlertView* dialog = [[UIAlertView alloc] init];
-	[dialog setDelegate:self];
-	[dialog setTitle:@"Doesn't work yet"];
-	[dialog setMessage:@"Sorry"];
-	[dialog addButtonWithTitle:@"OK"];
-	[dialog show];
-	[dialog release];
+    
+    MyBadgesTableViewController *myBadges = [[MyBadgesTableViewController alloc] init];
+	[self.navigationController pushViewController:myBadges animated:YES];
+
 	
 }
 
 
+//Method for setting the appropriate labels on the profile page
+
+-(void)setLabels {
+	
+	usernameLabel.text = [[[NSString alloc] initWithFormat:@"User: %@",appDelegate.email] autorelease];
+	
+	userClassLabel.text = [[[NSString alloc] initWithFormat:@"User Class: %@", appDelegate.userclass] autorelease];
+	
+	totalXPLabel.text = [[[NSString alloc] initWithFormat:@"Total XP: %@", appDelegate.totalXP] autorelease];
+	
+//	totalInvestmentsLabel.text = [[[NSString alloc] initWithFormat:@"Total Investments: %i",[appDelegate.currentLender.transactions count]] autorelease];
+	creditLabel.text = [[[NSString alloc] initWithFormat:@"My Seeds: %d",appDelegate.credit] autorelease];
+
+	[super viewDidAppear:YES];
+	
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	NSLog (@"%@", @"Profile view loaded!");
-	appDelegate = [[UIApplication sharedApplication] delegate];			
-	
-    [self setProfileImage:[appDelegate.currentLender.uid intValue]];
+	NSLog (@"%@", @"Profile viewDidLoad!");
+    
+	appDelegate = [[UIApplication sharedApplication] delegate];
 
+    [self setProfileImage:[appDelegate.uid intValue]];
+    
 	//Graphical stuff
-				   
+    
 	roundedCorners.layer.cornerRadius = 8;
 	roundedCorners2.layer.cornerRadius = 8;
 	statusBar.layer.cornerRadius = 8;
@@ -132,13 +145,13 @@
 	self.navigationItem.title = @"My Profile";
 	
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] 
-											   initWithTitle:@"Log Off" 
-											   style:UIBarButtonItemStyleBordered 
-											   target:self action:@selector(pressedLogOff:)] autorelease];
+                                              initWithTitle:@"Log Off" 
+                                              style:UIBarButtonItemStyleBordered 
+                                              target:self action:@selector(pressedLogOff:)] autorelease];
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] 
-											  initWithTitle:@"My Badges" 
-											  style:UIBarButtonItemStyleBordered 
-											  target:self action:@selector(pressedMyBadges:)] autorelease];
+                                               initWithTitle:@"My Badges" 
+                                               style:UIBarButtonItemStyleBordered 
+                                               target:self action:@selector(pressedMyBadges:)] autorelease];
 	
 	[self.buttonOne setBackgroundImage:[[UIImage imageNamed:@"whiteButton4.png"] 
 										stretchableImageWithLeftCapWidth:12.0 
@@ -149,59 +162,52 @@
 										topCapHeight:0] 
 							  forState:UIControlStateNormal];
 	[self.buttonThree setBackgroundImage:[[UIImage imageNamed:@"whiteButton4.png"] 
-										stretchableImageWithLeftCapWidth:12.0 
-										topCapHeight:0] 
-							  forState:UIControlStateNormal];
+                                          stretchableImageWithLeftCapWidth:12.0 
+                                          topCapHeight:0] 
+                                forState:UIControlStateNormal];
 	[self.buttonFour setBackgroundImage:[[UIImage imageNamed:@"whiteButton4.png"] 
-										stretchableImageWithLeftCapWidth:12.0 
-										topCapHeight:0] 
-							  forState:UIControlStateNormal];
+                                         stretchableImageWithLeftCapWidth:12.0 
+                                         topCapHeight:0] 
+                               forState:UIControlStateNormal];
 	
+    	[self setLabels]; //addition
+    	[self setLengthOfStatusBar];
 	
-	[self setLengthOfStatusBar];	
-	
-	
+    	[self viewDidAppear:YES]; //Addition
 	
     [super viewDidLoad];
 	
 }
 
-//Method for setting the appropriate labels on the profile page
-
--(void)setLabels {
-	
-	usernameLabel.text = [[[NSString alloc] initWithFormat:@"%@ %@",appDelegate.currentLender.firstName,
-						   appDelegate.currentLender.lastName] autorelease];
-	
-	userClassLabel.text = [[[NSString alloc] initWithFormat:@"User Class: %@", appDelegate.currentLender.userclass] autorelease];
-	
-	totalXPLabel.text = [[[NSString alloc] initWithFormat:@"Total XP: %@", appDelegate.currentLender.totalXP] autorelease];
-	
-	totalInvestmentsLabel.text = [[[NSString alloc] initWithFormat:@"Total Investments: %i",[appDelegate.currentLender.transactions count]] autorelease];
-	creditLabel.text = [[[NSString alloc] initWithFormat:@"Remaining Credit: %i",appDelegate.currentLender.credit] autorelease];
-
-	
-	
-}
-
-
 // Every time the view appears, a new Grabber is created with the appropriate userID, then the labels are updated
+/*
+- (void)viewWillAppear:(BOOL)animated
+{ 
+    NSLog (@"%@", @"Profile viewWillAppear!!");
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog (@"%@", @"Profile View did Appear!");
+//	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:nil];
 
-	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:nil];
+//	[self setLabels];
+//	[self setLengthOfStatusBar];
+		
+//    [super viewWillAppear:animated]; //changed animated to YES
+}*/
 
+-(void) viewDidAppear:(BOOL)animated{
+    NSLog (@"%@", @"Profile viewDidAppear!!");
+   
+    NSLog(@"WAAAT?? %@", [[appDelegate.tabBarController.tabBar items] objectAtIndex:0]);
+
+    [[[appDelegate.tabBarController.tabBar items] objectAtIndex:0] setBadgeValue:nil];
+    
 	[self setLabels];
 	[self setLengthOfStatusBar];
-	
-		
-    [super viewDidAppear:animated];
+    
+    [super viewDidAppear:YES];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
-	
+    NSLog (@"%@", @"Profile viewDiddisappear!!");	
 	//[newGrabber release];
 
 	[super viewDidDisappear:animated];
@@ -209,7 +215,8 @@
 
 -(void)checkForUpdates:(NSDictionary *)updatedInfo {
 	
-	
+    NSLog (@"%@", @"Profile View is checking for Updates...");
+
 	Lender *temp = appDelegate.currentLender;
 	
 	
@@ -258,15 +265,15 @@
 		}
 		
 		NSDictionary *putDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-									   newClass,@"class_type",
-									   nil];
+									   newClass,@"class_type",nil];
 		[newClass release];
 		NSString *jsondict = [putDictionary JSONRepresentation];
 		[putDictionary release];
 		
 		//Create a Sender with the json string and the PUT command. This will update the database
-		
-		Sender *newSender = [[Sender alloc] initWithParams:@"lenders" jsonString:jsondict idToBeChanged:temp.realid apiCall:@"PUT"];
+ 
+        NSLog (@"%@", @"Going to update the database...");
+		Sender *newSender = [[Sender alloc] initWithParams:@"users" jsonString:jsondict idToBeChanged:appDelegate.uid apiCall:@"PUT"];
 		[newSender release];
 		
 		[self setLengthOfStatusBar];
@@ -285,7 +292,8 @@
 -(void)didGetData:(NSArray *)recievedData withType:(NSString *)thisType {
 		
 	// Create a dictionary from the JSON object
-	
+    NSLog (@"%@", @"Grabber Delegate called this method!");
+
 	NSDictionary *userInfo = [recievedData objectAtIndex:0];
 	
 	
@@ -297,11 +305,11 @@
 }
 
 
--(IBAction)viewBadges {
+/*-(IBAction)viewBadges {
 	
-/*	BadgeViewController *badgeView = [[BadgeViewController alloc] init];
-	[self.navigationController pushViewController:badgeView animated:YES];
-	//[badgeView release]; */
+//	BadgeViewController *badgeView = [[BadgeViewController alloc] init];
+//	[self.navigationController pushViewController:badgeView animated:YES];
+	//[badgeView release]; 
 //	MyBadgesModalViewController *myBadges = [[MyBadgesModalViewController alloc] init];
 //	[self presentModalViewController:myBadges animated:YES];
 //	[myBadges release];
@@ -310,7 +318,7 @@
 	[self.navigationController pushViewController:myBadges animated:YES];
 
 	
-}
+} */
 
 -(IBAction)viewInvestments {
 	
@@ -320,6 +328,120 @@
 	
 }
 
+-(IBAction)addCredit {
+
+     UIActionSheet *asheet = [[UIActionSheet alloc] initWithTitle:@"Select an amount" 
+														delegate:self 
+											   cancelButtonTitle:@"Cancel" 
+										  destructiveButtonTitle:nil 
+											   otherButtonTitles:@"$1", @"$5", @"$10",@"$20",@"Custom", nil];
+    [asheet showFromTabBar:appDelegate.tabBarController.tabBar];
+    [asheet release]; 
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    
+	if (buttonIndex != actionSheet.cancelButtonIndex && buttonIndex != 4) {
+        
+        self.thisAmount = 0;
+
+		if (buttonIndex == 0) {
+			thisAmount = [[NSDecimalNumber alloc] initWithUnsignedInteger:1];
+            NSLog(@"Amount is: %@",thisAmount);
+            appDelegate.myCredit = thisAmount;
+            NSLog(@"appDelegate.myCredit is: %@", appDelegate.myCredit);
+		} else if (buttonIndex == 1) {
+			thisAmount = [[[NSDecimalNumber alloc] initWithUnsignedInteger:5]retain];
+            appDelegate.myCredit = thisAmount;
+		} else if (buttonIndex == 2) {
+            thisAmount = [[[NSDecimalNumber alloc] initWithUnsignedInteger:10]retain];
+            appDelegate.myCredit = thisAmount;
+		} else if (buttonIndex == 3) {
+			thisAmount = [[[NSDecimalNumber alloc] initWithUnsignedInteger:20]retain];
+            appDelegate.myCredit = thisAmount;
+		}	 
+        
+        PayButtonViewController *pbvc = [[PayButtonViewController alloc] init];
+        
+        [self.navigationController pushViewController:pbvc animated:YES];
+        
+//        [appDelegate.currentLender addCredit:thisAmount];
+        
+  //      [super viewDidAppear:YES];
+	} 
+	
+	if (buttonIndex == 4) {
+		UIAlertView* dialog = [[UIAlertView alloc] init];
+		[dialog setDelegate:self];
+		[dialog setTitle:@"Enter Amount"];
+		[dialog setMessage:@" "];
+		[dialog addButtonWithTitle:@"Cancel"];
+		[dialog addButtonWithTitle:@"OK"];
+        
+        nameField = [[UITextField alloc] initWithFrame:CGRectMake(20.0, 45.0, 245.0, 25.0)];
+		[nameField setBackgroundColor:[UIColor whiteColor]];
+		[nameField setKeyboardType:UIKeyboardTypeNumberPad];
+		[dialog addSubview:nameField];
+		[nameField becomeFirstResponder];
+  
+		[dialog show];
+		[dialog release];
+		
+	}
+}  
+/*
+-(IBAction)addExperience{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add XP Points"
+                                                    message:@"$1 for an 1 XP" delegate:self 
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+   alert.tag=2;
+    
+    [alert show];
+    [alert release];
+} */
+
+#pragma mark UIAlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (alertView.tag==2) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+            NSLog (@"%@", @"Alert tag is set!");
+            [appDelegate.currentLender addXP:1]; 
+            [self viewDidAppear:YES];
+        }
+    }
+    else {
+        if (buttonIndex == 1) {
+            NSLog (@"%@", @"Alert tag not set!");
+            
+            thisAmount = [[NSDecimalNumber alloc] initWithDecimal:[nameField.text decimalValue]];
+            NSLog(@"Amount is: %@",thisAmount);
+            appDelegate.myCredit = thisAmount;
+
+            PayButtonViewController *pbvc = [[PayButtonViewController alloc] init];
+            
+            [self.navigationController pushViewController:pbvc animated:YES];
+            
+     //       [appDelegate.currentLender addCredit:[[NSDecimalNumber alloc] initWithUnsignedInteger:[nameField.text intValue]]];             
+     //       [super viewDidAppear:YES];
+        }
+
+    }
+}
+
+-(void)transactionsuccessful:(NSString *) payKey {
+    NSLog (@"%@", @"paybutton Delegate called this method!");
+    [appDelegate.currentLender addCredit:thisAmount];
+	
+}
+
+/*
 -(IBAction)viewFriends {
 	
 	CollageViewController *newCollage = [[CollageViewController alloc] init];
@@ -327,14 +449,14 @@
 	[newCollage release];
 	
 	
-}
+} */
 
-- (IBAction)sendInAppSMS { //:(id)sender {
+- (IBAction)sendInAppSMS { 
     MFMessageComposeViewController *controller = [[[MFMessageComposeViewController alloc] init] autorelease];
 	if([MFMessageComposeViewController canSendText])
 	{
-		controller.body = @"Testing Application! By Leonard.";
-		controller.recipients = [NSArray arrayWithObjects:@"+17165360826", nil];
+		controller.body = @"Send 1.00 to 3307547720";
+		controller.recipients = [NSArray arrayWithObjects:@"729725", nil];
 		controller.messageComposeDelegate = self;
 		[self presentModalViewController:controller animated:YES];
 	}
@@ -389,6 +511,7 @@
 
 
 - (void)dealloc {
+    NSLog (@"%@", @"Dealloc called!");
 	[currentUser release];
 	[userImage release];
 	[roundedCorners release];
@@ -403,7 +526,11 @@
 	[buttonTwo release];
 	[buttonThree release];
 	[buttonFour release];
+    [buttonFive release];
+    [buttonSix release];
 	[creditLabel release];
+    [nameField release];
+//    [thisAmount release];
 
     [super dealloc];
 }

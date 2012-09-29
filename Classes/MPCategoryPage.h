@@ -2,24 +2,32 @@
 //  MPCategoryPage.h
 //  Microlending
 //
-//  Created by Cody Kolodziejzyk on 11/6/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by guest user on 09/25/12.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "MicrolendingAppDelegate.h"
+#import "PayButtonViewController.h"
 
+@class PayButtonViewController;
 
-@interface MPCategoryPage : UIViewController {
-	
+@interface MPCategoryPage : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
+
 	IBOutlet UIScrollView *scrollView;
-
+    NSDecimalNumber *thisAmount;
+    MicrolendingAppDelegate *appDelegate;
+    
 }
 
 @property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) NSDecimalNumber *thisAmount;
 
--(IBAction)pressedCake:(id)sender;
--(IBAction)pressedFish:(id)sender;
--(IBAction)pressedSelf:(id)sender;
-
+-(IBAction)pressedAgriculture;
+-(IBAction)pressedHealth;
+-(IBAction)pressedHandmade;
+-(IBAction)pressedZaBiashara;
+- (IBAction)pressedOthers;
 
 @end

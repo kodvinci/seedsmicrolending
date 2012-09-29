@@ -3,7 +3,7 @@
 //  Microlending
 //
 //  Created by Leonard Ngeno on 06/13/12.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "Lender.h"
@@ -23,13 +23,12 @@
 
 @implementation Lender
 
-@synthesize firstName, lastName, userclass, totalXP, badges, totalLoans, 
-friends, uid, realid, gender, lenderDelegate, transactions, totalCredit, profilesObserved, 
-currentLevel, categoriesObserved, borrowers, credit; 
+@synthesize email, password, siteURL, firstName, lastName, userclass, totalXP, badges, totalLoans, 
+friends, uid, lenderDelegate, transactions, totalCredit, profilesObserved,
+currentLevel, categoriesObserved, borrowers, credit, valueAmount; 
 
--(id)initWithUserID:(NSString *)userID { 	
+-(id)initWithUserID:(NSString *)userID { 
 	if (self = [super init]) {
-		
         self.uid = userID;
 		self.badges = [[NSMutableArray alloc] init];
 		self.transactions = [[NSMutableArray alloc] init];
@@ -39,7 +38,6 @@ currentLevel, categoriesObserved, borrowers, credit;
 		categoriesObserved = 0;
 		credit = 0;
 
-				
     }
 	
 	return self; 
@@ -50,15 +48,16 @@ currentLevel, categoriesObserved, borrowers, credit;
 
 -(void)initializeEverythingFromServer {
 	NSLog (@"%@", @"started initializing everythingFromServer!");
-	Grabber *newGrabber = [[Grabber alloc] initWithParams:@"lenders" 
-												  apiName:@"byUid" 
+/*	Grabber *newGrabber = [[Grabber alloc] initWithParams:@"users"
+												  apiName:@"show" 
 												 argument:self.uid
 												  apiCall:@"GET" 
-											typeOfGrabber:@"user"];
+											typeOfGrabber:@"user"]; 
 	newGrabber.grabberDelegate = self;
-	[newGrabber release];    
-   // 		[self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
+	[newGrabber release]; */
+    
     NSLog (@"%@", @"Finished initializing everythingFromServer!");
+    [self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
 
 }
 
@@ -89,7 +88,7 @@ currentLevel, categoriesObserved, borrowers, credit;
 	secondGrabber.grabberDelegate = self;
 	[secondGrabber release];
     NSLog (@"%@", @"Finished initializing existing Badges!");
-	//addition
+
  //   [self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
 
 }
@@ -127,27 +126,11 @@ currentLevel, categoriesObserved, borrowers, credit;
                 [self.badges addObject:addString];
                 [addString release];
             }
-		[self initializeExistingTransactions];
+	//	[self initializeExistingTransactions]; //???
+            [self initializeExistingBadges];
         }
         else {
             NSLog (@"%@", @"No badges!!");
-        }
-		
-	}
-    
-    //Individual Badge
-    if ([thisType isEqualToString:@"badge"]) {
-	    NSLog (@"%@", @"Do I have a badge?");
-        
-        if (recievedData) {   
-            NSDictionary *newDic = [recievedData objectAtIndex:0];
-            NSString *addString = [[NSString alloc] initWithFormat:@"%@",[newDic objectForKey:@"bid"]];
-            [self.badges addObject:addString];
-            [addString release];
-            [self initializeExistingTransactions];
-        }
-        else {
-            NSLog (@"%@", @"You have No badge!!");
         }
 		
 	}
@@ -182,21 +165,28 @@ currentLevel, categoriesObserved, borrowers, credit;
 	}
 	
 	if ([thisType isEqualToString:@"user"]) {
-				
-		NSDictionary *userInfo = [recievedData objectAtIndex:0];
+			
+        NSLog(@"The user details are: %@",recievedData);
+//		NSDictionary *userInfo = [recievedData objectAtIndex:0];
 		
-		self.firstName = [userInfo valueForKey:@"first_name"];
+/*		self.firstName = [userInfo valueForKey:@"first_name"];
 		self.lastName = [userInfo valueForKey:@"last_name"];
 		self.userclass = [userInfo valueForKey:@"class_type"];
 		self.totalXP = [userInfo valueForKey:@"exp"];
-		self.realid = [userInfo valueForKey:@"id"];
 		self.credit = [[userInfo valueForKey:@"credit"] intValue];
-        self.gender = [userInfo valueForKey:@"gender"];
-
+        self.uid = [userInfo valueForKey:@"id"]; 
+		*/
+        self.firstName = [recievedData valueForKey:@"first_name"];
+		self.lastName = [recievedData valueForKey:@"last_name"];
+		self.userclass = [recievedData valueForKey:@"class_type"];
+		self.totalXP = [recievedData valueForKey:@"exp"];
+		self.credit = [[recievedData valueForKey:@"credit"] intValue];
+        self.uid = [recievedData valueForKey:@"id"];
+        self.email = [recievedData valueForKey:@"email"];
 		
-		
-		[self initializeExistingBadges];
-      
+        NSLog(@"Email is %@", [recievedData valueForKey:@"email"]);
+	//	[self initializeExistingBadges];
+        [self.lenderDelegate didFinishSettingUpLender:YES withLender:self];
 
 	}
 	
@@ -220,7 +210,7 @@ currentLevel, categoriesObserved, borrowers, credit;
 		
 		
 	}
-	
+//	[self checkForUserClassChange]; //new addition ... causing problems
 }
 
 //Method to check for a change in user class
@@ -232,7 +222,8 @@ currentLevel, categoriesObserved, borrowers, credit;
 	MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	
 	//Create a large minimum
-	
+    NSLog (@"%@", @"IN checkForUserClassChange!");
+
 	int min = 1000000;
 	
 	NSString *newClass = [[NSString alloc] init];
@@ -243,6 +234,7 @@ currentLevel, categoriesObserved, borrowers, credit;
 			min = value;
 			newClass = key;
 			self.userclass = newClass;
+            NSLog (@"%@", @"Just moved to a new class!");
 		}
 	}
 	
@@ -251,16 +243,18 @@ currentLevel, categoriesObserved, borrowers, credit;
 	NSDictionary *putDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
 								   newClass,@"class_type",
 								   nil];
+    NSLog(@"first putDictionary has: %@", putDictionary);
 	[newClass release];
 	NSString *jsondict = [putDictionary JSONRepresentation];
 	[putDictionary release];
 	
 	//Create a Sender with the json string and the PUT command. This will update the database
-	
-	Sender *newSender = [[Sender alloc] initWithParams:@"lenders" 
+    NSLog (@"%@", @"ABOUT to user newSender!");
+	Sender *newSender = [[Sender alloc] initWithParams:@"users" 
 											jsonString:jsondict 
-										 idToBeChanged:self.uid 
-											   apiCall:@"PUT"];
+										 idToBeChanged:appDelegate.uid
+											   apiCall:@"PUT"]; //uid, users
+    NSLog (@"%@", @"Just used newSender!");
 	[newSender release];
 	
 	
@@ -272,7 +266,8 @@ currentLevel, categoriesObserved, borrowers, credit;
 -(void)addXP:(NSInteger)amountToBeAdded {
 	
 	//Add value onto current XP
-	
+    MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+
 	int updated = [self.totalXP intValue] + amountToBeAdded;
 	NSString *updatedString = [[NSString alloc] initWithFormat:@"%i",updated];
 	self.totalXP = updatedString;
@@ -283,8 +278,10 @@ currentLevel, categoriesObserved, borrowers, credit;
 	
 	NSString *newXP = [[NSString alloc] initWithFormat:@"%i",updated];
 	NSDictionary *putDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
-								   newXP,@"experience",
-								   nil];
+								   newXP,@"exp",
+								   nil]; //experience to exp
+    NSLog(@"second putDictionary has: %@",putDictionary);
+
 	[newXP release];
 	
 	//Create a JSON object from this dictionary
@@ -294,14 +291,14 @@ currentLevel, categoriesObserved, borrowers, credit;
 	
 	//Create a Sender with the json string and the PUT command. This will update the database
 	
-	Sender *newSender = [[Sender alloc] initWithParams:@"lenders" 
+	Sender *newSender = [[Sender alloc] initWithParams:@"users" 
 											jsonString:jsondict 
-										 idToBeChanged:self.realid 
-											   apiCall:@"PUT"];
+										 idToBeChanged:appDelegate.uid
+											   apiCall:@"PUT"]; //realid to uid, lenders to users
 	[newSender release];
 	
-	MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:@"3"];
+//	MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//	[[[appDelegate.tabBarController.tabBar items] objectAtIndex:1] setBadgeValue:@"3"];
 	
 	
 }
@@ -427,9 +424,7 @@ currentLevel, categoriesObserved, borrowers, credit;
 		
 		//Create a dictionary with the correct badge
 		
-		NSDictionary *newBadge = [NSDictionary dictionaryWithObjectsAndKeys:badgeID,@"bid",
-								  self.uid,@"uid",
-								  nil];
+		NSDictionary *newBadge = [NSDictionary dictionaryWithObjectsAndKeys:badgeID,@"bid",self.uid,@"uid",nil];
 		NSString *jsonBadge = [newBadge JSONRepresentation];
 		
 		//Send badge via POST request
@@ -452,11 +447,13 @@ currentLevel, categoriesObserved, borrowers, credit;
 //Subtract credit from this lender
 
 -(void)subtractCredit:(NSInteger)thisAmount {
-	
-	self.credit -= thisAmount;
-	
+    
+    MicrolendingAppDelegate *appDelegate;
+    appDelegate = [[UIApplication sharedApplication] delegate];
+	//self.credit -= thisAmount;
+	appDelegate.credit -= thisAmount;
 		
-	NSString *newCredit = [[NSString alloc] initWithFormat:@"%i",self.credit];
+	NSString *newCredit = [[NSString alloc] initWithFormat:@"%i",appDelegate.credit];
 	NSDictionary *putDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
 								   newCredit,@"credit",
 								   nil];
@@ -469,9 +466,40 @@ currentLevel, categoriesObserved, borrowers, credit;
 	
 	//Create a Sender with the json string and the PUT command. This will update the database
 	
-	Sender *newSender = [[Sender alloc] initWithParams:@"lenders" 
+	Sender *newSender = [[Sender alloc] initWithParams:@"users" 
 											jsonString:jsondict 
-										 idToBeChanged:self.realid 
+										 idToBeChanged:appDelegate.uid
+											   apiCall:@"PUT"];
+	[newSender release];
+}
+
+//Add credit to this lender
+
+-(void)addCredit:(NSDecimalNumber *)thisAmount {
+    NSLog (@"%@", @"going to add credit!");
+    NSInteger myNum = [thisAmount intValue];
+    
+    MicrolendingAppDelegate *appDelegate;
+    appDelegate = [[UIApplication sharedApplication] delegate];
+	//self.credit += myNum;
+	appDelegate.credit += myNum;
+    
+	NSString *newCredit = [[NSString alloc] initWithFormat:@"%i",appDelegate.credit];
+	NSDictionary *putDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+								   newCredit,@"credit",
+								   nil];
+	[newCredit release];
+	
+	//Create a JSON object from this dictionary
+	
+	NSString *jsondict = [putDictionary JSONRepresentation];
+	[putDictionary release];
+	
+	//Create a Sender with the json string and the PUT command. This will update the database
+	
+	Sender *newSender = [[Sender alloc] initWithParams:@"users" 
+											jsonString:jsondict 
+										 idToBeChanged:appDelegate.uid
 											   apiCall:@"PUT"];
 	[newSender release];
 }
@@ -484,6 +512,5 @@ currentLevel, categoriesObserved, borrowers, credit;
 	return [UIImage imageNamed:@"lender.png"]; 	
 		
 }
-
 
 @end

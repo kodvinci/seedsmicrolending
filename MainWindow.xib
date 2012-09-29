@@ -2,25 +2,25 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">11D50b</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
-		<string key="IBDocument.AppKitVersion">1138.32</string>
-		<string key="IBDocument.HIToolboxVersion">568.00</string>
+		<string key="IBDocument.SystemVersion">11G56</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1181</string>
+			<string key="NS.object.0">1498</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
-			<string>IBUINavigationController</string>
-			<string>IBUIViewController</string>
 			<string>IBUICustomObject</string>
-			<string>IBUITabBarController</string>
-			<string>IBUIWindow</string>
-			<string>IBUITabBar</string>
 			<string>IBUINavigationBar</string>
+			<string>IBUINavigationController</string>
 			<string>IBUINavigationItem</string>
+			<string>IBUITabBar</string>
+			<string>IBUITabBarController</string>
 			<string>IBUITabBarItem</string>
+			<string>IBUIViewController</string>
+			<string>IBUIWindow</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -47,6 +47,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -66,10 +67,14 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="502646160">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="992858000">
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="621104584">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="513516787">
+						<string key="IBUITitle">Leaderboard</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">icon_box_mail.png</string>
+						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUISystemItemIdentifier">0</int>
 					</object>
 					<reference key="IBUIParentViewController" ref="243713615"/>
 					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -79,7 +84,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="1057236221">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="433015482">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -90,12 +95,13 @@
 						<int key="IBUIBarStyle">1</int>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUIViewController" id="519330002">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="894413639">
+						<object class="IBUIViewController" id="886387688">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="347993152">
 								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="502646160"/>
+							<reference key="IBUIParentViewController" ref="621104584"/>
+							<string key="IBUINibName">LeaderboardViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -150,12 +156,12 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUINavigationController" id="956805007">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="544846448">
-							<string key="IBUITitle">Challenges</string>
+					<object class="IBUINavigationController" id="9429625">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="416611391">
+							<string key="IBUITitle">Marketplace</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">icon_hat.png</string>
+								<string key="NSResourceName">icon_credit_card.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -167,7 +173,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="884862064">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="301593260">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -178,13 +184,13 @@
 							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="870339266">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="4131596">
+							<object class="IBUIViewController" id="918181832">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="349087401">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="956805007"/>
-								<string key="IBUINibName">DecisionViewController</string>
+								<reference key="IBUIParentViewController" ref="9429625"/>
+								<string key="IBUINibName">MPCategoryPage</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -238,12 +244,14 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUINavigationController" id="9429625">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="416611391">
-							<string key="IBUITitle">Marketplace</string>
+					<reference ref="621104584"/>
+					<object class="IBUINavigationController" id="956805007">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="544846448">
+							<bool key="IBUIEnabled">NO</bool>
+							<string key="IBUITitle">Challenge</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">icon_credit_card.png</string>
+								<string key="NSResourceName">icon_hat.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -255,7 +263,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="301593260">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="884862064">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -266,13 +274,13 @@
 							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="918181832">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="349087401">
+							<object class="IBUIViewController" id="870339266">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="4131596">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="9429625"/>
-								<string key="IBUINibName">MPCategoryPage</string>
+								<reference key="IBUIParentViewController" ref="956805007"/>
+								<string key="IBUINibName">DecisionViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -282,14 +290,10 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUINavigationController" id="621104584">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="513516787">
-							<string key="IBUITitle">Leaderboard</string>
-							<object class="NSCustomResource" key="IBUIImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">icon_box_mail.png</string>
-							</object>
+					<object class="IBUINavigationController" id="502646160">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="992858000">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<int key="IBUISystemItemIdentifier">0</int>
 						</object>
 						<reference key="IBUIParentViewController" ref="243713615"/>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -299,7 +303,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="433015482">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="1057236221">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -310,13 +314,12 @@
 							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="886387688">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="347993152">
+							<object class="IBUIViewController" id="519330002">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="894413639">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="621104584"/>
-								<string key="IBUINibName">LeaderboardViewController</string>
+								<reference key="IBUIParentViewController" ref="502646160"/>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -326,13 +329,13 @@
 							</object>
 						</array>
 					</object>
-					<reference ref="502646160"/>
 				</array>
 				<object class="IBUITabBar" key="IBUITabBar" id="486910177">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
@@ -404,10 +407,10 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="486910177"/>
 							<reference ref="502646160"/>
-							<reference ref="621104584"/>
+							<reference ref="1017960686"/>
 							<reference ref="9429625"/>
 							<reference ref="1009293543"/>
-							<reference ref="1017960686"/>
+							<reference ref="621104584"/>
 							<reference ref="956805007"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -690,6 +693,6 @@
 			<string key="icon_hat.png">{30, 30}</string>
 			<string key="icon_user.png">{30, 30}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1181</string>
+		<string key="IBCocoaTouchPluginVersion">1498</string>
 	</data>
 </archive>

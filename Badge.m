@@ -44,10 +44,26 @@
 	return self.badgeID;
 }
 
--(UIImage *)getImage {
-	
-	return [UIImage imageNamed:@"badge.png"]; 	
-	
+-(UIImage *)getBadgeImage {
+    NSString *myBID = self.getBadgeBID;
+	if ([myBID isEqualToString:@"1"]) {
+        return [UIImage imageNamed:@"green.png"]; 
+    }
+	if ([myBID isEqualToString:@"2"]) {
+        return [UIImage imageNamed:@"red.png"];
+    }
+    if ([myBID isEqualToString:@"3"]) {
+        return [UIImage imageNamed:@"yellow.png"];
+    }
+    if ([myBID isEqualToString:@"4"]) {
+        return [UIImage imageNamed:@"orange.png"];
+    }
+    if ([myBID isEqualToString:@"5"]) {
+        return [UIImage imageNamed:@"master.png"];
+    }
+    else {
+        return [UIImage imageNamed:@"badge.png"];
+    }
 }
 
 

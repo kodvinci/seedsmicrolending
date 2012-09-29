@@ -7,7 +7,11 @@
 //
 
 #import "Sender.h"
+#import "Lender.h"
+#import "MicrolendingAppDelegate.h"
 
+@class MicrolendingAppDelegate;
+@class Lender;
 
 @implementation Sender
 
@@ -15,16 +19,26 @@
 			idToBeChanged:(NSString *)thisID apiCall:(NSString *)thisAPICall {
 	
 	if (self = [super init]) {
-		
+ /*       MicrolendingAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate]; //ADDITION
+
+        NSString *theID;
+        theID = appDelegate.currentLender.realid; //ADDITION
+      //  thisID = theID; */
+        
 		NSString *urlFormat;
 		
 		if ([tableName isEqualToString:@"badge_lists"] || [tableName isEqualToString:@"transactions"]) {
-			 urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.heroku.com/%@/",tableName]; 
+			 urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/",tableName]; 
 
-		} else {
-			urlFormat = [[NSString alloc] initWithFormat:@"http://warm-spring-9741.heroku.com/%@/%@.json",tableName,thisID]; 
-		}
-	
+		} if ([tableName isEqualToString:@"paypaltransactions"]) {
+            NSLog (@"%@", @"SECOND url format!");
+            urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json",tableName,thisJsonString,thisID,thisAPICall];
+        } else if ([tableName isEqualToString:@"lenders"]) {
+            NSLog (@"%@", @"THIRD url format!");
+            urlFormat = [[NSString alloc] initWithFormat:@"http://seedsmicroloans.herokuapp.com/%@/%@.json",tableName,thisID]; 
+        } 
+        
+        NSLog(@"%@",urlFormat);
 	
 	NSURL *jsonurl = [NSURL URLWithString:urlFormat];
 	[urlFormat release];
@@ -55,7 +69,8 @@
 {
 	
 	NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSLog(@"%@",result);
+//	NSLog(@"%@",result);
+    NSLog(@"Sender result has: %@",result);
 	[result release];
 	
 }

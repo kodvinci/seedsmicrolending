@@ -25,7 +25,7 @@
 -(NSString *)getBadgeTitle;
 -(NSString *)getBadgeDescription;
 -(NSString *)getBadgeBID;
--(UIImage *)getImage;
+-(UIImage *)getBadgeImage;
 
 
 @end
