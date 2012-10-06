@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "PayButtonViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @class Lender;
 @class LoginViewController;
@@ -31,6 +32,7 @@
 	NSString *uid;
     int *credit;
 
+    CLLocationManager *myLocation;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
