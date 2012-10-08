@@ -51,6 +51,9 @@
 		3107B8031617809B00F61B50 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107B8011617809B00F61B50 /* GameViewController.m */; };
 		3107B8041617809B00F61B50 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3107B8021617809B00F61B50 /* GameViewController.xib */; };
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
+		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
+		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
+		3191F7F3162095CE005EEF4A /* SeedlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7F2162095CE005EEF4A /* SeedlingView.m */; };
 		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
 		31CB22A21617975A005C97D5 /* gaia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22A11617975A005C97D5 /* gaia.jpg */; };
 		31CB22A516179B8A005C97D5 /* Citadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22A416179B8A005C97D5 /* Citadel.m */; };
@@ -198,6 +201,11 @@
 		3107B8021617809B00F61B50 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		3191F7CD161E864F005EEF4A /* Furniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Furniture.h; sourceTree = "<group>"; };
 		3191F7CE161E864F005EEF4A /* Furniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Furniture.m; sourceTree = "<group>"; };
+		3191F7E816208AC3005EEF4A /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
+		3191F7E916208AC3005EEF4A /* Seedling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seedling.m; sourceTree = "<group>"; };
+		3191F7EC16208CB8005EEF4A /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
+		3191F7F1162095CE005EEF4A /* SeedlingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingView.h; sourceTree = "<group>"; };
+		3191F7F2162095CE005EEF4A /* SeedlingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingView.m; sourceTree = "<group>"; };
 		31C3FBE1145E3CAC00688CE7 /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
 		31C3FBE2145E3CAC00688CE7 /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Grabber.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31CB22A11617975A005C97D5 /* gaia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaia.jpg; sourceTree = "<group>"; };
@@ -403,6 +411,10 @@
 				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
 				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
 				3191F7CD161E864F005EEF4A /* Furniture.h */,
+				3191F7E816208AC3005EEF4A /* Seedling.h */,
+				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
+				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
+				3191F7E916208AC3005EEF4A /* Seedling.m */,
 				3191F7CE161E864F005EEF4A /* Furniture.m */,
 			);
 			path = Classes;
@@ -474,6 +486,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3191F7EC16208CB8005EEF4A /* seedling.png */,
 				CD2DF6241479B53700884EA0 /* lender.png */,
 				CDBF7A351474562900C408C8 /* quilt.png */,
 				CDBE97041472059000A4D8DB /* canvas.jpg */,
@@ -669,6 +682,7 @@
 				3107B8041617809B00F61B50 /* GameViewController.xib in Resources */,
 				31CB22A21617975A005C97D5 /* gaia.jpg in Resources */,
 				31CB22BA161B883D005C97D5 /* FloorViewController.xib in Resources */,
+				3191F7ED16208CB8005EEF4A /* seedling.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +746,8 @@
 				31CB22B9161B883D005C97D5 /* FloorViewController.m in Sources */,
 				31CB22BE161BCF8C005C97D5 /* SingleFloor.m in Sources */,
 				3191F7CF161E864F005EEF4A /* Furniture.m in Sources */,
+				3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */,
+				3191F7F3162095CE005EEF4A /* SeedlingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

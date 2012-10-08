@@ -27,8 +27,10 @@
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGRect rectangle = CGRectMake(0,0,320,460);
     CGContextAddRect(context, rectangle);
+   // CGContextAddEllipseInRect(context, rectangle);
     CGContextStrokePath(context);
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
+    //CGContextAddEllipseInRect(context, rectangle);
     CGContextFillRect(context, rectangle);
 }
 
