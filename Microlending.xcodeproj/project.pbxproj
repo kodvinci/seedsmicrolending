@@ -53,7 +53,6 @@
 		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
 		31D13658145E360E00DD3A43 /* CollageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D13656145E360E00DD3A43 /* CollageViewController.xib */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
-		928CCD4A162003F5004EF115 /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 928CCD49162003F5004EF115 /* Seedling.m */; };
 		928CCD4D16201315004EF115 /* Seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 928CCD4C16201315004EF115 /* Seedling.png */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
@@ -196,8 +195,6 @@
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		928CCD48162003F5004EF115 /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
-		928CCD49162003F5004EF115 /* Seedling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seedling.m; sourceTree = "<group>"; };
 		928CCD4C16201315004EF115 /* Seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seedling.png; sourceTree = "<group>"; };
 		CD2DF6241479B53700884EA0 /* lender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lender.png; sourceTree = "<group>"; };
 		CD2E134514736E5B000A83FE /* PatchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatchButton.m; sourceTree = "<group>"; };
@@ -318,8 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				CD2E134714736E64000A83FE /* PatchButton.h */,
-				928CCD48162003F5004EF115 /* Seedling.h */,
-				928CCD49162003F5004EF115 /* Seedling.m */,
 				CD2E134514736E5B000A83FE /* PatchButton.m */,
 				CDBCCFE3147349E40028EE9A /* DecisionViewController.h */,
 				CDBCCFE4147349E40028EE9A /* DecisionViewController.m */,
@@ -699,7 +694,6 @@
 				0A2B632315BE87C5009FACFD /* Logout.m in Sources */,
 				3107B7B01617621900F61B50 /* KeychainItemWrapper.m in Sources */,
 				3107B8031617809B00F61B50 /* GameViewController.m in Sources */,
-				928CCD4A162003F5004EF115 /* Seedling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
