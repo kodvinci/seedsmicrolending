@@ -46,10 +46,16 @@
     NSLog (@"%@", @"In MicroLendingApp launch!");
     
     //Remove the DecisionsController from the tab Bar
-    NSMutableArray *items = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
+/*    NSMutableArray *items = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
     [items removeObjectAtIndex:4];
-    [self.tabBarController setViewControllers:items];
+    [self.tabBarController setViewControllers:items]; */
 
+    //Finding the location of the app
+/*    myLocation = [[CLLocationManager alloc] init];
+    [myLocation setDistanceFilter:kCLDistanceFilterNone];
+    [myLocation setDesiredAccuracy:kCLLocationAccuracyBest];
+    [myLocation startUpdatingLocation];
+*/   
 	ipaddress = [[NSString alloc] initWithString:@"10.180.135.109"];
 	userID = [[NSString alloc] init];
 	
@@ -74,6 +80,10 @@
 -(void)initializePayPal {
     [PayPal initializeWithAppID:@"APP-2GM56961PP5201218" forEnvironment:ENV_LIVE];
 }
+/*
+-(void)myLocation:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *) newLocation fromLocation:(CLLocation *)oldLocation {
+    NSLog(@"%@", newLocation);
+}*/
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*

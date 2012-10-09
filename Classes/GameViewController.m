@@ -8,11 +8,16 @@
 
 #import "GameViewController.h"
 
-@interface GameViewController ()
-
-@end
+@class FloorViewController;
+@class Floor;
+@class MicrolendingAppDelegate;
 
 @implementation GameViewController
+
+@synthesize numOfFloors;
+@synthesize level;
+@synthesize seedlingID;
+@synthesize furniture;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,8 +28,46 @@
     return self;
 }
 
+- (IBAction)begin
+{
+    // Create strings to store the text info
+    numOfFloors = [[NSString alloc] initWithString:@"1"];
+    level = [[NSString alloc] initWithString:@"1"];
+    furniture  = [[NSMutableArray alloc] initWithObjects:@"pool", @"hammock", nil];
+    seedlingID = 1;
+                                                
+    // Store the data
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:numOfFloors forKey:@"floors"];
+    [defaults setObject:level forKey:@"level"];
+    [defaults setInteger:seedlingID forKey:@"seedling"];
+    [defaults setObject:furniture forKey:@"furniture"];
+    [defaults synchronize];
+    NSLog(@"Data saved");
+    
+    FloorViewController *onefloor = [[FloorViewController alloc] init];
+	[self.navigationController pushViewController:onefloor animated:YES];
+}
+
+-(IBAction)play
+{    
+    FloorViewController *onefloor = [[FloorViewController alloc] init];
+    [self.navigationController pushViewController:onefloor animated:YES];
+}
+
+-(void)didFinishSettingFloor:(BOOL) result
+{
+    
+}
+
 - (void)viewDidLoad
 {
+    self.title = @"Gaia";
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    //set up all the floor items
+    Floor *floorItems = [[Floor alloc] init];
+    [floorItems initializeFloorItems];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

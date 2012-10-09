@@ -16,16 +16,6 @@
 #import "GrabberTwo.h"
 #import "KeychainItemWrapper.h"
 
-/*
-enum {
-	kUsernameSection = 0,
-	kPasswordSection
-}; */
-
-// Defined UI constants.
-// Tag table view cells that contain a text field to support secure text entry.
-//static NSInteger kPasswordTag	= 2;
-
 @class Grabber;
 @class Badge;
 @class LoginGrabber;
