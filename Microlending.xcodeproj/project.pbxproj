@@ -410,11 +410,11 @@
 				CDB3E17914635E010047108F /* CustomNavBar.m */,
 				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
 				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
-				3191F7CD161E864F005EEF4A /* Furniture.h */,
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
 				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
 				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
+				3191F7CD161E864F005EEF4A /* Furniture.h */,
 				3191F7CE161E864F005EEF4A /* Furniture.m */,
 			);
 			path = Classes;
