@@ -19,11 +19,6 @@
 -(id)initWithImage:(NSString *)imageName {
 	self = [super init];
     myName = imageName;
-   // myName = @"seedling1";
-    /*
-     NEED TO FIX IMAGE OF SEEDLING - OR SHOULD HAVE SEPARATE VIEW CONTROLLER?
-     myImage = [UIImageView initWithImage: (UIImage*) @"Seedling.png"]; */
-    
     myHappiness = 0;
     myXP = 0;
     myRelationships = [NSMutableDictionary dictionary];
@@ -37,6 +32,15 @@
 
 - (void) updateXP: (int) xpDifference {
     myXP += xpDifference;
+}
+
+// FINISH THIS METHOD
+- (void) makeNewFriend: (Seedling *)newFriend {
+    [myRelationships setObject: newFriend forKey: 0];
+}
+
+// FINISH THIS METHOD
+- (void) updateRelationshipPoints: (Seedling *) acquaintance: (int) pointChange {
 }
 
 -(void)dealloc
