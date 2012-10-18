@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface YogaPad : Furniture
+{
+    
+}
+-(void)initWithLevel:(NSInteger)furnitureLevel;
+
 
 @end

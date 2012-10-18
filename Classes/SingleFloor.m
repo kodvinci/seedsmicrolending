@@ -8,6 +8,8 @@
 
 #import "SingleFloor.h"
 
+@class FloorViewController;
+
 @implementation SingleFloor
 
 - (id)initWithFrame:(CGRect)frame
@@ -22,7 +24,7 @@
 
 - (void)drawRect:(CGRect)rect {
     NSLog(@"%@", @"drawRect!");
-    CGContextRef context = UIGraphicsGetCurrentContext();
+  /*  CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 2.0);
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGRect rectangle = CGRectMake(0,0,320,460);
@@ -31,7 +33,46 @@
     CGContextStrokePath(context);
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
     //CGContextAddEllipseInRect(context, rectangle);
-    CGContextFillRect(context, rectangle);
+    CGContextFillRect(context, rectangle); */
+    NSInteger numFloors = 5;
+    NSInteger height = 0;
+    
+    for (int f=0; f<numFloors; f++) {
+        if (f == 0) {
+            CGRect myRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / numFloors);
+          
+            [[UIColor blueColor] set]; // blue color
+            UIRectFill(myRect);
+            height = rect.size.height / numFloors;
+        }
+        if (f>0) {
+            CGRect myRect = CGRectMake(rect.origin.x, rect.origin.y + height, rect.size.width, rect.size.height / numFloors);
+            if (f % 2) {
+                [[UIColor redColor] set]; // red color
+                UIRectFill(myRect);
+            }
+            else{
+                [[UIColor blueColor] set]; // blue color
+                UIRectFill(myRect);
+            }
+            height += (rect.size.height / numFloors) + 5;
+        }
+    }
+    
+    // First, create a new rect with the upper half of the view
+	//CGRect upperRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / 2);
+	// Very similar to creating the upperRect, however for the lower portion of the view
+	//CGRect lowerRect = CGRectMake(rect.origin.x, rect.origin.y + (rect.size.width / 2), rect.size.width, rect.size.height / 2);
+	
+	//[[UIColor redColor] set]; // red team color
+	//UIRectFill(upperRect); // this will fill the upper rect all red,
+    // if you'd like, try these lines to get a nice effect
+    // [[UIColor whiteColor] set];
+    // UIRectFrame(upperRect); // This will frame the rect with a one point line I believe
+	//[[UIColor blueColor] set]; // blue team color
+	//UIRectFill(lowerRect); // and of course, fill our lower rect with blue
+
+    
 }
 
 @end

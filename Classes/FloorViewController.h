@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SingleFloor.h"
 #import "SeedlingView.h"
+#import "Pool.h"
+
 @interface FloorViewController : UIViewController {
     
     IBOutlet UIScrollView *scrollView;

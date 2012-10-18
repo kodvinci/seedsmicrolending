@@ -14,7 +14,8 @@
 @synthesize furniture;
 
 
--(void)initWithFloors:(NSInteger *)numberOfFloors {
+-(void)initWithFloors:(NSInteger) numFloors
+{
     
 }
 

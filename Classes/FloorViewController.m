@@ -10,6 +10,7 @@
 
 @class SingleFloor;
 @class SeedlingView;
+@class Pool;
 
 @implementation FloorViewController
 
@@ -19,6 +20,7 @@
 @synthesize mySeedling;
 @synthesize myTime;
 
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +28,7 @@
         // Custom initialization
     }
     return self;
-}
+} */
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -54,10 +56,25 @@
     NSLog(@"%@", @"Just added subView!");
     //launch Seedling
     myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedlingAround) userInfo:nil repeats:YES];
+   
+    //add purchase button in top floor for buying extra floor
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self action:@selector(newFloor:) forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"Buy Floor" forState:UIControlStateNormal];
+    button.frame = CGRectMake(0.0, 0.0, 80.0, 30.0);
+    [self.view addSubview:button];
     
     [myFloor release];
+    
+ //   Pool *myPool = [[Pool alloc] init];
+    
     [super viewDidLoad];
 }
+/*
+-(void)newFloor
+{
+   NSLog(@"%@", @"Implement purchase of a new floor!"); 
+} */
 
 -(void)moveSeedlingAround
 {
@@ -80,9 +97,10 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    //??
     NSLog(@"%@", @"touchesMoved! FloorViewController");
-  //  UITouch *myTouch = [[event allTouches]anyObject];
-  //  mySeedling.center = [myTouch locationInView:self.view];
+    UITouch *myTouch = [[event allTouches]anyObject];
+    mySeedling.center = [myTouch locationInView:self.view];
 
 }
 

@@ -1,5 +1,5 @@
 //
-//  GameViewController.h
+//  CitadelViewController.h
 //  Microlending
 //
 //  Created by guest user on 9/29/12.
@@ -11,10 +11,9 @@
 #import "Floor.h"
 #import "MicrolendingAppDelegate.h"
 
-@interface GameViewController : UIViewController {
+@interface CitadelViewController : UIViewController {
     MicrolendingAppDelegate *appDelegate;
-    CGRect myFrame;
-    
+    CGRect myFrame;    
     NSString *numOfFloors;
     NSString *level;
     NSInteger seedlingID;

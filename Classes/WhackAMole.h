@@ -9,5 +9,9 @@
 #import "Furniture.h"
 
 @interface WhackAMole : Furniture
+{
+    
+}
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

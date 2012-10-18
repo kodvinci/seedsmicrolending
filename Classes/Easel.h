@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface Easel : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

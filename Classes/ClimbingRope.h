@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface ClimbingRope : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

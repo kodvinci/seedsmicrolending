@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface Pool : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel image:(UIImage *)pic;
 
 @end

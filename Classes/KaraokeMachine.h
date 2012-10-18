@@ -9,5 +9,9 @@
 #import "Furniture.h"
 
 @interface KaraokeMachine : Furniture
+{
+    
+}
 
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 @end

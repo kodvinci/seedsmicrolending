@@ -9,5 +9,9 @@
 #import "Furniture.h"
 
 @interface BookShelf : Furniture
+{
+    
+}
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

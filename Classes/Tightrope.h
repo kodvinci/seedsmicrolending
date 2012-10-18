@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface Tightrope : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

@@ -9,5 +9,8 @@
 #import "Furniture.h"
 
 @interface Hammock : Furniture
-
+{
+    
+}
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 @end

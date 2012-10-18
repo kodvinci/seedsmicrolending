@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface Couch : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

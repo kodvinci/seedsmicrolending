@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface Citadel : NSObject {
-    NSInteger *floors;
+    NSInteger floors;
     NSArray *furniture;
+    NSInteger totalHeight;
 }
 
-@property(nonatomic, assign) NSInteger *floors;
+@property(nonatomic, assign) NSInteger floors;
 @property(nonatomic, retain) NSArray *furniture;
 
 
--(void)initWithFloors:(NSInteger *) numberOfFloors;
+-(void)initWithFloors:(NSInteger) numFloors;
 
 @end

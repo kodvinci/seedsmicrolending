@@ -9,5 +9,11 @@
 #import "Furniture.h"
 
 @interface MagmaHotTub : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
+
 
 @end

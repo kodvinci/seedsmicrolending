@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface StrongmanHammer : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

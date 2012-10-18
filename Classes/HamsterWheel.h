@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface HamsterWheel : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

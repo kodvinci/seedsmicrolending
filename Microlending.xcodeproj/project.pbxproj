@@ -48,8 +48,11 @@
 		3107B7B91617624600F61B50 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3107B7B51617624600F61B50 /* yellow.png */; };
 		3107B7BA1617624600F61B50 /* zabiasharaicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3107B7B61617624600F61B50 /* zabiasharaicon.png */; };
 		3107B7BC161762E200F61B50 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3107B7BB161762E200F61B50 /* Icon@2x.png */; };
-		3107B8031617809B00F61B50 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107B8011617809B00F61B50 /* GameViewController.m */; };
-		3107B8041617809B00F61B50 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3107B8021617809B00F61B50 /* GameViewController.xib */; };
+		3107B8031617809B00F61B50 /* CitadelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107B8011617809B00F61B50 /* CitadelViewController.m */; };
+		3107B8041617809B00F61B50 /* CitadelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3107B8021617809B00F61B50 /* CitadelViewController.xib */; };
+		3187E07D162F9F77000996F2 /* FurnitureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187E07C162F9F77000996F2 /* FurnitureViewController.m */; };
+		3187E081162FADB2000996F2 /* ViewFurniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187E080162FADB2000996F2 /* ViewFurniture.m */; };
+		3187E083162FB002000996F2 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187E082162FB002000996F2 /* pool.png */; };
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
 		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
@@ -63,6 +66,23 @@
 		31CB22BA161B883D005C97D5 /* FloorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22B8161B883D005C97D5 /* FloorViewController.xib */; };
 		31CB22BE161BCF8C005C97D5 /* SingleFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22BD161BCF8B005C97D5 /* SingleFloor.m */; };
 		31D13658145E360E00DD3A43 /* CollageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D13656145E360E00DD3A43 /* CollageViewController.xib */; };
+		31E641CB162DF89D004974DD /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641CA162DF89D004974DD /* Pool.m */; };
+		31E641CE162E0B52004974DD /* WaterBed.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641CD162E0B52004974DD /* WaterBed.m */; };
+		31E641D1162E296E004974DD /* Hammock.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641D0162E296E004974DD /* Hammock.m */; };
+		31E641D4162E2A6B004974DD /* BookShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641D3162E2A6B004974DD /* BookShelf.m */; };
+		31E641D7162E2BB3004974DD /* Desk.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641D6162E2BB3004974DD /* Desk.m */; };
+		31E641DA162E2CA3004974DD /* Easel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641D9162E2CA3004974DD /* Easel.m */; };
+		31E641DD162E2D9A004974DD /* KaraokeMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641DC162E2D9A004974DD /* KaraokeMachine.m */; };
+		31E641E0162E2EEC004974DD /* Tightrope.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641DF162E2EEC004974DD /* Tightrope.m */; };
+		31E641E3162E3021004974DD /* Barbell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641E2162E3020004974DD /* Barbell.m */; };
+		31E641E6162E311E004974DD /* MagmaHotTub.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641E5162E311E004974DD /* MagmaHotTub.m */; };
+		31E641E9162E3283004974DD /* Couch.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641E8162E3282004974DD /* Couch.m */; };
+		31E641EC162E33B9004974DD /* YogaPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641EB162E33B8004974DD /* YogaPad.m */; };
+		31E641EF162E34D3004974DD /* BandStand.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641EE162E34D2004974DD /* BandStand.m */; };
+		31E641F2162E3613004974DD /* ClimbingRope.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F1162E3612004974DD /* ClimbingRope.m */; };
+		31E641F5162E36E3004974DD /* HamsterWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F4162E36E2004974DD /* HamsterWheel.m */; };
+		31E641F8162E3AEC004974DD /* StrongmanHammer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F7162E3AEB004974DD /* StrongmanHammer.m */; };
+		31E641FB162E3BA6004974DD /* WhackAMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641FA162E3BA5004974DD /* WhackAMole.m */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
@@ -196,9 +216,14 @@
 		3107B7B51617624600F61B50 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		3107B7B61617624600F61B50 /* zabiasharaicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zabiasharaicon.png; sourceTree = "<group>"; };
 		3107B7BB161762E200F61B50 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		3107B8001617809B00F61B50 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		3107B8011617809B00F61B50 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		3107B8021617809B00F61B50 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
+		3107B8001617809B00F61B50 /* CitadelViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CitadelViewController.h; sourceTree = "<group>"; };
+		3107B8011617809B00F61B50 /* CitadelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitadelViewController.m; sourceTree = "<group>"; };
+		3107B8021617809B00F61B50 /* CitadelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CitadelViewController.xib; path = Classes/CitadelViewController.xib; sourceTree = "<group>"; };
+		3187E07B162F9F77000996F2 /* FurnitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FurnitureViewController.h; sourceTree = "<group>"; };
+		3187E07C162F9F77000996F2 /* FurnitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FurnitureViewController.m; sourceTree = "<group>"; };
+		3187E07F162FADB2000996F2 /* ViewFurniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFurniture.h; sourceTree = "<group>"; };
+		3187E080162FADB2000996F2 /* ViewFurniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFurniture.m; sourceTree = "<group>"; };
+		3187E082162FB002000996F2 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = SOURCE_ROOT; };
 		3191F7CD161E864F005EEF4A /* Furniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Furniture.h; sourceTree = "<group>"; };
 		3191F7CE161E864F005EEF4A /* Furniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Furniture.m; sourceTree = "<group>"; };
 		3191F7E816208AC3005EEF4A /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
@@ -216,10 +241,44 @@
 		31CB22AC1617A306005C97D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		31CB22B6161B883D005C97D5 /* FloorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorViewController.h; sourceTree = "<group>"; };
 		31CB22B7161B883D005C97D5 /* FloorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorViewController.m; sourceTree = "<group>"; };
-		31CB22B8161B883D005C97D5 /* FloorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloorViewController.xib; sourceTree = "<group>"; };
+		31CB22B8161B883D005C97D5 /* FloorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FloorViewController.xib; path = Classes/FloorViewController.xib; sourceTree = "<group>"; };
 		31CB22BC161BCF89005C97D5 /* SingleFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleFloor.h; sourceTree = "<group>"; };
 		31CB22BD161BCF8B005C97D5 /* SingleFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleFloor.m; sourceTree = "<group>"; };
 		31D13656145E360E00DD3A43 /* CollageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollageViewController.xib; path = Classes/CollageViewController.xib; sourceTree = "<group>"; };
+		31E641C9162DF89D004974DD /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		31E641CA162DF89D004974DD /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pool.m; sourceTree = "<group>"; };
+		31E641CC162E0B52004974DD /* WaterBed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterBed.h; sourceTree = "<group>"; };
+		31E641CD162E0B52004974DD /* WaterBed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterBed.m; sourceTree = "<group>"; };
+		31E641CF162E296E004974DD /* Hammock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hammock.h; sourceTree = "<group>"; };
+		31E641D0162E296E004974DD /* Hammock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hammock.m; sourceTree = "<group>"; };
+		31E641D2162E2A6A004974DD /* BookShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelf.h; sourceTree = "<group>"; };
+		31E641D3162E2A6B004974DD /* BookShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelf.m; sourceTree = "<group>"; };
+		31E641D5162E2BB3004974DD /* Desk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Desk.h; sourceTree = "<group>"; };
+		31E641D6162E2BB3004974DD /* Desk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Desk.m; sourceTree = "<group>"; };
+		31E641D8162E2CA2004974DD /* Easel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Easel.h; sourceTree = "<group>"; };
+		31E641D9162E2CA3004974DD /* Easel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Easel.m; sourceTree = "<group>"; };
+		31E641DB162E2D9A004974DD /* KaraokeMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaraokeMachine.h; sourceTree = "<group>"; };
+		31E641DC162E2D9A004974DD /* KaraokeMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaraokeMachine.m; sourceTree = "<group>"; };
+		31E641DE162E2EEC004974DD /* Tightrope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tightrope.h; sourceTree = "<group>"; };
+		31E641DF162E2EEC004974DD /* Tightrope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tightrope.m; sourceTree = "<group>"; };
+		31E641E1162E3020004974DD /* Barbell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barbell.h; sourceTree = "<group>"; };
+		31E641E2162E3020004974DD /* Barbell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barbell.m; sourceTree = "<group>"; };
+		31E641E4162E311E004974DD /* MagmaHotTub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagmaHotTub.h; sourceTree = "<group>"; };
+		31E641E5162E311E004974DD /* MagmaHotTub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagmaHotTub.m; sourceTree = "<group>"; };
+		31E641E7162E3282004974DD /* Couch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Couch.h; sourceTree = "<group>"; };
+		31E641E8162E3282004974DD /* Couch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Couch.m; sourceTree = "<group>"; };
+		31E641EA162E33B8004974DD /* YogaPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YogaPad.h; sourceTree = "<group>"; };
+		31E641EB162E33B8004974DD /* YogaPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YogaPad.m; sourceTree = "<group>"; };
+		31E641ED162E34D2004974DD /* BandStand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandStand.h; sourceTree = "<group>"; };
+		31E641EE162E34D2004974DD /* BandStand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BandStand.m; sourceTree = "<group>"; };
+		31E641F0162E3612004974DD /* ClimbingRope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClimbingRope.h; sourceTree = "<group>"; };
+		31E641F1162E3612004974DD /* ClimbingRope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClimbingRope.m; sourceTree = "<group>"; };
+		31E641F3162E36E1004974DD /* HamsterWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamsterWheel.h; sourceTree = "<group>"; };
+		31E641F4162E36E2004974DD /* HamsterWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamsterWheel.m; sourceTree = "<group>"; };
+		31E641F6162E3AEB004974DD /* StrongmanHammer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrongmanHammer.h; sourceTree = "<group>"; };
+		31E641F7162E3AEB004974DD /* StrongmanHammer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrongmanHammer.m; sourceTree = "<group>"; };
+		31E641F9162E3BA4004974DD /* WhackAMole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhackAMole.h; sourceTree = "<group>"; };
+		31E641FA162E3BA5004974DD /* WhackAMole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhackAMole.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -379,10 +438,8 @@
 				31CB22BC161BCF89005C97D5 /* SingleFloor.h */,
 				31CB22BD161BCF8B005C97D5 /* SingleFloor.m */,
 				31CB22B7161B883D005C97D5 /* FloorViewController.m */,
-				31CB22B8161B883D005C97D5 /* FloorViewController.xib */,
-				3107B8001617809B00F61B50 /* GameViewController.h */,
-				3107B8011617809B00F61B50 /* GameViewController.m */,
-				3107B8021617809B00F61B50 /* GameViewController.xib */,
+				3107B8001617809B00F61B50 /* CitadelViewController.h */,
+				3107B8011617809B00F61B50 /* CitadelViewController.m */,
 				0A74CF7215A3479A00E9E20B /* PayButtonViewController.h */,
 				0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */,
 				0A74CF7415A3479A00E9E20B /* SuccessViewController.h */,
@@ -414,8 +471,7 @@
 				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
 				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
-				3191F7CD161E864F005EEF4A /* Furniture.h */,
-				3191F7CE161E864F005EEF4A /* Furniture.m */,
+				31E641C7162DF52B004974DD /* Furniture */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -487,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				3191F7EC16208CB8005EEF4A /* seedling.png */,
+				3187E082162FB002000996F2 /* pool.png */,
 				CD2DF6241479B53700884EA0 /* lender.png */,
 				CDBF7A351474562900C408C8 /* quilt.png */,
 				CDBE97041472059000A4D8DB /* canvas.jpg */,
@@ -508,6 +565,8 @@
 				CD308BAD144E5FB0000A44C8 /* icon_credit_card.png */,
 				CD308BAE144E5FB0000A44C8 /* icon_hat.png */,
 				CD308BAF144E5FB0000A44C8 /* icon_user.png */,
+				31CB22B8161B883D005C97D5 /* FloorViewController.xib */,
+				3107B8021617809B00F61B50 /* CitadelViewController.xib */,
 				CD308A8A144E3916000A44C8 /* ProfileViewController.xib */,
 				CDF6DC0B1467721600A9030D /* MPCategoryPage.xib */,
 				31D13656145E360E00DD3A43 /* CollageViewController.xib */,
@@ -534,6 +593,53 @@
 				CDBF7A8D14746B5200C408C8 /* MessageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31E641C7162DF52B004974DD /* Furniture */ = {
+			isa = PBXGroup;
+			children = (
+				3191F7CD161E864F005EEF4A /* Furniture.h */,
+				3191F7CE161E864F005EEF4A /* Furniture.m */,
+				31E641C9162DF89D004974DD /* Pool.h */,
+				31E641CA162DF89D004974DD /* Pool.m */,
+				31E641CC162E0B52004974DD /* WaterBed.h */,
+				31E641CD162E0B52004974DD /* WaterBed.m */,
+				31E641CF162E296E004974DD /* Hammock.h */,
+				31E641D0162E296E004974DD /* Hammock.m */,
+				31E641D2162E2A6A004974DD /* BookShelf.h */,
+				31E641D3162E2A6B004974DD /* BookShelf.m */,
+				31E641D5162E2BB3004974DD /* Desk.h */,
+				31E641D6162E2BB3004974DD /* Desk.m */,
+				31E641D8162E2CA2004974DD /* Easel.h */,
+				31E641D9162E2CA3004974DD /* Easel.m */,
+				31E641DB162E2D9A004974DD /* KaraokeMachine.h */,
+				31E641DC162E2D9A004974DD /* KaraokeMachine.m */,
+				31E641DE162E2EEC004974DD /* Tightrope.h */,
+				31E641DF162E2EEC004974DD /* Tightrope.m */,
+				31E641E1162E3020004974DD /* Barbell.h */,
+				31E641E2162E3020004974DD /* Barbell.m */,
+				31E641E4162E311E004974DD /* MagmaHotTub.h */,
+				31E641E5162E311E004974DD /* MagmaHotTub.m */,
+				31E641E7162E3282004974DD /* Couch.h */,
+				31E641E8162E3282004974DD /* Couch.m */,
+				31E641EA162E33B8004974DD /* YogaPad.h */,
+				31E641EB162E33B8004974DD /* YogaPad.m */,
+				31E641ED162E34D2004974DD /* BandStand.h */,
+				31E641EE162E34D2004974DD /* BandStand.m */,
+				31E641F0162E3612004974DD /* ClimbingRope.h */,
+				31E641F1162E3612004974DD /* ClimbingRope.m */,
+				31E641F3162E36E1004974DD /* HamsterWheel.h */,
+				31E641F4162E36E2004974DD /* HamsterWheel.m */,
+				31E641F6162E3AEB004974DD /* StrongmanHammer.h */,
+				31E641F7162E3AEB004974DD /* StrongmanHammer.m */,
+				31E641F9162E3BA4004974DD /* WhackAMole.h */,
+				31E641FA162E3BA5004974DD /* WhackAMole.m */,
+				3187E07B162F9F77000996F2 /* FurnitureViewController.h */,
+				3187E07C162F9F77000996F2 /* FurnitureViewController.m */,
+				3187E07F162FADB2000996F2 /* ViewFurniture.h */,
+				3187E080162FADB2000996F2 /* ViewFurniture.m */,
+			);
+			name = Furniture;
 			sourceTree = "<group>";
 		};
 		CD67FBFA143BD419006E0CC8 /* JSON */ = {
@@ -679,10 +785,11 @@
 				3107B7B91617624600F61B50 /* yellow.png in Resources */,
 				3107B7BA1617624600F61B50 /* zabiasharaicon.png in Resources */,
 				3107B7BC161762E200F61B50 /* Icon@2x.png in Resources */,
-				3107B8041617809B00F61B50 /* GameViewController.xib in Resources */,
+				3107B8041617809B00F61B50 /* CitadelViewController.xib in Resources */,
 				31CB22A21617975A005C97D5 /* gaia.jpg in Resources */,
 				31CB22BA161B883D005C97D5 /* FloorViewController.xib in Resources */,
 				3191F7ED16208CB8005EEF4A /* seedling.png in Resources */,
+				3187E083162FB002000996F2 /* pool.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,7 +847,7 @@
 				0A2C774A15A6F40A00C91904 /* RecordTransactions.m in Sources */,
 				0A2B632315BE87C5009FACFD /* Logout.m in Sources */,
 				3107B7B01617621900F61B50 /* KeychainItemWrapper.m in Sources */,
-				3107B8031617809B00F61B50 /* GameViewController.m in Sources */,
+				3107B8031617809B00F61B50 /* CitadelViewController.m in Sources */,
 				31CB22A516179B8A005C97D5 /* Citadel.m in Sources */,
 				31CB22A81617A102005C97D5 /* Floor.m in Sources */,
 				31CB22B9161B883D005C97D5 /* FloorViewController.m in Sources */,
@@ -748,6 +855,25 @@
 				3191F7CF161E864F005EEF4A /* Furniture.m in Sources */,
 				3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */,
 				3191F7F3162095CE005EEF4A /* SeedlingView.m in Sources */,
+				31E641CB162DF89D004974DD /* Pool.m in Sources */,
+				31E641CE162E0B52004974DD /* WaterBed.m in Sources */,
+				31E641D1162E296E004974DD /* Hammock.m in Sources */,
+				31E641D4162E2A6B004974DD /* BookShelf.m in Sources */,
+				31E641D7162E2BB3004974DD /* Desk.m in Sources */,
+				31E641DA162E2CA3004974DD /* Easel.m in Sources */,
+				31E641DD162E2D9A004974DD /* KaraokeMachine.m in Sources */,
+				31E641E0162E2EEC004974DD /* Tightrope.m in Sources */,
+				31E641E3162E3021004974DD /* Barbell.m in Sources */,
+				31E641E6162E311E004974DD /* MagmaHotTub.m in Sources */,
+				31E641E9162E3283004974DD /* Couch.m in Sources */,
+				31E641EC162E33B9004974DD /* YogaPad.m in Sources */,
+				31E641EF162E34D3004974DD /* BandStand.m in Sources */,
+				31E641F2162E3613004974DD /* ClimbingRope.m in Sources */,
+				31E641F5162E36E3004974DD /* HamsterWheel.m in Sources */,
+				31E641F8162E3AEC004974DD /* StrongmanHammer.m in Sources */,
+				31E641FB162E3BA6004974DD /* WhackAMole.m in Sources */,
+				3187E07D162F9F77000996F2 /* FurnitureViewController.m in Sources */,
+				3187E081162FADB2000996F2 /* ViewFurniture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

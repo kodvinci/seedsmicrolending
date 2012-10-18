@@ -9,5 +9,8 @@
 #import "Furniture.h"
 
 @interface WaterBed : Furniture
-
+{
+    
+}
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 @end

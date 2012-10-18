@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface Barbell : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

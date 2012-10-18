@@ -9,5 +9,10 @@
 #import "Furniture.h"
 
 @interface BandStand : Furniture
+{
+    
+}
+
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 
 @end

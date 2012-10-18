@@ -1,18 +1,18 @@
 //
-//  GameViewController.m
+//  CitadelViewController.m
 //  Microlending
 //
 //  Created by guest user on 9/29/12.
 //
 //
 
-#import "GameViewController.h"
+#import "CitadelViewController.h"
 
 @class FloorViewController;
 @class Floor;
 @class MicrolendingAppDelegate;
 
-@implementation GameViewController
+@implementation CitadelViewController
 
 @synthesize numOfFloors;
 @synthesize level;
@@ -45,14 +45,19 @@
     [defaults synchronize];
     NSLog(@"Data saved");
     
-    FloorViewController *onefloor = [[FloorViewController alloc] init];
-	[self.navigationController pushViewController:onefloor animated:YES];
+//    FloorViewController *myfloor = [[FloorViewController alloc] init];
+//	[self.navigationController pushViewController:myfloor animated:YES];
+    
+//    [myfloor release];
 }
 
 -(IBAction)play
-{    
+{
+ //   NSLog(@"started play");
     FloorViewController *onefloor = [[FloorViewController alloc] init];
     [self.navigationController pushViewController:onefloor animated:YES];
+    
+    [onefloor release];
 }
 
 -(void)didFinishSettingFloor:(BOOL) result

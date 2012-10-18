@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Furniture : NSObject {
-
+@interface Furniture : NSObject
+{
     NSString *itemName;
     NSString *desire1;
     NSString *desire2;
@@ -17,26 +17,39 @@
     NSInteger users;
     NSInteger useTime;
     NSInteger itemWidth;
-    NSInteger desireReward;
-    NSInteger happinessReward;
+    NSInteger happinessReward1;
+    NSInteger happinessReward2;
+    NSInteger purchaseCost;
     NSInteger coinsCost;
     NSInteger leavesCost;
+    UIImage *furnPic;
 }
 
+@property(nonatomic, retain) UIImage *furnPic;
 @property(nonatomic, retain) NSString *itemName;
 @property(nonatomic, retain) NSString *desire1;
 @property(nonatomic, retain) NSString *desire2;
 @property(nonatomic, assign) NSInteger useTime;
-@property(nonatomic, assign) NSInteger desireReward;
+@property(nonatomic, assign) NSInteger happinessReward1;
 @property(nonatomic, assign) NSInteger itemLevel;
 @property(nonatomic, assign) NSInteger users;
 @property(nonatomic, assign) NSInteger itemWidth;
-@property(nonatomic, assign) NSInteger happinessReward;
+@property(nonatomic, assign) NSInteger happinessReward2;
 @property(nonatomic, assign) NSInteger coinsCost;
 @property(nonatomic, assign) NSInteger leavesCost;
+@property(nonatomic, assign) NSInteger purchaseCost;
 
--(void)initWithName:(NSString *)furnitureName level:(NSInteger)furnitureLevel;
--(void)purchaseFurniture;
--(void)interactWithFurniture;
+-(void)setFurnitureName:(NSString *)name;
+-(void)setFurnitureLevel:(NSInteger)level;
+-(void)setNumUsers:(NSInteger)NumUsers;
+-(void)setUseTime:(NSInteger)time;
+-(void)setItemWidth:(NSInteger)width;
+-(void)setDesire1:(NSString *)desire;
+-(void)setDesire2:(NSString *)desire;
+-(void)setHappinessReward1:(NSInteger)happiness;
+-(void)setHappinessReward2:(NSInteger)happiness;
+-(void)setPurchaseCostCoins:(NSInteger)cost;
+-(void)setUpgradeCostLeaves:(NSInteger)cost;
+-(void)setUpgradeCostCoins:(NSInteger)cost;
 
 @end
