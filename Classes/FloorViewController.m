@@ -61,9 +61,11 @@
    
     //add purchase button in top floor for buying extra floor
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self action:@selector(newFloor:) forControlEvents:UIControlEventTouchDown];
+    
+    [button addTarget:self action:@selector(newFloor:) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Buy Floor" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0.0, 0.0, 80.0, 30.0);
+    
+    button.frame = CGRectMake(0.0, 0.0, 320.0, 20.0);
     [self.view addSubview:button];
     
     [myFloor release];
@@ -73,7 +75,7 @@
 }
 
 -(void)newFloor
-{
+{ //TO_DO: Figure out why it causes a crash ...
    NSLog(@"%@", @"Implement purchase of a new floor!");
     Citadel *iCit = [Citadel alloc];
     [iCit addFloor];
