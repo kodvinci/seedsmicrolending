@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Citadel.h"
 #import "SingleFloor.h"
 #import "SeedlingView.h"
 #import "Pool.h"

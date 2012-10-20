@@ -8,6 +8,7 @@
 
 #import "FloorViewController.h"
 
+@class Citadel;
 @class SingleFloor;
 @class SeedlingView;
 @class Pool;
@@ -73,12 +74,15 @@
 
 -(void)newFloor
 {
-   NSLog(@"%@", @"Implement purchase of a new floor!"); 
+   NSLog(@"%@", @"Implement purchase of a new floor!");
+    Citadel *iCit = [Citadel alloc];
+    [iCit addFloor];
+    
 }
 
 -(void)moveSeedlingAround
 {
-    NSLog(@"%@", @"in moveAround!");
+ //   NSLog(@"%@", @"in moveAround!");
     mySeedling.center = CGPointMake(mySeedling.center.x+pos.x, mySeedling.center.y+pos.y);
     if (mySeedling.center.x > 320 || mySeedling.center.x < 0) {
         pos.x = -pos.x;

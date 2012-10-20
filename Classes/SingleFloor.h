@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FloorViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "MicrolendingAppDelegate.h"
 
 @interface SingleFloor : UIView
 {
+    MicrolendingAppDelegate *appDelegate;
     CGRect floor1;
     CGRect floor2;
     CGRect floor3;

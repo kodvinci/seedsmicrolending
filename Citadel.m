@@ -21,9 +21,10 @@
 
 -(void)initialize
 {
+    NSLog(@"%@", @"citadel initialize");
     appDelegate = [[UIApplication sharedApplication] delegate];
+    
     // Retrieve stored data from NSUserDefaults before the view loads
-   
     //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //citFloors = [defaults integerForKey:@"floors"];
     
@@ -32,6 +33,10 @@
     seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
     citFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
     citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];
+    
+    NSLog(@"%@", @"calling citadelSetUpDone...");
+    [self.citadelDelegate citadelSetUpDone:YES];
+
 }
 
 -(void)addFloor

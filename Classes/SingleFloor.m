@@ -9,11 +9,14 @@
 #import "SingleFloor.h"
 
 @class FloorViewController;
+@class MicrolendingAppDelegate;
 
 @implementation SingleFloor
 
 - (id)initWithFrame:(CGRect)frame
 {
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    
     NSLog(@"%@", @"at the UIView!");
     self = [super initWithFrame:frame];
     if (self) {
@@ -34,7 +37,8 @@
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
     //CGContextAddEllipseInRect(context, rectangle);
     CGContextFillRect(context, rectangle); */
-    NSInteger numFloors = 2;
+    
+    NSInteger numFloors = [appDelegate.citadelData integerForKey:@"floors"];
     NSInteger height = 0;
     
     for (int f=0; f<numFloors; f++) {

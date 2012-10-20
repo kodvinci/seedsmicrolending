@@ -56,6 +56,7 @@
     
     //Not sure if this works. 
     appDelegate.citadelData = defaults;
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     //Add mechanism to inform user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
 }
@@ -63,24 +64,33 @@
 -(IBAction)play
 {
  //   NSLog(@"started play");
-    FloorViewController *onefloor = [[FloorViewController alloc] init];
-    [self.navigationController pushViewController:onefloor animated:YES];
     
-    [onefloor release];
+    //set up the Citadel
+    Citadel *myCitadel = [Citadel alloc];
+    myCitadel.citadelDelegate = self;
+    [myCitadel initialize];
+    
 }
 
--(void)didFinishSettingFloor:(BOOL) result
+-(void)citadelSetUpDone:(BOOL)result
 {
-    
+    NSLog(@"%@", @"citadelSetUpDone!");
+    if (result) {
+        //Use the saved information for display
+        NSLog(@"Current Data: %@", appDelegate.citadelData);
+        NSLog(@"Number of floors: %@", [appDelegate.citadelData objectForKey:@"floors"]);
+        
+        FloorViewController *myCitadelFloors = [[FloorViewController alloc] init];
+        [self.navigationController pushViewController:myCitadelFloors animated:YES];
+        
+        [myCitadelFloors release];
+    }
 }
 
 - (void)viewDidLoad
 {
     self.title = @"Gaia";
     appDelegate = [[UIApplication sharedApplication] delegate];
-    //set up all the floor items
-    Floor *floorItems = [[Floor alloc] init];
-    [floorItems initializeFloorItems];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.

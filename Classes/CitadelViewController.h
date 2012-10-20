@@ -13,7 +13,7 @@
 #import "Seedling.h"
 #import "Citadel.h"
 
-@interface CitadelViewController : UIViewController {
+@interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
     CGRect myFrame;    
     NSInteger numOfFloors;
