@@ -24,7 +24,7 @@
     NSMutableArray *citSeedlings;
     id citadelDelegate;
     
-    //Not sure if we need these variables/properties
+    //Not sure if we need these variables
     NSInteger totalHeight;
     NSString *floorID;
     NSInteger seedlingID;

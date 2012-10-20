@@ -63,7 +63,7 @@
     [self saveChanges:@"FURNITURE"];
 }
 
-//Save the changes to NSUserDefaults
+//Save changes to NSUserDefaults
 //TO_DO: Regularly update the database with whatever changes have been made in the game.
 
 -(void)saveChanges:(NSString *)thisChanged

@@ -57,7 +57,7 @@
     //Not sure if this works. 
     appDelegate.citadelData = defaults;
     
-    //Add mechanism to inform the user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
+    //Add mechanism to inform user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
 }
 
 -(IBAction)play
