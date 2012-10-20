@@ -43,17 +43,18 @@
     pos = CGPointMake(1.0, 1.0);
     //convert png image to UIImage
     seedling = [UIImage imageNamed:@"seedling.png"];
-    //create frame
-    floorOne = CGRectMake(0, 0, 320, 460);
     
+    //create frame & init SingleFloor using frame
+    floorOne = CGRectMake(0, 0, 320, 460);
     SingleFloor *myFloor = [[SingleFloor alloc] initWithFrame:floorOne];
+   
+    //Init SeedlingView and center the seedling
     mySeedling = [[SeedlingView alloc] initWithImage:seedling];
-    //Center the seedling
     mySeedling.center = CGPointMake(160, 230);
     
     [self.view addSubview:myFloor];
     [self.view addSubview:mySeedling];
-    NSLog(@"%@", @"Just added subView!");
+
     //launch Seedling
     myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedlingAround) userInfo:nil repeats:YES];
    
@@ -66,15 +67,14 @@
     
     [myFloor release];
     
- //   Pool *myPool = [[Pool alloc] init];
-    
+ 
     [super viewDidLoad];
 }
-/*
+
 -(void)newFloor
 {
    NSLog(@"%@", @"Implement purchase of a new floor!"); 
-} */
+}
 
 -(void)moveSeedlingAround
 {
@@ -97,7 +97,6 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //??
     NSLog(@"%@", @"touchesMoved! FloorViewController");
     UITouch *myTouch = [[event allTouches]anyObject];
     mySeedling.center = [myTouch locationInView:self.view];

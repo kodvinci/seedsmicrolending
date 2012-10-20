@@ -10,20 +10,26 @@
 #import "FloorViewController.h"
 #import "Floor.h"
 #import "MicrolendingAppDelegate.h"
+#import "Seedling.h"
+#import "Citadel.h"
 
 @interface CitadelViewController : UIViewController {
     MicrolendingAppDelegate *appDelegate;
     CGRect myFrame;    
-    NSString *numOfFloors;
-    NSString *level;
+    NSInteger numOfFloors;
+    NSInteger level;
     NSInteger seedlingID;
     NSMutableArray *furniture;
+    NSMutableArray *seedlings;
+    NSUserDefaults *defaults;
 }
 
-@property(nonatomic, retain) NSString *numOfFloors;
-@property(nonatomic, retain) NSString *level;
+@property(nonatomic, assign) NSInteger numOfFloors;
+@property(nonatomic, assign) NSInteger level;
 @property(nonatomic, assign) NSInteger seedlingID;
 @property(nonatomic, retain) NSMutableArray *furniture;
+@property(nonatomic, retain) NSMutableArray *seedlings;
+@property(nonatomic, retain) NSUserDefaults *defaults;
 
 -(IBAction)play;
 -(IBAction)begin;

@@ -45,7 +45,7 @@
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *password;
 
--(IBAction)pressedLogin;
+//-(IBAction)pressedLogin;
 -(IBAction)pressedSignUp; 
 -(IBAction)login; 
 

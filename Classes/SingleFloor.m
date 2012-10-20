@@ -34,17 +34,26 @@
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
     //CGContextAddEllipseInRect(context, rectangle);
     CGContextFillRect(context, rectangle); */
-    NSInteger numFloors = 5;
+    NSInteger numFloors = 2;
     NSInteger height = 0;
     
     for (int f=0; f<numFloors; f++) {
         if (f == 0) {
-            CGRect myRect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / numFloors);
+            floor2 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / numFloors);
           
             [[UIColor blueColor] set]; // blue color
-            UIRectFill(myRect);
+            UIRectFill(floor2);
             height = rect.size.height / numFloors;
         }
+        
+        if (f == 1) {
+            floor1 = CGRectMake(rect.origin.x, rect.origin.y + height, rect.size.width, rect.size.height / numFloors);
+            
+            [[UIColor redColor] set]; // blue color
+            UIRectFill(floor1);
+            height += rect.size.height / numFloors;
+        }
+/*
         if (f>0) {
             CGRect myRect = CGRectMake(rect.origin.x, rect.origin.y + height, rect.size.width, rect.size.height / numFloors);
             if (f % 2) {
@@ -56,7 +65,7 @@
                 UIRectFill(myRect);
             }
             height += (rect.size.height / numFloors) + 5;
-        }
+        } */
     }
     
     // First, create a new rect with the upper half of the view
@@ -71,8 +80,26 @@
     // UIRectFrame(upperRect); // This will frame the rect with a one point line I believe
 	//[[UIColor blueColor] set]; // blue team color
 	//UIRectFill(lowerRect); // and of course, fill our lower rect with blue
-
     
 }
 
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"%@", @"touched floor! SingleFloor");
+    [self resizeRect:floor1];
+    
+    //UITouch *myTouch = [[event allTouches]anyObject];
+    //mySeedling.center = [myTouch locationInView:self.view];
+    
+}
+
+- (void)resizeRect:(CGRect)rect
+{
+    NSLog(@"%@", @"resizeRect!");
+    CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+//    [[UIColor greenColor] set];
+//	UIRectFill(rect);
+}
+    
 @end

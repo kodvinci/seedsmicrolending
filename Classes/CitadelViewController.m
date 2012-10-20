@@ -11,6 +11,8 @@
 @class FloorViewController;
 @class Floor;
 @class MicrolendingAppDelegate;
+@class Seedling;
+@class Citadel;
 
 @implementation CitadelViewController
 
@@ -18,6 +20,8 @@
 @synthesize level;
 @synthesize seedlingID;
 @synthesize furniture;
+@synthesize seedlings;
+@synthesize defaults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,25 +34,30 @@
 
 - (IBAction)begin
 {
-    // Create strings to store the text info
-    numOfFloors = [[NSString alloc] initWithString:@"1"];
-    level = [[NSString alloc] initWithString:@"1"];
+    //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously 
+    
+    // Create variables to store Citadel information
+    numOfFloors = 1; 
+    level = 1;
     furniture  = [[NSMutableArray alloc] initWithObjects:@"pool", @"hammock", nil];
     seedlingID = 1;
+    Seedling *myFirstSeedling = [[Seedling alloc] initWithImage:@"seedling1"];
+    [seedlings addObject:myFirstSeedling];
                                                 
     // Store the data
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:numOfFloors forKey:@"floors"];
-    [defaults setObject:level forKey:@"level"];
+    defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:numOfFloors forKey:@"floors"];
+    [defaults setInteger:level forKey:@"level"];
     [defaults setInteger:seedlingID forKey:@"seedling"];
     [defaults setObject:furniture forKey:@"furniture"];
+    [defaults setObject:seedlings forKey:@"seedlings"];
     [defaults synchronize];
     NSLog(@"Data saved");
     
-//    FloorViewController *myfloor = [[FloorViewController alloc] init];
-//	[self.navigationController pushViewController:myfloor animated:YES];
+    //Not sure if this works. 
+    appDelegate.citadelData = defaults;
     
-//    [myfloor release];
+    //Add mechanism to inform the user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
 }
 
 -(IBAction)play

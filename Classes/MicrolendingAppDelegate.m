@@ -36,6 +36,7 @@
 @synthesize userclass;
 @synthesize totalXP;
 @synthesize uid;
+@synthesize citadelData;
 
 #pragma mark -
 #pragma mark Application lifecycle

@@ -415,10 +415,6 @@
 				0A2C774815A6F40A00C91904 /* RecordTransactions.h */,
 				0A2C774915A6F40A00C91904 /* RecordTransactions.m */,
 				CDC3D6B01460748E00360097 /* Sender.m */,
-				31CB22A316179B8A005C97D5 /* Citadel.h */,
-				31CB22A61617A102005C97D5 /* Floor.h */,
-				31CB22A71617A102005C97D5 /* Floor.m */,
-				31CB22A416179B8A005C97D5 /* Citadel.m */,
 				31C3FBE1145E3CAC00688CE7 /* Grabber.h */,
 				0AA5C380159DD077001318BA /* GrabberTwo.h */,
 				0AA5C381159DD077001318BA /* GrabberTwo.m */,
@@ -434,17 +430,11 @@
 				CD308BDA144E62A6000A44C8 /* Borrower.h */,
 				CD308BDB144E62A6000A44C8 /* Borrower.m */,
 				1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */,
-				31CB22B6161B883D005C97D5 /* FloorViewController.h */,
-				31CB22BC161BCF89005C97D5 /* SingleFloor.h */,
-				31CB22BD161BCF8B005C97D5 /* SingleFloor.m */,
-				31CB22B7161B883D005C97D5 /* FloorViewController.m */,
-				3107B8001617809B00F61B50 /* CitadelViewController.h */,
-				3107B8011617809B00F61B50 /* CitadelViewController.m */,
+				1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */,
 				0A74CF7215A3479A00E9E20B /* PayButtonViewController.h */,
 				0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */,
 				0A74CF7415A3479A00E9E20B /* SuccessViewController.h */,
 				0A74CF7515A3479B00E9E20B /* SuccessViewController.m */,
-				1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */,
 				CDF6DC091467721600A9030D /* MPCategoryPage.h */,
 				CDF6DC0A1467721600A9030D /* MPCategoryPage.m */,
 				CD308AE8144E4EB3000A44C8 /* LoginViewController.h */,
@@ -467,10 +457,8 @@
 				CDB3E17914635E010047108F /* CustomNavBar.m */,
 				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
 				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
-				3191F7E816208AC3005EEF4A /* Seedling.h */,
-				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
-				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
-				3191F7E916208AC3005EEF4A /* Seedling.m */,
+				3187E08B16307C03000996F2 /* Citadel */,
+				3187E08A16307BB5000996F2 /* Seedling */,
 				31E641C7162DF52B004974DD /* Furniture */,
 			);
 			path = Classes;
@@ -487,39 +475,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				31CB22AC1617A306005C97D5 /* CoreData.framework */,
-				31CB22A11617975A005C97D5 /* gaia.jpg */,
-				3107B7BB161762E200F61B50 /* Icon@2x.png */,
-				3107B7B31617624600F61B50 /* orange.png */,
-				3107B7B41617624600F61B50 /* red.png */,
-				3107B7B51617624600F61B50 /* yellow.png */,
-				3107B7B61617624600F61B50 /* zabiasharaicon.png */,
-				3107B7AE1617621900F61B50 /* loginbackground.jpg */,
-				3107B7AF1617621900F61B50 /* master.png */,
-				3107B7A41617620000F61B50 /* green.png */,
-				3107B7A51617620000F61B50 /* handmadeicon.png */,
-				3107B7A61617620000F61B50 /* healthicon.png */,
-				3107B7A71617620000F61B50 /* Icon.png */,
-				3107B7A1161761DF00F61B50 /* agricultureicon.png */,
-				0AAAB46B15A5AF35006680C0 /* StoreKit.framework */,
-				0A74CF8015A34FA000E9E20B /* libz.dylib */,
-				0A74CF7E15A34F8000E9E20B /* libxml2.dylib */,
-				0A74CF7C15A34F3100E9E20B /* Security.framework */,
-				0A74CF7A15A34EF500E9E20B /* AddressBook.framework */,
-				0A74CF7815A34EB400E9E20B /* SystemConfiguration.framework */,
-				0A74CF6415A345B700E9E20B /* libPayPalMPL.a */,
-				0A74CF6515A345B800E9E20B /* PayPal.h */,
-				0A74CF6615A345B800E9E20B /* PayPalAddress.h */,
-				0A74CF6715A345B800E9E20B /* PayPalAdvancedPayment.h */,
-				0A74CF6815A345B800E9E20B /* PayPalAmounts.h */,
-				0A74CF6915A345B900E9E20B /* PayPalContext.h */,
-				0A74CF6A15A345B900E9E20B /* PayPalInvoiceData.h */,
-				0A74CF6B15A345B900E9E20B /* PayPalInvoiceItem.h */,
-				0A74CF6C15A345B900E9E20B /* PayPalPayment.h */,
-				0A74CF6D15A345B900E9E20B /* PayPalPreapprovalDetails.h */,
-				0A74CF6E15A345B900E9E20B /* PayPalReceiverAmounts.h */,
-				0A74CF6F15A345BA00E9E20B /* PayPalReceiverPaymentDetails.h */,
 				488A48AA145CABB900225D47 /* api.rtf */,
+				3187E088163066F0000996F2 /* PayPal */,
 				CD67FBFA143BD419006E0CC8 /* JSON */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -542,6 +499,19 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31CB22A11617975A005C97D5 /* gaia.jpg */,
+				3107B7BB161762E200F61B50 /* Icon@2x.png */,
+				3107B7B31617624600F61B50 /* orange.png */,
+				3107B7B41617624600F61B50 /* red.png */,
+				3107B7B51617624600F61B50 /* yellow.png */,
+				3107B7B61617624600F61B50 /* zabiasharaicon.png */,
+				3107B7AE1617621900F61B50 /* loginbackground.jpg */,
+				3107B7AF1617621900F61B50 /* master.png */,
+				3107B7A41617620000F61B50 /* green.png */,
+				3107B7A51617620000F61B50 /* handmadeicon.png */,
+				3107B7A61617620000F61B50 /* healthicon.png */,
+				3107B7A71617620000F61B50 /* Icon.png */,
+				3107B7A1161761DF00F61B50 /* agricultureicon.png */,
 				3191F7EC16208CB8005EEF4A /* seedling.png */,
 				3187E082162FB002000996F2 /* pool.png */,
 				CD2DF6241479B53700884EA0 /* lender.png */,
@@ -586,6 +556,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A74CF8015A34FA000E9E20B /* libz.dylib */,
+				0A74CF7E15A34F8000E9E20B /* libxml2.dylib */,
+				31CB22AC1617A306005C97D5 /* CoreData.framework */,
+				0AAAB46B15A5AF35006680C0 /* StoreKit.framework */,
+				0A74CF7C15A34F3100E9E20B /* Security.framework */,
+				0A74CF7A15A34EF500E9E20B /* AddressBook.framework */,
+				0A74CF7815A34EB400E9E20B /* SystemConfiguration.framework */,
 				0A7090EB158F835D00235DBE /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -593,6 +570,53 @@
 				CDBF7A8D14746B5200C408C8 /* MessageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3187E088163066F0000996F2 /* PayPal */ = {
+			isa = PBXGroup;
+			children = (
+				0A74CF6415A345B700E9E20B /* libPayPalMPL.a */,
+				0A74CF6515A345B800E9E20B /* PayPal.h */,
+				0A74CF6615A345B800E9E20B /* PayPalAddress.h */,
+				0A74CF6715A345B800E9E20B /* PayPalAdvancedPayment.h */,
+				0A74CF6815A345B800E9E20B /* PayPalAmounts.h */,
+				0A74CF6915A345B900E9E20B /* PayPalContext.h */,
+				0A74CF6A15A345B900E9E20B /* PayPalInvoiceData.h */,
+				0A74CF6B15A345B900E9E20B /* PayPalInvoiceItem.h */,
+				0A74CF6C15A345B900E9E20B /* PayPalPayment.h */,
+				0A74CF6D15A345B900E9E20B /* PayPalPreapprovalDetails.h */,
+				0A74CF6E15A345B900E9E20B /* PayPalReceiverAmounts.h */,
+				0A74CF6F15A345BA00E9E20B /* PayPalReceiverPaymentDetails.h */,
+			);
+			name = PayPal;
+			sourceTree = "<group>";
+		};
+		3187E08A16307BB5000996F2 /* Seedling */ = {
+			isa = PBXGroup;
+			children = (
+				3191F7E816208AC3005EEF4A /* Seedling.h */,
+				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
+				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
+				3191F7E916208AC3005EEF4A /* Seedling.m */,
+			);
+			name = Seedling;
+			sourceTree = "<group>";
+		};
+		3187E08B16307C03000996F2 /* Citadel */ = {
+			isa = PBXGroup;
+			children = (
+				31CB22A316179B8A005C97D5 /* Citadel.h */,
+				31CB22A416179B8A005C97D5 /* Citadel.m */,
+				3107B8001617809B00F61B50 /* CitadelViewController.h */,
+				3107B8011617809B00F61B50 /* CitadelViewController.m */,
+				31CB22A61617A102005C97D5 /* Floor.h */,
+				31CB22A71617A102005C97D5 /* Floor.m */,
+				31CB22B6161B883D005C97D5 /* FloorViewController.h */,
+				31CB22B7161B883D005C97D5 /* FloorViewController.m */,
+				31CB22BC161BCF89005C97D5 /* SingleFloor.h */,
+				31CB22BD161BCF8B005C97D5 /* SingleFloor.m */,
+			);
+			name = Citadel;
 			sourceTree = "<group>";
 		};
 		31E641C7162DF52B004974DD /* Furniture */ = {
