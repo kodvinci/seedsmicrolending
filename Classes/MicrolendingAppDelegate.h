@@ -31,6 +31,8 @@
 	NSString *totalXP;
 	NSString *uid;
     int *credit;
+    
+    NSUserDefaults *citadelData;
 
     CLLocationManager *myLocation;
 }
@@ -52,6 +54,7 @@
 @property (nonatomic, retain) NSString *totalXP;
 @property (nonatomic, retain) NSString *uid;
 @property (nonatomic, assign) int *credit;
+@property (nonatomic, retain) NSUserDefaults *citadelData;
 
 @end
 

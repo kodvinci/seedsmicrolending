@@ -10,5 +10,8 @@
 #import "Pool.h"
 
 @interface ViewFurniture : UIView
+{
+    
+}
 
 @end
