@@ -2,7 +2,7 @@
 //  Seedling.h
 //  Microlending
 //
-//  Created by guest user on 10/6/12.
+//  Created by Tori Reynolds on 10/6/12.
 //
 //
 
