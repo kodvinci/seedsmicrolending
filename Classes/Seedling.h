@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Seedling : NSObject {
+@interface Seedling : NSObject <NSCoding> {
     NSString *myName;
     UIImageView *myImage;
     int myHappiness;

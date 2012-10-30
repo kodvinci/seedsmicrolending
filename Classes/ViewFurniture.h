@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pool.h"
 
-@interface ViewFurniture : UIView
+@interface ViewFurniture : UIImageView
 {
     
 }

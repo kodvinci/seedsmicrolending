@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Furniture : NSObject
+@interface Furniture : NSObject <NSCoding>
 {
     NSString *itemName;
     NSString *desire1;

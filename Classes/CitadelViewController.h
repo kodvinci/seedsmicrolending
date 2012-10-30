@@ -12,6 +12,8 @@
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
 #import "Citadel.h"
+#import "Furniture.h"
+#import "Pool.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
@@ -22,6 +24,8 @@
     NSMutableArray *furniture;
     NSMutableArray *seedlings;
     NSUserDefaults *defaults;
+    Pool *poolFurn;
+    Seedling *myFirstSeedling;
 }
 
 @property(nonatomic, assign) NSInteger numOfFloors;
@@ -30,6 +34,8 @@
 @property(nonatomic, retain) NSMutableArray *furniture;
 @property(nonatomic, retain) NSMutableArray *seedlings;
 @property(nonatomic, retain) NSUserDefaults *defaults;
+@property(nonatomic, retain) Pool *poolFurn;
+@property(nonatomic, retain) Seedling *myFirstSeedling;
 
 -(IBAction)play;
 -(IBAction)begin;

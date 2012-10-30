@@ -235,6 +235,9 @@
 		31B7FC8616333C7D00B808FD /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6416333C7C00B808FD /* cpSweep1D.c */; };
 		31B7FC8716333C7D00B808FD /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6516333C7C00B808FD /* cpVect.c */; };
 		31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC6716333C7C00B808FD /* kazmath_neon.patch */; };
+		31B7FC92163DC3A600B808FD /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC91163DC3A600B808FD /* CMakeLists.txt */; };
+		31B7FC95163DC3E300B808FD /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC94163DC3E300B808FD /* CMakeLists.txt */; };
+		31B7FC97163DC40500B808FD /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC96163DC40500B808FD /* CMakeLists.txt */; };
 		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
 		31CB22A21617975A005C97D5 /* gaia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22A11617975A005C97D5 /* gaia.jpg */; };
 		31CB22A516179B8A005C97D5 /* Citadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22A416179B8A005C97D5 /* Citadel.m */; };
@@ -781,6 +784,9 @@
 		31B7FC6516333C7C00B808FD /* cpVect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpVect.c; sourceTree = "<group>"; };
 		31B7FC6616333C7C00B808FD /* prime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
 		31B7FC6716333C7C00B808FD /* kazmath_neon.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kazmath_neon.patch; sourceTree = "<group>"; };
+		31B7FC91163DC3A600B808FD /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		31B7FC94163DC3E300B808FD /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		31B7FC96163DC40500B808FD /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		31C3FBE1145E3CAC00688CE7 /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
 		31C3FBE2145E3CAC00688CE7 /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Grabber.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31CB22A11617975A005C97D5 /* gaia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaia.jpg; sourceTree = "<group>"; };
@@ -953,62 +959,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3107B7AC1617621900F61B50 /* KeychainItemWrapper.h */,
-				3107B7AD1617621900F61B50 /* KeychainItemWrapper.m */,
-				CD2E134714736E64000A83FE /* PatchButton.h */,
-				CD2E134514736E5B000A83FE /* PatchButton.m */,
-				CDBCCFE3147349E40028EE9A /* DecisionViewController.h */,
-				CDBCCFE4147349E40028EE9A /* DecisionViewController.m */,
-				CDDEA3371469FBE200A387B1 /* LeaderboardViewController.h */,
-				CDDEA3381469FBE200A387B1 /* LeaderboardViewController.m */,
-				CDE41964146100AA00FD1B8D /* CollageViewController.h */,
-				CDE41965146100AA00FD1B8D /* CollageViewController.m */,
-				CDC3D6AF1460748E00360097 /* Sender.h */,
-				0A2C774815A6F40A00C91904 /* RecordTransactions.h */,
-				0A2C774915A6F40A00C91904 /* RecordTransactions.m */,
-				CDC3D6B01460748E00360097 /* Sender.m */,
-				31C3FBE1145E3CAC00688CE7 /* Grabber.h */,
-				0AA5C380159DD077001318BA /* GrabberTwo.h */,
-				0AA5C381159DD077001318BA /* GrabberTwo.m */,
-				0AC32408159C34DA003E2B35 /* LoginGrabber.h */,
-				0AC32409159C34DA003E2B35 /* LoginGrabber.m */,
-				31C3FBE2145E3CAC00688CE7 /* Grabber.m */,
-				CDDEA2B5146887DD00A387B1 /* Transaction.h */,
-				CDDEA2B6146887DD00A387B1 /* Transaction.m */,
-				CDE418331460E14C00FD1B8D /* Badge.h */,
-				CDE418341460E14C00FD1B8D /* Badge.m */,
-				CD308A66144E2C32000A44C8 /* Lender.h */,
-				CD308A67144E2C32000A44C8 /* Lender.m */,
-				CD308BDA144E62A6000A44C8 /* Borrower.h */,
-				CD308BDB144E62A6000A44C8 /* Borrower.m */,
-				1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */,
-				1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */,
-				0A74CF7215A3479A00E9E20B /* PayButtonViewController.h */,
-				0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */,
-				0A74CF7415A3479A00E9E20B /* SuccessViewController.h */,
-				0A74CF7515A3479B00E9E20B /* SuccessViewController.m */,
-				CDF6DC091467721600A9030D /* MPCategoryPage.h */,
-				CDF6DC0A1467721600A9030D /* MPCategoryPage.m */,
-				CD308AE8144E4EB3000A44C8 /* LoginViewController.h */,
-				CD308AE9144E4EB3000A44C8 /* LoginViewController.m */,
-				CD308A88144E3916000A44C8 /* ProfileViewController.h */,
-				0A2B632115BE87C5009FACFD /* Logout.h */,
-				0A2B632215BE87C5009FACFD /* Logout.m */,
-				CD308A89144E3916000A44C8 /* ProfileViewController.m */,
-				CD308B63144E566B000A44C8 /* BadgeViewController.h */,
-				CD308B64144E566B000A44C8 /* BadgeViewController.m */,
-				CDBE97441472114800A4D8DB /* SingleBadgeViewController.h */,
-				CDBE97451472114800A4D8DB /* SingleBadgeViewController.m */,
-				CD308C18144E6F3E000A44C8 /* MPViewController.h */,
-				CD308C19144E6F3E000A44C8 /* MPViewController.m */,
-				CD308C40144E72B1000A44C8 /* BorrowerSingleViewController.h */,
-				CD308C41144E72B1000A44C8 /* BorrowerSingleViewController.m */,
-				CD308C6B144E7C47000A44C8 /* InvestmentTableViewController.h */,
-				CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */,
-				CDB3E17814635E010047108F /* CustomNavBar.h */,
-				CDB3E17914635E010047108F /* CustomNavBar.m */,
-				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
-				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
+				31C3789F1640895300A850CA /* MicrolendingApp */,
 				3187E08B16307C03000996F2 /* Citadel */,
 				3187E08A16307BB5000996F2 /* Seedling */,
 				31E641C7162DF52B004974DD /* Furniture */,
@@ -1149,9 +1100,9 @@
 			isa = PBXGroup;
 			children = (
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
+				3191F7E916208AC3005EEF4A /* Seedling.m */,
 				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
 				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
-				3191F7E916208AC3005EEF4A /* Seedling.m */,
 			);
 			name = Seedling;
 			sourceTree = "<group>";
@@ -1451,6 +1402,7 @@
 		31B7FB3A16333BDC00B808FD /* src */ = {
 			isa = PBXGroup;
 			children = (
+				31B7FC96163DC40500B808FD /* CMakeLists.txt */,
 				31B7FB3B16333BDC00B808FD /* aabb.c */,
 				31B7FB3C16333BDC00B808FD /* ChangeLog */,
 				31B7FB3D16333BDC00B808FD /* CMakeLists.txt */,
@@ -1489,6 +1441,7 @@
 		31B7FB5B16333C3B00B808FD /* Box2D */ = {
 			isa = PBXGroup;
 			children = (
+				31B7FC94163DC3E300B808FD /* CMakeLists.txt */,
 				31B7FB5C16333C3B00B808FD /* Box2D.h */,
 				31B7FB5D16333C3B00B808FD /* Box2DConfig.cmake */,
 				31B7FB5E16333C3B00B808FD /* CMakeLists.txt */,
@@ -1704,6 +1657,7 @@
 		31B7FC4616333C7C00B808FD /* src */ = {
 			isa = PBXGroup;
 			children = (
+				31B7FC91163DC3A600B808FD /* CMakeLists.txt */,
 				31B7FC4716333C7C00B808FD /* chipmunk.c */,
 				31B7FC4816333C7C00B808FD /* CMakeLists.txt */,
 				31B7FC4916333C7C00B808FD /* constraints */,
@@ -1747,11 +1701,76 @@
 			path = constraints;
 			sourceTree = "<group>";
 		};
+		31C3789F1640895300A850CA /* MicrolendingApp */ = {
+			isa = PBXGroup;
+			children = (
+				3107B7AC1617621900F61B50 /* KeychainItemWrapper.h */,
+				3107B7AD1617621900F61B50 /* KeychainItemWrapper.m */,
+				CD2E134714736E64000A83FE /* PatchButton.h */,
+				CD2E134514736E5B000A83FE /* PatchButton.m */,
+				CDBCCFE3147349E40028EE9A /* DecisionViewController.h */,
+				CDBCCFE4147349E40028EE9A /* DecisionViewController.m */,
+				CDDEA3371469FBE200A387B1 /* LeaderboardViewController.h */,
+				CDDEA3381469FBE200A387B1 /* LeaderboardViewController.m */,
+				CDE41964146100AA00FD1B8D /* CollageViewController.h */,
+				CDE41965146100AA00FD1B8D /* CollageViewController.m */,
+				CDC3D6AF1460748E00360097 /* Sender.h */,
+				0A2C774815A6F40A00C91904 /* RecordTransactions.h */,
+				0A2C774915A6F40A00C91904 /* RecordTransactions.m */,
+				CDC3D6B01460748E00360097 /* Sender.m */,
+				31C3FBE1145E3CAC00688CE7 /* Grabber.h */,
+				0AA5C380159DD077001318BA /* GrabberTwo.h */,
+				0AA5C381159DD077001318BA /* GrabberTwo.m */,
+				0AC32408159C34DA003E2B35 /* LoginGrabber.h */,
+				0AC32409159C34DA003E2B35 /* LoginGrabber.m */,
+				31C3FBE2145E3CAC00688CE7 /* Grabber.m */,
+				CDDEA2B5146887DD00A387B1 /* Transaction.h */,
+				CDDEA2B6146887DD00A387B1 /* Transaction.m */,
+				CDE418331460E14C00FD1B8D /* Badge.h */,
+				CDE418341460E14C00FD1B8D /* Badge.m */,
+				CD308A66144E2C32000A44C8 /* Lender.h */,
+				CD308A67144E2C32000A44C8 /* Lender.m */,
+				CD308BDA144E62A6000A44C8 /* Borrower.h */,
+				CD308BDB144E62A6000A44C8 /* Borrower.m */,
+				1D3623240D0F684500981E51 /* MicrolendingAppDelegate.h */,
+				1D3623250D0F684500981E51 /* MicrolendingAppDelegate.m */,
+				0A74CF7215A3479A00E9E20B /* PayButtonViewController.h */,
+				0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */,
+				0A74CF7415A3479A00E9E20B /* SuccessViewController.h */,
+				0A74CF7515A3479B00E9E20B /* SuccessViewController.m */,
+				CDF6DC091467721600A9030D /* MPCategoryPage.h */,
+				CDF6DC0A1467721600A9030D /* MPCategoryPage.m */,
+				CD308AE8144E4EB3000A44C8 /* LoginViewController.h */,
+				CD308AE9144E4EB3000A44C8 /* LoginViewController.m */,
+				CD308A88144E3916000A44C8 /* ProfileViewController.h */,
+				0A2B632115BE87C5009FACFD /* Logout.h */,
+				0A2B632215BE87C5009FACFD /* Logout.m */,
+				CD308A89144E3916000A44C8 /* ProfileViewController.m */,
+				CD308B63144E566B000A44C8 /* BadgeViewController.h */,
+				CD308B64144E566B000A44C8 /* BadgeViewController.m */,
+				CDBE97441472114800A4D8DB /* SingleBadgeViewController.h */,
+				CDBE97451472114800A4D8DB /* SingleBadgeViewController.m */,
+				CD308C18144E6F3E000A44C8 /* MPViewController.h */,
+				CD308C19144E6F3E000A44C8 /* MPViewController.m */,
+				CD308C40144E72B1000A44C8 /* BorrowerSingleViewController.h */,
+				CD308C41144E72B1000A44C8 /* BorrowerSingleViewController.m */,
+				CD308C6B144E7C47000A44C8 /* InvestmentTableViewController.h */,
+				CD308C6C144E7C47000A44C8 /* InvestmentTableViewController.m */,
+				CDB3E17814635E010047108F /* CustomNavBar.h */,
+				CDB3E17914635E010047108F /* CustomNavBar.m */,
+				CDBE13D31475BF5200F12B3C /* MyBadgesTableViewController.h */,
+				CDBE13D41475BF5200F12B3C /* MyBadgesTableViewController.m */,
+			);
+			name = MicrolendingApp;
+			sourceTree = "<group>";
+		};
 		31E641C7162DF52B004974DD /* Furniture */ = {
 			isa = PBXGroup;
 			children = (
 				3191F7CD161E864F005EEF4A /* Furniture.h */,
 				3191F7CE161E864F005EEF4A /* Furniture.m */,
+				3187E07F162FADB2000996F2 /* ViewFurniture.h */,
+				3187E080162FADB2000996F2 /* ViewFurniture.m */,
 				31E641C9162DF89D004974DD /* Pool.h */,
 				31E641CA162DF89D004974DD /* Pool.m */,
 				31E641CC162E0B52004974DD /* WaterBed.h */,
@@ -1788,8 +1807,6 @@
 				31E641FA162E3BA5004974DD /* WhackAMole.m */,
 				3187E07B162F9F77000996F2 /* FurnitureViewController.h */,
 				3187E07C162F9F77000996F2 /* FurnitureViewController.m */,
-				3187E07F162FADB2000996F2 /* ViewFurniture.h */,
-				3187E080162FADB2000996F2 /* ViewFurniture.m */,
 			);
 			name = Furniture;
 			sourceTree = "<group>";
@@ -1962,6 +1979,9 @@
 				31B7FC6916333C7D00B808FD /* README.textile in Resources */,
 				31B7FC6B16333C7D00B808FD /* CMakeLists.txt in Resources */,
 				31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */,
+				31B7FC92163DC3A600B808FD /* CMakeLists.txt in Resources */,
+				31B7FC95163DC3E300B808FD /* CMakeLists.txt in Resources */,
+				31B7FC97163DC40500B808FD /* CMakeLists.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

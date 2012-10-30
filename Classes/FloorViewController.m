@@ -12,16 +12,17 @@
 @class SingleFloor;
 @class SeedlingView;
 @class Pool;
+@class MicrolendingAppDelegate;
+@class ViewFurniture;
 
 @implementation FloorViewController
 
 @synthesize scrollView;
 @synthesize seedling;
-@synthesize images;
 @synthesize mySeedling;
 @synthesize myTime;
 
-/*
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,47 +30,40 @@
         // Custom initialization
     }
     return self;
-} */
+} 
 
 -(void)viewWillAppear:(BOOL)animated
 {
     NSLog(@"%@", @"viewWillApper!");
 
-    [super viewWillAppear:YES];
+    //[super viewWillAppear:YES];
 }
 - (void)viewDidLoad
 {
     NSLog(@"%@", @"viewDidLoad!");
-    //(X speed, Y speed)
-    pos = CGPointMake(1.0, 1.0);
-    //convert png image to UIImage
-    seedling = [UIImage imageNamed:@"seedling.png"];
     
-    //create frame & init SingleFloor using frame
-    floorOne = CGRectMake(0, 0, 320, 460);
-    SingleFloor *myFloor = [[SingleFloor alloc] initWithFrame:floorOne];
-   
-    //Init SeedlingView and center the seedling
-    mySeedling = [[SeedlingView alloc] initWithImage:seedling];
-    mySeedling.center = CGPointMake(160, 230);
-    
-    [self.view addSubview:myFloor];
-    [self.view addSubview:mySeedling];
+    appDelegate = [[UIApplication sharedApplication] delegate];
 
-    //launch Seedling
-    myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedlingAround) userInfo:nil repeats:YES];
-   
+    //create frame & init SingleFloor using frame
+  //  floorOne = CGRectMake(0, 0, 320, 460);
+    SingleFloor *myFloor = [[SingleFloor alloc] initWithFrame: CGRectMake(0, 0, 320, 370)];
+    [self.view addSubview:myFloor];
+    [self.view setNeedsDisplay];
+    
+    //TO_DO
+    //Find a way of not displaying this when max floors or unable to add floor
+    
     //add purchase button in top floor for buying extra floor
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
     [button addTarget:self action:@selector(newFloor:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"Buy Floor" forState:UIControlStateNormal];
+    [button setTitle:@"new floor" forState:UIControlStateNormal];
     
     button.frame = CGRectMake(0.0, 0.0, 320.0, 20.0);
     [self.view addSubview:button];
     
-    [myFloor release];
-    
+//    [myFloor release];
+ //   [self displayFurniture];
  
     [super viewDidLoad];
 }
@@ -82,9 +76,21 @@
     
 }
 
+-(void)displayFurniture
+{
+    NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
+    NSMutableArray *myfurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
+    for (int k=0; k < myfurniture.count; k++) {
+        NSLog(@"My Furniture: %@", [myfurniture objectAtIndex:k]);
+        NSString *item = [[myfurniture objectAtIndex:k] itemName];
+        NSLog(@"My furniture name: %@", item);
+
+    }
+}
+
 -(void)moveSeedlingAround
 {
- //   NSLog(@"%@", @"in moveAround!");
+    NSLog(@"%@", @"in moveSeedlingAround!");
     mySeedling.center = CGPointMake(mySeedling.center.x+pos.x, mySeedling.center.y+pos.y);
     if (mySeedling.center.x > 320 || mySeedling.center.x < 0) {
         pos.x = -pos.x;

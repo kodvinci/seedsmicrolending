@@ -27,11 +27,13 @@
     // Retrieve stored data from NSUserDefaults before the view loads
     //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //citFloors = [defaults integerForKey:@"floors"];
-    
+
     citFloors = [appDelegate.citadelData integerForKey:@"floors"];
     level = [appDelegate.citadelData integerForKey:@"level"];
     seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
-    citFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
+    NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
+    citFurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
+
     citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];
     
     NSLog(@"%@", @"calling citadelSetUpDone...");

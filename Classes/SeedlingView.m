@@ -14,6 +14,7 @@
 
 - (id)initWithImage:(UIImage *)image
 {
+    NSLog(@"SeedlingView: %@", @"initWithImage...");
     self = [super initWithImage:image];
     if (self) {
         // Initialization code

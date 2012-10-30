@@ -26,6 +26,28 @@
 	return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.myName = [decoder decodeObjectForKey:@"myName"];
+        self.myHappiness = [decoder decodeIntegerForKey:@"myHappiness"];
+        self.myXP = [decoder decodeIntegerForKey:@"myXP"];
+        self.myRelationships = [decoder decodeObjectForKey:@"myRelationships"];
+        self.myDesires = [decoder decodeObjectForKey:@"myDesires"];
+        self.myImage = [decoder decodeObjectForKey:@"myImage"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:myName forKey:@"myName"];
+    [encoder encodeInteger:myHappiness forKey:@"myHappiness"];
+    [encoder encodeInteger:myXP forKey:@"myXP"];
+    [encoder encodeObject:myRelationships forKey:@"myRelationships"];
+    [encoder encodeObject:myDesires forKey:@"myDesires"];
+    [encoder encodeObject:myImage forKey:@"myImage"];
+}
+
+
 - (void) updateHappiness: (int) happinessDifference {
     myHappiness += happinessDifference;
 }

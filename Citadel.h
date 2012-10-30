@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
+#import "Furniture.h"
 
 @protocol CitadelDelegate <NSObject>
 
