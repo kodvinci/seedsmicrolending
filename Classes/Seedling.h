@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CCSprite.h"
-# import <CCTouchDelegateProtocol.h>
+#import "Furniture.h"
 
-@interface Seedling : CCSprite <CCTargetedTouchDelegate> {
+@interface Seedling : CCSprite {
     NSString *myName;
     UIImageView *myImage;
     int myHappiness;
@@ -33,5 +33,7 @@
 
 //define boundary for collisions
 -(CGRect) getBounds;
+-(Boolean) hasCollidedWithFurniture: (Furniture*) piece;
+
 
 @end

@@ -26,10 +26,6 @@
 	return self;
 }
 
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    return true;
-}
-
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.myName = [decoder decodeObjectForKey:@"myName"];
@@ -86,5 +82,12 @@
                       position_.y - size.height* anchorPoint_.y, size.width,
                       size.height);
 }
-
+-(Boolean) hasCollidedWithFurniture: (Furniture*) piece{
+    CGRect seedling = [self  getBounds];
+    CGRect furniture= [piece getBounds];
+    if(CGRectIntersectsRect(seedling, furniture)){
+        return true;
+    }
+    return false;
+}
 @end
