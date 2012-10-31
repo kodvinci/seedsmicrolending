@@ -9,12 +9,12 @@
 #import "Seedling.h"
 
 @implementation Seedling
-@synthesize myName;
-@synthesize myImage;
-@synthesize myHappiness;
-@synthesize myXP;
-@synthesize myRelationships;
-@synthesize myDesires;
+@synthesize myName = myName_;
+@synthesize myImage = myImage_;
+@synthesize myHappiness = myHappiness_;
+@synthesize myXP = myXP_;
+@synthesize myRelationships = myRelationships_;
+@synthesize myDesires = myDesires_;
 
 -(id)initWithImage:(NSString *)imageName {
 	self = [super init];

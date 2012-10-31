@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCSprite.h"
 
-@interface Seedling : NSObject <NSCoding> {
+@interface Seedling : CCSprite {
     NSString *myName;
     UIImageView *myImage;
     int myHappiness;
