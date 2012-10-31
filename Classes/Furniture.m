@@ -10,7 +10,7 @@
 
 @implementation Furniture
 
-@synthesize desire1, desire2, itemName, itemLevel, users, useTime, itemWidth, happinessReward1, happinessReward2, coinsCost, leavesCost, furnPic;
+@synthesize desire1 = desire1_, desire2 = desire2_, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_;
 
 /*
 //Make it illegal to initialize the class
@@ -113,5 +113,12 @@
   */ //WHY DOES IT CRASH WHEN I DEALLOC THE ABOVE 3 @property variables?
     [super dealloc];
 }
-
+-(CGRect) getBounds{
+    CGSize size = [self contentSize];
+    size.width *= scaleX_;
+    size.height += scaleY_;
+    return CGRectMake( position_.x - size.width* anchorPoint_.x,
+                      position_.y - size.height* anchorPoint_.y, size.width,
+                      size.height);
+}
 @end

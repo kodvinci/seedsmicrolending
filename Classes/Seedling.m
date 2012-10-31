@@ -7,6 +7,8 @@
 //
 
 #import "Seedling.h"
+#import "CCSprite.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation Seedling
 @synthesize myName = myName_;
@@ -16,16 +18,20 @@
 @synthesize myRelationships = myRelationships_;
 @synthesize myDesires = myDesires_;
 
--(id)initWithImage:(NSString *)imageName {
+// initialize the seedling with the given image
+-(id)initWithImage:(NSString *) name : (NSString *) image {
 	self = [super init];
-    myName = imageName;
+    myName = name;
     myHappiness = 0;
     myXP = 0;
     myRelationships = [NSMutableDictionary dictionary];
     myDesires = [NSMutableDictionary dictionary];
+    [self initWithFile: image rect:CGRectMake(0, 0, 20, 40)];
 	return self;
 }
 
+
+// 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.myName = [decoder decodeObjectForKey:@"myName"];
@@ -73,5 +79,14 @@
     [myDesires release];
     [super dealloc];
 }
+
+//-(CGRect) getBounds{
+//    CGSize size = [self contentSize];
+//    size.width *= scaleX_;
+//    size.height += scaleY_;
+//    return CGRectMake( position_.x - size.width* anchorPoint_.x,
+//                      position_.y - size.height* anchorPoint_.y, size.width,
+//                      size.height);
+//}
 
 @end

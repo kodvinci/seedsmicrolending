@@ -51,5 +51,7 @@
 -(void)setPurchaseCostCoins:(NSInteger)cost;
 -(void)setUpgradeCostLeaves:(NSInteger)cost;
 -(void)setUpgradeCostCoins:(NSInteger)cost;
+//define boundary for collisions
+-(CGRect) getBounds;
 
 @end

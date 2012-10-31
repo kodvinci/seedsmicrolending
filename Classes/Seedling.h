@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "CCSprite.h"
+#import <CCTouchDelegateProtocol.h>
 
 @interface Seedling : CCSprite {
     NSString *myName;
-    UIImageView *myImage;
+    NSString *myImage;
     int myHappiness;
     int myXP;
     NSMutableDictionary *myRelationships;
@@ -19,7 +20,7 @@
 }
 
 @property (nonatomic, retain) NSString *myName;
-@property (nonatomic, retain) UIImageView *myImage;
+@property (nonatomic, retain) NSString *myImage;
 @property (nonatomic, assign) int myHappiness;
 @property (nonatomic, assign) int myXP;
 @property (nonatomic, retain) NSMutableDictionary *myRelationships;
@@ -28,6 +29,9 @@
 
 - (void) updateHappiness: (int) happinessDifference;
 - (void) updateXP: (int) xpDifference;
--(id)initWithImage: (NSString *) imageName;
+- (id) initWithImage: (NSString *) name : (NSString *) image;
+
+//define boundary for collisions
+// -(CGRect) getBounds;
 
 @end
