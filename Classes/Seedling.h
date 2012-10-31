@@ -31,4 +31,7 @@
 - (void) updateXP: (int) xpDifference;
 -(id)initWithImage: (NSString *) imageName;
 
+//define boundary for collisions
+-(CGRect) getBounds;
+
 @end
