@@ -12,10 +12,11 @@
 @class MicrolendingAppDelegate;
 @class SeedlingView;
 @class ViewFurniture;
+@class Citadel;
 
 @implementation SingleFloor
 
-@synthesize seedling, mySeedling, myFun;
+@synthesize seedling, mySeedling, myFun, furniture, myTime;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -29,6 +30,18 @@
     }
     return self;
 }
+
+/*
+-(void)needToRefreshView:(BOOL)result
+{
+    NSLog(@"%@", @"needToRefreshView!");
+    if (result) {
+ //need to redraw view
+        NSLog(@"NumFloors: %@", [appDelegate.citadelData objectForKey:@"floors"]);
+        [self setNeedsDisplay];
+    }
+
+}*/
 
 -(void)setupSeedling
 {
@@ -46,6 +59,9 @@
     if (numFloors == 2) {
         mySeedling.center = CGPointMake(160, 277.5);
     }
+    if (numFloors == 3) {
+        mySeedling.center = CGPointMake(160, 320);
+    }
     
     //launch Seedling
     myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedlingAround) userInfo:nil repeats:YES];
@@ -54,15 +70,18 @@
     
 }
 
+
 -(void)moveSeedlingAround
 {
-    NSLog(@"%@", @"in moveSeedlingAround!");
+//    NSLog(@"%@", @"in moveSeedlingAround!");
+    int floorY = 370/numFloors;
+    int Ypos = (floorY * numFloors) - floorY + 30;
 
     mySeedling.center = CGPointMake(mySeedling.center.x+pos.x, mySeedling.center.y+pos.y);
     if (mySeedling.center.x > 320 || mySeedling.center.x < 0) {
         pos.x = -pos.x;
     }
-    if (mySeedling.center.y > (370) || mySeedling.center.y < 210) { //center = 185
+    if (mySeedling.center.y > (370) || mySeedling.center.y < Ypos) { 
         pos.y = -pos.y;
     }
 }
@@ -92,10 +111,10 @@
         
         for (int f=0; f<numFloors; f++) {
             if (f == 0) {
-                floor2 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / numFloors);
+                floor1 = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height / numFloors);
           
                 [[UIColor blueColor] set]; // blue color
-                UIRectFill(floor2);
+                UIRectFill(floor1);
                 floorYorigin = rect.size.height / numFloors;
                 
                  [self setupSeedling];
@@ -104,12 +123,22 @@
             }
         
             if (f == 1) {
-                floor1 = CGRectMake(rect.origin.x, rect.origin.y + floorYorigin, rect.size.width, rect.size.height / numFloors);
+                floor2 = CGRectMake(rect.origin.x, rect.origin.y + floorYorigin, rect.size.width, rect.size.height / numFloors);
             
                 [[UIColor redColor] set]; // red color
-                UIRectFill(floor1);
+                UIRectFill(floor2);
                 floorYorigin += rect.size.height / numFloors;
 
+                [self displayFurniture];
+                [self setupSeedling];
+            }
+            if (f == 2) {
+                floor3 = CGRectMake(rect.origin.x, rect.origin.y + floorYorigin, rect.size.width, rect.size.height / numFloors);
+                
+                [[UIColor yellowColor] set]; // yellow color
+                UIRectFill(floor3);
+                floorYorigin += rect.size.height / numFloors;
+                
                 [self displayFurniture];
                 [self setupSeedling];
             }
@@ -164,5 +193,15 @@
 //    [[UIColor greenColor] set];
 //	UIRectFill(rect);
 }
-    
+  
+-(void)dealloc
+{
+    [super dealloc];
+    [seedling release];
+    [mySeedling release];
+    [myTime release];
+    [furniture release];
+    [myFun release];
+}
+
 @end

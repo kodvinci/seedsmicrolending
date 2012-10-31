@@ -6,18 +6,23 @@
 //
 //
 
+@protocol CitadelDelegate <NSObject>
+
+-(void)citadelSetUpDone:(BOOL)result;
+-(void)needToRefreshView:(BOOL)result;
+
+@end
+
 #import <Foundation/Foundation.h>
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
 #import "Furniture.h"
+#import "FloorViewController.h"
+#import "SingleFloor.h"
+#import "Floor.h"
 
-@protocol CitadelDelegate <NSObject>
-
--(void)citadelSetUpDone:(BOOL)result;
-
-@end
-
-@interface Citadel : NSObject {
+@interface Citadel : NSObject
+{
     MicrolendingAppDelegate *appDelegate;
     NSInteger citFloors;
     NSMutableArray *citFurniture;
@@ -25,10 +30,16 @@
     NSMutableArray *citSeedlings;
     id citadelDelegate;
     
-    //Not sure if we need these variables
+    //Player variables
+    NSInteger playerLevel;
+    NSInteger playerCoins;
+    NSInteger playerLeaves;
+    
+    //Floor Variables
     NSInteger totalHeight;
     NSString *floorID;
     NSInteger seedlingID;
+    
     
 }
 
@@ -39,9 +50,10 @@
 @property(nonatomic, retain) id citadelDelegate;
 
 -(void)initialize;
--(void)addFloor;
+-(void)addFloor:(NSInteger)floorNumber;
 -(void)addSeedling;
 -(void)addFurniture;
 -(void)saveChanges:(NSString *)thisChanged;
 
+-(void) findHappyObj:(Seedling *)seed;
 @end

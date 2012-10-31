@@ -36,8 +36,9 @@
 {
     NSLog(@"%@", @"viewWillApper!");
 
-    //[super viewWillAppear:YES];
+    [super viewWillAppear:YES];
 }
+
 - (void)viewDidLoad
 {
     NSLog(@"%@", @"viewDidLoad!");
@@ -54,9 +55,10 @@
     //Find a way of not displaying this when max floors or unable to add floor
     
     //add purchase button in top floor for buying extra floor
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [button addTarget:self action:@selector(newFloor:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundColor:[UIColor greenColor]];
     [button setTitle:@"new floor" forState:UIControlStateNormal];
     
     button.frame = CGRectMake(0.0, 0.0, 320.0, 20.0);
@@ -68,9 +70,9 @@
     [super viewDidLoad];
 }
 
--(void)newFloor
-{ //TO_DO: Figure out why it causes a crash ...
-   NSLog(@"%@", @"Implement purchase of a new floor!");
+-(void) newFloor:(id)sender
+{
+    NSLog(@"%@", @"Implement purchase of a new floor!");
     Citadel *iCit = [Citadel alloc];
     [iCit addFloor];
     

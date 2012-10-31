@@ -15,23 +15,25 @@
 @end
 
 @interface Floor : NSObject {
-    NSMutableArray *furniture;
-    NSString *numOfFloors;
-    NSString *level;
-    NSString *floorID;
-    NSInteger seedlingID;
+    //Floor variables
+    NSInteger floorID;
+    NSInteger playerLevelReq;
+    NSInteger floorCoinsCost;
+    NSInteger earlyUnlockCost;
+    NSInteger growTime;
+    NSMutableArray *floorFurniture;
+    
     id floorDelegate;
 
 }
 
-@property(nonatomic, retain) NSMutableArray *furniture;
-@property(nonatomic, retain) NSString * numOfFloors;
-@property(nonatomic, retain) NSString *level;
+@property(nonatomic, assign) NSInteger playerLevelReq;
+@property(nonatomic, assign) NSInteger floorCoinsCost;
+@property(nonatomic, assign) NSInteger earlyUnlockCost;
 @property(nonatomic, retain) id floorDelegate;
-@property(nonatomic, retain) NSString *floorID;
-@property(nonatomic, assign) NSInteger seedlingID;
+@property(nonatomic, assign) NSInteger floorID;
+@property(nonatomic, retain) NSMutableArray *floorFurniture;
 
--(void)initializeFloorItems;
--(void)addFloor;
-
+-(void)initWithGrowTime:(NSInteger) growTime;
+-(void)initImmediately;
 @end

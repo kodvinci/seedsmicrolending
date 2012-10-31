@@ -10,6 +10,9 @@
 
 @class MicrolendingAppDelegate;
 @class Seedling;
+@class FloorViewController;
+@class SingleFloor;
+@class Floor;
 
 @implementation Citadel
 
@@ -18,6 +21,7 @@
 @synthesize level;
 @synthesize citSeedlings;
 @synthesize citadelDelegate;
+
 
 -(void)initialize
 {
@@ -29,6 +33,7 @@
     //citFloors = [defaults integerForKey:@"floors"];
 
     citFloors = [appDelegate.citadelData integerForKey:@"floors"];
+    NSLog(@"my citFloors:%d", citFloors);
     level = [appDelegate.citadelData integerForKey:@"level"];
     seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
     NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
@@ -41,12 +46,48 @@
 
 }
 
--(void)addFloor
+-(void)addFloor:(NSInteger)floorNumber
 {
     //TO_DO
-    //Do whatever setup might be needed
+    //Do whatever setup might be needed to determine if one can add floor
+    if (floorNumber == 1) {
+        //all players can purchase this floor
+        if (playerCoins >= 100) {
+            playerCoins = playerCoins - 100;
+            //TO_DO
+            //initialize floor with grow time = 5 minutes
+            Floor *myFloor = [Floor alloc];
+            [myFloor init];
+        }
+        else {
+            //Alert player that they do not have enough coins to buy floor
+        }
+    }
+    if (floorNumber == 2) {
+        if (playerLevel >= 3) {
+            if (playerCoins >= 1000) {
+                //have enough coins to buy floor
+                playerCoins = playerCoins - 1000;
+                //TO_DO
+                //initialize floor with grow time = 1 hour
+                
+            }
+        }
+    }
     
-    citFloors = citFloors + 1;
+    NSInteger maxFloors = 3; //Make maximum floors 3 for testing purposes
+    appDelegate = [[UIApplication sharedApplication] delegate];
+//    appDelegate.CitadelDelegate = self;
+    NSInteger x = [appDelegate.citadelData integerForKey:@"floors"] + 1;
+    if (x > maxFloors) {
+        citFloors = maxFloors;
+    }
+    else {
+        citFloors = x;
+    }
+    
+    NSLog(@"new floors:%d", citFloors);
+    
     [self saveChanges:@"FLOOR"];
 }
 
@@ -77,6 +118,7 @@
 {
     if ([thisChanged isEqualToString:@"FLOOR"]) {
         [appDelegate.citadelData setInteger:citFloors forKey:@"floors"];
+        [appDelegate.citadelData synchronize];
     }
     
     if ([thisChanged isEqualToString:@"SEEDLING"]) {
@@ -86,6 +128,16 @@
     if ([thisChanged isEqualToString:@"FURNITURE"]) {
         [appDelegate.citadelData setObject:citFurniture forKey:@"furniture"];
     }
+    NSLog(@"NumFloors:%@", [appDelegate.citadelData objectForKey:@"floors"]);
+  
+    
+   [self.citadelDelegate needToRefreshView:YES];
+
+}
+
+-(void)findHappyObj:(Seedling *)seed
+{
+    
 }
 
 @end

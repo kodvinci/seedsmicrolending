@@ -10,35 +10,34 @@
 
 @implementation Floor
     
-@synthesize furniture;
-@synthesize numOfFloors;
-@synthesize level;
+@synthesize playerLevelReq;
+@synthesize floorCoinsCost;
+@synthesize earlyUnlockCost;
 @synthesize floorDelegate;
 @synthesize floorID;
+@synthesize floorFurniture;
 
--(void)initializeFloorItems
+//Give it to player based on method of purchase
+
+-(void)initWithGrowTime:(NSInteger)growTime
 {
     NSLog(@"%@", @"In initializeFloor");
-    // Get the stored data before the view loads
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    numOfFloors = [defaults objectForKey:@"floors"];
-    level = [defaults objectForKey:@"level"];
-    seedlingID = [defaults integerForKey:@"seedling"];
-    furniture = [defaults objectForKey:@"furniture"];
    
     NSLog(@"%@",@"Finished Initializing floor items");
-    [self.floorDelegate didFinishSettingFloor:YES];
+   // [self.floorDelegate didFinishSettingFloor:YES];
     
-    NSLog(@"%@", numOfFloors);
-    NSLog(@"%@", level);
-    NSLog(@"%d", seedlingID);
-    NSLog(@"%@", furniture);
+    [floorFurniture init];
 }
 
-//Method called when the top of the current floor is tapped to purchase an additional floor
--(void)addFloor
+-(void)initImmediately
 {
-    
+
+    [floorFurniture init];
+}
+
+-(void)addFurnitureToFloor:(Class *)furnitureClass
+{
+    [floorFurniture addObject:furnitureClass];
 }
 
 @end

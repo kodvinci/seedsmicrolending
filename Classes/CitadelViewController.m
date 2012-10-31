@@ -41,7 +41,7 @@
     //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously 
    
     // Create variables to store Citadel information
-    numOfFloors = 2;
+    numOfFloors = 1;
     level = 1;
     seedlingID = 1;
     //pool
@@ -92,6 +92,18 @@
         [myCitadelFloors release];
     }
 }
+-(void)needToRefreshView:(BOOL)result
+{
+    NSLog(@"CitadelViewController: %@", @"needToRefreshView!");
+    if (result) {
+        NSLog(@"NumFloors: %@", [appDelegate.citadelData objectForKey:@"floors"]);
+        FloorViewController *myCitadelFloors = [[FloorViewController alloc] init];
+        [self.navigationController pushViewController:myCitadelFloors animated:YES];
+        
+        [myCitadelFloors release];
+    }
+    
+}
 
 - (void)viewDidLoad
 {
@@ -107,6 +119,11 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

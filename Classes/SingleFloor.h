@@ -12,8 +12,10 @@
 #import "FloorViewController.h"
 #import "SeedlingView.h"
 #import "ViewFurniture.h"
+#import "Citadel.h"
 
-@interface SingleFloor : UIView
+
+@interface SingleFloor : UIView 
 {
     MicrolendingAppDelegate *appDelegate;
     CGRect floor1;

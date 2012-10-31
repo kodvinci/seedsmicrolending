@@ -264,6 +264,7 @@
 		31E641F5162E36E3004974DD /* HamsterWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F4162E36E2004974DD /* HamsterWheel.m */; };
 		31E641F8162E3AEC004974DD /* StrongmanHammer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F7162E3AEB004974DD /* StrongmanHammer.m */; };
 		31E641FB162E3BA6004974DD /* WhackAMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641FA162E3BA5004974DD /* WhackAMole.m */; };
+		31F323C11640D56700E6B92E /* TraitDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F323C01640D56700E6B92E /* TraitDice.m */; };
 		31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC41DD1633232F0042278D /* OpenGLES.framework */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
@@ -835,6 +836,8 @@
 		31E641F7162E3AEB004974DD /* StrongmanHammer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrongmanHammer.m; sourceTree = "<group>"; };
 		31E641F9162E3BA4004974DD /* WhackAMole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhackAMole.h; sourceTree = "<group>"; };
 		31E641FA162E3BA5004974DD /* WhackAMole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhackAMole.m; sourceTree = "<group>"; };
+		31F323BF1640D56700E6B92E /* TraitDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitDice.h; sourceTree = "<group>"; };
+		31F323C01640D56700E6B92E /* TraitDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitDice.m; sourceTree = "<group>"; };
 		31FC41DD1633232F0042278D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
@@ -1110,6 +1113,8 @@
 		3187E08B16307C03000996F2 /* Citadel */ = {
 			isa = PBXGroup;
 			children = (
+				31F323BF1640D56700E6B92E /* TraitDice.h */,
+				31F323C01640D56700E6B92E /* TraitDice.m */,
 				31CB22A316179B8A005C97D5 /* Citadel.h */,
 				31CB22A416179B8A005C97D5 /* Citadel.m */,
 				3107B8001617809B00F61B50 /* CitadelViewController.h */,
@@ -2236,6 +2241,7 @@
 				31B7FC8516333C7D00B808FD /* cpSpatialIndex.c in Sources */,
 				31B7FC8616333C7D00B808FD /* cpSweep1D.c in Sources */,
 				31B7FC8716333C7D00B808FD /* cpVect.c in Sources */,
+				31F323C11640D56700E6B92E /* TraitDice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
