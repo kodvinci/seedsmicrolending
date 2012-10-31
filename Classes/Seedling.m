@@ -26,6 +26,10 @@
 	return self;
 }
 
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    return true;
+}
+
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.myName = [decoder decodeObjectForKey:@"myName"];

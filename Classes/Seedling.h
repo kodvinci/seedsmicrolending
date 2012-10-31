@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CCSprite.h"
+# import <CCTouchDelegateProtocol.h>
 
-@interface Seedling : CCSprite {
+@interface Seedling : CCSprite <CCTargetedTouchDelegate> {
     NSString *myName;
     UIImageView *myImage;
     int myHappiness;

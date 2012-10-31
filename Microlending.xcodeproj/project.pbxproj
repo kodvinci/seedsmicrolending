@@ -56,7 +56,6 @@
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
 		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
-		3191F7F3162095CE005EEF4A /* SeedlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7F2162095CE005EEF4A /* SeedlingView.m */; };
 		31B7FAD516333BB700B808FD /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1416333BB700B808FD /* CCAction.m */; };
 		31B7FAD616333BB700B808FD /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1616333BB700B808FD /* CCActionCamera.m */; };
 		31B7FAD716333BB700B808FD /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1816333BB700B808FD /* CCActionCatmullRom.m */; };
@@ -266,6 +265,7 @@
 		31E641FB162E3BA6004974DD /* WhackAMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641FA162E3BA5004974DD /* WhackAMole.m */; };
 		31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC41DD1633232F0042278D /* OpenGLES.framework */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
+		92B7F13A1640D828003F90E8 /* TraitDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B7F1391640D828003F90E8 /* TraitDice.m */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
 		CD308A68144E2C32000A44C8 /* Lender.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A67144E2C32000A44C8 /* Lender.m */; };
@@ -411,8 +411,6 @@
 		3191F7E816208AC3005EEF4A /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
 		3191F7E916208AC3005EEF4A /* Seedling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seedling.m; sourceTree = "<group>"; };
 		3191F7EC16208CB8005EEF4A /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
-		3191F7F1162095CE005EEF4A /* SeedlingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingView.h; sourceTree = "<group>"; };
-		3191F7F2162095CE005EEF4A /* SeedlingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingView.m; sourceTree = "<group>"; };
 		31B7FA1316333BB700B808FD /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		31B7FA1416333BB700B808FD /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
 		31B7FA1516333BB700B808FD /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
@@ -839,6 +837,8 @@
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		92B7F1391640D828003F90E8 /* TraitDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitDice.m; sourceTree = "<group>"; };
+		92B7F13C1640D833003F90E8 /* TraitDice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TraitDice.h; sourceTree = "<group>"; };
 		CD2DF6241479B53700884EA0 /* lender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lender.png; sourceTree = "<group>"; };
 		CD2E134514736E5B000A83FE /* PatchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatchButton.m; sourceTree = "<group>"; };
 		CD2E134714736E64000A83FE /* PatchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatchButton.h; sourceTree = "<group>"; };
@@ -1101,8 +1101,6 @@
 			children = (
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
-				3191F7F1162095CE005EEF4A /* SeedlingView.h */,
-				3191F7F2162095CE005EEF4A /* SeedlingView.m */,
 			);
 			name = Seedling;
 			sourceTree = "<group>";
@@ -1110,6 +1108,8 @@
 		3187E08B16307C03000996F2 /* Citadel */ = {
 			isa = PBXGroup;
 			children = (
+				92B7F13C1640D833003F90E8 /* TraitDice.h */,
+				92B7F1391640D828003F90E8 /* TraitDice.m */,
 				31CB22A316179B8A005C97D5 /* Citadel.h */,
 				31CB22A416179B8A005C97D5 /* Citadel.m */,
 				3107B8001617809B00F61B50 /* CitadelViewController.h */,
@@ -2046,7 +2046,6 @@
 				31CB22BE161BCF8C005C97D5 /* SingleFloor.m in Sources */,
 				3191F7CF161E864F005EEF4A /* Furniture.m in Sources */,
 				3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */,
-				3191F7F3162095CE005EEF4A /* SeedlingView.m in Sources */,
 				31E641CB162DF89D004974DD /* Pool.m in Sources */,
 				31E641CE162E0B52004974DD /* WaterBed.m in Sources */,
 				31E641D1162E296E004974DD /* Hammock.m in Sources */,
@@ -2236,6 +2235,7 @@
 				31B7FC8516333C7D00B808FD /* cpSpatialIndex.c in Sources */,
 				31B7FC8616333C7D00B808FD /* cpSweep1D.c in Sources */,
 				31B7FC8716333C7D00B808FD /* cpVect.c in Sources */,
+				92B7F13A1640D828003F90E8 /* TraitDice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
