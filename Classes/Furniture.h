@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCSprite.h"
+#import <CCTouchDelegateProtocol.h>
 
-@interface Furniture : NSObject <NSCoding>
+@interface Furniture : CCSprite <CCTargetedTouchDelegate>
 {
     NSString *itemName;
     NSString *desire1;
@@ -51,5 +53,7 @@
 -(void)setPurchaseCostCoins:(NSInteger)cost;
 -(void)setUpgradeCostLeaves:(NSInteger)cost;
 -(void)setUpgradeCostCoins:(NSInteger)cost;
+//define boundary for collisions
+-(CGRect) getBounds;
 
 @end

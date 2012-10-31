@@ -113,5 +113,12 @@
   */ //WHY DOES IT CRASH WHEN I DEALLOC THE ABOVE 3 @property variables?
     [super dealloc];
 }
-
+-(CGRect) getBounds{
+    CGSize size = [self contentSize];
+    size.width *= scaleX_;
+    size.height += scaleY_;
+    return CGRectMake( position_.x - size.width* anchorPoint_.x,
+                      position_.y - size.height* anchorPoint_.y, size.width,
+                      size.height);
+}
 @end
