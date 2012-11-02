@@ -56,63 +56,8 @@
     [encoder encodeObject:furnPic forKey:@"furnPic"];
 }
 
--(void)setFurnitureName:(NSString *)name
-{
-    itemName = name;
-}
--(void)setFurnitureLevel:(NSInteger)level
-{
-    itemLevel = level;
-}
--(void)setNumUsers:(NSInteger)NumUsers
-{
-    users = NumUsers;
-}
--(void)setUseTime:(NSInteger)time
-{
-    useTime = time; 
-}
--(void)setItemWidth:(NSInteger)width
-{
-    itemWidth = width;
-}
--(void)setDesire1:(NSString *)desire
-{
-    desire1 = desire;
-}
--(void)setDesire2:(NSString *)desire
-{
-    desire2 = desire;
-}
--(void)setHappinessReward1:(NSInteger)happiness
-{
-    happinessReward1 = happiness;
-}
--(void)setHappinessReward2:(NSInteger)happiness
-{
-    happinessReward2 = happiness;
-}
--(void)setPurchaseCostCoins:(NSInteger)cost
-{
-    purchaseCost = cost;
-}
--(void)setUpgradeCostLeaves:(NSInteger)cost
-{
-    leavesCost = cost;
-}
--(void)setUpgradeCostCoins:(NSInteger)cost
-{
-    coinsCost = cost;
-}
 
--(void) dealloc
-{/*
-    [desire1 release];
-    [desire2 release];
-    [itemName release];
-  */ //WHY DOES IT CRASH WHEN I DEALLOC THE ABOVE 3 @property variables?
-    [super dealloc];
-}
+/* //Commented out this section for now - Leonard's copy...
 -(CGRect) getBounds{
     CGSize size = [self contentSize];
     size.width *= scaleX_;
@@ -121,4 +66,5 @@
                       position_.y - size.height* anchorPoint_.y, size.width,
                       size.height);
 }
+*/
 @end

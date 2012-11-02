@@ -15,6 +15,8 @@
 @class Citadel;
 @class Furniture;
 @class Pool;
+@class BuyFurnitureViewController;
+
 
 @implementation CitadelViewController
 
@@ -36,6 +38,13 @@
     return self;
 }*/
 
+-(IBAction)furnitureStore
+{
+    BuyFurnitureViewController *myFurniture = [[BuyFurnitureViewController alloc] init];
+	[self.navigationController pushViewController:myFurniture animated:YES];
+    [myFurniture release];
+}
+
 - (IBAction)begin
 {
     //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously 
@@ -45,9 +54,9 @@
     level = 1;
     seedlingID = 1;
     //pool
-    UIImage *poolPic = [UIImage imageNamed:@"pool"];
+//    UIImage *poolPic = [UIImage imageNamed:@"pool"];
     poolFurn = [Pool alloc ];
-    [poolFurn initWithLevel:1 image:poolPic];
+    [poolFurn initWithLevel:1];
     furniture  = [[NSMutableArray alloc] initWithObjects: nil];
     [furniture addObject:poolFurn];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];

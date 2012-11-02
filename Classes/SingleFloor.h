@@ -13,7 +13,7 @@
 #import "SeedlingView.h"
 #import "ViewFurniture.h"
 #import "Citadel.h"
-
+#import "Seedling.h"
 
 @interface SingleFloor : UIView 
 {

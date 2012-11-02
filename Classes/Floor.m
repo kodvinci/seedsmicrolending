@@ -35,7 +35,7 @@
     [floorFurniture init];
 }
 
--(void)addFurnitureToFloor:(Class *)furnitureClass
+-(void)addFurnitureToFloor:(Class *)furnitureClass //ClassWithString()
 {
     [floorFurniture addObject:furnitureClass];
 }

@@ -12,32 +12,33 @@
 
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
-    [self setFurnitureName:@"yogapad"];
-    [self setNumUsers:2];
-    [self setUseTime:30];
-    [self setItemWidth:2];
-    [self setDesire1:@"relax"];
-    [self setDesire2:@"strength"];
+    self.furnPic = [UIImage imageNamed:@"yogapad"];
+    self.itemName = @"yogapad";
+    self.users = 2;
+    self.useTime = 30;
+    self.itemWidth = 2;
+    self.desire1 = @"relax";
+    self.desire2 = @"strength";
     
     if (furnitureLevel == 1) {
-        [self setFurnitureLevel:1];
-        [self setHappinessReward1:2];
-        [self setHappinessReward2:1];
-        [self setPurchaseCostCoins:250];
+        self.itemLevel = 1;
+        self.happinessReward1 = 2;
+        self.happinessReward2 = 1;
+        self.purchaseCost = 250;
     }
     if (furnitureLevel == 2) {
-        [self setFurnitureLevel:2];
-        [self setHappinessReward1:3];
-        [self setHappinessReward2:1];
-        [self setUpgradeCostCoins:1000];
-        [self setUpgradeCostLeaves:3];
+        self.itemLevel = 2;
+        self.happinessReward1 = 3;
+        self.happinessReward2 = 1;
+        self.coinsCost = 1000;
+        self.leavesCost = 3;
     }
     if (furnitureLevel == 3) {
-        [self setFurnitureLevel:3];
-        [self setHappinessReward1:3];
-        [self setHappinessReward2:2];
-        [self setUpgradeCostCoins:4000];
-        [self setUpgradeCostLeaves:6];
+        self.itemLevel = 3;
+        self.happinessReward1 = 3;
+        self.happinessReward2 = 2;
+        self.coinsCost = 4000;
+        self.leavesCost = 6;
     }
 }
 

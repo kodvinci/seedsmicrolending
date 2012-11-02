@@ -13,6 +13,5 @@
     
 }
 
--(void)initWithLevel:(NSInteger)furnitureLevel image:(UIImage *)pic;
-
+-(void)initWithLevel:(NSInteger)furnitureLevel;
 @end

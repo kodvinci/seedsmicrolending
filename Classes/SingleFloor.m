@@ -13,6 +13,7 @@
 @class SeedlingView;
 @class ViewFurniture;
 @class Citadel;
+@class Seedling;
 
 @implementation SingleFloor
 

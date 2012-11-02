@@ -11,34 +11,35 @@
 @implementation WhackAMole
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
-    [self setFurnitureName:@"whackamole"];
-    [self setUseTime:30];
-    [self setItemWidth:2];
-    [self setDesire1:@"strength"];
-    [self setDesire2:@"acrobatic"];
+    self.furnPic = [UIImage imageNamed:@"whackamole"];
+    self.itemName = @"whackamole";
+    self.useTime = 30;
+    self.itemWidth = 2;
+    self.desire1 = @"strength";
+    self.desire2 = @"acrobatic";
     
     if (furnitureLevel == 1) {
-        [self setFurnitureLevel:1];
-        [self setNumUsers:1];
-        [self setHappinessReward1:1];
-        [self setHappinessReward2:2];
-        [self setPurchaseCostCoins:250];
+        self.itemLevel = 1;
+        self.users = 1;
+        self.happinessReward1 = 1;
+        self.happinessReward2 = 2;
+        self.purchaseCost = 250;
     }
     if (furnitureLevel == 2) {
-        [self setFurnitureLevel:2];
-        [self setNumUsers:2];
-        [self setHappinessReward1:1];
-        [self setHappinessReward2:2];
-        [self setUpgradeCostCoins:1000];
-        [self setUpgradeCostLeaves:3];
+        self.itemLevel = 2;
+        self.users = 2;
+        self.happinessReward1 = 1;
+        self.happinessReward2 = 2;
+        self.coinsCost = 1000;
+        self.leavesCost = 3;
     }
     if (furnitureLevel == 3) {
-        [self setFurnitureLevel:3];
-        [self setNumUsers:3];
-        [self setHappinessReward1:1];
-        [self setHappinessReward2:3];
-        [self setUpgradeCostCoins:4000];
-        [self setUpgradeCostLeaves:6];
+        self.itemLevel = 3;
+        self.users = 3;
+        self.happinessReward1 = 1;
+        self.happinessReward2 = 3;
+        self.coinsCost = 4000;
+        self.leavesCost = 6;
     }
 }
 

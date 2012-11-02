@@ -1,0 +1,150 @@
+//
+//  BuyFurnitureViewController.m
+//  Microlending
+//
+//  Created by guest user on 10/31/12.
+//
+//
+
+#import "BuyFurnitureViewController.h"
+
+@interface BuyFurnitureViewController ()
+
+@end
+
+@class MicrolendingAppDelegate;
+@class FurnitureViewController;
+
+@implementation BuyFurnitureViewController
+
+@synthesize furniture;
+@synthesize furnitureName;
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+-(void)dealloc
+{
+    [super dealloc];
+    [furniture release];
+    [furnitureName release];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.title = @"Furniture";
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    furniture = [[NSMutableArray alloc] initWithObjects:@"Pool", @"WaterBed", @"Hammock", @"BookShelf", @"Desk", @"Easel", @"KaraokeMachine", @"Tightrope", @"Barbell", @"WhackAMole",@"StrongmanHammer", @"HamsterWheel", @"ClimbingRope", @"BandStand", @"YogaPad", @"Couch", @"MagmaHotTub", nil ];
+    
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [furniture count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    [cell.textLabel setText:[furniture objectAtIndex:indexPath.row]];
+    
+    // Configure the cell...
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    //set furnitureName
+    furnitureName = [furniture objectAtIndex:indexPath.row];
+    
+    FurnitureViewController *myFurniture = [[FurnitureViewController alloc] initWithNibName:@"FurnitureViewController" bundle:nil className:furnitureName ];
+    
+    [self.navigationController pushViewController:myFurniture animated:YES];
+    [myFurniture release];
+}
+
+@end

@@ -12,32 +12,33 @@
 
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
-    [self setFurnitureName:@"bookshelf"];
-    [self setNumUsers:1];
-    [self setUseTime:30];
-    [self setItemWidth:1];
-    [self setDesire1:@"intelligence"];
-    [self setDesire2:@"relax"];
+    self.furnPic = [UIImage imageNamed:@"bookshelf"];
+    self.itemName = @"bookshelf";
+    self.users = 1;
+    self.useTime = 30;
+    self.itemWidth = 1;
+    self.desire1 = @"intelligence";
+    self.desire2 = @"relax";
     
     if (furnitureLevel == 1) {
-        [self setFurnitureLevel:1];
-        [self setHappinessReward1:2];
-        [self setHappinessReward2:1];
-        [self setPurchaseCostCoins:250];
+        self.itemLevel = 1;
+        self.happinessReward1 = 2;
+        self.happinessReward2 = 1;
+        self.purchaseCost = 250;
     }
     if (furnitureLevel == 2) {
-        [self setFurnitureLevel:2];
-        [self setHappinessReward1:3];
-        [self setHappinessReward2:1];
-        [self setUpgradeCostCoins:1000];
-        [self setUpgradeCostLeaves:3];
+        self.itemLevel = 2;
+        self.happinessReward1 = 3;
+        self.happinessReward2 = 1;
+        self.coinsCost = 1000;
+        self.leavesCost = 3;
     }
     if (furnitureLevel == 3) {
-        [self setFurnitureLevel:3];
-        [self setHappinessReward1:3];
-        [self setHappinessReward2:2];
-        [self setUpgradeCostCoins:4000];
-        [self setUpgradeCostLeaves:6];
+        self.itemLevel = 3;
+        self.happinessReward1 = 3;
+        self.happinessReward2 = 2;
+        self.coinsCost = 4000;
+        self.leavesCost = 6;
     }
 }
 

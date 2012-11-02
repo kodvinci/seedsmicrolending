@@ -12,28 +12,29 @@
 
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
-    [self setFurnitureName:@"Barbell"];
-    [self setNumUsers:1];
-    [self setUseTime:30];
-    [self setItemWidth:1];
-    [self setDesire1:@"strength"];
+    self.furnPic = [UIImage imageNamed:@"barbell"];
+    self.itemName = @"barbell";
+    self.users = 1;
+    self. useTime = 30;
+    self.itemWidth = 1;
+    self.desire1 = @"strength";
     
     if (furnitureLevel == 1) {
-        [self setFurnitureLevel:1];
-        [self setHappinessReward1:5];
-        [self setPurchaseCostCoins:500];
+        self.itemLevel = 1;
+        self.happinessReward1 = 5;
+        self.purchaseCost = 500;
     }
     if (furnitureLevel == 2) {
-        [self setFurnitureLevel:2];
-        [self setHappinessReward1:6];
-        [self setUpgradeCostCoins:2000];
-        [self setUpgradeCostLeaves:5];
+        self.itemLevel = 2;
+        self.happinessReward1 = 6;
+        self.coinsCost = 2000;
+        self.leavesCost = 5;
     }
     if (furnitureLevel == 3) {
-        [self setFurnitureLevel:3];
-        [self setHappinessReward1:7];
-        [self setUpgradeCostCoins:8000];
-        [self setUpgradeCostLeaves:10];
+        self.itemLevel = 3;
+        self.happinessReward1 = 7;
+        self.coinsCost = 8000;
+        self.leavesCost = 10;
     }
 }
 

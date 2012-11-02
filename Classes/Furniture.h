@@ -39,19 +39,7 @@
 @property(nonatomic, assign) NSInteger leavesCost;
 @property(nonatomic, assign) NSInteger purchaseCost;
 
--(void)setFurnitureName:(NSString *)name;
--(void)setFurnitureLevel:(NSInteger)level;
--(void)setNumUsers:(NSInteger)NumUsers;
--(void)setUseTime:(NSInteger)time;
--(void)setItemWidth:(NSInteger)width;
--(void)setDesire1:(NSString *)desire;
--(void)setDesire2:(NSString *)desire;
--(void)setHappinessReward1:(NSInteger)happiness;
--(void)setHappinessReward2:(NSInteger)happiness;
--(void)setPurchaseCostCoins:(NSInteger)cost;
--(void)setUpgradeCostLeaves:(NSInteger)cost;
--(void)setUpgradeCostCoins:(NSInteger)cost;
 //define boundary for collisions
--(CGRect) getBounds;
+//-(CGRect) getBounds;
 
 @end

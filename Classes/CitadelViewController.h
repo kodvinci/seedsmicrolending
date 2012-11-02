@@ -14,6 +14,7 @@
 #import "Citadel.h"
 #import "Furniture.h"
 #import "Pool.h"
+#import "BuyFurnitureViewController.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
@@ -39,5 +40,6 @@
 
 -(IBAction)play;
 -(IBAction)begin;
+-(IBAction)furnitureStore;
 
 @end

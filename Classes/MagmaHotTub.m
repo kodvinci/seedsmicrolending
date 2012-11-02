@@ -12,30 +12,31 @@
 
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
-    [self setFurnitureName:@"magmahottub"];
-    [self setUseTime:30];
-    [self setItemWidth:2];
-    [self setDesire1:@"water"];
+    self.furnPic = [UIImage imageNamed:@"magmahottub"];
+    self.itemName = @"magmahottub";
+    self. useTime = 30;
+    self.itemWidth = 2;
+    self.desire1 = @"water";
     
     if (furnitureLevel == 1) {
-        [self setFurnitureLevel:1];
-        [self setNumUsers:1];
-        [self setHappinessReward1:4];
-        [self setPurchaseCostCoins:500];
+        self.itemLevel = 1;
+        self.users = 1;
+        self.happinessReward1 = 4;
+        self.purchaseCost = 500;
     }
     if (furnitureLevel == 2) {
-        [self setFurnitureLevel:2];
-        [self setNumUsers:2];
-        [self setHappinessReward1:4];
-        [self setUpgradeCostCoins:2000];
-        [self setUpgradeCostLeaves:5];
+        self.itemLevel = 2;
+        self.users = 2;
+        self.happinessReward1 = 4;
+        self.coinsCost = 2000;
+        self.leavesCost = 5;
     }
     if (furnitureLevel == 3) {
-        [self setFurnitureLevel:3];
-        [self setNumUsers:2];
-        [self setHappinessReward1:5];
-        [self setUpgradeCostCoins:8000];
-        [self setUpgradeCostLeaves:10];
+        self.itemLevel = 3;
+        self.users = 2;
+        self.happinessReward1 = 5;
+        self.coinsCost = 8000;
+        self.leavesCost = 10;
     }
 }
 
