@@ -19,7 +19,7 @@
 @property(nonatomic, assign) NSMutableArray *traits;
 
 
--(void) addNumber: (NSInteger *) number ofTrait: (NSString *)trait;
+-(void) addNumber: (int) number ofTrait: (NSString *)trait;
 -(NSString *) getTrait;
 
 

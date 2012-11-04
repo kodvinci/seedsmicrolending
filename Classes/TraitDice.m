@@ -13,8 +13,8 @@
 @synthesize traitName;
 @synthesize traits;
 
--(void) addNumber:(NSInteger *)number ofTrait:(NSString *)trait{
-    for (NSInteger i= *number; i>0; i--)
+-(void) addNumber:(int)number ofTrait:(NSString *)trait{
+    for (int i= number; i>0; i--)
     {
         [traits addObject:trait];
     }
