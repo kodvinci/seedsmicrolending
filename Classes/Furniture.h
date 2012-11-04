@@ -23,6 +23,7 @@
     NSInteger coinsCost;
     NSInteger leavesCost;
     UIImage *furnPic;
+    NSInteger currentOccupancy;
 }
 
 @property(nonatomic, retain) UIImage *furnPic;
@@ -38,6 +39,11 @@
 @property(nonatomic, assign) NSInteger coinsCost;
 @property(nonatomic, assign) NSInteger leavesCost;
 @property(nonatomic, assign) NSInteger purchaseCost;
+@property(nonatomic, assign) NSInteger currentOccupants;
+
+//check if occupied
+-(Boolean) isOccupied;
+-(void) addSeedling;
 
 //define boundary for collisions
 //-(CGRect) getBounds;
