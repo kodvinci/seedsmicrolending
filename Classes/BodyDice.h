@@ -9,5 +9,5 @@
 #import "TraitDice.h"
 
 @interface BodyDice : TraitDice
--(void) initilizie;
+-(id) init;
 @end

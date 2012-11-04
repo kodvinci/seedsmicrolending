@@ -9,5 +9,5 @@
 #import "TraitDice.h"
 
 @interface EyeDice : TraitDice
--(void) initilize;
+-(id) init;
 @end

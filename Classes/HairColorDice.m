@@ -10,12 +10,14 @@
 
 @implementation HairColorDice
 
--(void) initilize{
-    CCLog(@"%@", @"HairColorDice initialize");
+-(id) init{
+    if(self == [super init]){
     [self addNumber:3 ofTrait:@"Red"];
     [self addNumber:3 ofTrait:@"White"];
     [self addNumber:1 ofTrait:@"Yellow"];
     [self addNumber:1 ofTrait:@"Purple"];
+    }
+    return self;
 }
 
 @end

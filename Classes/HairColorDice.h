@@ -10,5 +10,5 @@
 
 @interface HairColorDice : TraitDice
 
--(void) initilize;
+-(id) init;
 @end

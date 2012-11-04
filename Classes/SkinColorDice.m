@@ -9,10 +9,12 @@
 #import "SkinColorDice.h"
 
 @implementation SkinColorDice
--(void) initilize{
-    CCLog(@"%@", @"SkinColorDice initialize");
+-(id) init{
+    if(self == [super init]){
     [self addNumber:1 ofTrait:@"Medium green"];
     [self addNumber:1 ofTrait:@"Medium brown"];
+    }
+    return self;
 
 }
 @end

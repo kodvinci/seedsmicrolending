@@ -9,5 +9,5 @@
 #import "TraitDice.h"
 
 @interface SkinColorDice : TraitDice
--(void) initilize;
+-(id) init;
 @end

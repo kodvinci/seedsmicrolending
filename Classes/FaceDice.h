@@ -9,6 +9,6 @@
 #import "TraitDice.h"
 
 @interface FaceDice : TraitDice
--(void) initilize;
+-(id) init;
 
 @end
