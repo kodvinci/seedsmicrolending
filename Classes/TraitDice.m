@@ -6,7 +6,6 @@
 //
 
 
-#include <stdlib.h>
 #import "TraitDice.h"
 
 @implementation TraitDice
