@@ -19,8 +19,8 @@
     }
 }
 
--(NSString *) getTrait{
-    int random = arc4random() % [traits count];
+-(NSString *) rollDice{
+    int random = randomIntWithUpperBound ([traits count]);
     return [traits objectAtIndex:random];
     
 }

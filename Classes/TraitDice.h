@@ -20,7 +20,7 @@
 
 
 -(void) addNumber: (int) number ofTrait: (NSString *)trait;
--(NSString *) getTrait;
+-(NSString *) rollDice;
 
 
 @end
