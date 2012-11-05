@@ -284,6 +284,14 @@
 		31F323C11640D56700E6B92E /* TraitDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F323C01640D56700E6B92E /* TraitDice.m */; };
 		31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC41DD1633232F0042278D /* OpenGLES.framework */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
+		B57CB74F164863050041FA59 /* EyeDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB74C164863050041FA59 /* EyeDice.m */; };
+		B57CB750164863050041FA59 /* FaceDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB74E164863050041FA59 /* FaceDice.m */; };
+		B57CB7531648633F0041FA59 /* BodyDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB7521648633F0041FA59 /* BodyDice.m */; };
+		B57CB758164863590041FA59 /* HairColorDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB755164863590041FA59 /* HairColorDice.m */; };
+		B57CB759164863590041FA59 /* HairDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB757164863590041FA59 /* HairDice.m */; };
+		B57CB75C164863720041FA59 /* NameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB75B164863720041FA59 /* NameGenerator.m */; };
+		B57CB75F164863B30041FA59 /* SkinColorDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB75E164863B30041FA59 /* SkinColorDice.m */; };
+		B57CB762164863C30041FA59 /* TraitDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B57CB761164863C30041FA59 /* TraitDice.m */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
 		CD308A68144E2C32000A44C8 /* Lender.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A67144E2C32000A44C8 /* Lender.m */; };
@@ -877,6 +885,22 @@
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B57CB74B164863050041FA59 /* EyeDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeDice.h; sourceTree = "<group>"; };
+		B57CB74C164863050041FA59 /* EyeDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeDice.m; sourceTree = "<group>"; };
+		B57CB74D164863050041FA59 /* FaceDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDice.h; sourceTree = "<group>"; };
+		B57CB74E164863050041FA59 /* FaceDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDice.m; sourceTree = "<group>"; };
+		B57CB7511648633F0041FA59 /* BodyDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyDice.h; sourceTree = "<group>"; };
+		B57CB7521648633F0041FA59 /* BodyDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyDice.m; sourceTree = "<group>"; };
+		B57CB754164863590041FA59 /* HairColorDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HairColorDice.h; sourceTree = "<group>"; };
+		B57CB755164863590041FA59 /* HairColorDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HairColorDice.m; sourceTree = "<group>"; };
+		B57CB756164863590041FA59 /* HairDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HairDice.h; sourceTree = "<group>"; };
+		B57CB757164863590041FA59 /* HairDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HairDice.m; sourceTree = "<group>"; };
+		B57CB75A164863720041FA59 /* NameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameGenerator.h; sourceTree = "<group>"; };
+		B57CB75B164863720041FA59 /* NameGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameGenerator.m; sourceTree = "<group>"; };
+		B57CB75D164863B30041FA59 /* SkinColorDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinColorDice.h; sourceTree = "<group>"; };
+		B57CB75E164863B30041FA59 /* SkinColorDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinColorDice.m; sourceTree = "<group>"; };
+		B57CB760164863C30041FA59 /* TraitDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitDice.h; sourceTree = "<group>"; };
+		B57CB761164863C30041FA59 /* TraitDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitDice.m; sourceTree = "<group>"; };
 		CD2DF6241479B53700884EA0 /* lender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lender.png; sourceTree = "<group>"; };
 		CD2E134514736E5B000A83FE /* PatchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatchButton.m; sourceTree = "<group>"; };
 		CD2E134714736E64000A83FE /* PatchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatchButton.h; sourceTree = "<group>"; };
@@ -999,6 +1023,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B57CB747164862AF0041FA59 /* Dice */,
 				31C3789F1640895300A850CA /* MicrolendingApp */,
 				3187E08B16307C03000996F2 /* Citadel */,
 				3187E08A16307BB5000996F2 /* Seedling */,
@@ -1169,8 +1194,6 @@
 		3187E08B16307C03000996F2 /* Citadel */ = {
 			isa = PBXGroup;
 			children = (
-				31F323BF1640D56700E6B92E /* TraitDice.h */,
-				31F323C01640D56700E6B92E /* TraitDice.m */,
 				31CB22A316179B8A005C97D5 /* Citadel.h */,
 				31CB22A416179B8A005C97D5 /* Citadel.m */,
 				3107B8001617809B00F61B50 /* CitadelViewController.h */,
@@ -1883,6 +1906,31 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
+		B57CB747164862AF0041FA59 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				B57CB74B164863050041FA59 /* EyeDice.h */,
+				B57CB74C164863050041FA59 /* EyeDice.m */,
+				B57CB75A164863720041FA59 /* NameGenerator.h */,
+				B57CB75B164863720041FA59 /* NameGenerator.m */,
+				B57CB74D164863050041FA59 /* FaceDice.h */,
+				B57CB7511648633F0041FA59 /* BodyDice.h */,
+				B57CB754164863590041FA59 /* HairColorDice.h */,
+				B57CB755164863590041FA59 /* HairColorDice.m */,
+				B57CB756164863590041FA59 /* HairDice.h */,
+				B57CB760164863C30041FA59 /* TraitDice.h */,
+				B57CB761164863C30041FA59 /* TraitDice.m */,
+				B57CB75D164863B30041FA59 /* SkinColorDice.h */,
+				B57CB75E164863B30041FA59 /* SkinColorDice.m */,
+				B57CB757164863590041FA59 /* HairDice.m */,
+				B57CB7521648633F0041FA59 /* BodyDice.m */,
+				B57CB74E164863050041FA59 /* FaceDice.m */,
+				31F323BF1640D56700E6B92E /* TraitDice.h */,
+				31F323C01640D56700E6B92E /* TraitDice.m */,
+			);
+			name = Dice;
+			sourceTree = "<group>";
+		};
 		CD67FBFA143BD419006E0CC8 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -2312,6 +2360,14 @@
 				31BBF93E1641CEF2008B5D2F /* BuyFurnitureViewController.m in Sources */,
 				31BBF9421641D6A4008B5D2F /* SeedlingView.m in Sources */,
 				312B89C51642A9FE00452356 /* FurnitureViewController.m in Sources */,
+				B57CB74F164863050041FA59 /* EyeDice.m in Sources */,
+				B57CB750164863050041FA59 /* FaceDice.m in Sources */,
+				B57CB7531648633F0041FA59 /* BodyDice.m in Sources */,
+				B57CB758164863590041FA59 /* HairColorDice.m in Sources */,
+				B57CB759164863590041FA59 /* HairDice.m in Sources */,
+				B57CB75C164863720041FA59 /* NameGenerator.m in Sources */,
+				B57CB75F164863B30041FA59 /* SkinColorDice.m in Sources */,
+				B57CB762164863C30041FA59 /* TraitDice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
