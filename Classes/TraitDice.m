@@ -20,7 +20,7 @@
 }
 
 -(NSString *) rollDice{
-    int random = randomIntWithUpperBound ([traits count]);
+    int random = rand() % ([traits count]);
     return [traits objectAtIndex:random];
     
 }
