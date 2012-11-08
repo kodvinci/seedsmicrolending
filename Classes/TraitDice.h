@@ -6,6 +6,7 @@
 //
 //
 
+#import "stdlib.h"
 #import <Foundation/Foundation.h>
 
 @interface TraitDice : NSObject
@@ -19,8 +20,8 @@
 @property(nonatomic, assign) NSMutableArray *traits;
 
 
--(void) addNumber: (NSInteger *) number ofTrait: (NSString *)trait;
--(NSString *) getTrait;
+-(void) addNumber: (int) number ofTrait: (NSString *)trait;
+-(NSString *) rollDice;
 
 
 @end

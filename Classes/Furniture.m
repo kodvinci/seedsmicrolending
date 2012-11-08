@@ -10,7 +10,7 @@
 
 @implementation Furniture
 
-@synthesize desire1 = desire1_, desire2 = desire2_, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_;
+@synthesize desire1 = desire1_, desire2 = desire2_, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_, currentOccupants = currentOccupancy_;
 
 /*
 //Make it illegal to initialize the class
@@ -36,6 +36,7 @@
         self.coinsCost = [decoder decodeIntegerForKey:@"coinsCost"];
         self.leavesCost = [decoder decodeIntegerForKey:@"leavesCost"];
         self.furnPic = [decoder decodeObjectForKey:@"furnPic"];
+        self.currentOccupants = [decoder decodeIntegerForKey:@"currentOccupancy"];
     }
     return self;
 }
@@ -54,8 +55,21 @@
     [encoder encodeInteger:coinsCost forKey:@"coinsCost"];
     [encoder encodeInteger:leavesCost forKey:@"leavesCost"];
     [encoder encodeObject:furnPic forKey:@"furnPic"];
+    [encoder encodeInteger:currentOccupancy forKey:@"currentOccupancy"];
 }
 
+-(Boolean) isOccupied{
+    if(self.users == self.currentOccupants){
+        return true;
+    }
+    return false;
+}
+
+-(void) addSeedling{
+    if(!self.isOccupied){
+        currentOccupancy++;
+    }
+}
 
 /* //Commented out this section for now - Leonard's copy...
 -(CGRect) getBounds{
