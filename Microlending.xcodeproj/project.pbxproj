@@ -282,6 +282,16 @@
 		31E641F8162E3AEC004974DD /* StrongmanHammer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641F7162E3AEB004974DD /* StrongmanHammer.m */; };
 		31E641FB162E3BA6004974DD /* WhackAMole.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641FA162E3BA5004974DD /* WhackAMole.m */; };
 		31F323C11640D56700E6B92E /* TraitDice.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F323C01640D56700E6B92E /* TraitDice.m */; };
+		31F4E5E71646ECC7002A3892 /* ResoCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F4E5E51646ECC7002A3892 /* ResoCurrencyViewController.m */; };
+		31F4E5E81646ECC7002A3892 /* ResoCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5E61646ECC7002A3892 /* ResoCurrencyViewController.xib */; };
+		31F4E5EE1646F057002A3892 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EA1646F057002A3892 /* coin.png */; };
+		31F4E5EF1646F057002A3892 /* crystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EB1646F057002A3892 /* crystal.png */; };
+		31F4E5F01646F057002A3892 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EC1646F057002A3892 /* leaf.png */; };
+		31F4E5F11646F057002A3892 /* xp.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5ED1646F057002A3892 /* xp.png */; };
+		31F4E5F51646F613002A3892 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F4E5F31646F612002A3892 /* StoreViewController.m */; };
+		31F4E5F61646F613002A3892 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5F41646F613002A3892 /* StoreViewController.xib */; };
+		31F4E5FA1646FE39002A3892 /* ResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F4E5F81646FE37002A3892 /* ResourceViewController.m */; };
+		31F4E5FB1646FE39002A3892 /* ResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5F91646FE38002A3892 /* ResourceViewController.xib */; };
 		31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC41DD1633232F0042278D /* OpenGLES.framework */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
@@ -873,6 +883,19 @@
 		31E641FA162E3BA5004974DD /* WhackAMole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhackAMole.m; sourceTree = "<group>"; };
 		31F323BF1640D56700E6B92E /* TraitDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitDice.h; sourceTree = "<group>"; };
 		31F323C01640D56700E6B92E /* TraitDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitDice.m; sourceTree = "<group>"; };
+		31F4E5E41646ECC7002A3892 /* ResoCurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResoCurrencyViewController.h; sourceTree = "<group>"; };
+		31F4E5E51646ECC7002A3892 /* ResoCurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResoCurrencyViewController.m; sourceTree = "<group>"; };
+		31F4E5E61646ECC7002A3892 /* ResoCurrencyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResoCurrencyViewController.xib; sourceTree = "<group>"; };
+		31F4E5EA1646F057002A3892 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
+		31F4E5EB1646F057002A3892 /* crystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crystal.png; sourceTree = "<group>"; };
+		31F4E5EC1646F057002A3892 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
+		31F4E5ED1646F057002A3892 /* xp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xp.png; sourceTree = "<group>"; };
+		31F4E5F21646F612002A3892 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		31F4E5F31646F612002A3892 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		31F4E5F41646F613002A3892 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
+		31F4E5F71646FE37002A3892 /* ResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceViewController.h; sourceTree = "<group>"; };
+		31F4E5F81646FE37002A3892 /* ResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceViewController.m; sourceTree = "<group>"; };
+		31F4E5F91646FE38002A3892 /* ResourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourceViewController.xib; sourceTree = "<group>"; };
 		31FC41DD1633232F0042278D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
@@ -1045,6 +1068,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31F4E5EA1646F057002A3892 /* coin.png */,
+				31F4E5EB1646F057002A3892 /* crystal.png */,
+				31F4E5EC1646F057002A3892 /* leaf.png */,
+				31F4E5ED1646F057002A3892 /* xp.png */,
 				31AB3B331643A526001F2DD3 /* bandstand.png */,
 				31AB3B341643A526001F2DD3 /* barbell.png */,
 				31AB3B351643A526001F2DD3 /* climbingrope.png */,
@@ -1181,6 +1208,15 @@
 				31CB22B7161B883D005C97D5 /* FloorViewController.m */,
 				31CB22BC161BCF89005C97D5 /* SingleFloor.h */,
 				31CB22BD161BCF8B005C97D5 /* SingleFloor.m */,
+				31F4E5E41646ECC7002A3892 /* ResoCurrencyViewController.h */,
+				31F4E5E51646ECC7002A3892 /* ResoCurrencyViewController.m */,
+				31F4E5E61646ECC7002A3892 /* ResoCurrencyViewController.xib */,
+				31F4E5F21646F612002A3892 /* StoreViewController.h */,
+				31F4E5F31646F612002A3892 /* StoreViewController.m */,
+				31F4E5F41646F613002A3892 /* StoreViewController.xib */,
+				31F4E5F71646FE37002A3892 /* ResourceViewController.h */,
+				31F4E5F81646FE37002A3892 /* ResourceViewController.m */,
+				31F4E5F91646FE38002A3892 /* ResourceViewController.xib */,
 			);
 			name = Citadel;
 			sourceTree = "<group>";
@@ -2056,6 +2092,13 @@
 				31AB3B461643A527001F2DD3 /* tightrope.png in Resources */,
 				31AB3B471643A527001F2DD3 /* whackamole.png in Resources */,
 				31AB3B481643A527001F2DD3 /* yogapad.png in Resources */,
+				31F4E5E81646ECC7002A3892 /* ResoCurrencyViewController.xib in Resources */,
+				31F4E5EE1646F057002A3892 /* coin.png in Resources */,
+				31F4E5EF1646F057002A3892 /* crystal.png in Resources */,
+				31F4E5F01646F057002A3892 /* leaf.png in Resources */,
+				31F4E5F11646F057002A3892 /* xp.png in Resources */,
+				31F4E5F61646F613002A3892 /* StoreViewController.xib in Resources */,
+				31F4E5FB1646FE39002A3892 /* ResourceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2312,6 +2355,9 @@
 				31BBF93E1641CEF2008B5D2F /* BuyFurnitureViewController.m in Sources */,
 				31BBF9421641D6A4008B5D2F /* SeedlingView.m in Sources */,
 				312B89C51642A9FE00452356 /* FurnitureViewController.m in Sources */,
+				31F4E5E71646ECC7002A3892 /* ResoCurrencyViewController.m in Sources */,
+				31F4E5F51646F613002A3892 /* StoreViewController.m in Sources */,
+				31F4E5FA1646FE39002A3892 /* ResourceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2338,7 +2384,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Microlending;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F696AD7F-4088-454B-950F-EAF3A18DE1F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos5.1]" = "";
 				REZ_SEARCH_PATHS = "${PROJECT_DIR}/**/**";
@@ -2365,7 +2411,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Microlending;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "F696AD7F-4088-454B-950F-EAF3A18DE1F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				REZ_SEARCH_PATHS = "${PROJECT_DIR}/**/**";
 				RUN_CLANG_STATIC_ANALYZER = NO;
@@ -2384,6 +2430,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -2399,6 +2446,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

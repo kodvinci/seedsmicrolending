@@ -14,7 +14,7 @@
 #import "Citadel.h"
 #import "Furniture.h"
 #import "Pool.h"
-#import "BuyFurnitureViewController.h"
+#import "StoreViewController.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;

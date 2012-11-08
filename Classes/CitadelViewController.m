@@ -15,7 +15,7 @@
 @class Citadel;
 @class Furniture;
 @class Pool;
-@class BuyFurnitureViewController;
+@class StoreViewController;
 
 
 @implementation CitadelViewController
@@ -40,7 +40,7 @@
 
 -(IBAction)furnitureStore
 {
-    BuyFurnitureViewController *myFurniture = [[BuyFurnitureViewController alloc] init];
+    StoreViewController *myFurniture = [[StoreViewController alloc] init];
 	[self.navigationController pushViewController:myFurniture animated:YES];
     [myFurniture release];
 }
