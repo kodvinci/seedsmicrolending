@@ -139,10 +139,10 @@
     //set furnitureName
     furnitureName = [furniture objectAtIndex:indexPath.row];
     
-    FurnitureViewController *myFurniture = [[FurnitureViewController alloc] initWithNibName:@"FurnitureViewController" bundle:nil className:furnitureName ];
+    FurnitureViewController *BFmyFurniture = [[FurnitureViewController alloc] initWithNibName:@"FurnitureViewController" bundle:nil className:furnitureName ];
     
-    [self.navigationController pushViewController:myFurniture animated:YES];
-    [myFurniture release];
+    [self.navigationController pushViewController:BFmyFurniture animated:YES];
+//    [myFurniture release];
 }
 
 @end

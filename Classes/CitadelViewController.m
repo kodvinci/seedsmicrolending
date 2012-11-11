@@ -34,9 +34,9 @@
 
 -(IBAction)furnitureStore
 {
-    StoreViewController *myFurniture = [[StoreViewController alloc] init];
-	[self.navigationController pushViewController:myFurniture animated:YES];
-    [myFurniture release];
+    StoreViewController *CVmyFurniture = [[StoreViewController alloc] init];
+	[self.navigationController pushViewController:CVmyFurniture animated:YES];
+    [CVmyFurniture release];
 }
 
 //GAME DEFAULTS
@@ -49,7 +49,7 @@
     //Player Variables
     playerXP = 1;
     playerLevel = 1;
-    playerCoins = 100;
+    playerCoins = 700;
     playerLeaves = 0;
     //Store player variables
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
@@ -118,23 +118,23 @@
 
     if (howmany == 1) {
         NSLog(@"One floor %@", @"in..");
-        OneFloorViewController *myFloor1 = [[OneFloorViewController alloc]init];
-        [self.navigationController pushViewController:myFloor1 animated:YES];
-        [myFloor1 release];
+        OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
+        [self.navigationController pushViewController:CVmyFloor1 animated:YES];
+        [CVmyFloor1 release];
     }
     
     if (howmany == 2) {
         NSLog(@"Two floor %@", @"in..");
-        TwoFloorsViewController *myFloor2 = [[TwoFloorsViewController alloc]init];
-        [self.navigationController pushViewController:myFloor2 animated:YES];
-        [myFloor2 release];
+        TwoFloorsViewController *CVmyFloor2 = [[TwoFloorsViewController alloc]init];
+        [self.navigationController pushViewController:CVmyFloor2 animated:YES];
+        [CVmyFloor2 release];
     }
     
     if (howmany == 3) {
         NSLog(@"Three floor %@", @"in..");
-        ThreeFloorsViewController *myFloor3 = [[ThreeFloorsViewController alloc]init];
-        [self.navigationController pushViewController:myFloor3 animated:YES];
-        [myFloor3 release];
+        ThreeFloorsViewController *CVmyFloor3 = [[ThreeFloorsViewController alloc]init];
+        [self.navigationController pushViewController:CVmyFloor3 animated:YES];
+        [CVmyFloor3 release];
     }
 
 }

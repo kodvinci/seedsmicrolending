@@ -40,7 +40,7 @@
 //    seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
     NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
     citFurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
-
+    [myFurniture release];
   //  citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];
     
     NSLog(@"%@", @"calling citadelSetUpDone...");

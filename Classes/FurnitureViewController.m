@@ -8,6 +8,8 @@
 
 #import "FurnitureViewController.h"
 
+@class MicrolendingAppDelegate;
+@class CitadelViewController;
 
 @implementation FurnitureViewController
 
@@ -23,12 +25,16 @@
 @synthesize furnDesire1, furnDesire2;
 @synthesize furnReward1, furnReward2, users;
 @synthesize desire1, desire2, reward1, reward2, numUsers;
-
+@synthesize level1, level2, level3;
+@synthesize furnitureArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        appDelegate = [[UIApplication sharedApplication]delegate];
+        furnitureArray = [[NSMutableArray alloc] init];
+        
         furnName = name;
         
         id myClass = [[NSClassFromString(name) alloc] init];
@@ -42,7 +48,9 @@
         furnReward1 = [myClass happinessReward1];
         furnReward2 = [myClass happinessReward2];
         users = [myClass users];
-            
+        self.level1 = YES;
+        self.level2 = NO;
+        self.level3 = NO;
         NSLog(@"furnCost: %d", furnCost);
         [self viewWillAppear:YES];
     }
@@ -70,7 +78,9 @@
             furnReward1 = [myClass1 happinessReward1];
             furnReward2 = [myClass1 happinessReward2 ];
             users = [myClass1 users ];
-                
+            self.level1 = YES;
+            self.level2 = NO;
+            self.level3 = NO;
             NSLog(@"furnCost: %d", furnCost);
             [self viewDidLoad];
           
@@ -87,7 +97,9 @@
             furnReward1 = [myClass2 happinessReward1];
             furnReward2 = [myClass2 happinessReward2 ];
             users = [myClass2 users];
-                
+            self.level1 = NO;
+            self.level2 = YES;
+            self.level3 = NO;
             NSLog(@"upgradeLeaves: %d", upgradeLeaves);
             [self viewDidLoad];
             
@@ -104,6 +116,9 @@
             furnReward1 = [myClass3 happinessReward1];
             furnReward2 = [myClass3 happinessReward2 ];
             users = [myClass3 users];
+            self.level1 = NO;
+            self.level2 = NO;
+            self.level3 = YES;
             NSLog(@"upgradeLeaves: %d", upgradeLeaves);
             [self viewDidLoad];
             
@@ -131,6 +146,54 @@
     reward1.text = [NSString stringWithFormat:@"%d", furnReward1];
     reward2.text = [NSString stringWithFormat:@"%d", furnReward2];
     numUsers.text = [NSString stringWithFormat:@"%d", users];
+}
+
+-(IBAction)buyFurniture
+{
+    if (level1 == YES) {
+        //Buy level 1 furniture
+        id furniture1 = [[NSClassFromString(furnName) alloc] init];
+        [furniture1 initWithLevel:1];
+        //check if I can afford it...
+        NSInteger myCoins = [appDelegate.citadelData integerForKey:@"coins"];
+        if (myCoins >= [furniture1 purchaseCost] ) {
+            //Can afford it
+            //Add it to my array of furniture
+            NSData *myFurniture1 = [appDelegate.citadelData objectForKey:@"furniture"];
+            [furnitureArray addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1]];
+            [furnitureArray addObject:furniture1];
+            NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furnitureArray];
+            [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+            //subtract cost
+            myCoins = myCoins - [furniture1 purchaseCost];
+            [appDelegate.citadelData setInteger:myCoins forKey:@"coins"];
+            //   [myFurniture1 release];
+            //   [furnData release];
+            //   [furniture1 release];
+            //   [myCoins release];
+            //RELEASING ONE OF THE ABOVE VARIABLES CAUSES A CRASH...BUT I DON'T UNDERSTAND WHY
+            //Display the bought furniture on floor
+            CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+            [self.navigationController initWithRootViewController:FVmyCitadel];
+            [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+            [FVmyCitadel release];
+        }
+        else
+        {
+            //Inform player they can't afford it
+        }
+    }
+    
+    if (level2 == YES) {
+        //Upgrade furniture to level 2
+        id furniture2 = [[NSClassFromString(furnName) alloc] init];
+        [furniture2 initWithLevel:2];
+    }
+    else if (level3 == YES) {
+        //Upgrade furniture to level 3
+        id furniture3 = [[NSClassFromString(furnName) alloc] init];
+        [furniture3 initWithLevel:1];
+    }
 }
 
 - (void)viewDidUnload

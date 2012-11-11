@@ -32,12 +32,12 @@
     int numFloor = [appDelegate.citadelData integerForKey:@"floors"];
     numFloor +=1;
     NSLog(@"numFloor: %d", numFloor);
-    CitadelViewController *myCitadel = [[CitadelViewController alloc] init];
-    [self.navigationController initWithRootViewController:myCitadel];
-    [myCitadel displayFloors:numFloor];
+    CitadelViewController *OFmyCitadel = [[CitadelViewController alloc] init];
+    [self.navigationController initWithRootViewController:OFmyCitadel];
+    [OFmyCitadel displayFloors:numFloor];
     [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
     NSLog(@"floors: %d", [appDelegate.citadelData integerForKey:@"floors"]);
-    [myCitadel release];
+    [OFmyCitadel release];
 }
 
 - (void)viewDidLoad

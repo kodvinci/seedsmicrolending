@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MicrolendingAppDelegate.h"
+#import "CitadelViewController.h"
 #import "Pool.h"
 #import "WaterBed.h"
 #import "Hammock.h"
@@ -14,6 +16,7 @@
 
 @interface FurnitureViewController : UIViewController 
 {
+    MicrolendingAppDelegate *appDelegate;
     Class className;
     NSString *furnName;
     NSInteger furnCost;
@@ -33,6 +36,10 @@
     IBOutlet UILabel *reward1;
     IBOutlet UILabel *reward2;
     IBOutlet UILabel *numUsers;
+    BOOL level1;
+    BOOL level2;
+    BOOL level3;
+    NSMutableArray *furnitureArray;
 }
 
 @property(nonatomic, assign) Class className;
@@ -57,8 +64,13 @@
 @property(nonatomic, retain) UILabel *reward1;
 @property(nonatomic, retain) UILabel *reward2;
 @property(nonatomic, retain) UILabel *numUsers;
+@property(nonatomic, assign) BOOL level1;
+@property(nonatomic, assign) BOOL level2;
+@property(nonatomic, assign) BOOL level3;
+@property(nonatomic, retain) NSMutableArray *furnitureArray;
 
 -(IBAction) segmentedControlIndexChanged;
+-(IBAction)buyFurniture;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name;
 
 @end
