@@ -10,9 +10,11 @@
 #import "LoginViewController.h"
 #import "PayButtonViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "CitadelViewController.h"
 
 @class Lender;
 @class LoginViewController;
+@class CitadelViewController;
 
 @interface MicrolendingAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

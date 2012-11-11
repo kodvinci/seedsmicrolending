@@ -8,6 +8,7 @@
 
 #import "ResourceViewController.h"
 
+@class InAppPurchaseManager;
 
 @implementation ResourceViewController
 
@@ -72,6 +73,9 @@
 -(void)buy:(id)sender
 {
     //storekit kicks in...
+    InAppPurchaseManager *myManager = [[InAppPurchaseManager alloc] init];
+    [myManager requestleafProductData];
+    
 }
 
 - (void)viewDidUnload

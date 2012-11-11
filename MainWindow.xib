@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">11G63</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
 		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1498</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -47,7 +47,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -67,17 +66,16 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="956805007">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="544846448">
-						<string key="IBUITitle">Game</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="1009293543">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="986940312">
+						<string key="IBUITitle">Badges</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">icon_hat.png</string>
+							<string key="NSResourceName">icon_blog.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="243713615"/>
-					<string key="IBUINibName">CitadelViewController</string>
 					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="IBUIInterfaceOrientation">1</int>
@@ -85,7 +83,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="884862064">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="532650014">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -96,14 +94,13 @@
 						<int key="IBUIBarStyle">1</int>
 					</object>
 					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUIViewController" id="870339266">
-							<string key="IBUITitle">Citadel</string>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="4131596">
+						<object class="IBUIViewController" id="756199267">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="822028410">
 								<string key="IBUITitle">Root View Controller</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="956805007"/>
-							<string key="IBUINibName">CitadelViewController</string>
+							<reference key="IBUIParentViewController" ref="1009293543"/>
+							<string key="IBUINibName">BadgeViewController</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -202,12 +199,13 @@
 							</object>
 						</array>
 					</object>
-					<object class="IBUINavigationController" id="1009293543">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="986940312">
-							<string key="IBUITitle">Badges</string>
+					<reference ref="1009293543"/>
+					<object class="IBUINavigationController" id="956805007">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="544846448">
+							<string key="IBUITitle">Citadel</string>
 							<object class="NSCustomResource" key="IBUIImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">icon_blog.png</string>
+								<string key="NSResourceName">icon_hat.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -219,7 +217,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="532650014">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="884862064">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -230,13 +228,14 @@
 							<int key="IBUIBarStyle">1</int>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="756199267">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="822028410">
+							<object class="IBUIViewController" id="870339266">
+								<string key="IBUITitle">Citadel</string>
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="4131596">
 									<string key="IBUITitle">Root View Controller</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="1009293543"/>
-								<string key="IBUINibName">BadgeViewController</string>
+								<reference key="IBUIParentViewController" ref="956805007"/>
+								<string key="IBUINibName">CitadelViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -246,7 +245,6 @@
 							</object>
 						</array>
 					</object>
-					<reference ref="956805007"/>
 					<object class="IBUINavigationController" id="621104584">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="513516787">
 							<string key="IBUITitle">Leaderboard</string>
@@ -336,7 +334,6 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
@@ -679,7 +676,7 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1296" key="NS.object.0"/>
+			<real value="1536" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.InterfaceBuilder3</string>
@@ -694,6 +691,6 @@
 			<string key="icon_hat.png">{30, 30}</string>
 			<string key="icon_user.png">{30, 30}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1498</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>

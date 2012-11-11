@@ -56,7 +56,8 @@
     [myLocation setDistanceFilter:kCLDistanceFilterNone];
     [myLocation setDesiredAccuracy:kCLLocationAccuracyBest];
     [myLocation startUpdatingLocation];
-*/   
+*/
+    
 	ipaddress = [[NSString alloc] initWithString:@"10.180.135.109"];
 	userID = [[NSString alloc] init];
 	

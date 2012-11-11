@@ -8,6 +8,8 @@
 
 #import <StoreKit/StoreKit.h>
 
-@interface LocalizedPrice : SKProduct
+@interface SKProduct (LocalizedPrice)
+
+@property (nonatomic, readonly) NSString *localizedPrice;
 
 @end

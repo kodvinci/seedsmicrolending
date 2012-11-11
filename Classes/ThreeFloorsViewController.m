@@ -8,20 +8,36 @@
 
 #import "ThreeFloorsViewController.h"
 
-@interface ThreeFloorsViewController ()
-
-@end
+@class MicrolendingAppDelegate;
 
 @implementation ThreeFloorsViewController
+
+@synthesize addFloor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        appDelegate = [[UIApplication sharedApplication]delegate];
     }
     return self;
 }
+
+//add a new floor
+-(IBAction)buyFloor
+{
+    int numFloor = [appDelegate.citadelData integerForKey:@"floors"];
+    numFloor +=1;
+    NSLog(@"numFloor: %d", numFloor);
+    CitadelViewController *myCitadel = [[CitadelViewController alloc] init];
+    [self.navigationController initWithRootViewController:myCitadel];
+    [myCitadel displayFloors:numFloor];
+    [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
+    NSLog(@"floors: %d", [appDelegate.citadelData integerForKey:@"floors"]);
+    [myCitadel release];
+}
+
 
 - (void)viewDidLoad
 {

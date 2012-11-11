@@ -32,8 +32,6 @@
 -(void)dealloc
 {
     [super dealloc];
-    [furniture release];
-    [furnitureName release];
 }
 
 - (void)viewDidLoad

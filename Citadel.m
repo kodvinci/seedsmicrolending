@@ -21,7 +21,7 @@
 @synthesize level;
 @synthesize citSeedlings;
 @synthesize citadelDelegate;
-
+@synthesize playerXP, playerLeaves, playerCoins, playerLevel;
 
 -(void)initialize
 {
@@ -29,17 +29,19 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     
     // Retrieve stored data from NSUserDefaults before the view loads
-    //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //citFloors = [defaults integerForKey:@"floors"];
 
+    playerXP = [appDelegate.citadelData integerForKey:@"experience"];
+    playerLevel = [appDelegate.citadelData integerForKey:@"playerLevel"];
+    playerCoins = [appDelegate.citadelData integerForKey:@"coins"];
+    playerLeaves = [appDelegate.citadelData integerForKey:@"leaves"];
     citFloors = [appDelegate.citadelData integerForKey:@"floors"];
-    NSLog(@"my citFloors:%d", citFloors);
     level = [appDelegate.citadelData integerForKey:@"level"];
-    seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
+    
+//    seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
     NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
     citFurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
 
-    citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];
+  //  citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];
     
     NSLog(@"%@", @"calling citadelSetUpDone...");
     [self.citadelDelegate citadelSetUpDone:YES];

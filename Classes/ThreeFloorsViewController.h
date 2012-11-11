@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MicrolendingAppDelegate.h"
 
 @interface ThreeFloorsViewController : UIViewController
+{
+    IBOutlet UIButton *addFloor;
+    MicrolendingAppDelegate *appDelegate;
+}
+
+@property(nonatomic, retain) UIButton *addFloor;
+
+-(IBAction)buyFloor;
 
 @end

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <StoreKit/StoreKit.h>
 
-@interface InAppPurchaseManager : NSObject
+#define kInAppPurchaseManagerProductsFetchedNotification @"kInAppPurchaseManagerProductsFetchedNotification"
+
+@interface InAppPurchaseManager : NSObject <SKProductsRequestDelegate>
+{
+    SKProduct *leafProduct;
+    SKProductsRequest *productsRequest;
+}
+
+-(void)requestleafProductData;
 
 @end

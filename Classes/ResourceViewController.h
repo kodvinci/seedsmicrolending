@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InAppPurchaseManager.h"
 
-@interface ResourceViewController : UIViewController
+@interface ResourceViewController : UIViewController 
 {
     IBOutlet UIImageView *furnitureImage;
     UIImage *furnImage;

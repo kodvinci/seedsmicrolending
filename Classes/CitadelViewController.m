@@ -16,7 +16,9 @@
 @class Furniture;
 @class Pool;
 @class StoreViewController;
-
+@class OneFloorViewController;
+@class TwoFloorsViewController;
+@class ThreeFloorsViewController;
 
 @implementation CitadelViewController
 
@@ -28,15 +30,7 @@
 @synthesize defaults;
 @synthesize poolFurn;
 @synthesize myFirstSeedling;
-
-/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}*/
+@synthesize playerCoins, playerLeaves, playerLevel, playerXP;
 
 -(IBAction)furnitureStore
 {
@@ -45,14 +39,29 @@
     [myFurniture release];
 }
 
+//GAME DEFAULTS
 - (IBAction)begin
 {
-    //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously 
-   
-    // Create variables to store Citadel information
+    //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously
+    
+   appDelegate.citadelData = [NSUserDefaults standardUserDefaults];
+    
+    //Player Variables
+    playerXP = 1;
+    playerLevel = 1;
+    playerCoins = 100;
+    playerLeaves = 0;
+    //Store player variables
+    [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
+    [appDelegate.citadelData setInteger:playerLevel forKey:@"playerLevel"];
+    [appDelegate.citadelData setInteger:playerCoins forKey:@"coins"];
+    [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
+    
+    //Citadel Variables
     numOfFloors = 1;
     level = 1;
     seedlingID = 1;
+    
     //pool
 //    UIImage *poolPic = [UIImage imageNamed:@"pool"];
     poolFurn = [Pool alloc ];
@@ -61,18 +70,20 @@
     [furniture addObject:poolFurn];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
     //seedling
-    myFirstSeedling = [[Seedling alloc] initWithImage:@"seedling1"];
+/*    NSString *seed = [[NSString alloc] initWithFormat:@"myseed"];
+    myFirstSeedling = [Seedling alloc];
+    [myFirstSeedling initWithImage:seed :@"seedling1" ];
+    //[myFirstSeedling initWithImage: seed image:@"seedling1"];
     seedlings = [[NSMutableArray alloc]initWithObjects: nil];
     [seedlings addObject:myFirstSeedling];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:seedlings];
-                                        
+  */
     // Store the data
-    appDelegate.citadelData = [NSUserDefaults standardUserDefaults];
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     [appDelegate.citadelData setInteger:level forKey:@"level"];
-    [appDelegate.citadelData setInteger:seedlingID forKey:@"seedling"];
+  //  [appDelegate.citadelData setInteger:seedlingID forKey:@"seedling"];
     [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    //[appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     [appDelegate.citadelData synchronize];
     NSLog(@"Data saved");
     
@@ -94,13 +105,40 @@
     if (result) {
         //Use the saved information for display
         NSLog(@"Number of floors: %@", [appDelegate.citadelData objectForKey:@"floors"]);
+        NSInteger number = [appDelegate.citadelData integerForKey:@"floors"];
         
-        FloorViewController *myCitadelFloors = [[FloorViewController alloc] init];
-        [self.navigationController pushViewController:myCitadelFloors animated:YES];
-        
-        [myCitadelFloors release];
+        [self displayFloors:number];
+
     }
 }
+
+-(void)displayFloors:(NSInteger)howmany
+{
+    NSLog(@"One floor %@", self.navigationController);
+
+    if (howmany == 1) {
+        NSLog(@"One floor %@", @"in..");
+        OneFloorViewController *myFloor1 = [[OneFloorViewController alloc]init];
+        [self.navigationController pushViewController:myFloor1 animated:YES];
+        [myFloor1 release];
+    }
+    
+    if (howmany == 2) {
+        NSLog(@"Two floor %@", @"in..");
+        TwoFloorsViewController *myFloor2 = [[TwoFloorsViewController alloc]init];
+        [self.navigationController pushViewController:myFloor2 animated:YES];
+        [myFloor2 release];
+    }
+    
+    if (howmany == 3) {
+        NSLog(@"Three floor %@", @"in..");
+        ThreeFloorsViewController *myFloor3 = [[ThreeFloorsViewController alloc]init];
+        [self.navigationController pushViewController:myFloor3 animated:YES];
+        [myFloor3 release];
+    }
+
+}
+
 -(void)needToRefreshView:(BOOL)result
 {
     NSLog(@"CitadelViewController: %@", @"needToRefreshView!");
@@ -116,7 +154,7 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"Gaia";
+    self.title = @"Citadel";
     appDelegate = [[UIApplication sharedApplication] delegate];
     
     [super viewDidLoad];

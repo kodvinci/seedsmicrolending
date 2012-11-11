@@ -10,7 +10,6 @@
 		0A2B632315BE87C5009FACFD /* Logout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2B632215BE87C5009FACFD /* Logout.m */; };
 		0A2C774A15A6F40A00C91904 /* RecordTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2C774915A6F40A00C91904 /* RecordTransactions.m */; };
 		0A7090EC158F835D00235DBE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7090EB158F835D00235DBE /* QuartzCore.framework */; };
-		0A74CF7015A345BA00E9E20B /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CF6415A345B700E9E20B /* libPayPalMPL.a */; };
 		0A74CF7615A3479B00E9E20B /* PayButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */; };
 		0A74CF7715A3479B00E9E20B /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A74CF7515A3479B00E9E20B /* SuccessViewController.m */; };
 		0A74CF7915A34EB400E9E20B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CF7815A34EB400E9E20B /* SystemConfiguration.framework */; };
@@ -50,8 +49,11 @@
 		3107B7BC161762E200F61B50 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3107B7BB161762E200F61B50 /* Icon@2x.png */; };
 		3107B8031617809B00F61B50 /* CitadelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107B8011617809B00F61B50 /* CitadelViewController.m */; };
 		3107B8041617809B00F61B50 /* CitadelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3107B8021617809B00F61B50 /* CitadelViewController.xib */; };
+		31258B5F164E09B1007D32C3 /* citadel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 31258B5E164E09B1007D32C3 /* citadel1.png */; };
 		312B89C51642A9FE00452356 /* FurnitureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 312B89C31642A9FE00452356 /* FurnitureViewController.m */; };
 		312B89C61642A9FE00452356 /* FurnitureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 312B89C41642A9FE00452356 /* FurnitureViewController.xib */; };
+		313489C3164CB85200E12D3F /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 313489C2164CB85200E12D3F /* InAppPurchaseManager.m */; };
+		313489C7164CBB4C00E12D3F /* LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 313489C6164CBB4C00E12D3F /* LocalizedPrice.m */; };
 		313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B395D1642C0C300602E7D /* libiconv.dylib */; };
 		313B39631642C15300602E7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B39621642C15300602E7D /* libc++.dylib */; };
 		313B39651642C26000602E7D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 313B39641642C26000602E7D /* CMakeLists.txt */; };
@@ -62,6 +64,7 @@
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
 		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
+		31AA455A164C5AA60066B35B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAAB46B15A5AF35006680C0 /* StoreKit.framework */; };
 		31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2A16438B92001F2DD3 /* bookshelf.png */; };
 		31AB3B2F16438B92001F2DD3 /* easel.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2B16438B92001F2DD3 /* easel.png */; };
 		31AB3B3016438B92001F2DD3 /* hammock.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2C16438B92001F2DD3 /* hammock.png */; };
@@ -252,10 +255,20 @@
 		31B7FC8616333C7D00B808FD /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6416333C7C00B808FD /* cpSweep1D.c */; };
 		31B7FC8716333C7D00B808FD /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6516333C7C00B808FD /* cpVect.c */; };
 		31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC6716333C7C00B808FD /* kazmath_neon.patch */; };
+		31BB6E7A164CE3FF001B7CDE /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BB6E6F164CE3FF001B7CDE /* libPayPalMPL.a */; };
+		31BB6E82164DDEF7001B7CDE /* OneFloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BB6E80164DDEF7001B7CDE /* OneFloorViewController.m */; };
+		31BB6E83164DDEF7001B7CDE /* OneFloorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E81164DDEF7001B7CDE /* OneFloorViewController.xib */; };
+		31BB6E86164DE031001B7CDE /* citadel3.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E85164DE031001B7CDE /* citadel3.png */; };
+		31BB6E8A164DE0BB001B7CDE /* TwoFloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BB6E88164DE0BB001B7CDE /* TwoFloorsViewController.m */; };
+		31BB6E8B164DE0BB001B7CDE /* TwoFloorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E89164DE0BB001B7CDE /* TwoFloorsViewController.xib */; };
+		31BB6E8F164DE0E5001B7CDE /* ThreeFloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BB6E8D164DE0E5001B7CDE /* ThreeFloorsViewController.m */; };
+		31BB6E90164DE0E5001B7CDE /* ThreeFloorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E8E164DE0E5001B7CDE /* ThreeFloorsViewController.xib */; };
+		31BB6E92164DE290001B7CDE /* branch.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E91164DE290001B7CDE /* branch.png */; };
 		31BBF93E1641CEF2008B5D2F /* BuyFurnitureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBF93C1641CEF2008B5D2F /* BuyFurnitureViewController.m */; };
 		31BBF93F1641CEF2008B5D2F /* BuyFurnitureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BBF93D1641CEF2008B5D2F /* BuyFurnitureViewController.xib */; };
 		31BBF9421641D6A4008B5D2F /* SeedlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBF9411641D6A4008B5D2F /* SeedlingView.m */; };
 		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
+		31C72035164EB7500073EAF0 /* citadel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C72034164EB7500073EAF0 /* citadel2.png */; };
 		31CB22A21617975A005C97D5 /* gaia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22A11617975A005C97D5 /* gaia.jpg */; };
 		31CB22A516179B8A005C97D5 /* Citadel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22A416179B8A005C97D5 /* Citadel.m */; };
 		31CB22A81617A102005C97D5 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22A71617A102005C97D5 /* Floor.m */; };
@@ -360,18 +373,6 @@
 		0A2C774815A6F40A00C91904 /* RecordTransactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTransactions.h; sourceTree = "<group>"; };
 		0A2C774915A6F40A00C91904 /* RecordTransactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTransactions.m; sourceTree = "<group>"; };
 		0A7090EB158F835D00235DBE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0A74CF6415A345B700E9E20B /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
-		0A74CF6515A345B800E9E20B /* PayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPal.h; sourceTree = "<group>"; };
-		0A74CF6615A345B800E9E20B /* PayPalAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAddress.h; sourceTree = "<group>"; };
-		0A74CF6715A345B800E9E20B /* PayPalAdvancedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAdvancedPayment.h; sourceTree = "<group>"; };
-		0A74CF6815A345B800E9E20B /* PayPalAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAmounts.h; sourceTree = "<group>"; };
-		0A74CF6915A345B900E9E20B /* PayPalContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalContext.h; sourceTree = "<group>"; };
-		0A74CF6A15A345B900E9E20B /* PayPalInvoiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceData.h; sourceTree = "<group>"; };
-		0A74CF6B15A345B900E9E20B /* PayPalInvoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceItem.h; sourceTree = "<group>"; };
-		0A74CF6C15A345B900E9E20B /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
-		0A74CF6D15A345B900E9E20B /* PayPalPreapprovalDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPreapprovalDetails.h; sourceTree = "<group>"; };
-		0A74CF6E15A345B900E9E20B /* PayPalReceiverAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverAmounts.h; sourceTree = "<group>"; };
-		0A74CF6F15A345BA00E9E20B /* PayPalReceiverPaymentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverPaymentDetails.h; sourceTree = "<group>"; };
 		0A74CF7215A3479A00E9E20B /* PayButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayButtonViewController.h; sourceTree = "<group>"; };
 		0A74CF7315A3479A00E9E20B /* PayButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PayButtonViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0A74CF7415A3479A00E9E20B /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
@@ -429,9 +430,14 @@
 		3107B8001617809B00F61B50 /* CitadelViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = CitadelViewController.h; sourceTree = "<group>"; };
 		3107B8011617809B00F61B50 /* CitadelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitadelViewController.m; sourceTree = "<group>"; };
 		3107B8021617809B00F61B50 /* CitadelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CitadelViewController.xib; path = Classes/CitadelViewController.xib; sourceTree = "<group>"; };
+		31258B5E164E09B1007D32C3 /* citadel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citadel1.png; sourceTree = "<group>"; };
 		312B89C21642A9FE00452356 /* FurnitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FurnitureViewController.h; sourceTree = "<group>"; };
 		312B89C31642A9FE00452356 /* FurnitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FurnitureViewController.m; sourceTree = "<group>"; };
 		312B89C41642A9FE00452356 /* FurnitureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FurnitureViewController.xib; path = Classes/FurnitureViewController.xib; sourceTree = "<group>"; };
+		313489C1164CB85200E12D3F /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
+		313489C2164CB85200E12D3F /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
+		313489C5164CBB4C00E12D3F /* LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedPrice.h; sourceTree = "<group>"; };
+		313489C6164CBB4C00E12D3F /* LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedPrice.m; sourceTree = "<group>"; };
 		313B395D1642C0C300602E7D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		313B39621642C15300602E7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		313B39641642C26000602E7D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "../../../cocos2d-iphone-2.0/external/Chipmunk/src/CMakeLists.txt"; sourceTree = "<group>"; };
@@ -828,6 +834,28 @@
 		31B7FC6516333C7C00B808FD /* cpVect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpVect.c; sourceTree = "<group>"; };
 		31B7FC6616333C7C00B808FD /* prime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
 		31B7FC6716333C7C00B808FD /* kazmath_neon.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kazmath_neon.patch; sourceTree = "<group>"; };
+		31BB6E6F164CE3FF001B7CDE /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
+		31BB6E70164CE3FF001B7CDE /* PayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPal.h; sourceTree = "<group>"; };
+		31BB6E71164CE3FF001B7CDE /* PayPalAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAddress.h; sourceTree = "<group>"; };
+		31BB6E72164CE3FF001B7CDE /* PayPalAdvancedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAdvancedPayment.h; sourceTree = "<group>"; };
+		31BB6E73164CE3FF001B7CDE /* PayPalAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAmounts.h; sourceTree = "<group>"; };
+		31BB6E74164CE3FF001B7CDE /* PayPalInvoiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceData.h; sourceTree = "<group>"; };
+		31BB6E75164CE3FF001B7CDE /* PayPalInvoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInvoiceItem.h; sourceTree = "<group>"; };
+		31BB6E76164CE3FF001B7CDE /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
+		31BB6E77164CE3FF001B7CDE /* PayPalPreapprovalDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPreapprovalDetails.h; sourceTree = "<group>"; };
+		31BB6E78164CE3FF001B7CDE /* PayPalReceiverAmounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverAmounts.h; sourceTree = "<group>"; };
+		31BB6E79164CE3FF001B7CDE /* PayPalReceiverPaymentDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalReceiverPaymentDetails.h; sourceTree = "<group>"; };
+		31BB6E7F164DDEF7001B7CDE /* OneFloorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneFloorViewController.h; sourceTree = "<group>"; };
+		31BB6E80164DDEF7001B7CDE /* OneFloorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneFloorViewController.m; sourceTree = "<group>"; };
+		31BB6E81164DDEF7001B7CDE /* OneFloorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneFloorViewController.xib; sourceTree = "<group>"; };
+		31BB6E85164DE031001B7CDE /* citadel3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citadel3.png; sourceTree = "<group>"; };
+		31BB6E87164DE0BB001B7CDE /* TwoFloorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoFloorsViewController.h; sourceTree = "<group>"; };
+		31BB6E88164DE0BB001B7CDE /* TwoFloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoFloorsViewController.m; sourceTree = "<group>"; };
+		31BB6E89164DE0BB001B7CDE /* TwoFloorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoFloorsViewController.xib; sourceTree = "<group>"; };
+		31BB6E8C164DE0E5001B7CDE /* ThreeFloorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeFloorsViewController.h; sourceTree = "<group>"; };
+		31BB6E8D164DE0E5001B7CDE /* ThreeFloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeFloorsViewController.m; sourceTree = "<group>"; };
+		31BB6E8E164DE0E5001B7CDE /* ThreeFloorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeFloorsViewController.xib; sourceTree = "<group>"; };
+		31BB6E91164DE290001B7CDE /* branch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = branch.png; sourceTree = "<group>"; };
 		31BBF93B1641CEF2008B5D2F /* BuyFurnitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyFurnitureViewController.h; sourceTree = "<group>"; };
 		31BBF93C1641CEF2008B5D2F /* BuyFurnitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyFurnitureViewController.m; sourceTree = "<group>"; };
 		31BBF93D1641CEF2008B5D2F /* BuyFurnitureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyFurnitureViewController.xib; path = Classes/BuyFurnitureViewController.xib; sourceTree = "<group>"; };
@@ -835,6 +863,7 @@
 		31BBF9411641D6A4008B5D2F /* SeedlingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingView.m; sourceTree = "<group>"; };
 		31C3FBE1145E3CAC00688CE7 /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
 		31C3FBE2145E3CAC00688CE7 /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Grabber.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		31C72034164EB7500073EAF0 /* citadel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citadel2.png; sourceTree = "<group>"; };
 		31CB22A11617975A005C97D5 /* gaia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gaia.jpg; sourceTree = "<group>"; };
 		31CB22A316179B8A005C97D5 /* Citadel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Citadel.h; path = ../Citadel.h; sourceTree = "<group>"; };
 		31CB22A416179B8A005C97D5 /* Citadel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Citadel.m; path = ../Citadel.m; sourceTree = "<group>"; };
@@ -998,6 +1027,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31AA455A164C5AA60066B35B /* StoreKit.framework in Frameworks */,
 				313B39631642C15300602E7D /* libc++.dylib in Frameworks */,
 				313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */,
 				31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */,
@@ -1012,7 +1042,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				CDBF7A8E14746B5200C408C8 /* MessageUI.framework in Frameworks */,
-				0A74CF7015A345BA00E9E20B /* libPayPalMPL.a in Frameworks */,
+				31BB6E7A164CE3FF001B7CDE /* libPayPalMPL.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,8 +1071,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				313B39621642C15300602E7D /* libc++.dylib */,
-				313B395D1642C0C300602E7D /* libiconv.dylib */,
 				488A48AA145CABB900225D47 /* api.rtf */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -1068,6 +1096,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31C72034164EB7500073EAF0 /* citadel2.png */,
+				31258B5E164E09B1007D32C3 /* citadel1.png */,
+				31BB6E91164DE290001B7CDE /* branch.png */,
+				31BB6E85164DE031001B7CDE /* citadel3.png */,
 				31F4E5EA1646F057002A3892 /* coin.png */,
 				31F4E5EB1646F057002A3892 /* crystal.png */,
 				31F4E5EC1646F057002A3892 /* leaf.png */,
@@ -1146,6 +1178,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				313B39621642C15300602E7D /* libc++.dylib */,
+				313B395D1642C0C300602E7D /* libiconv.dylib */,
 				0A74CF8015A34FA000E9E20B /* libz.dylib */,
 				31FC41DD1633232F0042278D /* OpenGLES.framework */,
 				0A74CF7E15A34F8000E9E20B /* libxml2.dylib */,
@@ -1166,18 +1200,17 @@
 		3187E088163066F0000996F2 /* PayPal */ = {
 			isa = PBXGroup;
 			children = (
-				0A74CF6415A345B700E9E20B /* libPayPalMPL.a */,
-				0A74CF6515A345B800E9E20B /* PayPal.h */,
-				0A74CF6615A345B800E9E20B /* PayPalAddress.h */,
-				0A74CF6715A345B800E9E20B /* PayPalAdvancedPayment.h */,
-				0A74CF6815A345B800E9E20B /* PayPalAmounts.h */,
-				0A74CF6915A345B900E9E20B /* PayPalContext.h */,
-				0A74CF6A15A345B900E9E20B /* PayPalInvoiceData.h */,
-				0A74CF6B15A345B900E9E20B /* PayPalInvoiceItem.h */,
-				0A74CF6C15A345B900E9E20B /* PayPalPayment.h */,
-				0A74CF6D15A345B900E9E20B /* PayPalPreapprovalDetails.h */,
-				0A74CF6E15A345B900E9E20B /* PayPalReceiverAmounts.h */,
-				0A74CF6F15A345BA00E9E20B /* PayPalReceiverPaymentDetails.h */,
+				31BB6E6F164CE3FF001B7CDE /* libPayPalMPL.a */,
+				31BB6E70164CE3FF001B7CDE /* PayPal.h */,
+				31BB6E71164CE3FF001B7CDE /* PayPalAddress.h */,
+				31BB6E72164CE3FF001B7CDE /* PayPalAdvancedPayment.h */,
+				31BB6E73164CE3FF001B7CDE /* PayPalAmounts.h */,
+				31BB6E74164CE3FF001B7CDE /* PayPalInvoiceData.h */,
+				31BB6E75164CE3FF001B7CDE /* PayPalInvoiceItem.h */,
+				31BB6E76164CE3FF001B7CDE /* PayPalPayment.h */,
+				31BB6E77164CE3FF001B7CDE /* PayPalPreapprovalDetails.h */,
+				31BB6E78164CE3FF001B7CDE /* PayPalReceiverAmounts.h */,
+				31BB6E79164CE3FF001B7CDE /* PayPalReceiverPaymentDetails.h */,
 			);
 			name = PayPal;
 			sourceTree = "<group>";
@@ -1217,6 +1250,19 @@
 				31F4E5F71646FE37002A3892 /* ResourceViewController.h */,
 				31F4E5F81646FE37002A3892 /* ResourceViewController.m */,
 				31F4E5F91646FE38002A3892 /* ResourceViewController.xib */,
+				313489C1164CB85200E12D3F /* InAppPurchaseManager.h */,
+				313489C2164CB85200E12D3F /* InAppPurchaseManager.m */,
+				313489C5164CBB4C00E12D3F /* LocalizedPrice.h */,
+				313489C6164CBB4C00E12D3F /* LocalizedPrice.m */,
+				31BB6E7F164DDEF7001B7CDE /* OneFloorViewController.h */,
+				31BB6E80164DDEF7001B7CDE /* OneFloorViewController.m */,
+				31BB6E81164DDEF7001B7CDE /* OneFloorViewController.xib */,
+				31BB6E87164DE0BB001B7CDE /* TwoFloorsViewController.h */,
+				31BB6E88164DE0BB001B7CDE /* TwoFloorsViewController.m */,
+				31BB6E89164DE0BB001B7CDE /* TwoFloorsViewController.xib */,
+				31BB6E8C164DE0E5001B7CDE /* ThreeFloorsViewController.h */,
+				31BB6E8D164DE0E5001B7CDE /* ThreeFloorsViewController.m */,
+				31BB6E8E164DE0E5001B7CDE /* ThreeFloorsViewController.xib */,
 			);
 			name = Citadel;
 			sourceTree = "<group>";
@@ -2099,6 +2145,13 @@
 				31F4E5F11646F057002A3892 /* xp.png in Resources */,
 				31F4E5F61646F613002A3892 /* StoreViewController.xib in Resources */,
 				31F4E5FB1646FE39002A3892 /* ResourceViewController.xib in Resources */,
+				31BB6E83164DDEF7001B7CDE /* OneFloorViewController.xib in Resources */,
+				31BB6E86164DE031001B7CDE /* citadel3.png in Resources */,
+				31BB6E8B164DE0BB001B7CDE /* TwoFloorsViewController.xib in Resources */,
+				31BB6E90164DE0E5001B7CDE /* ThreeFloorsViewController.xib in Resources */,
+				31BB6E92164DE290001B7CDE /* branch.png in Resources */,
+				31258B5F164E09B1007D32C3 /* citadel1.png in Resources */,
+				31C72035164EB7500073EAF0 /* citadel2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2358,6 +2411,11 @@
 				31F4E5E71646ECC7002A3892 /* ResoCurrencyViewController.m in Sources */,
 				31F4E5F51646F613002A3892 /* StoreViewController.m in Sources */,
 				31F4E5FA1646FE39002A3892 /* ResourceViewController.m in Sources */,
+				313489C3164CB85200E12D3F /* InAppPurchaseManager.m in Sources */,
+				313489C7164CBB4C00E12D3F /* LocalizedPrice.m in Sources */,
+				31BB6E82164DDEF7001B7CDE /* OneFloorViewController.m in Sources */,
+				31BB6E8A164DE0BB001B7CDE /* TwoFloorsViewController.m in Sources */,
+				31BB6E8F164DE0E5001B7CDE /* ThreeFloorsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2368,9 +2426,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: LEONARD NG'ENO";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LEONARD NG'ENO";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos5.1]" = "iPhone Distribution: LEONARD NG'ENO";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LEONARD NG'ENO (97S7RCJM7F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LEONARD NG'ENO (97S7RCJM7F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos5.1]" = "iPhone Developer: LEONARD NG'ENO (97S7RCJM7F)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2384,9 +2442,9 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Microlending;
-				PROVISIONING_PROFILE = "F696AD7F-4088-454B-950F-EAF3A18DE1F7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos5.1]" = "";
+				PROVISIONING_PROFILE = "D14D8A71-01D7-409C-BD3A-44B58DFE4BA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D14D8A71-01D7-409C-BD3A-44B58DFE4BA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos5.1]" = "D14D8A71-01D7-409C-BD3A-44B58DFE4BA4";
 				REZ_SEARCH_PATHS = "${PROJECT_DIR}/**/**";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
@@ -2398,8 +2456,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: LEONARD NG'ENO";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: LEONARD NG'ENO";
+				CODE_SIGN_IDENTITY = "iPhone Developer: LEONARD NG'ENO (97S7RCJM7F)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LEONARD NG'ENO (97S7RCJM7F)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Microlending_Prefix.pch;
@@ -2411,8 +2469,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = Microlending;
-				PROVISIONING_PROFILE = "F696AD7F-4088-454B-950F-EAF3A18DE1F7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "D14D8A71-01D7-409C-BD3A-44B58DFE4BA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D14D8A71-01D7-409C-BD3A-44B58DFE4BA4";
 				REZ_SEARCH_PATHS = "${PROJECT_DIR}/**/**";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;

@@ -31,6 +31,7 @@
     id citadelDelegate;
     
     //Player variables
+    NSInteger playerXP;
     NSInteger playerLevel;
     NSInteger playerCoins;
     NSInteger playerLeaves;
@@ -48,6 +49,10 @@
 @property(nonatomic, assign) NSInteger level;
 @property(atomic, retain) NSMutableArray *citSeedlings;
 @property(nonatomic, retain) id citadelDelegate;
+@property(nonatomic, assign) NSInteger playerXP;
+@property(nonatomic, assign) NSInteger playerLevel;
+@property(nonatomic, assign) NSInteger playerCoins;
+@property(nonatomic, assign) NSInteger playerLeaves;
 
 -(void)initialize;
 -(void)addFloor:(NSInteger)floorNumber;

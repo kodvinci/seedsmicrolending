@@ -15,6 +15,9 @@
 #import "Furniture.h"
 #import "Pool.h"
 #import "StoreViewController.h"
+#import "OneFloorViewController.h"
+#import "TwoFloorsViewController.h"
+#import "ThreeFloorsViewController.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
@@ -27,6 +30,12 @@
     NSUserDefaults *defaults;
     Pool *poolFurn;
     Seedling *myFirstSeedling;
+    
+    //Player variables
+    NSInteger playerXP;
+    NSInteger playerLevel;
+    NSInteger playerCoins;
+    NSInteger playerLeaves;
 }
 
 @property(nonatomic, assign) NSInteger numOfFloors;
@@ -38,8 +47,14 @@
 @property(nonatomic, retain) Pool *poolFurn;
 @property(nonatomic, retain) Seedling *myFirstSeedling;
 
+@property(nonatomic, assign) NSInteger playerXP;
+@property(nonatomic, assign) NSInteger playerLevel;
+@property(nonatomic, assign) NSInteger playerCoins;
+@property(nonatomic, assign) NSInteger playerLeaves;
+
 -(IBAction)play;
 -(IBAction)begin;
 -(IBAction)furnitureStore;
+-(void)displayFloors:(NSInteger)howmany;
 
 @end
