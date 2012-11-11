@@ -20,7 +20,7 @@
 }
 
 -(NSString *) rollDice{
-    int random = rand() % ([traits count]);
+    int random = arc4rand() % ([traits count]);
     return [traits objectAtIndex:random];
     
 }
