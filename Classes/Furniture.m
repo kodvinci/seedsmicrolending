@@ -11,7 +11,7 @@
 @implementation Furniture
 
 @synthesize desire1 = desire1_, desire2 = desire2_, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_, currentOccupants = currentOccupancy_;
-
+@synthesize xPos, yPos;
 /*
 //Make it illegal to initialize the class
 - (id)init
@@ -23,6 +23,8 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
+        self.xPos = [decoder decodeIntegerForKey:@"xPosition"];
+        self.yPos = [decoder decodeIntegerForKey:@"yPosition"];
         self.itemName = [decoder decodeObjectForKey:@"itemName"];
         self.desire1 = [decoder decodeObjectForKey:@"desire1"];
         self.desire2 = [decoder decodeObjectForKey:@"desire2"];
@@ -42,20 +44,23 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:itemName forKey:@"itemName"];
-    [encoder encodeObject:desire1 forKey:@"desire1"];
-    [encoder encodeObject:desire2 forKey:@"desire2"];
-    [encoder encodeInteger:itemLevel forKey:@"itemLevel"];
-    [encoder encodeInteger:users forKey:@"users"];
-    [encoder encodeInteger:useTime forKey:@"useTime"];
-    [encoder encodeInteger:itemWidth forKey:@"itemWidth"];
-    [encoder encodeInteger:happinessReward1 forKey:@"happinessReward1"];
-    [encoder encodeInteger:happinessReward2 forKey:@"happinessReward2"];
-    [encoder encodeInteger:purchaseCost forKey:@"purchaseCost"];
-    [encoder encodeInteger:coinsCost forKey:@"coinsCost"];
-    [encoder encodeInteger:leavesCost forKey:@"leavesCost"];
-    [encoder encodeObject:furnPic forKey:@"furnPic"];
+    [encoder encodeObject:self.itemName forKey:@"itemName"];
+    [encoder encodeObject:self.desire1 forKey:@"desire1"];
+    [encoder encodeObject:self.desire2 forKey:@"desire2"];
+    [encoder encodeInteger:self.itemLevel forKey:@"itemLevel"];
+    [encoder encodeInteger:self.users forKey:@"users"];
+    [encoder encodeInteger:self.useTime forKey:@"useTime"];
+    [encoder encodeInteger:self.itemWidth forKey:@"itemWidth"];
+    [encoder encodeInteger:self.happinessReward1 forKey:@"happinessReward1"];
+    [encoder encodeInteger:self.happinessReward2 forKey:@"happinessReward2"];
+    [encoder encodeInteger:self.purchaseCost forKey:@"purchaseCost"];
+    [encoder encodeInteger:self.coinsCost forKey:@"coinsCost"];
+    [encoder encodeInteger:self.leavesCost forKey:@"leavesCost"];
+    [encoder encodeObject:self.furnPic forKey:@"furnPic"];
     [encoder encodeInteger:currentOccupancy forKey:@"currentOccupancy"];
+    [encoder encodeInteger:self.xPos forKey:@"xPosition"];
+    [encoder encodeInteger:self.yPos forKey:@"yPosition"];
+
 }
 
 -(Boolean) isOccupied{
@@ -81,4 +86,11 @@
                       size.height);
 }
 */
+
+-(void)xPosition:(NSInteger)x yPosition:(NSInteger)y
+{
+    self.xPos = x;
+    self.yPos = y;
+}
+
 @end

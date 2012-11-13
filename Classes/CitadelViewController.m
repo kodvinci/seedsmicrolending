@@ -14,7 +14,7 @@
 @class Seedling;
 @class Citadel;
 @class Furniture;
-@class Pool;
+@class Plot;
 @class StoreViewController;
 @class OneFloorViewController;
 @class TwoFloorsViewController;
@@ -28,7 +28,7 @@
 @synthesize furniture;
 @synthesize seedlings;
 @synthesize defaults;
-@synthesize poolFurn;
+@synthesize plot1;
 @synthesize myFirstSeedling;
 @synthesize playerCoins, playerLeaves, playerLevel, playerXP;
 
@@ -62,12 +62,12 @@
     level = 1;
     seedlingID = 1;
     
-    //pool
-//    UIImage *poolPic = [UIImage imageNamed:@"pool"];
-    poolFurn = [Pool alloc ];
-    [poolFurn initWithLevel:1];
+    //Farm Plot
+    plot1 = [[Plot alloc]init];
+    [plot1 initWithLevel:1];
+    NSLog(@"Plot1: %@", [plot1 itemName]);
     furniture  = [[NSMutableArray alloc] initWithObjects: nil];
-    [furniture addObject:poolFurn];
+    [furniture addObject:plot1];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
     //seedling
 /*    NSString *seed = [[NSString alloc] initWithFormat:@"myseed"];
@@ -93,10 +93,10 @@
 -(IBAction)play
 {
     //set up the Citadel
-    Citadel *myCitadel = [Citadel alloc];
+    Citadel *myCitadel = [[Citadel alloc]init];
     myCitadel.citadelDelegate = self;
     [myCitadel initialize];
-    
+    [myCitadel release]; 
 }
 
 -(void)citadelSetUpDone:(BOOL)result
@@ -120,7 +120,7 @@
         NSLog(@"One floor %@", @"in..");
         OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
         [self.navigationController pushViewController:CVmyFloor1 animated:YES];
-        [CVmyFloor1 release];
+     //   [CVmyFloor1 release];
     }
     
     if (howmany == 2) {

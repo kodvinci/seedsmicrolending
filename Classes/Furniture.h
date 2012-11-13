@@ -24,6 +24,8 @@
     NSInteger leavesCost;
     UIImage *furnPic;
     NSInteger currentOccupancy;
+    NSInteger xPos;
+    NSInteger yPos;
 }
 
 @property(nonatomic, retain) UIImage *furnPic;
@@ -40,6 +42,8 @@
 @property(nonatomic, assign) NSInteger leavesCost;
 @property(nonatomic, assign) NSInteger purchaseCost;
 @property(nonatomic, assign) NSInteger currentOccupants;
+@property(nonatomic, assign) NSInteger xPos;
+@property(nonatomic, assign) NSInteger yPos;
 
 //check if occupied
 -(Boolean) isOccupied;
@@ -47,5 +51,8 @@
 
 //define boundary for collisions
 //-(CGRect) getBounds;
+
+//positioning
+-(void)xPosition:(NSInteger)x yPosition:(NSInteger)y;
 
 @end

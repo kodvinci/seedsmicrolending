@@ -13,7 +13,7 @@
 #import "Seedling.h"
 #import "Citadel.h"
 #import "Furniture.h"
-#import "Pool.h"
+#import "Plot.h"
 #import "StoreViewController.h"
 #import "OneFloorViewController.h"
 #import "TwoFloorsViewController.h"
@@ -28,7 +28,7 @@
     NSMutableArray *furniture;
     NSMutableArray *seedlings;
     NSUserDefaults *defaults;
-    Pool *poolFurn;
+    Plot *plot1;
     Seedling *myFirstSeedling;
     
     //Player variables
@@ -44,7 +44,7 @@
 @property(nonatomic, retain) NSMutableArray *furniture;
 @property(nonatomic, retain) NSMutableArray *seedlings;
 @property(nonatomic, retain) NSUserDefaults *defaults;
-@property(nonatomic, retain) Pool *poolFurn;
+@property(nonatomic, retain) Plot *plot1;
 @property(nonatomic, retain) Seedling *myFirstSeedling;
 
 @property(nonatomic, assign) NSInteger playerXP;

@@ -167,11 +167,7 @@
             //subtract cost
             myCoins = myCoins - [furniture1 purchaseCost];
             [appDelegate.citadelData setInteger:myCoins forKey:@"coins"];
-            //   [myFurniture1 release];
-            //   [furnData release];
-            //   [furniture1 release];
-            //   [myCoins release];
-            //RELEASING ONE OF THE ABOVE VARIABLES CAUSES A CRASH...BUT I DON'T UNDERSTAND WHY
+
             //Display the bought furniture on floor
             CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
             [self.navigationController initWithRootViewController:FVmyCitadel];

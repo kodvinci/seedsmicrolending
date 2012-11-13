@@ -20,6 +20,7 @@
     self = [super initWithImage:image];
     if (self) {
         // Initialization code
+        NSLog(@"ViewFurniture: %@", @"self is true!");
     }
     return self;
 }

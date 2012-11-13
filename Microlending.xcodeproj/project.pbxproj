@@ -276,6 +276,8 @@
 		31CB22B9161B883D005C97D5 /* FloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22B7161B883D005C97D5 /* FloorViewController.m */; };
 		31CB22BA161B883D005C97D5 /* FloorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22B8161B883D005C97D5 /* FloorViewController.xib */; };
 		31CB22BE161BCF8C005C97D5 /* SingleFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CB22BD161BCF8B005C97D5 /* SingleFloor.m */; };
+		31D04AFB1652C41E00D16508 /* Plot.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D04AFA1652C41E00D16508 /* Plot.m */; };
+		31D04AFE1652C5EA00D16508 /* plot.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D04AFD1652C5EA00D16508 /* plot.png */; };
 		31D13658145E360E00DD3A43 /* CollageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D13656145E360E00DD3A43 /* CollageViewController.xib */; };
 		31E641CB162DF89D004974DD /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641CA162DF89D004974DD /* Pool.m */; };
 		31E641CE162E0B52004974DD /* WaterBed.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E641CD162E0B52004974DD /* WaterBed.m */; };
@@ -875,6 +877,9 @@
 		31CB22B8161B883D005C97D5 /* FloorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FloorViewController.xib; path = Classes/FloorViewController.xib; sourceTree = "<group>"; };
 		31CB22BC161BCF89005C97D5 /* SingleFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleFloor.h; sourceTree = "<group>"; };
 		31CB22BD161BCF8B005C97D5 /* SingleFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleFloor.m; sourceTree = "<group>"; };
+		31D04AF91652C41E00D16508 /* Plot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plot.h; sourceTree = "<group>"; };
+		31D04AFA1652C41E00D16508 /* Plot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plot.m; sourceTree = "<group>"; };
+		31D04AFD1652C5EA00D16508 /* plot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plot.png; sourceTree = "<group>"; };
 		31D13656145E360E00DD3A43 /* CollageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CollageViewController.xib; path = Classes/CollageViewController.xib; sourceTree = "<group>"; };
 		31E641C9162DF89D004974DD /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
 		31E641CA162DF89D004974DD /* Pool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pool.m; sourceTree = "<group>"; };
@@ -1096,6 +1101,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31D04AFD1652C5EA00D16508 /* plot.png */,
 				31C72034164EB7500073EAF0 /* citadel2.png */,
 				31258B5E164E09B1007D32C3 /* citadel1.png */,
 				31BB6E91164DE290001B7CDE /* branch.png */,
@@ -1949,6 +1955,8 @@
 				31E641F7162E3AEB004974DD /* StrongmanHammer.m */,
 				31E641F9162E3BA4004974DD /* WhackAMole.h */,
 				31E641FA162E3BA5004974DD /* WhackAMole.m */,
+				31D04AF91652C41E00D16508 /* Plot.h */,
+				31D04AFA1652C41E00D16508 /* Plot.m */,
 			);
 			name = Furniture;
 			sourceTree = "<group>";
@@ -2152,6 +2160,7 @@
 				31BB6E92164DE290001B7CDE /* branch.png in Resources */,
 				31258B5F164E09B1007D32C3 /* citadel1.png in Resources */,
 				31C72035164EB7500073EAF0 /* citadel2.png in Resources */,
+				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2416,6 +2425,7 @@
 				31BB6E82164DDEF7001B7CDE /* OneFloorViewController.m in Sources */,
 				31BB6E8A164DE0BB001B7CDE /* TwoFloorsViewController.m in Sources */,
 				31BB6E8F164DE0E5001B7CDE /* ThreeFloorsViewController.m in Sources */,
+				31D04AFB1652C41E00D16508 /* Plot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

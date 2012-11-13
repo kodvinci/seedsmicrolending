@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
 #import "CitadelViewController.h"
+#import "ViewFurniture.h"
 
 @interface OneFloorViewController : UIViewController
 {
@@ -17,14 +18,16 @@
     IBOutlet UILabel *coins;
     IBOutlet UILabel *leaves;
     IBOutlet UILabel *level;
-    
+    ViewFurniture *myFurnitureView;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
 @property(nonatomic, retain) UILabel *coins;
 @property(nonatomic, retain) UILabel *leaves;
 @property(nonatomic, retain) UILabel *level;
+@property(nonatomic, retain) ViewFurniture *myFurnitureView;
 
 -(IBAction)buyFloor;
+-(void)displayFurniture;
 
 @end
