@@ -16,8 +16,8 @@
     [self addNumber:1 ofTrait:@"Striped"];
     [self addNumber:1 ofTrait:@"Thick solid"];
     [inheritance setObject:@"Normal" forKey:@"Plain"];
-    [inheritance setObject:@"Normal" forKey:@"Spotted"];
-    [inheritance setObject:@"Normal" forKey:@"Striped"];
+    [inheritance setObject:@"Spotted" forKey:@"Spotted"];
+    [inheritance setObject:@"Striped" forKey:@"Striped"];
     [inheritance setObject:@"Thick" forKey:@"Thick Solid"];
     [inheritance setObject:@"Thick" forKey:@"Thick Spotted"];
     [inheritance setObject:@"Thick" forKey:@"Thick Striped"];
