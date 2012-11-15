@@ -17,7 +17,7 @@
     [self addNumber:1 ofTrait:@"Silk Tree"];
     [self addNumber:1 ofTrait:@"Calla Lily"];
     [self addNumber:1 ofTrait:@"Lotus White"];
-    }
+    
     
     [inheritance setObject:@"Leaves" forKey:@"Bamboo"];
     [inheritance setObject:@"Soft" forKey:@"Tulip"];
@@ -35,7 +35,7 @@
     [inheritance setObject:@"Deep" forKey:@"Calla Lilly"];
     [inheritance setObject:@"Leaves" forKey:@"Lotus White"];
     
-    
+    }
     return self;
 }
 

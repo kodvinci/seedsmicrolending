@@ -10,5 +10,5 @@
 
 @interface FaceDice : TraitDice
 -(id) init;
-
+-(NSString *) faceFromDadsHair:(NSString *) face andMomsFace: (NSString *) face2;
 @end
