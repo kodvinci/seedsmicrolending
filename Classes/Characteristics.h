@@ -26,6 +26,6 @@
 @property (nonatomic, retain) NSMutableDictionary *seedlingCharacteristics;
 
 -(void) generateNewSeedlingCharacteristics;
--(void) birthFrom: (Seedling*) Dad andFrom:(Seedling*) Mom;
+-(void) birthFrom: (Seedling*) Dad andFrom:(Seedling* ) Mom;
 
 @end

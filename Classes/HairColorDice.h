@@ -11,4 +11,5 @@
 @interface HairColorDice : TraitDice
 
 -(id) init;
+-(NSString *) hairColorFromDad:(NSString *) hair andMom: (NSString *) hair2;
 @end
