@@ -7,59 +7,28 @@
 //
 
 #import "Seedling.h"
-
+#import "CCSprite.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation Seedling
-
 @synthesize myName = myName_;
 @synthesize myImage = myImage_;
 @synthesize myHappiness = myHappiness_;
 @synthesize myXP = myXP_;
 @synthesize myRelationships = myRelationships_;
 @synthesize myDesires = myDesires_;
+@synthesize myCharacteristics = myCharacteristics_;
 
 // initialize the seedling with the given image
--(id)initWithImage:(NSString *) imageName seedlingName:(NSString *) name
-{
+-(id)initWithImage:(NSString *) name : (NSString *) image {
 	self = [super init];
     myName = name;
     myHappiness = 0;
     myXP = 0;
     myRelationships = [NSMutableDictionary dictionary];
     myDesires = [NSMutableDictionary dictionary];
-//    [self initWithFile: imageName rect:CGRectMake(0, 0, 20, 40)];
-    CCSprite *target = [CCSprite spriteWithFile:imageName rect:CGRectMake(0, 0, 27, 40)];
-    
-    //new additions
-    target.tag = 1;
-    [_targets addObject:target];
-    
-    // Determine where to spawn the target along the Y axis
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int minY = target.contentSize.height/2;
-    int maxY = winSize.height - target.contentSize.height/2;
-    int rangeY = maxY - minY;
-    int actualY = (arc4random() % rangeY) + minY;
-    
-    // Create the target slightly off-screen along the right edge,
-    // and along a random position along the Y axis as calculated above
-    target.position = ccp(winSize.width + (target.contentSize.width/2), actualY);
-    [self addChild:target];
-    
-    // Determine speed of the target
-    int minDuration = 2.0;
-    int maxDuration = 4.0;
-    int rangeDuration = maxDuration - minDuration;
-    int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    
-    // Create the actions
-    id actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                        position:ccp(-target.contentSize.width/2, actualY)];
-    id actionMoveDone = [CCCallFuncN actionWithTarget:self
-                                             selector:@selector(spriteMoveFinished:)];
-    [target runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
-    
-
+    myCharacteristics = [NSMutableDictionary dictionary];
+    [self initWithFile: image rect:CGRectMake(0, 0, 20, 40)];
 	return self;
 }
 
@@ -71,6 +40,7 @@
         self.myHappiness = [decoder decodeIntegerForKey:@"myHappiness"];
         self.myXP = [decoder decodeIntegerForKey:@"myXP"];
         self.myRelationships = [decoder decodeObjectForKey:@"myRelationships"];
+        self.myCharacteristics = [decoder decodeObjectForKey:@"myCharacteristics"];
         self.myDesires = [decoder decodeObjectForKey:@"myDesires"];
         self.myImage = [decoder decodeObjectForKey:@"myImage"];
     }
@@ -83,6 +53,7 @@
     [encoder encodeInteger:myXP forKey:@"myXP"];
     [encoder encodeObject:myRelationships forKey:@"myRelationships"];
     [encoder encodeObject:myDesires forKey:@"myDesires"];
+    [encoder encodeObject:myCharacteristics forKey:@"myCharacteristics"];
     [encoder encodeObject:myImage forKey:@"myImage"];
 }
 
@@ -111,6 +82,58 @@
     [myRelationships release];
     [myDesires release];
     [super dealloc];
+}
+
+- (void) generateNewSeedlingCharacteristics{
+    NameGenerator *namer;
+    EyeDice *eye;
+    FaceDice *face;
+    BodyDice *body;
+    HairColorDice *hairColor;
+    HairDice *hair;
+    SkinColorDice *skinColor;
+    DesireDice *desires;
+    
+    NSString *name = [namer generateName];
+    NSString *eyeType = [eye rollDice];
+    NSString *faceType = [face rollDice];
+    NSString *bodyType = [body rollDice];
+    NSString *hairColorType = [hairColor rollDice];
+    NSString *hairType = [hair rollDice];
+    NSString *skinColorType = [skinColor rollDice];
+    NSString *firstDesireType = [desires rollDice];
+    NSString *secondDesireType = [desires rollDice];
+    while ([firstDesireType isEqualToString: secondDesireType])
+    {
+        secondDesireType = [desires rollDice];
+    }
+    NSString *thirdDesireType = [desires rollDice];
+    while ([firstDesireType isEqualToString: thirdDesireType] && [secondDesireType isEqualToString: thirdDesireType])
+    {
+        thirdDesireType = [desires rollDice];
+    }
+    [myCharacteristics setObject: name forKey: @"Name"];
+    [myCharacteristics setObject: eyeType forKey: @"Eye Type"];
+    [myCharacteristics setObject: faceType forKey: @"Face Type"];
+    [myCharacteristics setObject: bodyType forKey: @"Body Type"];
+    [myCharacteristics setObject: hairColorType forKey: @"Hair Color"];
+    [myCharacteristics setObject: hairType forKey: @"Hair Type"];
+    [myCharacteristics setObject: skinColorType forKey: @"Skin Color"];
+    [myCharacteristics setObject: firstDesireType forKey: @"First Desire"];
+    [myCharacteristics setObject: secondDesireType forKey: @"Second Desire"];
+    [myCharacteristics setObject: thirdDesireType forKey: @"Third Desire"];
+}
+
+-(void) birthFrom:(Seedling *)Dad andFrom:(Seedling *)Mom{
+    NameGenerator *namer;
+    NSString *name = [namer generateName];
+    [myCharacteristics setObject: name forKey: @"Name"];
+    
+    
+    NSMutableDictionary *dad = [Dad myCharacteristics];
+    NSMutableDictionary *mom = [Mom myCharacteristics];
+    
+    
 }
 
 //-(CGRect) getBounds{

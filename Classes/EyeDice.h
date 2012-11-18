@@ -10,4 +10,5 @@
 
 @interface EyeDice : TraitDice
 -(id) init;
+-(NSString *) eyesFromDadsEyes:(NSString *) eye andMomsEyes: (NSString *) eyes2;
 @end
