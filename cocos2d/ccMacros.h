@@ -144,7 +144,7 @@ do	{																							\
 	[director_ setDisplayStats:NO];																\
 	[director_ setAnimationInterval:1.0/60];													\
 	CCGLView *__glView = [CCGLView viewWithFrame:[window_ bounds]								\
-									pixelFormat:kEAGLColorFormatRGB565							\
+									pixelFormat:kEAGLColorFormatRGBA8							\
 									depthFormat:0 /* GL_DEPTH_COMPONENT24_OES */				\
 							 preserveBackbuffer:NO												\
 									 sharegroup:nil												\

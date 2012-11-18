@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
 @interface Seed : UIView
+{
+    
+}
 
 @end

@@ -5,7 +5,7 @@
 //  Created by guest user on 10/2/12.
 //
 //
-
+/*
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "MicrolendingAppDelegate.h"
@@ -42,3 +42,4 @@
 @property(nonatomic, retain) ViewFurniture *myFun;
 
 @end
+*/

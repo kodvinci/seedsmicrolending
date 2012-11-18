@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FloorViewController.h"
+//#import "FloorViewController.h"
 #import "Floor.h"
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
@@ -36,6 +36,7 @@
     NSInteger playerLevel;
     NSInteger playerCoins;
     NSInteger playerLeaves;
+    
 }
 
 @property(nonatomic, assign) NSInteger numOfFloors;
@@ -56,5 +57,6 @@
 -(IBAction)begin;
 -(IBAction)furnitureStore;
 -(void)displayFloors:(NSInteger)howmany;
+
 
 @end

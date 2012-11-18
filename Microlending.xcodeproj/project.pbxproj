@@ -80,6 +80,7 @@
 		31AB3B461643A527001F2DD3 /* tightrope.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3B1643A527001F2DD3 /* tightrope.png */; };
 		31AB3B471643A527001F2DD3 /* whackamole.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3C1643A527001F2DD3 /* whackamole.png */; };
 		31AB3B481643A527001F2DD3 /* yogapad.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3D1643A527001F2DD3 /* yogapad.png */; };
+		31B05EEA165559B5000E1CB0 /* Seed.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B05EE9165559B5000E1CB0 /* Seed.m */; };
 		31B7FAD516333BB700B808FD /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1416333BB700B808FD /* CCAction.m */; };
 		31B7FAD616333BB700B808FD /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1616333BB700B808FD /* CCActionCamera.m */; };
 		31B7FAD716333BB700B808FD /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1816333BB700B808FD /* CCActionCatmullRom.m */; };
@@ -266,7 +267,7 @@
 		31BB6E92164DE290001B7CDE /* branch.png in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E91164DE290001B7CDE /* branch.png */; };
 		31BBF93E1641CEF2008B5D2F /* BuyFurnitureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBF93C1641CEF2008B5D2F /* BuyFurnitureViewController.m */; };
 		31BBF93F1641CEF2008B5D2F /* BuyFurnitureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BBF93D1641CEF2008B5D2F /* BuyFurnitureViewController.xib */; };
-		31BBF9421641D6A4008B5D2F /* SeedlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBF9411641D6A4008B5D2F /* SeedlingView.m */; };
+		31BBF9421641D6A4008B5D2F /* SeedlingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BBF9411641D6A4008B5D2F /* SeedlingLayer.m */; };
 		31C3FBE3145E3CAC00688CE7 /* Grabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3FBE2145E3CAC00688CE7 /* Grabber.m */; };
 		31C72035164EB7500073EAF0 /* citadel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 31C72034164EB7500073EAF0 /* citadel2.png */; };
 		31CB22A21617975A005C97D5 /* gaia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31CB22A11617975A005C97D5 /* gaia.jpg */; };
@@ -468,6 +469,8 @@
 		31AB3B3B1643A527001F2DD3 /* tightrope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tightrope.png; sourceTree = "<group>"; };
 		31AB3B3C1643A527001F2DD3 /* whackamole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whackamole.png; sourceTree = "<group>"; };
 		31AB3B3D1643A527001F2DD3 /* yogapad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yogapad.png; sourceTree = "<group>"; };
+		31B05EE8165559B5000E1CB0 /* Seed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seed.h; sourceTree = "<group>"; };
+		31B05EE9165559B5000E1CB0 /* Seed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seed.m; sourceTree = "<group>"; };
 		31B7FA1316333BB700B808FD /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		31B7FA1416333BB700B808FD /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
 		31B7FA1516333BB700B808FD /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
@@ -861,8 +864,8 @@
 		31BBF93B1641CEF2008B5D2F /* BuyFurnitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyFurnitureViewController.h; sourceTree = "<group>"; };
 		31BBF93C1641CEF2008B5D2F /* BuyFurnitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyFurnitureViewController.m; sourceTree = "<group>"; };
 		31BBF93D1641CEF2008B5D2F /* BuyFurnitureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BuyFurnitureViewController.xib; path = Classes/BuyFurnitureViewController.xib; sourceTree = "<group>"; };
-		31BBF9401641D6A4008B5D2F /* SeedlingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingView.h; sourceTree = "<group>"; };
-		31BBF9411641D6A4008B5D2F /* SeedlingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingView.m; sourceTree = "<group>"; };
+		31BBF9401641D6A4008B5D2F /* SeedlingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingLayer.h; sourceTree = "<group>"; };
+		31BBF9411641D6A4008B5D2F /* SeedlingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingLayer.m; sourceTree = "<group>"; };
 		31C3FBE1145E3CAC00688CE7 /* Grabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grabber.h; sourceTree = "<group>"; };
 		31C3FBE2145E3CAC00688CE7 /* Grabber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Grabber.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31C72034164EB7500073EAF0 /* citadel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citadel2.png; sourceTree = "<group>"; };
@@ -1224,10 +1227,12 @@
 		3187E08A16307BB5000996F2 /* Seedling */ = {
 			isa = PBXGroup;
 			children = (
-				31BBF9401641D6A4008B5D2F /* SeedlingView.h */,
-				31BBF9411641D6A4008B5D2F /* SeedlingView.m */,
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
+				31BBF9401641D6A4008B5D2F /* SeedlingLayer.h */,
+				31BBF9411641D6A4008B5D2F /* SeedlingLayer.m */,
+				31B05EE8165559B5000E1CB0 /* Seed.h */,
+				31B05EE9165559B5000E1CB0 /* Seed.m */,
 			);
 			name = Seedling;
 			sourceTree = "<group>";
@@ -2415,7 +2420,7 @@
 				31B7FC8716333C7D00B808FD /* cpVect.c in Sources */,
 				31F323C11640D56700E6B92E /* TraitDice.m in Sources */,
 				31BBF93E1641CEF2008B5D2F /* BuyFurnitureViewController.m in Sources */,
-				31BBF9421641D6A4008B5D2F /* SeedlingView.m in Sources */,
+				31BBF9421641D6A4008B5D2F /* SeedlingLayer.m in Sources */,
 				312B89C51642A9FE00452356 /* FurnitureViewController.m in Sources */,
 				31F4E5E71646ECC7002A3892 /* ResoCurrencyViewController.m in Sources */,
 				31F4E5F51646F613002A3892 /* StoreViewController.m in Sources */,
@@ -2426,6 +2431,7 @@
 				31BB6E8A164DE0BB001B7CDE /* TwoFloorsViewController.m in Sources */,
 				31BB6E8F164DE0E5001B7CDE /* ThreeFloorsViewController.m in Sources */,
 				31D04AFB1652C41E00D16508 /* Plot.m in Sources */,
+				31B05EEA165559B5000E1CB0 /* Seed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

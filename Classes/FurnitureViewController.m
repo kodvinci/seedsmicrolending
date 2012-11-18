@@ -177,6 +177,11 @@
         else
         {
             //Inform player they can't afford it
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Too Expensive!" message:@"You haven't earned enough coins!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Go to Game", nil];
+            
+            alert.tag=1;
+            [alert show];
+            [alert release];
         }
     }
     
@@ -189,6 +194,23 @@
         //Upgrade furniture to level 3
         id furniture3 = [[NSClassFromString(furnName) alloc] init];
         [furniture3 initWithLevel:1];
+    }
+}
+
+#pragma mark UIAlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (alertView.tag==1) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            //go to game
+            CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+            [self.navigationController initWithRootViewController:FVmyCitadel];
+            [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+            [FVmyCitadel release];
+        }
     }
 }
 

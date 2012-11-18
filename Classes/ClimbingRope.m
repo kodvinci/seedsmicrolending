@@ -18,6 +18,8 @@
     self. useTime = 30;
     self.itemWidth = 1;
     self.desire1 = @"acrobatic";
+    self.xPos = 160;
+    self.yPos = 170;
     
     if (furnitureLevel == 1) {
         self.itemLevel = 1;

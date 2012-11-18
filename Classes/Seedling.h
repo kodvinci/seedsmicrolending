@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCSprite.h"
+#import "cocos2d.h"
 #import <CCTouchDelegateProtocol.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface Seedling : CCSprite {
     NSString *myName;
@@ -17,6 +18,7 @@
     int myXP;
     NSMutableDictionary *myRelationships;
     NSMutableDictionary *myDesires;
+    NSMutableArray *_targets;
 }
 
 @property (nonatomic, retain) NSString *myName;
@@ -29,7 +31,7 @@
 
 - (void) updateHappiness: (int) happinessDifference;
 - (void) updateXP: (int) xpDifference;
-- (id) initWithImage: (NSString *) name : (NSString *) image;
+- (id) initWithImage: (NSString *) imageName seedlingName: (NSString *) name;
 
 //define boundary for collisions
 // -(CGRect) getBounds;

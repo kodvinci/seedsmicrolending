@@ -8,7 +8,7 @@
 
 #import "CitadelViewController.h"
 
-@class FloorViewController;
+//@class FloorViewController;
 @class Floor;
 @class MicrolendingAppDelegate;
 @class Seedling;
@@ -69,21 +69,19 @@
     furniture  = [[NSMutableArray alloc] initWithObjects: nil];
     [furniture addObject:plot1];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
+    
     //seedling
 /*    NSString *seed = [[NSString alloc] initWithFormat:@"myseed"];
-    myFirstSeedling = [Seedling alloc];
-    [myFirstSeedling initWithImage:seed :@"seedling1" ];
-    //[myFirstSeedling initWithImage: seed image:@"seedling1"];
+    myFirstSeedling = [[Seedling alloc]initWithImage:@"seedling" seedlingName:seed];
     seedlings = [[NSMutableArray alloc]initWithObjects: nil];
     [seedlings addObject:myFirstSeedling];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:seedlings];
-  */
+*/
     // Store the data
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     [appDelegate.citadelData setInteger:level forKey:@"level"];
-  //  [appDelegate.citadelData setInteger:seedlingID forKey:@"seedling"];
     [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-    //[appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+  //  [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     [appDelegate.citadelData synchronize];
     NSLog(@"Data saved");
     
@@ -138,7 +136,7 @@
     }
 
 }
-
+/*
 -(void)needToRefreshView:(BOOL)result
 {
     NSLog(@"CitadelViewController: %@", @"needToRefreshView!");
@@ -151,7 +149,7 @@
     }
     
 }
-
+*/
 - (void)viewDidLoad
 {
     self.title = @"Citadel";

@@ -24,6 +24,8 @@
     if (self) {
         // Custom initialization
         appDelegate = [[UIApplication sharedApplication] delegate];
+         _seedlings = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
@@ -80,12 +82,105 @@
     
     //display furniture
     [self displayFurniture];
+    
+//COCOS2D
+    CCDirector *director = [CCDirector sharedDirector];
+    
+    if([director isViewLoaded] == NO)
+    {
+        NSLog(@"In %@", @"director viewNotLoaded");
+
+        // Create the OpenGL view that Cocos2D will render to.
+        CCGLView *glView = [CCGLView viewWithFrame:[[[UIApplication sharedApplication] keyWindow] bounds]
+                                       pixelFormat:kEAGLColorFormatRGBA8
+                                       depthFormat:0
+                                preserveBackbuffer:NO
+                                        sharegroup:nil
+                                     multiSampling:NO
+                                   numberOfSamples:0];
+        
+        glView.backgroundColor = [UIColor clearColor];
+
+        // Assign the view to the director.
+        director.view = glView;
+        
+        // Initialize other director settings.
+        [director setAnimationInterval:1.0f/60.0f];
+        [director enableRetinaDisplay:YES];
+    }
+    
+    // Set the view controller as the director's delegate, so we can respond to certain events.
+    director.delegate = self;
+    
+    // Add the director as a child view controller of this view controller.
+    [self addChildViewController:director];
+    
+    // Add the director's OpenGL view as a subview so we can see it.
+    [self.view addSubview:director.view];
+  //  [self.view sendSubviewToBack:director.view];
+   
+    
+    // Finish up our view controller containment responsibilities.
+    [director didMoveToParentViewController:self];
+    
+    // Run whatever scene we'd like to run here.
+    if(director.runningScene)
+        [director replaceScene:[SeedlingLayer scene]];
+    else
+       [director runWithScene:[SeedlingLayer scene]];
+
+
+}
+
+
+-(void)displaySeedling
+{
+    NSLog(@"In %@", @"displaySeedling");
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CCSprite *seedling = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 27, 40)];
+    [_seedlings addObject:seedling];
+    
+    // Determine where to spawn the target along the Y axis
+    int minY = seedling.contentSize.height/2;
+    int maxY = winSize.height - seedling.contentSize.height/2;
+    int rangeY = maxY - minY;
+    int actualY = (arc4random() % rangeY) + minY;
+    
+    // Create the target slightly off-screen along the right edge,
+    // and along a random position along the Y axis as calculated above
+   // seedling.position = ccp(winSize.width + (seedling.contentSize.width/2), actualY);
+    seedling.position = ccp(100, 100);
+//    [self addChild:seedling];
+    
+    // Determine speed of the target
+    int minDuration = 2.0;
+    int maxDuration = 4.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    // Create the actions
+    id actionMove = [CCMoveTo actionWithDuration:actualDuration
+                                        position:ccp(-seedling.contentSize.width/2, actualY)];
+    [seedling runAction:[CCSequence actions:actionMove, nil]];
+
+//    id actionMoveDone = [CCCallFuncN actionWithTarget:self
+//                                             selector:@selector(spriteMoveFinished:)];
+//    [seedling runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    [[CCDirector sharedDirector] setDelegate:nil];
 }
 
 @end

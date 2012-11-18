@@ -11,7 +11,11 @@
 #import "CitadelViewController.h"
 #import "ViewFurniture.h"
 
-@interface OneFloorViewController : UIViewController
+//cocos2d stuff
+#import "cocos2d.h"
+#import "SeedlingLayer.h"
+
+@interface OneFloorViewController : UIViewController <CCDirectorDelegate>
 {
     IBOutlet UIButton *addFloor;
     MicrolendingAppDelegate *appDelegate;
@@ -19,6 +23,9 @@
     IBOutlet UILabel *leaves;
     IBOutlet UILabel *level;
     ViewFurniture *myFurnitureView;
+    
+    //cocos2d
+    NSMutableArray *_seedlings;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;

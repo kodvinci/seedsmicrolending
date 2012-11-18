@@ -6,11 +6,19 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
 
-@interface SeedlingView : UIImageView {
-    NSArray *animationImages;
+// When you import this file, you import all the cocos2d classes
+#import "cocos2d.h"
+
+@interface SeedlingLayer : CCLayerColor
+{
+    NSMutableArray *_targets;
+    NSMutableArray *_projectiles;
+    int _projectilesDestroyed;
 }
 
-@property(nonatomic, copy) NSArray *animationImages;
+// returns a CCScene that contains the SeedlingLayer as the only child
++(CCScene *) scene;
+
 @end

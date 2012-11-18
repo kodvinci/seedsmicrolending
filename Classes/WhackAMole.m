@@ -17,6 +17,8 @@
     self.itemWidth = 2;
     self.desire1 = @"strength";
     self.desire2 = @"acrobatic";
+    self.xPos = 100;
+    self.yPos = 100;
     
     if (furnitureLevel == 1) {
         self.itemLevel = 1;

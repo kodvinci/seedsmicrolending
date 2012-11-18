@@ -18,6 +18,8 @@
     self. useTime = 30;
     self.itemWidth = 1;
     self.desire1 = @"strength";
+    self.xPos = 60;
+    self.yPos = 130;
     
     if (furnitureLevel == 1) {
         self.itemLevel = 1;

@@ -17,6 +17,8 @@
     self. useTime = 30;
     self.itemWidth = 1;
     self.desire1 = @"musical";
+    self.xPos = 30;
+    self.yPos = 80;
     
     if (furnitureLevel == 1) {
         self.itemLevel = 1;
