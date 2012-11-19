@@ -456,7 +456,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NavBarImage.png">{320, 44}</string>
-			<string key="citadel1.png">{482, 253}</string>
+			<string key="citadel1.png">{509, 453}</string>
 			<string key="coin.png">{74, 78}</string>
 			<string key="leaf.png">{98, 59}</string>
 		</dictionary>

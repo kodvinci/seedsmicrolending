@@ -20,6 +20,7 @@
     UIWindow *window;
 	IBOutlet UITabBarController *tabBarController;
 	LoginViewController *loginView;
+    CitadelViewController *citadelView;
 	NSString *userID;
 	NSString *ipaddress;
 	Lender *currentLender;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) LoginViewController *loginView;
+@property(nonatomic, retain) CitadelViewController *citadelView;
 @property (nonatomic, retain) NSString *ipaddress;
 @property (nonatomic, retain) NSString *userID;
 @property (nonatomic, retain) Lender *currentLender;

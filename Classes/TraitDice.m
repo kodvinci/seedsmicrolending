@@ -22,7 +22,7 @@
 
 -(NSString *) rollDice
 {
-    int random = arc4rand() % ([traits count]);
+    int random = arc4random() % ([traits count]);
     return [traits objectAtIndex:random];
     
 }

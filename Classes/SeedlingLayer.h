@@ -6,9 +6,7 @@
 //
 //
 
-#import <GameKit/GameKit.h>
-
-// When you import this file, you import all the cocos2d classes
+#import "MicrolendingAppDelegate.h"
 #import "cocos2d.h"
 
 @interface SeedlingLayer : CCLayerColor
@@ -16,6 +14,8 @@
     NSMutableArray *_targets;
     NSMutableArray *_projectiles;
     int _projectilesDestroyed;
+    CCSprite *seedling;
+    MicrolendingAppDelegate *appDelegate;
 }
 
 // returns a CCScene that contains the SeedlingLayer as the only child

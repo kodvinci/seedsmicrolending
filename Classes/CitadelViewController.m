@@ -49,7 +49,7 @@
     //Player Variables
     playerXP = 1;
     playerLevel = 1;
-    playerCoins = 700;
+    playerCoins = 1700;
     playerLeaves = 0;
     //Store player variables
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
@@ -118,7 +118,7 @@
         NSLog(@"One floor %@", @"in..");
         OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
         [self.navigationController pushViewController:CVmyFloor1 animated:YES];
-     //   [CVmyFloor1 release];
+        [CVmyFloor1 release];
     }
     
     if (howmany == 2) {

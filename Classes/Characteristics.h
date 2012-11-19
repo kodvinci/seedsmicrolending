@@ -17,6 +17,7 @@
 #import "DesireDice.h"
 #import "Seedling.h"
 
+@class Seedling;
 
 @interface Characteristics : NSObject{
     NSMutableDictionary *seedlingCharacteristics;
@@ -26,6 +27,6 @@
 @property (nonatomic, retain) NSMutableDictionary *seedlingCharacteristics;
 
 -(void) generateNewSeedlingCharacteristics;
--(void) birthFrom: (Seedling*) Dad andFrom:(Seedling* ) Mom;
+-(void) birthFrom: (Seedling *) Dad andFrom:(Seedling *) Mom;
 
 @end

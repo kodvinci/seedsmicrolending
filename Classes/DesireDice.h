@@ -6,7 +6,7 @@
 //
 //
 
-#import <TraitDice.h>;
+#import "TraitDice.h"
 
 @interface DesireDice : TraitDice
 -(id) init;

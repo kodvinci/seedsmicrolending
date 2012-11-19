@@ -8,6 +8,7 @@
 
 #import "stdlib.h"
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 @interface TraitDice : NSObject
 {

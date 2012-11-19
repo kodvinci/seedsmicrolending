@@ -10,7 +10,7 @@
 #import "SeedlingLayer.h"
 #import "MicrolendingAppDelegate.h"
 
-// HelloWorldLayer implementation
+// SeedlingLayer implementation
 @implementation SeedlingLayer
 
 // Helper class method that creates a Scene with the SeedlingLayer as the only child.
@@ -76,8 +76,10 @@
         [self removeChild:projectile cleanup:YES];
     }
     [projectilesToDelete release]; */
+    
+    CGRect seedlingRect = CGRectMake(seedling.position.x - (seedling.contentSize.width/2), seedling.position.y - (seedling.contentSize.height/2),seedling.contentSize.width,seedling.contentSize.height);
 }
-
+/*
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
     
@@ -89,69 +91,98 @@
     
     [self removeChild:sprite cleanup:YES];
     
- /*   GameOverScene *gameOverScene = [GameOverScene node];
+    GameOverScene *gameOverScene = [GameOverScene node];
     [gameOverScene.layer.label setString:@"You Lose :["];
-    [[CCDirector sharedDirector] replaceScene:gameOverScene]; */
-}
-/*
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+} */
+
 -(void)addTarget {
     NSLog(@"SeedlingLayer: %@", @"addTarget");
 
-    CCSprite *target = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 50, 50)];
+//    CCSprite *target = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 50, 50)];
     
     //new additions
-    target.tag = 1;
-    [_targets addObject:target];
+//    target.tag = 1;
+//    [_targets addObject:target];
     
     // Determine where to spawn the target along the Y axis
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int minY = target.contentSize.height/2;
-    int maxY = winSize.height - target.contentSize.height/2;
+    int minY = seedling.contentSize.height/2;
+    int maxY = winSize.height - seedling.contentSize.height/2;
     int rangeY = maxY - minY;
     int actualY = (arc4random() % rangeY) + minY;
     
-    // Create the target slightly off-screen along the right edge,
+    // Create the target along the right edge,
     // and along a random position along the Y axis as calculated above
-    target.position = ccp(winSize.width - (target.contentSize.width/2), actualY);
-    [self addChild:target];
+    seedling.position = ccp(winSize.width - (seedling.contentSize.width/2), actualY);
+    [self addChild:seedling];
     
     // Determine speed of the target
-    int minDuration = 2.0;
-    int maxDuration = 4.0;
+    int minDuration = 5.0;
+    int maxDuration = 8.0;
     int rangeDuration = maxDuration - minDuration;
     int actualDuration = (arc4random() % rangeDuration) + minDuration;
     
     // Create the actions
     id actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                        position:ccp(-target.contentSize.width/2, actualY)];
-    id actionMoveDone = [CCCallFuncN actionWithTarget:self
-                                             selector:@selector(spriteMoveFinished:)];
-    [target runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
-    
+                                        position:ccp(-seedling.contentSize.width/2, actualY)];
+ //   id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveFinished:)];
+  
+ //   [seedling runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+    [seedling runAction:[CCSequence actions:actionMove, nil]];
+ 
 }
 
+
 -(void)gameLogic:(ccTime)dt {
-    [self addTarget];
+    [self moveAround];
 }
-*/
+
 // on "init" you need to initialize your instance
+
+-(void)moveAround
+{
+    // Determine speed of seedling
+    int minDuration = 5.0;
+    int maxDuration = 8.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    //determine where to move to
+    NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
+    NSMutableArray *myfurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
+    for (int k=0; k < myfurniture.count; k++) {
+        NSLog(@"My Furniture: %@", [myfurniture objectAtIndex:k]);
+        int actualX = [[myfurniture objectAtIndex:k]xPos];
+        int actualY = [[myfurniture objectAtIndex:k]yPos];
+
+        id actionMove = [CCMoveTo actionWithDuration:actualDuration position:ccp(actualX, actualY)];
+        
+        [seedling runAction:[CCSequence actions:actionMove, nil]];
+    }
+}
+
 -(id) init
 {
     NSLog(@"SeedlingLayer: %@", @"init");
-    _targets = [[NSMutableArray alloc] init];
+    
+    appDelegate = [[UIApplication sharedApplication]delegate];
  
     if( (self=[super initWithColor:ccc4(0,0,0,0)] )) {
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        CCSprite *player = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 50, 50)];
-        player.position = ccp(player.contentSize.width/2, winSize.height/2);
-        [self addChild:player];
+        seedling = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 50, 50)];
+        seedling.tag = 1;
+        seedling.position = ccp(seedling.contentSize.width/2, winSize.height/2);
+        [self addChild:seedling];
     }
     
     self.isTouchEnabled = YES;
     
  //   [self schedule:@selector(update:)];
     
- //   [self schedule:@selector(gameLogic:) interval:1.0];
+    [self moveAround];
+    
+//    [self schedule:@selector(gameLogic:) interval:1.0];
     
     return self;
 

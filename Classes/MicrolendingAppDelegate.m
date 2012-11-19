@@ -17,12 +17,14 @@
 @class LoginViewController;
 @class Badge;
 @class Grabber;
+@class CitadelViewController;
 
 @implementation MicrolendingAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;
 @synthesize loginView;
+@synthesize citadelView;
 @synthesize ipaddress;
 @synthesize userID;
 @synthesize currentLender;
@@ -71,11 +73,14 @@
     
     [self.window makeKeyAndVisible];
 	loginView = [[LoginViewController alloc] init];
+//    citadelView = [[CitadelViewController alloc] init];
 	[window addSubview:tabBarController.view];
 
     [NSThread detachNewThreadSelector:@selector(initializePayPal) toTarget:self withObject:nil];
 	
-	[self.tabBarController presentModalViewController:loginView animated:NO]; 
+	[self.tabBarController presentModalViewController:loginView animated:NO];
+ //   [self.tabBarController presentModalViewController:citadelView animated:YES];
+
     return YES;
 }
 
@@ -152,7 +157,7 @@
 	[userClasses release];
 	[badgeList release];
     [myCredit release];
-
+    [citadelView release];
     [super dealloc];
 }
 
