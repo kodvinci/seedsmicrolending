@@ -8,7 +8,7 @@
 
 #import "CitadelViewController.h"
 
-//@class FloorViewController;
+@class FloorViewController;
 @class Floor;
 @class MicrolendingAppDelegate;
 @class Seedling;
@@ -49,7 +49,7 @@
     //Player Variables
     playerXP = 1;
     playerLevel = 1;
-    playerCoins = 1700;
+    playerCoins = 700;
     playerLeaves = 0;
     //Store player variables
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
@@ -69,19 +69,21 @@
     furniture  = [[NSMutableArray alloc] initWithObjects: nil];
     [furniture addObject:plot1];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
-    
     //seedling
 /*    NSString *seed = [[NSString alloc] initWithFormat:@"myseed"];
-    myFirstSeedling = [[Seedling alloc]initWithImage:@"seedling" seedlingName:seed];
+    myFirstSeedling = [Seedling alloc];
+    [myFirstSeedling initWithImage:seed :@"seedling1" ];
+    //[myFirstSeedling initWithImage: seed image:@"seedling1"];
     seedlings = [[NSMutableArray alloc]initWithObjects: nil];
     [seedlings addObject:myFirstSeedling];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:seedlings];
-*/
+  */
     // Store the data
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     [appDelegate.citadelData setInteger:level forKey:@"level"];
+  //  [appDelegate.citadelData setInteger:seedlingID forKey:@"seedling"];
     [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-  //  [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    //[appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     [appDelegate.citadelData synchronize];
     NSLog(@"Data saved");
     
@@ -118,7 +120,7 @@
         NSLog(@"One floor %@", @"in..");
         OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
         [self.navigationController pushViewController:CVmyFloor1 animated:YES];
-        [CVmyFloor1 release];
+     //   [CVmyFloor1 release];
     }
     
     if (howmany == 2) {
@@ -136,7 +138,7 @@
     }
 
 }
-/*
+
 -(void)needToRefreshView:(BOOL)result
 {
     NSLog(@"CitadelViewController: %@", @"needToRefreshView!");
@@ -149,7 +151,7 @@
     }
     
 }
-*/
+
 - (void)viewDidLoad
 {
     self.title = @"Citadel";

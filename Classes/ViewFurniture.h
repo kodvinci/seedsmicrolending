@@ -11,8 +11,7 @@
 
 @interface ViewFurniture : UIImageView
 {
-    NSString *name;
+    
 }
-@property(nonatomic, retain) NSString *name;
 
 @end

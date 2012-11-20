@@ -17,8 +17,6 @@
     self. useTime = 30;
     self.itemWidth = 2;
     self.desire1 = @"water";
-    self.xPos = 160;
-    self.yPos = 130;
     
     if (furnitureLevel == 1) {
         self.itemLevel = 1;

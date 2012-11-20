@@ -97,9 +97,9 @@
     //TO_DO
     //Do the magic of generating the name for my seedling here...then use that name to initialize it
     
-//    Seedling *mySeedling = [[Seedling alloc]initWithImage:@"nameGenerated"];
-//    [citSeedlings addObject:mySeedling];
-//    [self saveChanges:@"SEEDLING"];
+    Seedling *mySeedling = [[Seedling alloc]initWithImage:@"nameGenerated"];
+    [citSeedlings addObject:mySeedling];
+    [self saveChanges:@"SEEDLING"];
 }
 
 -(void)addFurniture
@@ -131,6 +131,8 @@
     }
     NSLog(@"NumFloors:%@", [appDelegate.citadelData objectForKey:@"floors"]);
   
+    
+   [self.citadelDelegate needToRefreshView:YES];
 
 }
 

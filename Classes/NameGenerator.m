@@ -8,6 +8,7 @@
 
 #import "NameGenerator.h"
 
+
 @implementation NameGenerator: NSObject
 
 
@@ -129,11 +130,11 @@
 
 -(NSString *) generateName{
     
-    NSMutableString *name = (NSMutableString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))];
-    [name appendString:((NSString *)[nameParts objectAtIndex:(arc4random() %([nameParts count]))])];
-    int random = arc4random() % 2;
+    NSMutableString *name = (NSMutableString *)[nameParts objectAtIndex:(arc4rand() % ([nameParts count]))];
+    [name appendString:((NSString *)[nameParts objectAtIndex:(arc4rand() %([nameParts count]))])];
+    int random = arc4rand() % 2;
     for(int i = 0; i<random; i++){
-        [name appendString:((NSString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))])];
+        [name appendString:((NSString *)[nameParts objectAtIndex:(arc4rand() % ([nameParts count]))])];
     }
     NSString *finalName = [self capitalize:  name];
     return finalName;
