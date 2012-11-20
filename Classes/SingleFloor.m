@@ -5,7 +5,7 @@
 //  Created by guest user on 10/2/12.
 //
 //
-/*
+
 #import "SingleFloor.h"
 
 @class FloorViewController;
@@ -32,7 +32,7 @@
     return self;
 }
 
-
+/*
 -(void)needToRefreshView:(BOOL)result
 {
     NSLog(@"%@", @"needToRefreshView!");
@@ -42,7 +42,7 @@
         [self setNeedsDisplay];
     }
 
-}
+}*/
 
 -(void)setupSeedling
 {
@@ -206,4 +206,3 @@
 }
 
 @end
-*/

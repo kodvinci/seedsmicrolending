@@ -86,11 +86,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/FloorViewController.m"
-         timestampString = "374621125.050532"
+         timestampString = "373341268.284988"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91">
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-displayFurniture"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

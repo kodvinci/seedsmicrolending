@@ -42,7 +42,7 @@
 @property(nonatomic, assign) NSInteger leavesCost;
 @property(nonatomic, assign) NSInteger purchaseCost;
 @property(nonatomic, assign) NSInteger currentOccupants;
-@property(nonatomic, assign, readwrite) NSInteger xPos;
+@property(nonatomic, assign) NSInteger xPos;
 @property(nonatomic, assign) NSInteger yPos;
 
 //check if occupied
