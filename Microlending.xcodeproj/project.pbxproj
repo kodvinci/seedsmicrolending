@@ -56,7 +56,6 @@
 		313489C7164CBB4C00E12D3F /* LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 313489C6164CBB4C00E12D3F /* LocalizedPrice.m */; };
 		313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B395D1642C0C300602E7D /* libiconv.dylib */; };
 		313B39631642C15300602E7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B39621642C15300602E7D /* libc++.dylib */; };
-		313B39651642C26000602E7D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 313B39641642C26000602E7D /* CMakeLists.txt */; };
 		3187E081162FADB2000996F2 /* ViewFurniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187E080162FADB2000996F2 /* ViewFurniture.m */; };
 		3187E083162FB002000996F2 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187E082162FB002000996F2 /* pool.png */; };
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
@@ -449,7 +448,6 @@
 		313489C6164CBB4C00E12D3F /* LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedPrice.m; sourceTree = "<group>"; };
 		313B395D1642C0C300602E7D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		313B39621642C15300602E7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		313B39641642C26000602E7D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "../../../cocos2d-iphone-2.0/external/Chipmunk/src/CMakeLists.txt"; sourceTree = "<group>"; };
 		3187E07F162FADB2000996F2 /* ViewFurniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFurniture.h; sourceTree = "<group>"; };
 		3187E080162FADB2000996F2 /* ViewFurniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFurniture.m; sourceTree = "<group>"; };
 		3187E082162FB002000996F2 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = SOURCE_ROOT; };
@@ -1824,7 +1822,6 @@
 		31B7FC4616333C7C00B808FD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				313B39641642C26000602E7D /* CMakeLists.txt */,
 				31B7FC4716333C7C00B808FD /* chipmunk.c */,
 				31B7FC4916333C7C00B808FD /* constraints */,
 				31B7FC5516333C7C00B808FD /* cpArbiter.c */,
@@ -2175,7 +2172,6 @@
 				31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */,
 				31BBF93F1641CEF2008B5D2F /* BuyFurnitureViewController.xib in Resources */,
 				312B89C61642A9FE00452356 /* FurnitureViewController.xib in Resources */,
-				313B39651642C26000602E7D /* CMakeLists.txt in Resources */,
 				31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */,
 				31AB3B2F16438B92001F2DD3 /* easel.png in Resources */,
 				31AB3B3016438B92001F2DD3 /* hammock.png in Resources */,
