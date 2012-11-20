@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Dark GreenDark Green</key>
+	<string>Dark Green</string>
+	<key>Dark GreenMedium Green</key>
+	<string>Dark Green</string>
+	<key>Medium GreenMedium Green</key>
+	<string>Medium Green</string>
+	<key>Dark GreenLight Green</key>
+	<string>Medium Green</string>
+	<key>Light GreenMedium Green</key>
+	<string>Medium Green</string>
+	<key>Dark GreenGreyish Green</key>
+	<string>Medium Green</string>
+	<key>Greyish GreenMedium Green</key>
+	<string>Light Green</string>
+	<key>Light GreenLight Green</key>
+	<string>Light Green</string>
+	<key>Dark GreenYellowish Green</key>
+	<string>Light Green</string>
+	<key>Medium GreenYellowish Green</key>
+	<string>Light Green</string>
+	<key>Light GreenWhite</key>
+	<string>Greyish Green</string>
+	<key>Medium GreenWhite</key>
+	<string>Greyish Green</string>
+	<key>Dark GreenWhite</key>
+	<string>Greyish Green</string>
+	<key>Greyish GreenWhite</key>
+	<string>Greyish Green</string>
+	<key>Light GreenYellowish Green</key>
+	<string>Greyish Green</string>
+	<key>Greyish GreenLight Green</key>
+	<string>Greyish Green</string>
+	<key>Greyish GreenGreyish Green</key>
+	<string>Greyish Green</string>
+	<key>Greyish GreenMedium Brown</key>
+	<string>Yellowish Green</string>
+	<key>Greyish BrownMedium Green</key>
+	<string>Yellowish Green</string>
+	<key>Dark GreenGold</key>
+	<string>Yellowish Green</string>
+	<key>GoldMedium Green</key>
+	<string>Yellowish Green</string>
+	<key>Greyish BrownGold</key>
+	<string>Yellowish Green</string>
+	<key>GoldLight Brown</key>
+	<string>Yellowish Green</string>
+	<key>GoldMedium Brown</key>
+	<string>Yellowish Green</string>
+	<key>Dark BrownGold</key>
+	<string>Yellowish Green</string>
+	<key>GoldLight Purple</key>
+	<string>Yellowish Green</string>
+	<key>GoldPurple</key>
+	<string>Yellowish Green</string>
+	<key>WhiteYellowish Green</key>
+	<string>Yellowish Green</string>
+	<key>Dark BrownGreyish Green</key>
+	<string>Yellowish Green</string>
+	<key>Light GreenMedium Brown</key>
+	<string>Yellowish Green</string>
+	<key>Medium BrownMedium Green</key>
+	<string>Yellowish Green</string>
+	<key>Dark BrownLight Green</key>
+	<string>Yellowish Green</string>
+	<key>Light BrownMedium Green</key>
+	<string>Yellowish Green</string>
+	<key>Dark GreenLight Brown</key>
+	<string>Yellowish Green</string>
+	<key>Dark GreenGreyish Brown</key>
+	<string>Yellowish Green</string>
+	<key>Dark BrownDark Brown</key>
+	<string>Dark Brown</string>
+	<key>Dark BrownMedium Brown</key>
+	<string>Dark Brown</string>
+	<key>Dark GreenDark Red</key>
+	<string>Dark Brown</string>
+	<key>Medium BrownPurple</key>
+	<string>Dark Brown</string>
+	<key>Dark RedMedium Brown</key>
+	<string>Dark Brown</string>
+	<key>Dark RedMedium Green</key>
+	<string>Dark Brown</string>
+	<key>Medium BrownMedium Brown</key>
+	<string>Medium Brown</string>
+	<key>Dark BrownLight Brown</key>
+	<string>Medium Brown</string>
+	<key>Light BrownMedium Brown</key>
+	<string>Medium Brown</string>
+	<key>Dark BrownGreyish Brown</key>
+	<string>Medium Brown</string>
+	<key>Dark RedLight Green</key>
+	<string>Medium Brown</string>
+	<key>Light RedMedium Green</key>
+	<string>Medium Brown</string>
+	<key>Dark GreenLight Red</key>
+	<string>Medium Brown</string>
+	<key>Light BrownLight Brown</key>
+	<string>Light Brown</string>
+	<key>Greyish BrownMedium Brown</key>
+	<string>Light Brown</string>
+	<key>Light GreenLight Red</key>
+	<string>Light Brown</string>
+	<key>Dark RedGreyish Red</key>
+	<string>Light Brown</string>
+	<key>Greyish BrownLight Brown</key>
+	<string>Light Brown</string>
+	<key>Light BrownWhite</key>
+	<string>Greyish Brown</string>
+	<key>Medium BrownWhite</key>
+	<string>Greyish Brown</string>
+	<key>Dark BrownWhite</key>
+	<string>Greyish Brown</string>
+	<key>Greyish BrownWhite</key>
+	<string>Greyish Brown</string>
+	<key>Greyish GreenLight Red</key>
+	<string>Greyish Brown</string>
+	<key>Light BrownLight Red</key>
+	<string>Greyish Brown</string>
+	<key>Light BrownLight Purple</key>
+	<string>Greyish Brown</string>
+	<key>Greyish BrownGreyish Brown</key>
+	<string>Greyish Brown</string>
+	<key>Greyish BrownLight Purple</key>
+	<string>Greyish Brown</string>
+	<key>Light PurpleLight Purple</key>
+	<string>Light Purple</string>
+	<key>Light PurpleWhite</key>
+	<string>Light Purple</string>
+	<key>PurpleWhite</key>
+	<string>Light Purple</string>
+	<key>GoldLight Red</key>
+	<string>Light Purple</string>
+	<key>Light RedYellowish Green</key>
+	<string>Light Purple</string>
+	<key>Light PurpleLight Red</key>
+	<string>Light Purple</string>
+	<key>PurpleYellowish Green</key>
+	<string>Light Purple</string>
+	<key>Greyish BrownPurple</key>
+	<string>Light Purple</string>
+	<key>Light BrownPurple</key>
+	<string>Light Purple</string>
+	<key>Light PurpleYellowish Green</key>
+	<string>Light Purple</string>
+	<key>Dark RedLight Purple</key>
+	<string>Light Purple</string>
+	<key>PurplePurple</key>
+	<string>Purple</string>
+	<key>Light PurplePurple</key>
+	<string>Purple</string>
+	<key>Dark RedGold</key>
+	<string>Purple</string>
+	<key>Dark RedYellowish Green</key>
+	<string>Purple</string>
+	<key>Light PurpleMedium Brown</key>
+	<string>Purple</string>
+	<key>Dark BrownLight Purple</key>
+	<string>Purple</string>
+	<key>Dark BrownPurple</key>
+	<string>Purple</string>
+	<key>Light RedLight Red</key>
+	<string>Light Red</string>
+	<key>Dark RedWhite</key>
+	<string>Light Red</string>
+	<key>Greyish GreenLight Purple</key>
+	<string>Light Red</string>
+	<key>Greyish GreenPurple</key>
+	<string>Light Red</string>
+	<key>Dark RedGreyish Brown</key>
+	<string>Light Red</string>
+	<key>Greyish BrownYellowish Green</key>
+	<string>Light Red</string>
+	<key>Dark RedLight Brown</key>
+	<string>Light Red</string>
+	<key>Light BrownYellowish Green</key>
+	<string>Light Red</string>
+	<key>Light GreenLight Purple</key>
+	<string>Light Red</string>
+	<key>Dark RedLight Red</key>
+	<string>Light Red</string>
+	<key>Light RedWhite</key>
+	<string>Light Red</string>
+	<key>Greyish BrownLight Red</key>
+	<string>Light Red</string>
+	<key>Dark BrownDark Green</key>
+	<string>Dark Red</string>
+	<key>Dark GreenMedium Brown</key>
+	<string>Dark Red</string>
+	<key>Dark BrownMedium Green</key>
+	<string>Dark Red</string>
+	<key>Dark GreenLight Purple</key>
+	<string>Dark Red</string>
+	<key>Dark GreenPurple</key>
+	<string>Dark Red</string>
+	<key>Light PurpleMedium Green</key>
+	<string>Dark Red</string>
+	<key>Medium GreenPurple</key>
+	<string>Dark Red</string>
+	<key>Light GreenPurple</key>
+	<string>Dark Red</string>
+	<key>Medium BrownYellowish Green</key>
+	<string>Dark Red</string>
+	<key>Dark BrownYellowish Green</key>
+	<string>Dark Red</string>
+	<key>Dark BrownLight Red</key>
+	<string>Dark Red</string>
+	<key>Light RedMedium Brown</key>
+	<string>Dark Red</string>
+	<key>Dark RedPurple</key>
+	<string>Dark Red</string>
+	<key>Dark RedDark Red</key>
+	<string>Dark Red</string>
+	<key>WhiteWhite</key>
+	<string>White</string>
+	<key>Greyish GreenGreyish Brown</key>
+	<string>White</string>
+	<key>Greyish GreenLight Brown</key>
+	<string>White</string>
+	<key>Greyish BrownLight Green</key>
+	<string>White</string>
+	<key>Light BrownLight Green</key>
+	<string>White</string>
+	<key>GoldWhite</key>
+	<string>Gold</string>
+	<key>GoldGold</key>
+	<string>Gold</string>
+	<key>GoldYellowish Green</key>
+	<string>Gold</string>
+	<key>GoldLight Green</key>
+	<string>Gold</string>
+	<key>GoldGreyish Green</key>
+	<string>Gold</string>
+</dict>
+</plist>

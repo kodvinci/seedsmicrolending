@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Dark BrownLight Brown</key>
+	<string>Light Brown</string>
+	<key>Light BrownRed</key>
+	<string>Light Brown</string>
+	<key>Light BrownYellow</key>
+	<string>Light Brown</string>
+	<key>Light BrownLight Brown</key>
+	<string>Light Brown</string>
+	<key>RedYellow</key>
+	<string>Light Brown</string>
+	<key>Dark BrownGreen</key>
+	<string>Dark Brown</string>
+	<key>BlueLight Brown</key>
+	<string>Dark Brown</string>
+	<key>Dark BrownRed</key>
+	<string>Dark Brown</string>
+	<key>Dark BrownYellow</key>
+	<string>Dark Brown</string>
+	<key>Dark BrownDark Brown</key>
+	<string>Dark Brown</string>
+	<key>BlueRed</key>
+	<string>Green</string>
+	<key>Dark BrownGrey</key>
+	<string>Green</string>
+	<key>GreenGreen</key>
+	<string>Green</string>
+	<key>BlueYellow</key>
+	<string>Green</string>
+	<key>GreenYellow</key>
+	<string>Blue</string>
+	<key>GreyLight Brown</key>
+	<string>Blue</string>
+	<key>BlueBlue</key>
+	<string>Blue</string>
+	<key>BlueGrey</key>
+	<string>Blue</string>
+	<key>GreyGrey</key>
+	<string>Grey</string>
+	<key>BlueGreen</key>
+	<string>Grey</string>
+	<key>RedRed</key>
+	<string>Red</string>
+	<key>BlueDark Brown</key>
+	<string>Red</string>
+	<key>GreenLight Brown</key>
+	<string>Red</string>
+	<key>GreyRed</key>
+	<string>Red</string>
+	<key>YellowYellow</key>
+	<string>Yellow</string>
+	<key>GreenGrey</key>
+	<string>Yellow</string>
+	<key>GreenRed</key>
+	<string>Yellow</string>
+	<key>GreyYellow</key>
+	<string></string>
+</dict>
+</plist>
