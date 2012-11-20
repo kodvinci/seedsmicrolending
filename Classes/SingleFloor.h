@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MicrolendingAppDelegate.h"
 #import "FloorViewController.h"
-#import "SeedlingView.h"
 #import "ViewFurniture.h"
 #import "Citadel.h"
 #import "Seedling.h"
