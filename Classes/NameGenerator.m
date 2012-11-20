@@ -14,6 +14,7 @@
 @synthesize nameParts;
 
 -(id) init{
+    nameParts = [[NSMutableArray alloc]init];
     if(self == [super init]){
         [self.nameParts addObject:@"a"];
         [self.nameParts addObject:@"ai"];
@@ -129,11 +130,12 @@
 
 -(NSString *) generateName{
     
-    NSMutableString *name = (NSMutableString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))];
-    [name appendString:((NSString *)[nameParts objectAtIndex:(arc4random() %([nameParts count]))])];
+    NSMutableString *name = [[NSMutableString alloc]init];
+    [name appendString: (NSMutableString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))]];
+    [name appendString:((NSMutableString *)[nameParts objectAtIndex:(arc4random() %([nameParts count]))])];
     int random = arc4random() % 2;
     for(int i = 0; i<random; i++){
-        [name appendString:((NSString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))])];
+        [name appendString:((NSMutableString *)[nameParts objectAtIndex:(arc4random() % ([nameParts count]))])];
     }
     NSString *finalName = [self capitalize:  name];
     return finalName;

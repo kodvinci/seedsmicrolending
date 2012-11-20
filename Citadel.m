@@ -37,7 +37,6 @@
     citFloors = [appDelegate.citadelData integerForKey:@"floors"];
     level = [appDelegate.citadelData integerForKey:@"level"];
     
-//    seedlingID = [appDelegate.citadelData integerForKey:@"seedling"];
    // NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
  //   citFurniture = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
   //  citSeedlings = [appDelegate.citadelData objectForKey:@"seedlings"];

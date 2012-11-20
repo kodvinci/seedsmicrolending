@@ -11,6 +11,7 @@
 @class MicrolendingAppDelegate;
 @class CitadelViewController;
 @class ViewFurniture;
+@class SeedlingV2View;
 
 @implementation OneFloorViewController
 
@@ -19,6 +20,7 @@
 @synthesize myFurnitureView, myFarmView;
 @synthesize myfurniture, furnitureViews;
 @synthesize pt, myTouch;
+@synthesize myseedlings;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,8 +58,6 @@
     myfurniture = [[NSMutableArray alloc]initWithArray:myarray];
     
     for (int k=0; k < myfurniture.count; k++) {
-        NSString *myImage = [[myfurniture objectAtIndex:k]itemName];
-        NSLog(@"name of furniture: %@", myImage);
         UIImage *furnitureImage = [[myfurniture objectAtIndex:k]furnPic];
         
         //Non-plot furniture
@@ -71,8 +71,7 @@
             
             furnitureViews = [[NSMutableArray alloc]initWithObjects: nil];
             [furnitureViews addObject:myFurnitureView];
-            //NSLog(@"My Furniture Views Array: %@", [furnitureViews objectAtIndex:0]);
-   
+
             [self.view addSubview:myFurnitureView];
 
         }
@@ -93,7 +92,7 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-    NSLog(@"clever asses: %@", @"hitTest");
+    NSLog(@"!!: %@", @"hitTest");
 
     UIView *hitView = [self.view hitTest:point withEvent:event];
     if (hitView == self.view) {
@@ -106,32 +105,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  
-/*    UITouch *touch = [touches anyObject];
-    for (ViewFurniture *fun in furnitureViews){
-        if ([[touch view] tag] == fun.tag) {
-            [fun setCenter: CGPointMake([myTouch locationInView:self.view].x, [myTouch locationInView:self.view].y)];
-        }
-    }
-    
-    UIView *touchedView = [[UIView alloc] init];
-    
-    touchedView =  [self.view hitTest:[touch locationInView:self.view] withEvent:event];
 
-    [touchedView setCenter:[touch locationInView:self.view]];
-  */
- //   [touchedView release];
-    
-    /*
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:touch.view];
-    for (ViewFurniture *fView in furnitureViews) {
-        if(CGRectContainsPoint(fView.frame, point)) {
-            oldX = fView.center.x - fView.frame.origin.x - point.x;
-            oldY = fView.center.y - fView.frame.origin.y - point.y;
-            break;
-        }
-    } */
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -141,7 +115,7 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"dumb asses?? %@", @"touchesMoved");
+    NSLog(@"?? %@", @"touchesMoved");
     
     myTouch = [[event allTouches]anyObject];
     pt = CGPointMake([myTouch locationInView:self.view].x, [myTouch locationInView:self.view].y);
@@ -162,6 +136,11 @@
         } 
     }
     
+    //seedling
+    if (CGRectContainsPoint(mySeedlingView.frame, pt)) {
+        mySeedlingView.center = [myTouch locationInView:self.view];
+    }
+    
     else {
         
         UITouch *touch = [touches anyObject];
@@ -177,35 +156,6 @@
         }
     }
     
-   /* CGPoint pointi = [myTouch locationInView:myTouch.view];
-    for (ViewFurniture *funView in furnitureViews) {
-        if (CGRectContainsPoint(funView.frame, pointi)) {
-            [funView setCenter:CGPointMake(pointi.x+oldX, pointi.y+oldY)];
-        }
-    } */
-    
- /*   else {
-        
-        for (ViewFurniture *fun in furnitureViews) {
-            if (CGRectContainsPoint(fun.frame, pt)) {
-                for (int j=0; j < myfurniture.count; j++) {
-                    if([fun.name isEqualToString:[[myfurniture objectAtIndex:j]itemName]]) {
-                        [[myfurniture objectAtIndex:j] setXPos:[myTouch locationInView:self.view].x];
-                        [[myfurniture objectAtIndex:j] setYPos:[myTouch locationInView:self.view].y];
-                        NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myfurniture];
-                        [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-                        NSLog(@"New Furniture X pos: %d",[[myfurniture objectAtIndex:j]xPos]);
-                        
-                        [fun setCenter: CGPointMake([[myfurniture objectAtIndex:j]xPos], [[myfurniture objectAtIndex:j]yPos])];
-                        break;
-                    }
-                }
-            }
-        }
-   //     [self nonFarm];
-        
-    } 
-   */
 }
 
 
@@ -223,9 +173,25 @@
     
     //display furniture
     [self displayFurniture];
-    
+    //display seedlings
+    [self displaySeedlings];
 }
 
+-(void)displaySeedlings
+{
+    NSData *mySeedling = [appDelegate.citadelData objectForKey:@"seedlings"];
+    NSArray *myarray = [NSKeyedUnarchiver unarchiveObjectWithData:mySeedling];
+    myseedlings = [[NSMutableArray alloc]initWithArray:myarray];
+    
+    for (int k=0; k < myseedlings.count; k++) {
+        UIImage *seedlingImage = [[myseedlings objectAtIndex:k] myImage];
+        mySeedlingView = [[SeedlingV2View alloc]initWithImage:seedlingImage];
+        mySeedlingView.center = CGPointMake(100,100);
+        [self.mySeedlingView setUserInteractionEnabled:YES];
+        [self.view addSubview:mySeedlingView];
+    }
+    
+}
 /*
 -(void)displaySeedling
 {

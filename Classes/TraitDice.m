@@ -13,7 +13,15 @@
 @synthesize traits;
 @synthesize inheritance;
 
--(void) addNumber:(int)number ofTrait:(NSString *)trait{
+-(id)init
+{
+    if(self == [super init]){
+        traits = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
+
+-(void) addNumber:(int)number ofTrait:(NSString *)trait {
     for (int i= number; i>0; i--)
     {
         [traits addObject:trait];

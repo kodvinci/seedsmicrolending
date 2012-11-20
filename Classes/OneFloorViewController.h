@@ -11,7 +11,7 @@
 #import "CitadelViewController.h"
 #import "ViewFurniture.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "SeedlingV2View.h"
 //cocos2d stuff
 #import "cocos2d.h"
 #import "SeedlingLayer.h"
@@ -19,6 +19,7 @@
 @interface OneFloorViewController : UIViewController <CCDirectorDelegate>
 {
     NSMutableArray *myfurniture;
+    NSMutableArray *myseedlings;
     IBOutlet UIButton *addFloor;
     MicrolendingAppDelegate *appDelegate;
     IBOutlet UILabel *coins;
@@ -26,6 +27,7 @@
     IBOutlet UILabel *level;
     ViewFurniture *myFurnitureView;
     ViewFurniture *myFarmView;
+    SeedlingV2View *mySeedlingView;
     CGPoint pt;
     float oldX, oldY;
     UITouch *myTouch;
@@ -43,7 +45,9 @@
 @property(nonatomic, retain) UITouch *myTouch;
 @property(nonatomic, retain) ViewFurniture *myFurnitureView;
 @property(nonatomic, retain) ViewFurniture *myFarmView;
+@property(nonatomic, retain) SeedlingV2View *mySeedlingView;
 @property(nonatomic, retain) NSMutableArray *myfurniture;
+@property(nonatomic, retain) NSMutableArray *myseedlings;
 @property(nonatomic, retain) NSMutableArray *furnitureViews;
 
 -(IBAction)buyFloor;

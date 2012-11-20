@@ -57,6 +57,8 @@
 		313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B395D1642C0C300602E7D /* libiconv.dylib */; };
 		313B39631642C15300602E7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B39621642C15300602E7D /* libc++.dylib */; };
 		313B39651642C26000602E7D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 313B39641642C26000602E7D /* CMakeLists.txt */; };
+		3186CE31165B13B40037766A /* SeedlingV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE30165B13B40037766A /* SeedlingV2.m */; };
+		3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE34165B1F700037766A /* SeedlingV2View.m */; };
 		3187E081162FADB2000996F2 /* ViewFurniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187E080162FADB2000996F2 /* ViewFurniture.m */; };
 		3187E083162FB002000996F2 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187E082162FB002000996F2 /* pool.png */; };
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
@@ -450,6 +452,10 @@
 		313B395D1642C0C300602E7D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		313B39621642C15300602E7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		313B39641642C26000602E7D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "../../../cocos2d-iphone-2.0/external/Chipmunk/src/CMakeLists.txt"; sourceTree = "<group>"; };
+		3186CE2F165B13B40037766A /* SeedlingV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingV2.h; sourceTree = "<group>"; };
+		3186CE30165B13B40037766A /* SeedlingV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingV2.m; sourceTree = "<group>"; };
+		3186CE33165B1F700037766A /* SeedlingV2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingV2View.h; sourceTree = "<group>"; };
+		3186CE34165B1F700037766A /* SeedlingV2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingV2View.m; sourceTree = "<group>"; };
 		3187E07F162FADB2000996F2 /* ViewFurniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFurniture.h; sourceTree = "<group>"; };
 		3187E080162FADB2000996F2 /* ViewFurniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFurniture.m; sourceTree = "<group>"; };
 		3187E082162FB002000996F2 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = SOURCE_ROOT; };
@@ -1248,6 +1254,10 @@
 		3187E08A16307BB5000996F2 /* Seedling */ = {
 			isa = PBXGroup;
 			children = (
+				3186CE2F165B13B40037766A /* SeedlingV2.h */,
+				3186CE30165B13B40037766A /* SeedlingV2.m */,
+				3186CE33165B1F700037766A /* SeedlingV2View.h */,
+				3186CE34165B1F700037766A /* SeedlingV2View.m */,
 				31B05EF016594A50000E1CB0 /* SeedlingLayer.h */,
 				31B05EF116594A50000E1CB0 /* SeedlingLayer.m */,
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
@@ -2480,6 +2490,8 @@
 				B521E12616548F4D00521E3C /* SkinColorDice.m in Sources */,
 				B521E12916548F6800521E3C /* NameGenerator.m in Sources */,
 				31B05EF216594A50000E1CB0 /* SeedlingLayer.m in Sources */,
+				3186CE31165B13B40037766A /* SeedlingV2.m in Sources */,
+				3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

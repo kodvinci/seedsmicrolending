@@ -19,6 +19,9 @@
 @class OneFloorViewController;
 @class TwoFloorsViewController;
 @class ThreeFloorsViewController;
+@class NameGenerator;
+@class SeedlingV2;
+@class SeedlingV2View;
 
 @implementation CitadelViewController
 
@@ -70,18 +73,25 @@
     [furniture addObject:plot1];
     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
     
-    //seedling
-/*    NSString *seed = [[NSString alloc] initWithFormat:@"myseed"];
-    myFirstSeedling = [[Seedling alloc]initWithImage:@"seedling" seedlingName:seed];
+    // Default seedling
+   // NameGenerator *mySeedName = [[NameGenerator alloc]init];
+   // NSString *seed = [[NSString alloc]init];
+   // seed = [mySeedName generateName];
+   // NSLog(@"My Seed: %@", seed);
+    
+    SeedlingV2 *mySeedling = [[SeedlingV2 alloc]init];
+    [mySeedling generateNewSeedlingCharacteristics];
+    NSLog(@"My Seed: %@",[mySeedling myName]);
+    
     seedlings = [[NSMutableArray alloc]initWithObjects: nil];
-    [seedlings addObject:myFirstSeedling];
+    [seedlings addObject:mySeedling];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:seedlings];
-*/
+
     // Store the data
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     [appDelegate.citadelData setInteger:level forKey:@"level"];
     [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-  //  [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     [appDelegate.citadelData synchronize];
     NSLog(@"Data saved");
     

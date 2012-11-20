@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "FloorViewController.h"
 #import "Floor.h"
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
@@ -18,6 +17,9 @@
 #import "OneFloorViewController.h"
 #import "TwoFloorsViewController.h"
 #import "ThreeFloorsViewController.h"
+#import "NameGenerator.h"
+#import "SeedlingV2.h"
+#import "SeedlingV2View.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
