@@ -160,7 +160,9 @@
             //Can afford it
             //Add it to my array of furniture
             NSData *myFurniture1 = [appDelegate.citadelData objectForKey:@"furniture"];
-            [furnitureArray addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1]];
+            NSArray *myArray = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1];
+            [furnitureArray addObjectsFromArray:myArray];
+            
             [furnitureArray addObject:furniture1];
             NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furnitureArray];
             [appDelegate.citadelData setObject:furnData forKey:@"furniture"];

@@ -66,6 +66,8 @@
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
 		31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980293165C54FA00FEFCA2 /* EyeColors.plist */; };
 		31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980294165C54FA00FEFCA2 /* HairColors.plist */; };
+		3198029B165C98D200FEFCA2 /* SeedlingDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31980299165C98D200FEFCA2 /* SeedlingDataViewController.m */; };
+		3198029C165C98D200FEFCA2 /* SeedlingDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3198029A165C98D200FEFCA2 /* SeedlingDataViewController.xib */; };
 		31AA455A164C5AA60066B35B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAAB46B15A5AF35006680C0 /* StoreKit.framework */; };
 		31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2A16438B92001F2DD3 /* bookshelf.png */; };
 		31AB3B2F16438B92001F2DD3 /* easel.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2B16438B92001F2DD3 /* easel.png */; };
@@ -467,6 +469,9 @@
 		3191F7EC16208CB8005EEF4A /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
 		31980293165C54FA00FEFCA2 /* EyeColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EyeColors.plist; sourceTree = "<group>"; };
 		31980294165C54FA00FEFCA2 /* HairColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HairColors.plist; sourceTree = "<group>"; };
+		31980298165C98D200FEFCA2 /* SeedlingDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingDataViewController.h; sourceTree = "<group>"; };
+		31980299165C98D200FEFCA2 /* SeedlingDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingDataViewController.m; sourceTree = "<group>"; };
+		3198029A165C98D200FEFCA2 /* SeedlingDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeedlingDataViewController.xib; sourceTree = "<group>"; };
 		31AB3B2A16438B92001F2DD3 /* bookshelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookshelf.png; sourceTree = "<group>"; };
 		31AB3B2B16438B92001F2DD3 /* easel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easel.png; sourceTree = "<group>"; };
 		31AB3B2C16438B92001F2DD3 /* hammock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammock.png; sourceTree = "<group>"; };
@@ -1263,6 +1268,9 @@
 				3186CE34165B1F700037766A /* SeedlingV2View.m */,
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
+				31980298165C98D200FEFCA2 /* SeedlingDataViewController.h */,
+				31980299165C98D200FEFCA2 /* SeedlingDataViewController.m */,
+				3198029A165C98D200FEFCA2 /* SeedlingDataViewController.xib */,
 			);
 			name = Seedling;
 			sourceTree = "<group>";
@@ -2219,6 +2227,7 @@
 				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
 				31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */,
 				31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */,
+				3198029C165C98D200FEFCA2 /* SeedlingDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2494,6 +2503,7 @@
 				B521E12916548F6800521E3C /* NameGenerator.m in Sources */,
 				3186CE31165B13B40037766A /* SeedlingV2.m in Sources */,
 				3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */,
+				3198029B165C98D200FEFCA2 /* SeedlingDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

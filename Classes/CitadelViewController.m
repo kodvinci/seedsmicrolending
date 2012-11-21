@@ -52,7 +52,7 @@
     //Player Variables
     playerXP = 1;
     playerLevel = 1;
-    playerCoins = 1700;
+    playerCoins = 90;
     playerLeaves = 0;
     //Store player variables
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];

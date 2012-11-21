@@ -10,7 +10,7 @@
 
 @implementation Furniture
 
-@synthesize desire1 = desire1_, desire2 = desire2_, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_, currentOccupants = currentOccupancy_;
+@synthesize desire1, desire2, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_, currentOccupants = currentOccupancy_;
 @synthesize xPos, yPos;
 /*
 //Make it illegal to initialize the class

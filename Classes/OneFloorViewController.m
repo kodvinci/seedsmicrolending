@@ -12,6 +12,7 @@
 @class CitadelViewController;
 @class ViewFurniture;
 @class SeedlingV2View;
+@class SeedlingDataViewController;
 
 @implementation OneFloorViewController
 
@@ -23,6 +24,7 @@
 @synthesize myseedlings;
 @synthesize mySeedlingView;
 @synthesize myTime;
+@synthesize des1, des2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,14 +32,12 @@
     if (self) {
         // Custom initialization
         appDelegate = [[UIApplication sharedApplication] delegate];
-       //  _seedlings = [[NSMutableArray alloc] init];
         
     }
     return self;
 }
 
-//add a new floor
--(IBAction)buyFloor
+-(void)floorGrowTimer
 {
     int numFloor = [appDelegate.citadelData integerForKey:@"floors"];
     numFloor +=1;
@@ -50,13 +50,57 @@
     [OFmyCitadel release];
 }
 
+//add a new floor
+-(IBAction)buyFloor
+{
+    if ([appDelegate.citadelData integerForKey:@"coins"] >= 100 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 1) {
+        //can buy a new floor
+        int newCoins = [appDelegate.citadelData integerForKey:@"coins"] - 100;
+        [appDelegate.citadelData setInteger:newCoins forKey:@"coins"];
+        [NSTimer scheduledTimerWithTimeInterval:(300.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+        [self viewWillAppear:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor!" message:@"Your new floor will take 5 minutes to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=2;
+        [alert show];
+        [alert release];
+    }
+    else {
+        //alert that not enough coins or experience
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You don't have enough coins!" message:@"If your seedling has 100 happiness, drag it to the farm plot to earn more coins. Or help the seedling interact with a piece of furniture that can increase its happiness." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=1;
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (alertView.tag==1) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+        }
+    }
+    
+    else if(alertView.tag==2) {
+        if (buttonIndex == 0) {
+
+        }
+        else {
+            
+        }
+        
+    }
+}
+
+
 //display the furniture
 -(void)displayFurniture
 {
-  //  [self.view setMultipleTouchEnabled:YES];
-    
-    NSData *myFurniture = [appDelegate.citadelData objectForKey:@"furniture"];
-    NSArray *myarray = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture];
+    NSData *myFurnit = [appDelegate.citadelData objectForKey:@"furniture"];
+    NSArray *myarray = [NSKeyedUnarchiver unarchiveObjectWithData:myFurnit];
     myfurniture = [[NSMutableArray alloc]initWithArray:myarray];
     
     for (int k=0; k < myfurniture.count; k++) {
@@ -65,6 +109,11 @@
         //Non-plot furniture
         if (![[[myfurniture objectAtIndex:k]itemName] isEqualToString:@"plot"]) {
             NSLog(@"My Furniture: %@", [myfurniture objectAtIndex:k]);
+            NSLog(@"My Furn desire1: %@", [[myfurniture objectAtIndex:k] desire1]);
+            des1 = [[NSString alloc] initWithString:[[myfurniture objectAtIndex:k] desire1]];
+            newHappiness = [[myfurniture objectAtIndex:k] happinessReward1];
+          //  des2 = [[NSString alloc] initWithString:[[myfurniture objectAtIndex:k] desire2]];
+            
             myFurnitureView = [[ViewFurniture alloc]initWithImage:furnitureImage];
             myFurnitureView.center = CGPointMake([[myfurniture objectAtIndex:k]xPos], [[myfurniture objectAtIndex:k]yPos]);
             myFurnitureView.tag = k;
@@ -85,7 +134,7 @@
             yPosition = [[myfurniture objectAtIndex:k]yPos];
             myFarmView = [[ViewFurniture alloc]initWithImage:furnitureImage];
             myFarmView.center = CGPointMake([[myfurniture objectAtIndex:k]xPos], [[myfurniture objectAtIndex:k]yPos]);
-            [self.myFarmView setUserInteractionEnabled:YES];
+            [self.myFarmView setUserInteractionEnabled:NO];
             [self.view addSubview:myFarmView];
         }
         
@@ -122,7 +171,7 @@
     myTouch = [[event allTouches]anyObject];
     pt = CGPointMake([myTouch locationInView:self.view].x, [myTouch locationInView:self.view].y);
     
-    if (CGRectContainsPoint(myFarmView.frame, pt)) {
+ /*   if (CGRectContainsPoint(myFarmView.frame, pt)) {
         myFarmView.center = [myTouch locationInView:self.view];
         NSLog(@"Farm x pos: %f",[myTouch locationInView:self.view].x);
         
@@ -136,7 +185,7 @@
             }
             NSLog(@"New Farm X position: %d",[[myfurniture objectAtIndex:k]xPos]);
         } 
-    }
+    } */
     
     //seedling
     if (CGRectContainsPoint(mySeedlingView.frame, pt)) {
@@ -181,7 +230,20 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:YES];
     
+    coins.text = [NSString stringWithFormat:@"%d",[appDelegate.citadelData integerForKey:@"coins"]];
+    leaves.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
+    level.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"playerLevel"]];
+    
+}
+
+-(void)handleDoubleTap:(UIGestureRecognizer *) gestureRecognizer
+{
+    NSLog(@"double tapped!");
+    SeedlingDataViewController *OFVCmyTap = [[SeedlingDataViewController alloc] init];
+	[self.navigationController pushViewController:OFVCmyTap animated:YES];
+    [OFVCmyTap release];
 }
 
 -(void)displaySeedlings
@@ -193,12 +255,20 @@
     for (int k=0; k < myseedlings.count; k++) {
         UIImage *seedlingImage = [[myseedlings objectAtIndex:k] myImage];
         mySeedlingView = [[SeedlingV2View alloc]initWithImage:seedlingImage];
-        mySeedlingView.center = CGPointMake(100,100);
+        mySeedlingView.center = CGPointMake(35,310);
         [self.mySeedlingView setUserInteractionEnabled:YES];
+        
+        //add double tap gesture to seedling
+        UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+       // doubleTapGestureRecognizer.delegate = self;
+        [mySeedlingView addGestureRecognizer:doubleTapGestureRecognizer];
+        [doubleTapGestureRecognizer release];
+        
         [self.view addSubview:mySeedlingView];
         //make seedling move
         [self moveSeedlingTimer];
-        pos = CGPointMake(0.1, 0.1); //(X speed, Y speed)
+        pos = CGPointMake(0.15, 0.15); //(X speed, Y speed)
      //   myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedling) userInfo:nil repeats:YES];
         //CHECK SEEDLING CHARACTERISTICS
         NSLog(@"seedling: %@", myseedlings);
@@ -222,8 +292,8 @@
     //Subtract happiness from Seedling, Award Coins to Player
     //release Seedling from Farm
     //Enable interaction with Farm and Seedling
-    int newHappiness = [[myseedlings objectAtIndex:0] myHappiness] - 100;
-    [[myseedlings objectAtIndex:0] setMyHappiness:newHappiness];
+    int newSmilly = [[myseedlings objectAtIndex:0] myHappiness] - 100;
+    [[myseedlings objectAtIndex:0] setMyHappiness:newSmilly];
     [[myseedlings objectAtIndex:0] setHappinessDeposited:[[myseedlings objectAtIndex:0] happinessDeposited] + 100];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
     [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
@@ -231,6 +301,25 @@
     [appDelegate.citadelData setInteger:(initialCoins+100) forKey:@"coins"];
     mySeedlingView.center = CGPointMake(myFarmView.frame.size.width+20, myFarmView.frame.size.height+20); // (100, 100);
     [myFarmView setUserInteractionEnabled:YES];
+    [mySeedlingView setUserInteractionEnabled:YES];
+    [self viewWillAppear:YES];
+    [self moveSeedlingTimer];
+}
+
+-(void)seedlingDoneInteractingWithFurniture
+{
+    int prevHappiness = [[myseedlings objectAtIndex:0] myHappiness];
+    [[myseedlings objectAtIndex:0] setMyHappiness:(newHappiness+prevHappiness)];
+    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    mySeedlingView.center = CGPointMake(0, 350);
+    NSLog(@"seedlingHappiness After: %d",[[myseedlings objectAtIndex:0] myHappiness]);
+    [NSTimer scheduledTimerWithTimeInterval:(7.0) target:self selector:@selector(seedlingDoneIdling) userInfo:nil repeats:NO];
+
+}
+
+-(void)seedlingDoneIdling
+{
     [mySeedlingView setUserInteractionEnabled:YES];
     [self moveSeedlingTimer];
 }
@@ -264,16 +353,28 @@
         NSLog(@"In loop!!");
         if ((CGRectIntersectsRect(mySeedlingView.frame, myFun.frame))) {
             NSDictionary *desires = [[NSDictionary alloc]initWithDictionary:[[myseedlings objectAtIndex:0] myDesires]];
+            NSLog(@"seedling desire1: %@",[desires objectForKey:@"First Desire"]);
+            NSLog(@"furniture desire1: %@", des1);
+            NSLog(@"furniture desire2: %@", [[myfurniture objectAtIndex:0] desire2]);
+
+            NSLog(@"Intersection!!");
             //check if they have same desires
-            if ([[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+            if ([[desires objectForKey:@"First Desire"] isEqualToString:des1] || [[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
                     //do something
                 NSLog(@"Seedling on Furniture!!");
+                [self.myTime invalidate];
+                mySeedlingView.center = myFun.center;
+                //Disable interaction with Furniture & Seedling
+                [mySeedlingView setUserInteractionEnabled:NO];
+                NSLog(@"seedlingHappiness before: %d",[[myseedlings objectAtIndex:0] myHappiness]);
+                //set a timer to fire after an hour
+                [NSTimer scheduledTimerWithTimeInterval:(30.0) target:self selector:@selector(seedlingDoneInteractingWithFurniture) userInfo:nil repeats:NO];
             }
-            if ([[desires objectForKey:@"Second Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"Second Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+            if ([[desires objectForKey:@"Second Desire"] isEqualToString:des1] || [[desires objectForKey:@"Second Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
                 //do something
                 NSLog(@"Seedling on Furniture!!");
             }
-            if ([[desires objectForKey:@"Third Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"Third Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+            if ([[desires objectForKey:@"Third Desire"] isEqualToString:des1] || [[desires objectForKey:@"Third Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
                 //do something
                 NSLog(@"Seedling on Furniture!!");
             }
@@ -281,44 +382,6 @@
         }
     }
 }
-
-/*
--(void)displaySeedling
-{
-    NSLog(@"In %@", @"displaySeedling");
-    
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    CCSprite *seedling = [CCSprite spriteWithFile:@"seedling.png" rect:CGRectMake(0, 0, 27, 40)];
-    [_seedlings addObject:seedling];
-    
-    // Determine where to spawn the target along the Y axis
-    int minY = seedling.contentSize.height/2;
-    int maxY = winSize.height - seedling.contentSize.height/2;
-    int rangeY = maxY - minY;
-    int actualY = (arc4random() % rangeY) + minY;
-    
-    // Create the target slightly off-screen along the right edge,
-    // and along a random position along the Y axis as calculated above
-   // seedling.position = ccp(winSize.width + (seedling.contentSize.width/2), actualY);
-    seedling.position = ccp(100, 100);
-//    [self addChild:seedling];
-    
-    // Determine speed of the target
-    int minDuration = 2.0;
-    int maxDuration = 4.0;
-    int rangeDuration = maxDuration - minDuration;
-    int actualDuration = (arc4random() % rangeDuration) + minDuration;
-    
-    // Create the actions
-    id actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                        position:ccp(-seedling.contentSize.width/2, actualY)];
-    [seedling runAction:[CCSequence actions:actionMove, nil]];
-
-//    id actionMoveDone = [CCCallFuncN actionWithTarget:self
-//                                             selector:@selector(spriteMoveFinished:)];
-//    [seedling runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
-
-} */
 
 - (void)didReceiveMemoryWarning
 {
@@ -332,7 +395,7 @@
     
     [[CCDirector sharedDirector] setDelegate:nil];
 }
-/*
+
 -(void)dealloc
 {
     [super dealloc];
@@ -345,6 +408,6 @@
     [myFurnitureView release];
     [myFarmView release];
     [myTouch release];
-} */
+} 
 
 @end

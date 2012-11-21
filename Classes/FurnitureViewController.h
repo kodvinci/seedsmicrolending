@@ -40,6 +40,7 @@
     BOOL level2;
     BOOL level3;
     NSMutableArray *furnitureArray;
+    
 }
 
 @property(nonatomic, assign) Class className;

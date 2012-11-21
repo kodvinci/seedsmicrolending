@@ -14,7 +14,7 @@
 {
     self.furnPic = [UIImage imageNamed:@"plot"];
     self.itemName = @"plot";
-    self.xPos = 30;
+    self.xPos = 35;
     self.yPos = 200;
 }
 

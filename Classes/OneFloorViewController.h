@@ -12,6 +12,7 @@
 #import "ViewFurniture.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SeedlingV2View.h"
+#import "SeedlingDataViewController.h"
 //cocos2d stuff
 #import "cocos2d.h"
 
@@ -36,6 +37,11 @@
     NSInteger yPosition;
     
     NSMutableArray *furnitureViews;
+    
+    //temp variables
+    NSString *des1;
+    NSString *des2;
+    int newHappiness;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
@@ -52,6 +58,9 @@
 @property(nonatomic, retain) NSMutableArray *myfurniture;
 @property(nonatomic, retain) NSMutableArray *myseedlings;
 @property(nonatomic, retain) NSMutableArray *furnitureViews;
+
+@property(nonatomic,retain) NSString *des1;
+@property(nonatomic,retain) NSString *des2;
 
 -(IBAction)buyFloor;
 -(void)displayFurniture;
