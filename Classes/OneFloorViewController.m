@@ -19,8 +19,10 @@
 @synthesize coins, leaves, level;
 @synthesize myFurnitureView, myFarmView;
 @synthesize myfurniture, furnitureViews;
-@synthesize pt, myTouch;
+@synthesize pt, pos, myTouch;
 @synthesize myseedlings;
+@synthesize mySeedlingView;
+@synthesize myTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -177,6 +179,11 @@
     [self displaySeedlings];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+}
+
 -(void)displaySeedlings
 {
     NSData *mySeedling = [appDelegate.citadelData objectForKey:@"seedlings"];
@@ -189,9 +196,92 @@
         mySeedlingView.center = CGPointMake(100,100);
         [self.mySeedlingView setUserInteractionEnabled:YES];
         [self.view addSubview:mySeedlingView];
+        //make seedling move
+        [self moveSeedlingTimer];
+        pos = CGPointMake(0.1, 0.1); //(X speed, Y speed)
+     //   myTime = [NSTimer scheduledTimerWithTimeInterval:(0.03) target:self selector:@selector(moveSeedling) userInfo:nil repeats:YES];
+        //CHECK SEEDLING CHARACTERISTICS
+        NSLog(@"seedling: %@", myseedlings);
+        NSLog(@"seedling name: %@", [[myseedlings objectAtIndex:0] myName]);
+        NSLog(@"seedling happiness: %d", [[myseedlings objectAtIndex:0] myHappiness]);
+        NSLog(@"seedling characteristic count: %d", [[[myseedlings objectAtIndex:0] myCharacteristics] count]);
+        NSLog(@"seedling characteristics: %@", [[myseedlings objectAtIndex:0] myCharacteristics]);
+        NSLog(@"seedling desires: %@", [[myseedlings objectAtIndex:0] myDesires]);
+
     }
     
 }
+
+-(void)moveSeedlingTimer
+{
+     myTime = [NSTimer scheduledTimerWithTimeInterval:(0.13) target:self selector:@selector(moveSeedling) userInfo:nil repeats:YES];
+}
+
+-(void)happinessCollectedTimer
+{
+    //Subtract happiness from Seedling, Award Coins to Player
+    //release Seedling from Farm
+    //Enable interaction with Farm and Seedling
+    int newHappiness = [[myseedlings objectAtIndex:0] myHappiness] - 100;
+    [[myseedlings objectAtIndex:0] setMyHappiness:newHappiness];
+    [[myseedlings objectAtIndex:0] setHappinessDeposited:[[myseedlings objectAtIndex:0] happinessDeposited] + 100];
+    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    int initialCoins = [appDelegate.citadelData integerForKey:@"coins"];
+    [appDelegate.citadelData setInteger:(initialCoins+100) forKey:@"coins"];
+    mySeedlingView.center = CGPointMake(myFarmView.frame.size.width+20, myFarmView.frame.size.height+20); // (100, 100);
+    [myFarmView setUserInteractionEnabled:YES];
+    [mySeedlingView setUserInteractionEnabled:YES];
+    [self moveSeedlingTimer];
+}
+
+-(void)moveSeedling
+{
+    //Random movement
+    mySeedlingView.center = CGPointMake(mySeedlingView.center.x + pos.x, mySeedlingView.center.y + pos.y);
+    if (mySeedlingView.center.x > 320 || mySeedlingView.center.x < 0) {
+        pos.x = -pos.x;
+    }
+    if (mySeedlingView.center.y > 370 || mySeedlingView.center.y < 0) {
+        pos.y = -pos.y;
+    }
+    //Check if Seedling in contact with farm
+    if (CGRectIntersectsRect(mySeedlingView.frame, myFarmView.frame)) {
+        //check if seedling has 100 happiness
+        if ([[myseedlings objectAtIndex:0] myHappiness] >= 100) {
+            NSLog(@"Seedling on Farm!!");
+            [self.myTime invalidate];
+            mySeedlingView.center = myFarmView.center;
+            //Disable interaction with Farm & Seedling
+            [mySeedlingView setUserInteractionEnabled:NO];
+            [myFarmView setUserInteractionEnabled:NO];
+            //set a timer to fire after an hour
+            [NSTimer scheduledTimerWithTimeInterval:(10.0) target:self selector:@selector(happinessCollectedTimer) userInfo:nil repeats:NO];
+        }
+    }
+    //Check if Seedling in contact with any furniture
+    for (ViewFurniture *myFun in furnitureViews) {
+        NSLog(@"In loop!!");
+        if ((CGRectIntersectsRect(mySeedlingView.frame, myFun.frame))) {
+            NSDictionary *desires = [[NSDictionary alloc]initWithDictionary:[[myseedlings objectAtIndex:0] myDesires]];
+            //check if they have same desires
+            if ([[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+                    //do something
+                NSLog(@"Seedling on Furniture!!");
+            }
+            if ([[desires objectForKey:@"Second Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"Second Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+                //do something
+                NSLog(@"Seedling on Furniture!!");
+            }
+            if ([[desires objectForKey:@"Third Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire1]] || [[desires objectForKey:@"Third Desire"] isEqualToString: [[myfurniture objectAtIndex:0] desire2]] ) {
+                //do something
+                NSLog(@"Seedling on Furniture!!");
+            }
+
+        }
+    }
+}
+
 /*
 -(void)displaySeedling
 {

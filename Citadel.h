@@ -9,7 +9,6 @@
 @protocol CitadelDelegate <NSObject>
 
 -(void)citadelSetUpDone:(BOOL)result;
--(void)needToRefreshView:(BOOL)result;
 
 @end
 

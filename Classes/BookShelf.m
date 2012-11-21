@@ -20,7 +20,7 @@
     self.desire1 = @"intelligence";
     self.desire2 = @"relax";
     self.xPos = 290;
-    self.yPos = 40;
+    self.yPos = 70;
 
     
     if (furnitureLevel == 1) {

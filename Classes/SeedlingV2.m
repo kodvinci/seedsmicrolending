@@ -17,14 +17,16 @@
 @synthesize myRelationships;
 @synthesize myDesires;
 @synthesize myCharacteristics;
+@synthesize happinessDeposited;
 
 // initialize the seedling 
 -(id)init {
 	self = [super init];
     myName = [[NSString alloc]init];
     myImage= [UIImage imageNamed:@"seedling"]; //TO_DO assign image based on chracteristics
-    myHappiness = 0;
+    myHappiness = 100;
     myXP = 0;
+    happinessDeposited = 0;
     myRelationships = [[NSMutableDictionary alloc]init]; 
     myDesires = [[NSMutableDictionary alloc]init];
     myCharacteristics = [[NSMutableDictionary alloc]init];
@@ -42,6 +44,8 @@
         self.myCharacteristics = [decoder decodeObjectForKey:@"myCharacteristics"];
         self.myDesires = [decoder decodeObjectForKey:@"myDesires"];
         self.myImage = [decoder decodeObjectForKey:@"myImage"];
+        self.happinessDeposited = [decoder decodeIntegerForKey:@"happinessDeposited"];
+
     }
     return self;
 }
@@ -54,6 +58,7 @@
     [encoder encodeObject:self.myDesires forKey:@"myDesires"];
     [encoder encodeObject:self.myCharacteristics forKey:@"myCharacteristics"];
     [encoder encodeObject:self.myImage forKey:@"myImage"];
+    [encoder encodeInteger:self.happinessDeposited forKey:@"happinessDeposited"];
 }
 
 
@@ -122,6 +127,10 @@
     [myCharacteristics setObject: firstDesireType forKey: @"First Desire"];
     [myCharacteristics setObject: secondDesireType forKey: @"Second Desire"];
     [myCharacteristics setObject: thirdDesireType forKey: @"Third Desire"];
+    //desires
+    [myDesires setObject: firstDesireType forKey: @"First Desire"];
+    [myDesires setObject: secondDesireType forKey: @"Second Desire"];
+    [myDesires setObject: thirdDesireType forKey: @"Third Desire"];
 }
 /*
 -(void) birthFrom:(Seedling *)Dad andFrom:(Seedling *)Mom{

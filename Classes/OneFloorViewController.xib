@@ -56,6 +56,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{260, 0}, {60, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -456,7 +457,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NavBarImage.png">{320, 44}</string>
-			<string key="citadel1.png">{482, 253}</string>
+			<string key="citadel1.png">{509, 453}</string>
 			<string key="coin.png">{74, 78}</string>
 			<string key="leaf.png">{98, 59}</string>
 		</dictionary>

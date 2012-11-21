@@ -12,11 +12,12 @@
 
 @implementation ViewFurniture
 
+@synthesize name;
 
 - (id)initWithImage:(UIImage *)image
 {
     NSLog(@"ViewFurniture: %@", @"initWithImage...");
-    
+
     self = [super initWithImage:image];
     if (self) {
         // Initialization code

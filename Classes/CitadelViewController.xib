@@ -42,7 +42,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, -3}, {320, 466}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="53001474"/>
+						<reference key="NSNextKeyView" ref="43477537"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -87,6 +87,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{228, 248}, {72, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView" ref="53001474"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -119,7 +120,7 @@
 					<object class="IBUIButton" id="580896182">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 248}, {72, 40}}</string>
+						<string key="NSFrame">{{20, 248}, {80, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="114986879"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -128,7 +129,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">BEGIN</string>
+						<string key="IBUINormalTitle">RESTART</string>
 						<reference key="IBUIHighlightedTitleColor" ref="762244748"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -141,16 +142,16 @@
 					<object class="IBUIButton" id="53001474">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{124, 307}, {72, 40}}</string>
+						<string key="NSFrame">{{102, 307}, {116, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="43477537"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">STORE</string>
+						<string key="IBUINormalTitle">GAME STORE</string>
 						<reference key="IBUIHighlightedTitleColor" ref="762244748"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -300,7 +301,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">gaia.jpg</string>
-			<string key="NS.object.0">{445, 667}</string>
+			<string key="NS.object.0">{428, 656}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>

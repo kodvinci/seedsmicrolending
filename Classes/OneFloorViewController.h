@@ -14,7 +14,6 @@
 #import "SeedlingV2View.h"
 //cocos2d stuff
 #import "cocos2d.h"
-#import "SeedlingLayer.h"
 
 @interface OneFloorViewController : UIViewController <CCDirectorDelegate>
 {
@@ -29,6 +28,8 @@
     ViewFurniture *myFarmView;
     SeedlingV2View *mySeedlingView;
     CGPoint pt;
+    CGPoint pos;
+    NSTimer *myTime;
     float oldX, oldY;
     UITouch *myTouch;
     NSInteger xPosition;
@@ -42,7 +43,9 @@
 @property(nonatomic, retain) UILabel *leaves;
 @property(nonatomic, retain) UILabel *level;
 @property(nonatomic, assign) CGPoint pt;
+@property(nonatomic, assign) CGPoint pos;
 @property(nonatomic, retain) UITouch *myTouch;
+@property(nonatomic, retain) NSTimer *myTime;
 @property(nonatomic, retain) ViewFurniture *myFurnitureView;
 @property(nonatomic, retain) ViewFurniture *myFarmView;
 @property(nonatomic, retain) SeedlingV2View *mySeedlingView;

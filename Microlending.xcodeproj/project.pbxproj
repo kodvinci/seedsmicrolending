@@ -64,6 +64,8 @@
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
 		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
+		31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980293165C54FA00FEFCA2 /* EyeColors.plist */; };
+		31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980294165C54FA00FEFCA2 /* HairColors.plist */; };
 		31AA455A164C5AA60066B35B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAAB46B15A5AF35006680C0 /* StoreKit.framework */; };
 		31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2A16438B92001F2DD3 /* bookshelf.png */; };
 		31AB3B2F16438B92001F2DD3 /* easel.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B2B16438B92001F2DD3 /* easel.png */; };
@@ -80,7 +82,6 @@
 		31AB3B461643A527001F2DD3 /* tightrope.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3B1643A527001F2DD3 /* tightrope.png */; };
 		31AB3B471643A527001F2DD3 /* whackamole.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3C1643A527001F2DD3 /* whackamole.png */; };
 		31AB3B481643A527001F2DD3 /* yogapad.png in Resources */ = {isa = PBXBuildFile; fileRef = 31AB3B3D1643A527001F2DD3 /* yogapad.png */; };
-		31B05EF216594A50000E1CB0 /* SeedlingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B05EF116594A50000E1CB0 /* SeedlingLayer.m */; };
 		31B7FAD516333BB700B808FD /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1416333BB700B808FD /* CCAction.m */; };
 		31B7FAD616333BB700B808FD /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1616333BB700B808FD /* CCActionCamera.m */; };
 		31B7FAD716333BB700B808FD /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FA1816333BB700B808FD /* CCActionCatmullRom.m */; };
@@ -464,6 +465,8 @@
 		3191F7E816208AC3005EEF4A /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
 		3191F7E916208AC3005EEF4A /* Seedling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seedling.m; sourceTree = "<group>"; };
 		3191F7EC16208CB8005EEF4A /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
+		31980293165C54FA00FEFCA2 /* EyeColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EyeColors.plist; sourceTree = "<group>"; };
+		31980294165C54FA00FEFCA2 /* HairColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HairColors.plist; sourceTree = "<group>"; };
 		31AB3B2A16438B92001F2DD3 /* bookshelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookshelf.png; sourceTree = "<group>"; };
 		31AB3B2B16438B92001F2DD3 /* easel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easel.png; sourceTree = "<group>"; };
 		31AB3B2C16438B92001F2DD3 /* hammock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hammock.png; sourceTree = "<group>"; };
@@ -479,8 +482,6 @@
 		31AB3B3B1643A527001F2DD3 /* tightrope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tightrope.png; sourceTree = "<group>"; };
 		31AB3B3C1643A527001F2DD3 /* whackamole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whackamole.png; sourceTree = "<group>"; };
 		31AB3B3D1643A527001F2DD3 /* yogapad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yogapad.png; sourceTree = "<group>"; };
-		31B05EF016594A50000E1CB0 /* SeedlingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingLayer.h; sourceTree = "<group>"; };
-		31B05EF116594A50000E1CB0 /* SeedlingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingLayer.m; sourceTree = "<group>"; };
 		31B7FA1316333BB700B808FD /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		31B7FA1416333BB700B808FD /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
 		31B7FA1516333BB700B808FD /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
@@ -1131,6 +1132,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31980293165C54FA00FEFCA2 /* EyeColors.plist */,
+				31980294165C54FA00FEFCA2 /* HairColors.plist */,
 				31D04AFD1652C5EA00D16508 /* plot.png */,
 				31C72034164EB7500073EAF0 /* citadel2.png */,
 				31258B5E164E09B1007D32C3 /* citadel1.png */,
@@ -1258,8 +1261,6 @@
 				3186CE30165B13B40037766A /* SeedlingV2.m */,
 				3186CE33165B1F700037766A /* SeedlingV2View.h */,
 				3186CE34165B1F700037766A /* SeedlingV2View.m */,
-				31B05EF016594A50000E1CB0 /* SeedlingLayer.h */,
-				31B05EF116594A50000E1CB0 /* SeedlingLayer.m */,
 				3191F7E816208AC3005EEF4A /* Seedling.h */,
 				3191F7E916208AC3005EEF4A /* Seedling.m */,
 			);
@@ -2216,6 +2217,8 @@
 				31258B5F164E09B1007D32C3 /* citadel1.png in Resources */,
 				31C72035164EB7500073EAF0 /* citadel2.png in Resources */,
 				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
+				31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */,
+				31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2489,7 +2492,6 @@
 				B521E12516548F4D00521E3C /* HairDice.m in Sources */,
 				B521E12616548F4D00521E3C /* SkinColorDice.m in Sources */,
 				B521E12916548F6800521E3C /* NameGenerator.m in Sources */,
-				31B05EF216594A50000E1CB0 /* SeedlingLayer.m in Sources */,
 				3186CE31165B13B40037766A /* SeedlingV2.m in Sources */,
 				3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */,
 			);

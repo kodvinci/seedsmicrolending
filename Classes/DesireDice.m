@@ -12,13 +12,13 @@
 
 -(id) init{
     if(self = [super init]){
-        [self addNumber:1 ofTrait:@"Water"];
-        [self addNumber:1 ofTrait:@"Relaxing"];
-        [self addNumber:1 ofTrait:@"Intellectual"];
-        [self addNumber:1 ofTrait:@"Artistic"];
-        [self addNumber:1 ofTrait:@"Musical"];
-        [self addNumber:1 ofTrait:@"Acrobatic"];
-        [self addNumber:1 ofTrait:@"Strength"];
+        [self addNumber:1 ofTrait:@"water"];
+        [self addNumber:1 ofTrait:@"relax"];
+        [self addNumber:1 ofTrait:@"intelligence"];
+        [self addNumber:1 ofTrait:@"artistic"];
+        [self addNumber:1 ofTrait:@"musical"];
+        [self addNumber:1 ofTrait:@"acrobatic"];
+        [self addNumber:1 ofTrait:@"strength"];
     }
     return self;
 }

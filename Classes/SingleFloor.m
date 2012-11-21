@@ -5,7 +5,7 @@
 //  Created by guest user on 10/2/12.
 //
 //
-
+/*
 #import "SingleFloor.h"
 
 @class FloorViewController;
@@ -30,7 +30,7 @@
         // Initialization code
     }
     return self;
-}
+}*/
 
 /*
 -(void)needToRefreshView:(BOOL)result
@@ -43,7 +43,7 @@
     }
 
 }*/
-
+/*
 -(void)setupSeedling
 {
     //(X speed, Y speed)
@@ -206,3 +206,4 @@
 }
 
 @end
+*/
