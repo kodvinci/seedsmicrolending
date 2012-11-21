@@ -10,4 +10,5 @@
 
 @interface SkinColorDice : TraitDice
 -(id) init;
+-(NSString *) skinColorFromDad:(NSString *) skin andMom: (NSString *) skin2;
 @end

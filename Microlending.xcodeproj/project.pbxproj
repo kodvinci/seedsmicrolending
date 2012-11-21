@@ -56,7 +56,6 @@
 		313489C7164CBB4C00E12D3F /* LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 313489C6164CBB4C00E12D3F /* LocalizedPrice.m */; };
 		313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B395D1642C0C300602E7D /* libiconv.dylib */; };
 		313B39631642C15300602E7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B39621642C15300602E7D /* libc++.dylib */; };
-		313B39651642C26000602E7D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 313B39641642C26000602E7D /* CMakeLists.txt */; };
 		3186CE31165B13B40037766A /* SeedlingV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE30165B13B40037766A /* SeedlingV2.m */; };
 		3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE34165B1F700037766A /* SeedlingV2View.m */; };
 		3187E081162FADB2000996F2 /* ViewFurniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187E080162FADB2000996F2 /* ViewFurniture.m */; };
@@ -319,6 +318,7 @@
 		B521E12516548F4D00521E3C /* HairDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E12216548F4D00521E3C /* HairDice.m */; };
 		B521E12616548F4D00521E3C /* SkinColorDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E12416548F4D00521E3C /* SkinColorDice.m */; };
 		B521E12916548F6800521E3C /* NameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E12816548F6800521E3C /* NameGenerator.m */; };
+		B55C80C2165C69DE009D3D88 /* BodyColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55C80C1165C69DE009D3D88 /* BodyColors.plist */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
 		CD308A68144E2C32000A44C8 /* Lender.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A67144E2C32000A44C8 /* Lender.m */; };
@@ -452,7 +452,6 @@
 		313489C6164CBB4C00E12D3F /* LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedPrice.m; sourceTree = "<group>"; };
 		313B395D1642C0C300602E7D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		313B39621642C15300602E7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		313B39641642C26000602E7D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "../../../cocos2d-iphone-2.0/external/Chipmunk/src/CMakeLists.txt"; sourceTree = "<group>"; };
 		3186CE2F165B13B40037766A /* SeedlingV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingV2.h; sourceTree = "<group>"; };
 		3186CE30165B13B40037766A /* SeedlingV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedlingV2.m; sourceTree = "<group>"; };
 		3186CE33165B1F700037766A /* SeedlingV2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingV2View.h; sourceTree = "<group>"; };
@@ -964,6 +963,7 @@
 		B521E12416548F4D00521E3C /* SkinColorDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinColorDice.m; sourceTree = "<group>"; };
 		B521E12716548F6800521E3C /* NameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameGenerator.h; sourceTree = "<group>"; };
 		B521E12816548F6800521E3C /* NameGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameGenerator.m; sourceTree = "<group>"; };
+		B55C80C1165C69DE009D3D88 /* BodyColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyColors.plist; sourceTree = "<group>"; };
 		CD2DF6241479B53700884EA0 /* lender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lender.png; sourceTree = "<group>"; };
 		CD2E134514736E5B000A83FE /* PatchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatchButton.m; sourceTree = "<group>"; };
 		CD2E134714736E64000A83FE /* PatchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatchButton.h; sourceTree = "<group>"; };
@@ -1133,6 +1133,7 @@
 			isa = PBXGroup;
 			children = (
 				31980293165C54FA00FEFCA2 /* EyeColors.plist */,
+				B55C80C1165C69DE009D3D88 /* BodyColors.plist */,
 				31980294165C54FA00FEFCA2 /* HairColors.plist */,
 				31D04AFD1652C5EA00D16508 /* plot.png */,
 				31C72034164EB7500073EAF0 /* citadel2.png */,
@@ -1835,7 +1836,6 @@
 		31B7FC4616333C7C00B808FD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				313B39641642C26000602E7D /* CMakeLists.txt */,
 				31B7FC4716333C7C00B808FD /* chipmunk.c */,
 				31B7FC4916333C7C00B808FD /* constraints */,
 				31B7FC5516333C7C00B808FD /* cpArbiter.c */,
@@ -2186,7 +2186,6 @@
 				31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */,
 				31BBF93F1641CEF2008B5D2F /* BuyFurnitureViewController.xib in Resources */,
 				312B89C61642A9FE00452356 /* FurnitureViewController.xib in Resources */,
-				313B39651642C26000602E7D /* CMakeLists.txt in Resources */,
 				31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */,
 				31AB3B2F16438B92001F2DD3 /* easel.png in Resources */,
 				31AB3B3016438B92001F2DD3 /* hammock.png in Resources */,
@@ -2219,6 +2218,7 @@
 				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
 				31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */,
 				31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */,
+				B55C80C2165C69DE009D3D88 /* BodyColors.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

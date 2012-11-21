@@ -61,6 +61,6 @@
     else if( [self doesString: combinedBody containOne: @"Thick" andTwo: @"Striped" ]){
         return @"Thick Striped";
     }
-    
+    return @"Error";
 }
 @end
