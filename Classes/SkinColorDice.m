@@ -20,11 +20,16 @@
 }
 
 -(NSString *) skinColorFromDad:(NSString *) skin andMom: (NSString *) skin2{
-    
-    
-    
-    
-    return @"Error";
+    NSString* plistPath =[[NSBundle mainBundle] pathForResource:@"BodyColors" ofType:@"plist"];
+    NSDictionary *skinDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath];
+    if( [skin compare: skin2] == NSOrderedSame || [skin compare: skin2]==NSOrderedAscending ){
+        skin = [skin stringByAppendingString:skin2];
+    }
+    else{
+        skin = [skin2 stringByAppendingString: skin];
+    }
+    return [skinDictionary valueForKey: skin];
+
 }
 
 @end
