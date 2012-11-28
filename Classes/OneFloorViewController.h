@@ -5,13 +5,13 @@
 //  Created by guest user on 11/9/12.
 //
 //
-
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
 #import "CitadelViewController.h"
 #import "ViewFurniture.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SeedlingV2View.h"
+#import "SeedlingDataViewController.h"
 //cocos2d stuff
 #import "cocos2d.h"
 
@@ -36,6 +36,15 @@
     NSInteger yPosition;
     
     NSMutableArray *furnitureViews;
+    
+    //temp variables
+    NSString *des1;
+    NSString *des2;
+    int furniturePos;
+    
+    //two floors
+    IBOutlet UIImageView *floor1;
+    IBOutlet UIImageView *floor2;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
@@ -52,6 +61,12 @@
 @property(nonatomic, retain) NSMutableArray *myfurniture;
 @property(nonatomic, retain) NSMutableArray *myseedlings;
 @property(nonatomic, retain) NSMutableArray *furnitureViews;
+
+@property(nonatomic,retain) NSString *des1;
+@property(nonatomic,retain) NSString *des2;
+
+@property(nonatomic, retain) UIImageView *floor1;
+@property(nonatomic, retain) UIImageView *floor2;
 
 -(IBAction)buyFloor;
 -(void)displayFurniture;

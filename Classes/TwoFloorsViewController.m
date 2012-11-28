@@ -23,7 +23,7 @@
     }
     return self;
 }
-
+/*
 //add a new floor
 -(IBAction)buyFloor
 {
@@ -36,17 +36,17 @@
     [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
     NSLog(@"floors: %d", [appDelegate.citadelData integerForKey:@"floors"]);
     [myCitadel release];
-}
+} */
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [floor1 setImage:[UIImage imageNamed:@"citadel1"]];
-    floor1.contentMode = UIViewContentModeScaleAspectFill;
-    [floor2 setImage:[UIImage imageNamed:@"citadel2"]];
-    floor2.contentMode = UIViewContentModeTop;
+  //  [floor1 setImage:[UIImage imageNamed:@"citadel1"]];
+  //  floor1.contentMode = UIViewContentModeScaleAspectFill;
+    [floor2 setImage:[UIImage imageNamed:@"citadel1"]];
+    floor2.contentMode = UIViewContentModeTop; 
 }
 
 - (void)didReceiveMemoryWarning

@@ -160,7 +160,9 @@
             //Can afford it
             //Add it to my array of furniture
             NSData *myFurniture1 = [appDelegate.citadelData objectForKey:@"furniture"];
-            [furnitureArray addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1]];
+            NSArray *myArray = [NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1];
+            [furnitureArray addObjectsFromArray:myArray];
+            
             [furnitureArray addObject:furniture1];
             NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furnitureArray];
             [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
@@ -177,6 +179,10 @@
         else
         {
             //Inform player they can't afford it
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not Enough Coins!" message:@"Please earn more coins in order to afford this piece of furniture." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=1;
+            [alert show];
+            [alert release];
         }
     }
     
@@ -189,6 +195,19 @@
         //Upgrade furniture to level 3
         id furniture3 = [[NSClassFromString(furnName) alloc] init];
         [furniture3 initWithLevel:1];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (alertView.tag==1) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+        }
     }
 }
 

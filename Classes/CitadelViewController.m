@@ -8,7 +8,6 @@
 
 #import "CitadelViewController.h"
 
-//@class FloorViewController;
 @class Floor;
 @class MicrolendingAppDelegate;
 @class Seedling;
@@ -34,6 +33,7 @@
 @synthesize plot1;
 @synthesize myFirstSeedling;
 @synthesize playerCoins, playerLeaves, playerLevel, playerXP;
+@synthesize plots;
 
 -(IBAction)furnitureStore
 {
@@ -45,14 +45,45 @@
 //GAME DEFAULTS
 - (IBAction)begin
 {
-    //Add mechanism to WARN the user that they are about to set the game defaults. Doing so will erase whatever level they had achieved previously
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING!" message:@"Setting game to beginner level!" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"CONTINUE", nil];
+    alert.tag=1;
+    [alert show];
+    [alert release];
     
-   appDelegate.citadelData = [NSUserDefaults standardUserDefaults];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (alertView.tag==1) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+            [self reset];
+        }
+    }
+    if (alertView.tag==2) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+        }
+    }
+    
+}
+
+-(void)reset
+{
+    appDelegate.citadelData = [NSUserDefaults standardUserDefaults];
     
     //Player Variables
     playerXP = 1;
     playerLevel = 1;
-    playerCoins = 1700;
+    playerCoins = 1500;
     playerLeaves = 0;
     //Store player variables
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
@@ -62,40 +93,38 @@
     
     //Citadel Variables
     numOfFloors = 1;
-    level = 1;
-    seedlingID = 1;
+    [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     
     //Farm Plot
     plot1 = [[Plot alloc]init];
     [plot1 initWithLevel:1];
     NSLog(@"Plot1: %@", [plot1 itemName]);
-    furniture  = [[NSMutableArray alloc] initWithObjects: nil];
-    [furniture addObject:plot1];
-    NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:furniture];
+    plots = [[NSMutableDictionary alloc]init];
+    [plots setObject:plot1 forKey:@"1"];
+    NSData *plotData = [NSKeyedArchiver archivedDataWithRootObject:plots];
+    [appDelegate.citadelData setObject:plotData forKey:@"plot"];
     
     // Default seedling
-   // NameGenerator *mySeedName = [[NameGenerator alloc]init];
-   // NSString *seed = [[NSString alloc]init];
-   // seed = [mySeedName generateName];
-   // NSLog(@"My Seed: %@", seed);
-    
     SeedlingV2 *mySeedling = [[SeedlingV2 alloc]init];
     [mySeedling generateNewSeedlingCharacteristics];
     NSLog(@"My Seed: %@",[mySeedling myName]);
-    
     seedlings = [[NSMutableArray alloc]initWithObjects: nil];
     [seedlings addObject:mySeedling];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:seedlings];
-
-    // Store the data
-    [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
-    [appDelegate.citadelData setInteger:level forKey:@"level"];
-    [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
     [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    
+    //Citadel Furniture, set to 0
+    NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:nil];
+    [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+    
     [appDelegate.citadelData synchronize];
     NSLog(@"Data saved");
     
-    //Add mechanism to inform user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
+    //inform user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WELCOME!" message:@"Press the PLAY button to begin game!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    alert.tag=2;
+    [alert show];
+    [alert release];
 }
 
 -(IBAction)play
@@ -104,7 +133,7 @@
     Citadel *myCitadel = [[Citadel alloc]init];
     myCitadel.citadelDelegate = self;
     [myCitadel initialize];
-    [myCitadel release]; 
+    [myCitadel release];
 }
 
 -(void)citadelSetUpDone:(BOOL)result
@@ -116,14 +145,14 @@
         NSInteger number = [appDelegate.citadelData integerForKey:@"floors"];
         
         [self displayFloors:number];
-
+        
     }
 }
 
 -(void)displayFloors:(NSInteger)howmany
 {
     NSLog(@"One floor %@", self.navigationController);
-
+    
     if (howmany == 1) {
         NSLog(@"One floor %@", @"in..");
         OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
@@ -132,8 +161,11 @@
     }
     
     if (howmany == 2) {
-        NSLog(@"Two floor %@", @"in..");
-        TwoFloorsViewController *CVmyFloor2 = [[TwoFloorsViewController alloc]init];
+        NSLog(@"Two floors %@", @"in..");
+       // TwoFloorsViewController *CVmyFloor2 = [[TwoFloorsViewController alloc]init];
+       // [self.navigationController pushViewController:CVmyFloor2 animated:YES];
+        
+        OneFloorViewController *CVmyFloor2 = [[OneFloorViewController alloc]initWithNibName:@"TwoFloorsViewController" bundle:nil];
         [self.navigationController pushViewController:CVmyFloor2 animated:YES];
         [CVmyFloor2 release];
     }
@@ -144,22 +176,9 @@
         [self.navigationController pushViewController:CVmyFloor3 animated:YES];
         [CVmyFloor3 release];
     }
-
-}
-/*
--(void)needToRefreshView:(BOOL)result
-{
-    NSLog(@"CitadelViewController: %@", @"needToRefreshView!");
-    if (result) {
-        NSLog(@"NumFloors: %@", [appDelegate.citadelData objectForKey:@"floors"]);
-        FloorViewController *myCitadelFloors = [[FloorViewController alloc] init];
-        [self.navigationController pushViewController:myCitadelFloors animated:YES];
-        
-        [myCitadelFloors release];
-    }
     
 }
-*/
+
 - (void)viewDidLoad
 {
     self.title = @"Citadel";
@@ -186,4 +205,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)dealloc
+{
+    [super dealloc];
+    [plot1 release];
+    [plots release];
+}
+
 @end
+

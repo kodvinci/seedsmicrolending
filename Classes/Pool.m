@@ -20,7 +20,7 @@
     self.users = 2;
     self. useTime = 30; 
     self.itemWidth = 2; 
-    self.desire1 = @"water";
+    self.desire1 = [[NSString alloc] initWithString:@"water"];
     self.xPos = 280;
     self.yPos = 300;
     
