@@ -5,7 +5,6 @@
 //  Created by guest user on 11/9/12.
 //
 //
-
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
 #import "CitadelViewController.h"
@@ -41,7 +40,11 @@
     //temp variables
     NSString *des1;
     NSString *des2;
-    int newHappiness;
+    int furniturePos;
+    
+    //two floors
+    IBOutlet UIImageView *floor1;
+    IBOutlet UIImageView *floor2;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
@@ -61,6 +64,9 @@
 
 @property(nonatomic,retain) NSString *des1;
 @property(nonatomic,retain) NSString *des2;
+
+@property(nonatomic, retain) UIImageView *floor1;
+@property(nonatomic, retain) UIImageView *floor2;
 
 -(IBAction)buyFloor;
 -(void)displayFurniture;

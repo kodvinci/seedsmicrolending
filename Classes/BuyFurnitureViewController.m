@@ -142,7 +142,7 @@
     FurnitureViewController *BFmyFurniture = [[FurnitureViewController alloc] initWithNibName:@"FurnitureViewController" bundle:nil className:furnitureName ];
     
     [self.navigationController pushViewController:BFmyFurniture animated:YES];
-//    [myFurniture release];
+    [BFmyFurniture release];
 }
 
 @end

@@ -23,11 +23,12 @@
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
-    CGRect myFrame;    
+    CGRect myFrame;
     NSInteger numOfFloors;
     NSInteger level;
     NSInteger seedlingID;
     NSMutableArray *furniture;
+    NSMutableDictionary *plots;
     NSMutableArray *seedlings;
     NSUserDefaults *defaults;
     Plot *plot1;
@@ -49,7 +50,7 @@
 @property(nonatomic, retain) NSUserDefaults *defaults;
 @property(nonatomic, retain) Plot *plot1;
 @property(nonatomic, retain) Seedling *myFirstSeedling;
-
+@property(nonatomic, retain) NSMutableDictionary *plots;
 @property(nonatomic, assign) NSInteger playerXP;
 @property(nonatomic, assign) NSInteger playerLevel;
 @property(nonatomic, assign) NSInteger playerCoins;
