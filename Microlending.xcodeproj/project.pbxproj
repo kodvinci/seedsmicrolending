@@ -2226,11 +2226,11 @@
 				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
 				31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */,
 				31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */,
-<<<<<<< HEAD
+
 				B55C80C2165C69DE009D3D88 /* BodyColors.plist in Resources */,
-=======
+
 				3198029C165C98D200FEFCA2 /* SeedlingDataViewController.xib in Resources */,
->>>>>>> 3af6773ed7354a1d0332d08a68d9a6cbb662a1cc
+3af6773ed7354a1d0332d08a68d9a6cbb662a1cc
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
