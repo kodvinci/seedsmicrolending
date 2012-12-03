@@ -321,6 +321,7 @@
 		B521E12616548F4D00521E3C /* SkinColorDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E12416548F4D00521E3C /* SkinColorDice.m */; };
 		B521E12916548F6800521E3C /* NameGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E12816548F6800521E3C /* NameGenerator.m */; };
 		B55C80C2165C69DE009D3D88 /* BodyColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55C80C1165C69DE009D3D88 /* BodyColors.plist */; };
+		B57CBF66166D31FB00129516 /* SeedlingSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = B57CBF65166D31FB00129516 /* SeedlingSheet.png */; };
 		CD2DF6251479B53700884EA0 /* lender.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2DF6241479B53700884EA0 /* lender.png */; };
 		CD2E134614736E5B000A83FE /* PatchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E134514736E5B000A83FE /* PatchButton.m */; };
 		CD308A68144E2C32000A44C8 /* Lender.m in Sources */ = {isa = PBXBuildFile; fileRef = CD308A67144E2C32000A44C8 /* Lender.m */; };
@@ -969,6 +970,7 @@
 		B521E12716548F6800521E3C /* NameGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameGenerator.h; sourceTree = "<group>"; };
 		B521E12816548F6800521E3C /* NameGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameGenerator.m; sourceTree = "<group>"; };
 		B55C80C1165C69DE009D3D88 /* BodyColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyColors.plist; sourceTree = "<group>"; };
+		B57CBF65166D31FB00129516 /* SeedlingSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeedlingSheet.png; sourceTree = "<group>"; };
 		CD2DF6241479B53700884EA0 /* lender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lender.png; sourceTree = "<group>"; };
 		CD2E134514736E5B000A83FE /* PatchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatchButton.m; sourceTree = "<group>"; };
 		CD2E134714736E64000A83FE /* PatchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatchButton.h; sourceTree = "<group>"; };
@@ -1137,6 +1139,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B57CBF65166D31FB00129516 /* SeedlingSheet.png */,
 				31980293165C54FA00FEFCA2 /* EyeColors.plist */,
 				B55C80C1165C69DE009D3D88 /* BodyColors.plist */,
 				31980294165C54FA00FEFCA2 /* HairColors.plist */,
@@ -2226,11 +2229,9 @@
 				31D04AFE1652C5EA00D16508 /* plot.png in Resources */,
 				31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */,
 				31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */,
-
 				B55C80C2165C69DE009D3D88 /* BodyColors.plist in Resources */,
-
 				3198029C165C98D200FEFCA2 /* SeedlingDataViewController.xib in Resources */,
-3af6773ed7354a1d0332d08a68d9a6cbb662a1cc
+				B57CBF66166D31FB00129516 /* SeedlingSheet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
