@@ -41,6 +41,10 @@
     BOOL level3;
     NSMutableArray *furnitureArray;
     
+    //HUD variables
+    IBOutlet UILabel *coins;
+    IBOutlet UILabel *leaves;
+    IBOutlet UILabel *level;
 }
 
 @property(nonatomic, assign) Class className;
@@ -69,6 +73,9 @@
 @property(nonatomic, assign) BOOL level2;
 @property(nonatomic, assign) BOOL level3;
 @property(nonatomic, retain) NSMutableArray *furnitureArray;
+@property(nonatomic, retain) UILabel *coins;
+@property(nonatomic, retain) UILabel *leaves;
+@property(nonatomic, retain) UILabel *level;
 
 -(IBAction) segmentedControlIndexChanged;
 -(IBAction)buyFurniture;

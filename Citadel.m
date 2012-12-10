@@ -11,8 +11,7 @@
 @class MicrolendingAppDelegate;
 @class Seedling;
 @class FloorViewController;
-@class SingleFloor;
-@class Floor;
+
 
 @implementation Citadel
 
@@ -46,50 +45,6 @@
 
 }
 
--(void)addFloor:(NSInteger)floorNumber
-{
-    //TO_DO
-    //Do whatever setup might be needed to determine if one can add floor
-    if (floorNumber == 1) {
-        //all players can purchase this floor
-        if (playerCoins >= 100) {
-            playerCoins = playerCoins - 100;
-            //TO_DO
-            //initialize floor with grow time = 5 minutes
-            Floor *myFloor = [Floor alloc];
-            [myFloor init];
-        }
-        else {
-            //Alert player that they do not have enough coins to buy floor
-        }
-    }
-    if (floorNumber == 2) {
-        if (playerLevel >= 3) {
-            if (playerCoins >= 1000) {
-                //have enough coins to buy floor
-                playerCoins = playerCoins - 1000;
-                //TO_DO
-                //initialize floor with grow time = 1 hour
-                
-            }
-        }
-    }
-    
-    NSInteger maxFloors = 3; //Make maximum floors 3 for testing purposes
-    appDelegate = [[UIApplication sharedApplication] delegate];
-//    appDelegate.CitadelDelegate = self;
-    NSInteger x = [appDelegate.citadelData integerForKey:@"floors"] + 1;
-    if (x > maxFloors) {
-        citFloors = maxFloors;
-    }
-    else {
-        citFloors = x;
-    }
-    
-    NSLog(@"new floors:%d", citFloors);
-    
-    [self saveChanges:@"FLOOR"];
-}
 
 -(void)addSeedling
 {
@@ -131,7 +86,7 @@
     NSLog(@"NumFloors:%@", [appDelegate.citadelData objectForKey:@"floors"]);
   
     
-   [self.citadelDelegate needToRefreshView:YES];
+  // [self.citadelDelegate needToRefreshView:YES];
 
 }
 

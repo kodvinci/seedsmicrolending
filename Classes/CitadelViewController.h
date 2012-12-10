@@ -3,20 +3,17 @@
 //  Microlending
 //
 //  Created by guest user on 9/29/12.
-//
+//  Leonard Ng'eno, Ben Mozenter, Tori Reynolds
 //
 
 #import <UIKit/UIKit.h>
-#import "Floor.h"
 #import "MicrolendingAppDelegate.h"
 #import "Seedling.h"
 #import "Citadel.h"
 #import "Furniture.h"
 #import "Plot.h"
 #import "StoreViewController.h"
-#import "OneFloorViewController.h"
-#import "TwoFloorsViewController.h"
-#import "ThreeFloorsViewController.h"
+#import "FloorViewController.h"
 #import "NameGenerator.h"
 #import "SeedlingV2.h"
 #import "SeedlingV2View.h"

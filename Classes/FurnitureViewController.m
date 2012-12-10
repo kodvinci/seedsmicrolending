@@ -27,6 +27,7 @@
 @synthesize desire1, desire2, reward1, reward2, numUsers;
 @synthesize level1, level2, level3;
 @synthesize furnitureArray;
+@synthesize coins, leaves, level;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name
 {
@@ -146,6 +147,11 @@
     reward1.text = [NSString stringWithFormat:@"%d", furnReward1];
     reward2.text = [NSString stringWithFormat:@"%d", furnReward2];
     numUsers.text = [NSString stringWithFormat:@"%d", users];
+    
+    //HUD variables
+    coins.text = [NSString stringWithFormat:@"%d",[appDelegate.citadelData integerForKey:@"coins"]];
+    leaves.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
+    level.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"playerLevel"]];
 }
 
 -(IBAction)buyFurniture

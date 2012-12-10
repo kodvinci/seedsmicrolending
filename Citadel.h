@@ -17,8 +17,6 @@
 #import "Seedling.h"
 #import "Furniture.h"
 #import "FloorViewController.h"
-#import "SingleFloor.h"
-#import "Floor.h"
 
 @interface Citadel : NSObject
 {
@@ -54,7 +52,6 @@
 @property(nonatomic, assign) NSInteger playerLeaves;
 
 -(void)initialize;
--(void)addFloor:(NSInteger)floorNumber;
 -(void)addSeedling;
 -(void)addFurniture;
 -(void)saveChanges:(NSString *)thisChanged;

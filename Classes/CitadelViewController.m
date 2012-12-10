@@ -8,16 +8,13 @@
 
 #import "CitadelViewController.h"
 
-@class Floor;
 @class MicrolendingAppDelegate;
 @class Seedling;
 @class Citadel;
 @class Furniture;
 @class Plot;
 @class StoreViewController;
-@class OneFloorViewController;
-@class TwoFloorsViewController;
-@class ThreeFloorsViewController;
+@class FloorViewController;
 @class NameGenerator;
 @class SeedlingV2;
 @class SeedlingV2View;
@@ -35,6 +32,7 @@
 @synthesize playerCoins, playerLeaves, playerLevel, playerXP;
 @synthesize plots;
 
+//Button that opens the view that contains the furniture and currency store
 -(IBAction)furnitureStore
 {
     StoreViewController *CVmyFurniture = [[StoreViewController alloc] init];
@@ -155,33 +153,47 @@
     
     if (howmany == 1) {
         NSLog(@"One floor %@", @"in..");
-        OneFloorViewController *CVmyFloor1 = [[OneFloorViewController alloc]init];
+        FloorViewController *CVmyFloor1 = [[FloorViewController alloc]initWithNibName:@"OneFloorViewController" bundle:nil];
         [self.navigationController pushViewController:CVmyFloor1 animated:YES];
         [CVmyFloor1 release];
     }
     
     if (howmany == 2) {
         NSLog(@"Two floors %@", @"in..");
-       // TwoFloorsViewController *CVmyFloor2 = [[TwoFloorsViewController alloc]init];
-       // [self.navigationController pushViewController:CVmyFloor2 animated:YES];
         
-        OneFloorViewController *CVmyFloor2 = [[OneFloorViewController alloc]initWithNibName:@"TwoFloorsViewController" bundle:nil];
+        FloorViewController *CVmyFloor2 = [[FloorViewController alloc]initWithNibName:@"TwoFloorsViewController" bundle:nil];
         [self.navigationController pushViewController:CVmyFloor2 animated:YES];
         [CVmyFloor2 release];
     }
     
     if (howmany == 3) {
-        NSLog(@"Three floor %@", @"in..");
-        ThreeFloorsViewController *CVmyFloor3 = [[ThreeFloorsViewController alloc]init];
+        NSLog(@"Three floors %@", @"in..");
+        FloorViewController *CVmyFloor3 = [[FloorViewController alloc]initWithNibName:@"ThreeFloorsViewController" bundle:nil];
+
         [self.navigationController pushViewController:CVmyFloor3 animated:YES];
         [CVmyFloor3 release];
     }
     
+    if (howmany == 4) {
+        NSLog(@"Four floors %@", @"in..");
+        FloorViewController *CVmyFloor4 = [[FloorViewController alloc]initWithNibName:@"FourFloorsViewController" bundle:nil];
+        
+        [self.navigationController pushViewController:CVmyFloor4 animated:YES];
+        [CVmyFloor4 release];
+    }
+    if (howmany == 5) {
+        NSLog(@"Five floors %@", @"in..");
+        FloorViewController *CVmyFloor5 = [[FloorViewController alloc]initWithNibName:@"FiveFloorsViewController" bundle:nil];
+        
+        [self.navigationController pushViewController:CVmyFloor5 animated:YES];
+        [CVmyFloor5 release];
+    }
+
 }
 
 - (void)viewDidLoad
 {
-    self.title = @"Citadel";
+    self.title = @"Home";
     appDelegate = [[UIApplication sharedApplication] delegate];
     
     [super viewDidLoad];
