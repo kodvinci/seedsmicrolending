@@ -25,7 +25,6 @@
 @synthesize mySeedlingView;
 @synthesize myTime;
 @synthesize des1, des2;
-@synthesize floor1, floor2;
 @synthesize scrollView;
 @synthesize nibFileName;
 @synthesize citadelView;
@@ -116,7 +115,9 @@
     [mydic release];
 }
 
-//display the furniture
+//This method attaches the furniture items to their views using the ViewFurniture class which is a subclass of the UIImageView class. The furniture items are stored in an NSMutableArray.
+//The resulting furniture views are then added as subViews to the main citadelView
+
 -(void)displayFurniture
 {
     NSData *myFurnit = [appDelegate.citadelData objectForKey:@"furniture"];
@@ -128,14 +129,11 @@
     for (int k=0; k < myfurniture.count; k++) {
         UIImage *furnitureImage = [[myfurniture objectAtIndex:k]furnPic];
         
-        //Furniture
+        //Non-plot Furniture
         if (![[[myfurniture objectAtIndex:k]itemName] isEqualToString:@"plot"]) {
             NSLog(@"My Furniture: %@", [[myfurniture objectAtIndex:k]itemName]);
             NSLog(@"My Furn desire1: %@", [[myfurniture objectAtIndex:k] desire1]);
             NSLog(@"My Furn desire2: %@", [[myfurniture objectAtIndex:k] desire2]);
-            //   des1 = [[NSString alloc] initWithString:[[myfurniture objectAtIndex:k] desire1]];
-            //   newHappiness = [[myfurniture objectAtIndex:k] happinessReward1];
-            //  des2 = [[NSString alloc] initWithString:[[myfurniture objectAtIndex:k] desire2]];
             
             myFurnitureView = [[ViewFurniture alloc]initWithImage:furnitureImage];
             myFurnitureView.center = CGPointMake([[myfurniture objectAtIndex:k]xPos], [[myfurniture objectAtIndex:k]yPos]);
@@ -143,37 +141,38 @@
             myFurnitureView.name = [[myfurniture objectAtIndex:k]itemName];
             [self.myFurnitureView setUserInteractionEnabled:YES];
             
-            //add Pan Recognizer to FurnitureViews
-            UIPanGestureRecognizer *panRecognizerF = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)] autorelease];
-            [panRecognizer setMinimumNumberOfTouches:1];
-            [panRecognizer setMaximumNumberOfTouches:1];
+            //add Pan Recognizer to FurnitureViews so that their individual displacement can be tracked.
+            UIPanGestureRecognizer *panRecognizerF = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleFurnitureDisplacement:)] autorelease];
+            [panRecognizerF setMinimumNumberOfTouches:1];
+            [panRecognizerF setMaximumNumberOfTouches:1];
             [self.myFurnitureView addGestureRecognizer:panRecognizerF];
             
             [furnitureViews addObject:myFurnitureView];
             
-            //   [self.view addSubview:myFurnitureView];
             [self.citadelView addSubview:myFurnitureView];
         }
-        
     }
 }
-/*
- - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
- {
- NSLog(@"!!: %@", @"hitTest");
- 
- UIView *hitView = [self.view hitTest:point withEvent:event];
- // UIView *hitView = [self.citadelView hitTest:point withEvent:event];
- if (hitView == self.view) {
- // if (hitView == self.citadelView) {
- NSLog(@"what is returned? %@", hitView);
- return nil;
- }
- else
- return hitView;
- } */
 
+//This method uses UIPanGestureRecognizer to track movements of the furniture within the citadel. The final position is saved as the new furniture position.
+-(void)handleFurnitureDisplacement:(UIPanGestureRecognizer *)recognizer
+{
+    NSLog(@"handleFurnitureDisplacement");
+    //This returns a point identifying the new location of the furniture in the coordinate system of its designated superview
+    CGPoint translation = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x, recognizer.view.center.y + translation.y);
+    // Set the new furniture location in the coordinate system of the specified view
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+    //Find the view the recognizer is attached to.
+    NSInteger k = recognizer.view.tag;
+    //Save the new x and y coordinates of the furniture
+    [[myfurniture objectAtIndex:k] setXPos:recognizer.view.center.x];
+    [[myfurniture objectAtIndex:k] setYPos:recognizer.view.center.y];
+    NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myfurniture];
+    [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+}
 
+//The three methods, touchesBegan, touchesEnded, touchesMoved have been overriden and implemented in the ScrollSubClass class. This is because UIScrollview steals touches from the main view and does not forward them to the subviews.
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
@@ -181,55 +180,12 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    /*  NSLog(@"Touches ended");
-     UITouch *meTouch = [touches anyObject];
-     if (CGRectContainsPoint(self.mySeedlingView.frame, [meTouch locationInView:self.scrollView])) {
-     // your touch handling code goes here
-     mySeedlingView.center = CGPointMake([meTouch locationInView:self.scrollView].x, [meTouch locationInView:self.scrollView].y);
-     NSLog(@"YES");
-     } */
+
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchesMoved");
-    /*
-     myTouch = [[event allTouches]anyObject];
-     pt = CGPointMake([myTouch locationInView:self.view].x, [myTouch locationInView:self.view].y);
-     
-     //seedling moved to a new spot
-     if (CGRectContainsPoint(mySeedlingView.frame, pt)) {
-     mySeedlingView.center = [myTouch locationInView:self.view];
-     //Check if Seedling is brought to contact with farm
-     if (CGRectIntersectsRect(mySeedlingView.frame, myFarmView.frame)) {
-     //check if seedling has 100 happiness
-     if ([[myseedlings objectAtIndex:0] myHappiness] >= 100) {
-     NSLog(@"Seedling on Farm!!");
-     //put Seedling at center of Farm
-     //Disable further interaction with Seedling & further seedling movement
-     //set a timer to fire after an hour
-     mySeedlingView.center = myFarmView.center;
-     [mySeedlingView setUserInteractionEnabled:NO];
-     [self.myTime invalidate];
-     [NSTimer scheduledTimerWithTimeInterval:(10.0) target:self selector:@selector(happinessCollectedTimer) userInfo:nil repeats:NO];
-     }
-     }
-     
-     }
-     
-     else {
-     UITouch *touch = [touches anyObject];
-     UIView *touchedView = [[UIView alloc] init];
-     touchedView =  [self.view hitTest:[touch locationInView:self.view] withEvent:event];
-     NSLog(@"touchedView tag: %d",touchedView.tag);
-     if (touchedView.tag != 1000) {
-     [touchedView setCenter:[touch locationInView:self.view]];
-     [[myfurniture objectAtIndex:touchedView.tag] setXPos:[touch locationInView:self.view].x];
-     [[myfurniture objectAtIndex:touchedView.tag] setYPos:[touch locationInView:self.view].y];
-     NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myfurniture];
-     [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
-     }
-     } */
+
 }
 
 
@@ -237,29 +193,23 @@
 {
     [super viewDidLoad];
     self.title = @"Citadel";
-    //scrollView
+    
+    //citadelView is initialized with a frame whose size equals the size of the main view (FloorViewController's view). citadelView is where all the other subViews are added to.
     self.citadelView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    //Enable scrolling and set the scrollView delegate as self.
+    //Nest the citadelView in the scrollView so that when scrolling happens, the subViews remain fixed to the scrollView and are not left hanging on the screen.
+    [scrollView setScrollEnabled:YES];
+    self.scrollView.delegate = self;
+    [self.scrollView addSubview:self.citadelView];
     
- //   if (![nibFileName isEqualToString:@"FloorViewController"] && ![nibFileName isEqualToString:@"TwoFloorsViewController"] && ![nibFileName isEqualToString:@"ThreeFloorsViewController"]) {
-        NSLog(@"Scrollable Floors");
-        [scrollView setScrollEnabled:YES];
-        self.scrollView.delegate = self;
-        [self.scrollView addSubview:self.citadelView];
- //   }
-    
-    
-    //   [self.view setUserInteractionEnabled:YES];
-    //   self.view.tag = 1000; //tag for super view
+    //Enable user interaction with the citadelView and add a tag to it so that it can be differentiated from the other subViews
     [self.citadelView setUserInteractionEnabled:YES];
     self.citadelView.tag = 1000;
     
+    //Heads-up Display labels. The values corresponding to the labels are fetched from the citadelData, a NSUserDefaults data structure.
     coins.text = [NSString stringWithFormat:@"%d",[appDelegate.citadelData integerForKey:@"coins"]];
     leaves.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
     level.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"playerLevel"]];
-    
-    //two floors variables
-    [floor2 setImage:[UIImage imageNamed:@"citadel1"]];
-    floor2.contentMode = UIViewContentModeTop;
     
     //display farm
     [self displayFarm];
@@ -268,11 +218,12 @@
     //display seedlings
     [self displaySeedlings];
     
-    //Now tell the scrollView the size of the view
+    //Set the size of the scrollView to the size of the citadelView
     self.scrollView.contentSize = self.citadelView.frame.size;
     
 }
 
+//This method reanimates the HUD variables. It is called whenever one of them changes
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
@@ -293,7 +244,8 @@
 }
 
 //Handles the dragging of a Seedling to a new location
-- (void)handlePan:(UIPanGestureRecognizer *)recognizer {
+- (void)handlePan:(UIPanGestureRecognizer *)recognizer
+{
     NSLog(@"handlePan");
     //This returns a point identifying the new location of the seedling in the coordinate system of its designated superview
     CGPoint translation = [recognizer translationInView:self.view];
@@ -374,7 +326,6 @@
             [NSTimer scheduledTimerWithTimeInterval:(10.0) target:self selector:@selector(happinessCollectedTimer) userInfo:nil repeats:NO];
         }
     }
-    
 }
 
 -(void)displaySeedlings
@@ -386,7 +337,7 @@
     for (int k=0; k < myseedlings.count; k++) {
         UIImage *seedlingImage = [[myseedlings objectAtIndex:k] myImage];
         mySeedlingView = [[SeedlingV2View alloc]initWithImage:seedlingImage];
-        mySeedlingView.center = CGPointMake(150,350);
+        mySeedlingView.center = CGPointMake(150,300);
         [self.mySeedlingView setUserInteractionEnabled:YES];
         
         //add double tap gesture to seedling
@@ -435,13 +386,13 @@
     //Subtract happiness from Seedling, Award Coins to Player
     //release Seedling from Farm
     //Enable interaction with Seedling
-    NSInteger newSmilly = [[myseedlings objectAtIndex:0] myHappiness] - 100;
-    [[myseedlings objectAtIndex:0] setMyHappiness:newSmilly];
+    [[myseedlings objectAtIndex:0] setMyHappiness:0];
     [[myseedlings objectAtIndex:0] setHappinessDeposited:[[myseedlings objectAtIndex:0] happinessDeposited] + 100];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
     [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     NSInteger initialCoins = [appDelegate.citadelData integerForKey:@"coins"];
     [appDelegate.citadelData setInteger:(initialCoins+100) forKey:@"coins"];
+    [appDelegate.citadelData synchronize];
     
     mySeedlingView.center = CGPointMake(myFarmView.center.x+150, myFarmView.center.y);
     [NSTimer scheduledTimerWithTimeInterval:(7.0) target:self selector:@selector(moveSeedlingTimer) userInfo:nil repeats:NO];
@@ -450,33 +401,53 @@
     
 }
 
+//This method handles the change in the seedling's variables (myHappiness) once it is done interacting with the furniture. The method is called by a scheduled timer that fires 30 seconds after the seedling gets trapped in the furniture
+//The seedling is then positioned away from the furniture and stays there for 7 seconds before it starts moving around
+
 -(void)seedlingDoneInteractingWithFurniture
 {
     NSInteger prevHappiness = [[myseedlings objectAtIndex:0] myHappiness];
     NSInteger RewardHappiness = [[myfurniture objectAtIndex:furniturePos] happinessReward1];
     NSInteger actualHappiness;
     //compute happiness to be awarded
+    //If total happiness exceeds 100, the total happiness for the seedling is set at 100
     if (prevHappiness + RewardHappiness > 100) {
         actualHappiness = 100;
     }
-    else
+    else {
         actualHappiness = RewardHappiness + prevHappiness;
+    }
     
+    //Save new happiness
     [[myseedlings objectAtIndex:0] setMyHappiness:actualHappiness];
     NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
     [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
-    mySeedlingView.center = CGPointMake(20, 340);
-    //   NSLog(@"seedlingHappiness After: %d",[[myseedlings objectAtIndex:0] myHappiness]);
+    [appDelegate.citadelData synchronize];
+    
+    //Position the seedling away from the furniture but in the same floor
+    if (mySeedlingView.center.x + 100 > 300) {
+        mySeedlingView.center = CGPointMake(mySeedlingView.center.x - 100, mySeedlingView.center.y);
+    }
+    else {
+        mySeedlingView.center = CGPointMake(mySeedlingView.center.x + 100, mySeedlingView.center.y);
+    }
+    //Schedule a timer to fire in 7 seconds. This will release the Seedling and allow it start moving around
     [NSTimer scheduledTimerWithTimeInterval:(7.0) target:self selector:@selector(seedlingDoneIdling) userInfo:nil repeats:NO];
     
 }
 
+//This method is called by the NSTimer scheduled in the seedlingDoneInteractingWithFurniture method
+//Enable furniture and seedling interaction, then let the seedling start moving again
 -(void)seedlingDoneIdling
 {
     [mySeedlingView setUserInteractionEnabled:YES];
+    [[furnitureViews objectAtIndex:furniturePos] setUserInteractionEnabled:YES];
     [self moveSeedlingTimer];
 }
+
 //Single Seedling
+//This method handles the movement of the seedling within the floor. It also checks constantly to see if a Seedling has come across a piece of furniture that satisfies its desires. If so, the seedling is trapped within that furniture for 30 seconds as it interacts with the piece of furniture. A timer is used to release the seedling after 30 seconds elapse.
+
 -(void)moveSeedling
 {
     //Random movement. Restricted to individual floor
@@ -496,7 +467,7 @@
         //floor 1 / top floor
         if (floorOne) {
             NSLog(@"top floor");
-            if (mySeedlingView.center.y > 180 || mySeedlingView.center.y < 25) {
+            if (mySeedlingView.center.y > 175 || mySeedlingView.center.y < 25) {
                 pos.y = -pos.y;
             }
         }
@@ -528,10 +499,8 @@
                 }
             }
             NSLog(@"Furniture position: %d", furniturePos);
-            
-            
-            NSLog(@"furniture desire1: %@", [[myfurniture objectAtIndex:0] desire1]);
-            NSLog(@"furniture desire2: %@", [[myfurniture objectAtIndex:0] desire2]);
+            NSLog(@"furn desire1: %@", [[myfurniture objectAtIndex:0] desire1]);
+            NSLog(@"furn desire2: %@", [[myfurniture objectAtIndex:0] desire2]);
             
             //check if Seedling desires are the same as that of furniture
             if ([[desires objectForKey:@"First Desire"] isEqualToString:[[myfurniture objectAtIndex:furniturePos] desire1]] || [[desires objectForKey:@"First Desire"] isEqualToString: [[myfurniture objectAtIndex:furniturePos] desire2]] ) {
@@ -542,10 +511,11 @@
                     myTime = nil;
                 }
                 mySeedlingView.center = myFun.center;
-                //Disable interaction with Furniture & Seedling
+                //Disable interaction with Furniture & Seedling so that they cannot be moved while interaction occurs
                 [mySeedlingView setUserInteractionEnabled:NO];
+                [myFun setUserInteractionEnabled:NO];
                 
-                //set a timer to fire after an hour
+                //set a timer to fire after Furniture UseTime
                 [NSTimer scheduledTimerWithTimeInterval:(30.0) target:self selector:@selector(seedlingDoneInteractingWithFurniture) userInfo:nil repeats:NO];
                 break; //get out of loop
             }
@@ -559,8 +529,10 @@
                 mySeedlingView.center = myFun.center;
                 //Disable interaction with Furniture & Seedling
                 [mySeedlingView setUserInteractionEnabled:NO];
+                [myFun setUserInteractionEnabled:NO];
+
                 NSLog(@"seedlingHappiness before: %d",[[myseedlings objectAtIndex:0] myHappiness]);
-                //set a timer to fire after an hour
+                //set a timer to fire after furniture usetime
                 [NSTimer scheduledTimerWithTimeInterval:(30.0) target:self selector:@selector(seedlingDoneInteractingWithFurniture) userInfo:nil repeats:NO];
                 break;
             }
@@ -574,8 +546,10 @@
                 mySeedlingView.center = myFun.center;
                 //Disable interaction with Furniture & Seedling
                 [mySeedlingView setUserInteractionEnabled:NO];
+                [myFun setUserInteractionEnabled:NO];
+
                 NSLog(@"seedlingHappiness before: %d",[[myseedlings objectAtIndex:0] myHappiness]);
-                //set a timer to fire after an hour
+                //set a timer to fire after furniture use time
                 [NSTimer scheduledTimerWithTimeInterval:(30.0) target:self selector:@selector(seedlingDoneInteractingWithFurniture) userInfo:nil repeats:NO];
             }
             [desires release];
@@ -583,7 +557,8 @@
     }
 }
 
-//Handle movement within a single floor
+//Handle movement within a single floor. This method restricts the movement of the seedling on its own to the boundaries of the floor it is on.
+
 -(void)moveWithinFloor
 {
     //floor 1

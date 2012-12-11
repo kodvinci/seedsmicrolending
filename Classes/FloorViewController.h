@@ -43,10 +43,6 @@
     NSString *des2;
     int furniturePos;
     
-    //two floors
-    IBOutlet UIImageView *floor1;
-    IBOutlet UIImageView *floor2;
-    
     //scrollview
     IBOutlet ScrollSubClass *scrollView;
     NSString *nibFileName;
@@ -86,9 +82,6 @@
 
 @property(nonatomic,retain) NSString *des1;
 @property(nonatomic,retain) NSString *des2;
-
-@property(nonatomic, retain) UIImageView *floor1;
-@property(nonatomic, retain) UIImageView *floor2;
 
 @property(nonatomic, strong) ScrollSubClass *scrollView;
 @property(nonatomic, retain) NSString *nibFileName;

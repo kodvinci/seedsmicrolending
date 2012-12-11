@@ -21,9 +21,9 @@
 {
     NSString *myName;
     UIImage *myImage;
-    int myHappiness;
-    int myXP;
-    int happinessDeposited;
+    NSInteger myHappiness;
+    NSInteger myXP;
+    NSInteger happinessDeposited;
     NSMutableDictionary *myRelationships;
     NSMutableDictionary *myDesires;
     NSMutableDictionary *myCharacteristics;
@@ -31,9 +31,9 @@
 
 @property (nonatomic, retain) NSString *myName;
 @property (nonatomic, retain) UIImage *myImage;
-@property (nonatomic, assign) int myHappiness;
-@property (nonatomic, assign) int happinessDeposited;
-@property (nonatomic, assign) int myXP;
+@property (nonatomic, assign) NSInteger myHappiness;
+@property (nonatomic, assign) NSInteger happinessDeposited;
+@property (nonatomic, assign) NSInteger myXP;
 @property (nonatomic, retain) NSMutableDictionary *myRelationships;
 @property (nonatomic, retain) NSMutableDictionary *myDesires;
 @property (nonatomic, retain) NSMutableDictionary *myCharacteristics;
