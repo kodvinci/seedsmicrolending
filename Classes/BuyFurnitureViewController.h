@@ -2,7 +2,7 @@
 //  BuyFurnitureViewController.h
 //  Microlending
 //
-//  Created by guest user on 10/31/12.
+//  Created by Leonard Ng'eno on 10/31/12.
 //
 //
 

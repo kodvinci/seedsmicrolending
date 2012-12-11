@@ -2,7 +2,7 @@
 //  Citadel.h
 //  Microlending
 //
-//  Created by guest user on 9/29/12.
+//  Created by Leonard Ng'eno on 9/29/12.
 //
 //
 

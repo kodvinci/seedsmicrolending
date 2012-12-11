@@ -2,7 +2,7 @@
 //  FloorViewController.h
 //  Microlending
 //
-//  Created by guest user on 11/9/12.
+//  Created by Leonard Ng'eno on 11/9/12.
 //
 //
 

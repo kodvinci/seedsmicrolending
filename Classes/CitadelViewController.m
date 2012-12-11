@@ -2,7 +2,7 @@
 //  CitadelViewController.m
 //  Microlending
 //
-//  Created by guest user on 9/29/12.
+//  Created by Leonard Ng'eno on 9/29/12.
 //
 //
 
@@ -87,7 +87,7 @@
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
     [appDelegate.citadelData setInteger:playerLevel forKey:@"playerLevel"];
     [appDelegate.citadelData setInteger:playerCoins forKey:@"coins"];
-    [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
+  //  [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
     
     //Citadel Variables
     numOfFloors = 1;

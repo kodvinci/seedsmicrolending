@@ -2,7 +2,7 @@
 //  MPCategoryPage.m
 //  Microlending
 //
-//  Created by guest user on 09/25/12.
+//  Created by Leonard Ng'eno on 09/25/12.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 

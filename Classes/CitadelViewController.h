@@ -2,8 +2,8 @@
 //  CitadelViewController.h
 //  Microlending
 //
-//  Created by guest user on 9/29/12.
-//  Leonard Ng'eno, Ben Mozenter, Tori Reynolds
+//  Created by Leonard Ng'eno on 9/29/12.
+//  
 //
 
 #import <UIKit/UIKit.h>
