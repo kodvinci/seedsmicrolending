@@ -18,6 +18,7 @@
 @synthesize myDesires;
 @synthesize myCharacteristics;
 @synthesize happinessDeposited;
+@synthesize seedlingPosition;
 
 // initialize the seedling 
 -(id)init {
@@ -30,6 +31,7 @@
     myRelationships = [[NSMutableDictionary alloc]init]; 
     myDesires = [[NSMutableDictionary alloc]init];
     myCharacteristics = [[NSMutableDictionary alloc]init];
+    seedlingPosition = CGPointMake(200, 300);
 	return self;
 }
 
@@ -45,6 +47,7 @@
         self.myDesires = [decoder decodeObjectForKey:@"myDesires"];
         self.myImage = [decoder decodeObjectForKey:@"myImage"];
         self.happinessDeposited = [decoder decodeIntegerForKey:@"happinessDeposited"];
+        self.seedlingPosition = [decoder decodeCGPointForKey:@"seedlingPosition"];
 
     }
     return self;
@@ -59,6 +62,8 @@
     [encoder encodeObject:self.myCharacteristics forKey:@"myCharacteristics"];
     [encoder encodeObject:self.myImage forKey:@"myImage"];
     [encoder encodeInteger:self.happinessDeposited forKey:@"happinessDeposited"];
+    [encoder encodeCGPoint:self.seedlingPosition forKey:@"seedlingPosition"];
+
 }
 
 

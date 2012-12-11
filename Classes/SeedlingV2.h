@@ -27,6 +27,7 @@
     NSMutableDictionary *myRelationships;
     NSMutableDictionary *myDesires;
     NSMutableDictionary *myCharacteristics;
+    CGPoint seedlingPosition;
 }
 
 @property (nonatomic, retain) NSString *myName;
@@ -37,7 +38,7 @@
 @property (nonatomic, retain) NSMutableDictionary *myRelationships;
 @property (nonatomic, retain) NSMutableDictionary *myDesires;
 @property (nonatomic, retain) NSMutableDictionary *myCharacteristics;
-
+@property(nonatomic, assign) CGPoint seedlingPosition;
 
 - (void) updateHappiness: (int) happinessDifference;
 - (void) updateXP: (int) xpDifference;

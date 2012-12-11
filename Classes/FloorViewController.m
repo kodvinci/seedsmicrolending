@@ -252,9 +252,12 @@
     recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x, recognizer.view.center.y + translation.y);
     // Set the new Seedling location in the coordinate system of the specified view
     [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+    [[myseedlings objectAtIndex:recognizer.view.tag] setSeedlingPosition:recognizer.view.center]; //set the seedlingPosition property in the seedling object
+    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    [appDelegate.citadelData synchronize]; //save the new position to disk
     
     if ([appDelegate.citadelData integerForKey:@"floors"] == 2) {
-        
         if (recognizer.view.center.y > 0 && recognizer.view.center.y < 200) {
             //Seedling dragged to top floor
             floorOne = YES;
@@ -335,10 +338,12 @@
     myseedlings = [[NSMutableArray alloc]initWithArray:myarray];
     
     for (int k=0; k < myseedlings.count; k++) {
-        UIImage *seedlingImage = [[myseedlings objectAtIndex:k] myImage];
+        UIImage *seedlingImage = [UIImage imageNamed:@"seedling"];
+        //[[myseedlings objectAtIndex:k] myImage];
         mySeedlingView = [[SeedlingV2View alloc]initWithImage:seedlingImage];
-        mySeedlingView.center = CGPointMake(150,300);
+        mySeedlingView.center = [[myseedlings objectAtIndex:k] seedlingPosition];
         [self.mySeedlingView setUserInteractionEnabled:YES];
+        self.mySeedlingView.tag = k; //assign a tag for differentiating between various seedlings
         
         //add double tap gesture to seedling
         UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
@@ -383,21 +388,29 @@
 
 -(void)happinessCollectedTimer
 {
-    //Subtract happiness from Seedling, Award Coins to Player
-    //release Seedling from Farm
-    //Enable interaction with Seedling
+    /* Subtract happiness from Seedling 
+     Award Coins to Player
+     Release Seedling from Farm
+     Enable interaction with Seedling */
+    
+    //happiness
     [[myseedlings objectAtIndex:0] setMyHappiness:0];
     [[myseedlings objectAtIndex:0] setHappinessDeposited:[[myseedlings objectAtIndex:0] happinessDeposited] + 100];
-    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
-    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    //coins
     NSInteger initialCoins = [appDelegate.citadelData integerForKey:@"coins"];
     [appDelegate.citadelData setInteger:(initialCoins+100) forKey:@"coins"];
+    //position
+    mySeedlingView.center = CGPointMake(myFarmView.center.x+150, myFarmView.center.y);
+    [[myseedlings objectAtIndex:mySeedlingView.tag] setSeedlingPosition:mySeedlingView.center];
+    
+    //Save the new values
+    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
     [appDelegate.citadelData synchronize];
     
-    mySeedlingView.center = CGPointMake(myFarmView.center.x+150, myFarmView.center.y);
     [NSTimer scheduledTimerWithTimeInterval:(7.0) target:self selector:@selector(moveSeedlingTimer) userInfo:nil repeats:NO];
     
-    [self viewWillAppear:YES];
+    [self viewWillAppear:YES]; //refresh the HUD labels
     
 }
 
@@ -417,12 +430,8 @@
     else {
         actualHappiness = RewardHappiness + prevHappiness;
     }
-    
-    //Save new happiness
+    //set myHappiness property to its new value
     [[myseedlings objectAtIndex:0] setMyHappiness:actualHappiness];
-    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
-    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
-    [appDelegate.citadelData synchronize];
     
     //Position the seedling away from the furniture but in the same floor
     if (mySeedlingView.center.x + 100 > 300) {
@@ -431,6 +440,14 @@
     else {
         mySeedlingView.center = CGPointMake(mySeedlingView.center.x + 100, mySeedlingView.center.y);
     }
+    
+    [[myseedlings objectAtIndex:mySeedlingView.tag] setSeedlingPosition:mySeedlingView.center]; //set the seedlingPosition property in the seedling object
+    
+    //Save the new values
+    NSData *seedData = [NSKeyedArchiver archivedDataWithRootObject:myseedlings];
+    [appDelegate.citadelData setObject:seedData forKey:@"seedlings"];
+    [appDelegate.citadelData synchronize]; //flush the data to disk
+    
     //Schedule a timer to fire in 7 seconds. This will release the Seedling and allow it start moving around
     [NSTimer scheduledTimerWithTimeInterval:(7.0) target:self selector:@selector(seedlingDoneIdling) userInfo:nil repeats:NO];
     
