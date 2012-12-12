@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ResourceViewController.h"
+#import "CrystalViewController.h"
 
 @interface ResoCurrencyViewController : UIViewController
 {

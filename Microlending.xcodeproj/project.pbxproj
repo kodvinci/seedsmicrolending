@@ -269,6 +269,14 @@
 		31B7FC8616333C7D00B808FD /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6416333C7C00B808FD /* cpSweep1D.c */; };
 		31B7FC8716333C7D00B808FD /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 31B7FC6516333C7C00B808FD /* cpVect.c */; };
 		31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */ = {isa = PBXBuildFile; fileRef = 31B7FC6716333C7C00B808FD /* kazmath_neon.patch */; };
+		31B9720516782FB80097F18C /* xp.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9720416782FB80097F18C /* xp.png */; };
+		31B9720A1678353C0097F18C /* CrystalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B972081678353A0097F18C /* CrystalViewController.m */; };
+		31B9720B1678353C0097F18C /* CrystalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31B972091678353B0097F18C /* CrystalViewController.xib */; };
+		31B9721116784F330097F18C /* bluecrystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9720C16784F330097F18C /* bluecrystal.png */; };
+		31B9721216784F330097F18C /* greencrystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9720D16784F330097F18C /* greencrystal.png */; };
+		31B9721316784F330097F18C /* lovingheart.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9720E16784F330097F18C /* lovingheart.png */; };
+		31B9721416784F330097F18C /* redcrystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9720F16784F330097F18C /* redcrystal.png */; };
+		31B9721516784F330097F18C /* yellowcrystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B9721016784F330097F18C /* yellowcrystal.png */; };
 		31BB6E7A164CE3FF001B7CDE /* libPayPalMPL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BB6E6F164CE3FF001B7CDE /* libPayPalMPL.a */; };
 		31BB6E82164DDEF7001B7CDE /* FloorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BB6E80164DDEF7001B7CDE /* FloorViewController.m */; };
 		31BB6E83164DDEF7001B7CDE /* OneFloorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31BB6E81164DDEF7001B7CDE /* OneFloorViewController.xib */; };
@@ -309,7 +317,6 @@
 		31F4E5EE1646F057002A3892 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EA1646F057002A3892 /* coin.png */; };
 		31F4E5EF1646F057002A3892 /* crystal.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EB1646F057002A3892 /* crystal.png */; };
 		31F4E5F01646F057002A3892 /* leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5EC1646F057002A3892 /* leaf.png */; };
-		31F4E5F11646F057002A3892 /* xp.png in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5ED1646F057002A3892 /* xp.png */; };
 		31F4E5F51646F613002A3892 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F4E5F31646F612002A3892 /* StoreViewController.m */; };
 		31F4E5F61646F613002A3892 /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5F41646F613002A3892 /* StoreViewController.xib */; };
 		31F4E5FA1646FE39002A3892 /* ResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F4E5F81646FE37002A3892 /* ResourceViewController.m */; };
@@ -871,6 +878,15 @@
 		31B7FC6516333C7C00B808FD /* cpVect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpVect.c; sourceTree = "<group>"; };
 		31B7FC6616333C7C00B808FD /* prime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prime.h; sourceTree = "<group>"; };
 		31B7FC6716333C7C00B808FD /* kazmath_neon.patch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kazmath_neon.patch; sourceTree = "<group>"; };
+		31B9720416782FB80097F18C /* xp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xp.png; sourceTree = "<group>"; };
+		31B972071678353A0097F18C /* CrystalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrystalViewController.h; sourceTree = "<group>"; };
+		31B972081678353A0097F18C /* CrystalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrystalViewController.m; sourceTree = "<group>"; };
+		31B972091678353B0097F18C /* CrystalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrystalViewController.xib; sourceTree = "<group>"; };
+		31B9720C16784F330097F18C /* bluecrystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluecrystal.png; sourceTree = "<group>"; };
+		31B9720D16784F330097F18C /* greencrystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greencrystal.png; sourceTree = "<group>"; };
+		31B9720E16784F330097F18C /* lovingheart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lovingheart.png; sourceTree = "<group>"; };
+		31B9720F16784F330097F18C /* redcrystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redcrystal.png; sourceTree = "<group>"; };
+		31B9721016784F330097F18C /* yellowcrystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowcrystal.png; sourceTree = "<group>"; };
 		31BB6E6F164CE3FF001B7CDE /* libPayPalMPL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMPL.a; sourceTree = "<group>"; };
 		31BB6E70164CE3FF001B7CDE /* PayPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPal.h; sourceTree = "<group>"; };
 		31BB6E71164CE3FF001B7CDE /* PayPalAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalAddress.h; sourceTree = "<group>"; };
@@ -944,7 +960,6 @@
 		31F4E5EA1646F057002A3892 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		31F4E5EB1646F057002A3892 /* crystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crystal.png; sourceTree = "<group>"; };
 		31F4E5EC1646F057002A3892 /* leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaf.png; sourceTree = "<group>"; };
-		31F4E5ED1646F057002A3892 /* xp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xp.png; sourceTree = "<group>"; };
 		31F4E5F21646F612002A3892 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		31F4E5F31646F612002A3892 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		31F4E5F41646F613002A3892 /* StoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewController.xib; sourceTree = "<group>"; };
@@ -1141,6 +1156,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31B9720C16784F330097F18C /* bluecrystal.png */,
+				31B9720D16784F330097F18C /* greencrystal.png */,
+				31B9720E16784F330097F18C /* lovingheart.png */,
+				31B9720F16784F330097F18C /* redcrystal.png */,
+				31B9721016784F330097F18C /* yellowcrystal.png */,
+				31B9720416782FB80097F18C /* xp.png */,
 				318EC669167555590048FF03 /* seedlingcolored.png */,
 				315650FE1667D01000848860 /* window.png */,
 				31980293165C54FA00FEFCA2 /* EyeColors.plist */,
@@ -1153,7 +1174,6 @@
 				31F4E5EA1646F057002A3892 /* coin.png */,
 				31F4E5EB1646F057002A3892 /* crystal.png */,
 				31F4E5EC1646F057002A3892 /* leaf.png */,
-				31F4E5ED1646F057002A3892 /* xp.png */,
 				31AB3B331643A526001F2DD3 /* bandstand.png */,
 				31AB3B341643A526001F2DD3 /* barbell.png */,
 				31AB3B351643A526001F2DD3 /* climbingrope.png */,
@@ -1290,6 +1310,9 @@
 				31F4E5E41646ECC7002A3892 /* ResoCurrencyViewController.h */,
 				31F4E5E51646ECC7002A3892 /* ResoCurrencyViewController.m */,
 				31F4E5E61646ECC7002A3892 /* ResoCurrencyViewController.xib */,
+				31B972071678353A0097F18C /* CrystalViewController.h */,
+				31B972081678353A0097F18C /* CrystalViewController.m */,
+				31B972091678353B0097F18C /* CrystalViewController.xib */,
 				31F4E5F21646F612002A3892 /* StoreViewController.h */,
 				31F4E5F31646F612002A3892 /* StoreViewController.m */,
 				31F4E5F41646F613002A3892 /* StoreViewController.xib */,
@@ -1311,8 +1334,8 @@
 				318EC657167527600048FF03 /* SevenFloorsViewController.xib */,
 				318EC65C167527CA0048FF03 /* EightFloorsViewController.xib */,
 				318EC6611675280C0048FF03 /* NineFloorsViewController.xib */,
-				318EC6661675284F0048FF03 /* TenFloorsViewController.xib */,
 				318B63D71668658300A32E89 /* ScrollSubClass.h */,
+				318EC6661675284F0048FF03 /* TenFloorsViewController.xib */,
 				318B63D81668658300A32E89 /* ScrollSubClass.m */,
 			);
 			name = Citadel;
@@ -2217,7 +2240,6 @@
 				31F4E5EE1646F057002A3892 /* coin.png in Resources */,
 				31F4E5EF1646F057002A3892 /* crystal.png in Resources */,
 				31F4E5F01646F057002A3892 /* leaf.png in Resources */,
-				31F4E5F11646F057002A3892 /* xp.png in Resources */,
 				31F4E5F61646F613002A3892 /* StoreViewController.xib in Resources */,
 				31F4E5FB1646FE39002A3892 /* ResourceViewController.xib in Resources */,
 				31BB6E83164DDEF7001B7CDE /* OneFloorViewController.xib in Resources */,
@@ -2240,6 +2262,13 @@
 				318EC6631675280C0048FF03 /* NineFloorsViewController.xib in Resources */,
 				318EC6681675284F0048FF03 /* TenFloorsViewController.xib in Resources */,
 				318EC66A167555590048FF03 /* seedlingcolored.png in Resources */,
+				31B9720516782FB80097F18C /* xp.png in Resources */,
+				31B9720B1678353C0097F18C /* CrystalViewController.xib in Resources */,
+				31B9721116784F330097F18C /* bluecrystal.png in Resources */,
+				31B9721216784F330097F18C /* greencrystal.png in Resources */,
+				31B9721316784F330097F18C /* lovingheart.png in Resources */,
+				31B9721416784F330097F18C /* redcrystal.png in Resources */,
+				31B9721516784F330097F18C /* yellowcrystal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2512,6 +2541,7 @@
 				3186CE35165B1F700037766A /* SeedlingV2View.m in Sources */,
 				3198029B165C98D200FEFCA2 /* SeedlingDataViewController.m in Sources */,
 				318B63D91668658300A32E89 /* ScrollSubClass.m in Sources */,
+				31B9720A1678353C0097F18C /* CrystalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

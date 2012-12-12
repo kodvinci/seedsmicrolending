@@ -9,9 +9,9 @@
 #import "ResoCurrencyViewController.h"
 
 @class ResourceViewController;
+@class CrystalViewController;
 
 @implementation ResoCurrencyViewController
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,7 +48,9 @@
 
 -(IBAction)crystal
 {
-    
+    CrystalViewController *myCrstal = [[CrystalViewController alloc]initWithStyle:UITableViewCellStyleSubtitle]; //allow for subtitles
+    [self.navigationController pushViewController:myCrstal animated:YES];
+    [myCrstal release];
 }
 
 
