@@ -395,6 +395,14 @@
 					<int key="connectionID">110</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">addFloor</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="731939350"/>
+					</object>
+					<int key="connectionID">112</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">buyFloor</string>
 						<reference key="source" ref="731939350"/>
@@ -544,7 +552,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">111</int>
+			<int key="maxID">112</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -556,8 +564,8 @@
 			<string key="branch.png">{498, 39}</string>
 			<string key="citadel1.png">{509, 453}</string>
 			<string key="citadel2.png">{500, 200}</string>
-			<string key="coin.png">{74, 78}</string>
-			<string key="leaf.png">{98, 59}</string>
+			<string key="coin.png">{120, 120}</string>
+			<string key="leaf.png">{120, 120}</string>
 			<string key="window.png">{379, 149}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>

@@ -1334,8 +1334,8 @@
 				318EC657167527600048FF03 /* SevenFloorsViewController.xib */,
 				318EC65C167527CA0048FF03 /* EightFloorsViewController.xib */,
 				318EC6611675280C0048FF03 /* NineFloorsViewController.xib */,
-				318B63D71668658300A32E89 /* ScrollSubClass.h */,
 				318EC6661675284F0048FF03 /* TenFloorsViewController.xib */,
+				318B63D71668658300A32E89 /* ScrollSubClass.h */,
 				318B63D81668658300A32E89 /* ScrollSubClass.m */,
 			);
 			name = Citadel;

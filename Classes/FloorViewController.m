@@ -59,6 +59,7 @@
 //add a new floor
 -(IBAction)buyFloor
 {
+    NSLog(@"buyFloor pressed");
     if ([appDelegate.citadelData integerForKey:@"coins"] >= 100 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 1) {
         //can buy a new floor
         int newCoins = [appDelegate.citadelData integerForKey:@"coins"] - 100;
@@ -145,6 +146,8 @@
             UIPanGestureRecognizer *panRecognizerF = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleFurnitureDisplacement:)] autorelease];
             [panRecognizerF setMinimumNumberOfTouches:1];
             [panRecognizerF setMaximumNumberOfTouches:1];
+            panRecognizerF.cancelsTouchesInView = NO;
+            panRecognizerF.delegate = self;
             [self.myFurnitureView addGestureRecognizer:panRecognizerF];
             
             [furnitureViews addObject:myFurnitureView];
@@ -205,6 +208,8 @@
     //Enable user interaction with the citadelView and add a tag to it so that it can be differentiated from the other subViews
     [self.citadelView setUserInteractionEnabled:YES];
     self.citadelView.tag = 1000;
+    
+    [self.citadelView addSubview:addFloor]; //Adding the UIButton as a subview of the citadelView ensures that it is not covered by the scrollView since the button was created in the Nib file. If it is not added, it will be unresponsive to touches. 
     
     //Heads-up Display labels. The values corresponding to the labels are fetched from the citadelData, a NSUserDefaults data structure.
     coins.text = [NSString stringWithFormat:@"%d",[appDelegate.citadelData integerForKey:@"coins"]];
@@ -347,8 +352,9 @@
         
         //add double tap gesture to seedling
         UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+        doubleTapGestureRecognizer.delegate = self;
         doubleTapGestureRecognizer.numberOfTapsRequired = 2;
-        // doubleTapGestureRecognizer.delegate = self;
+        doubleTapGestureRecognizer.cancelsTouchesInView = NO; //Allow other touches to be detected and delivered to their respective views e.g. on UIButtons
         [mySeedlingView addGestureRecognizer:doubleTapGestureRecognizer];
         [doubleTapGestureRecognizer release];
         
@@ -356,7 +362,8 @@
         panRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)] autorelease];
         [panRecognizer setMinimumNumberOfTouches:1];
         [panRecognizer setMaximumNumberOfTouches:1];
-        //  [panRecognizer setDelegate:self];
+        [panRecognizer setDelegate:self];
+        panRecognizer.cancelsTouchesInView = NO;
         [self.mySeedlingView addGestureRecognizer:panRecognizer];
         
         //  self.scrollView.subViewRect = self.mySeedlingView.frame;

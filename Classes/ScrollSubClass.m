@@ -58,4 +58,10 @@
     return result;
 }
 
+- (BOOL)touchesShouldCancelInContentView:(UIView *)view
+{
+    NSLog(@"BOOL");
+    return ![view isKindOfClass:[UISlider class]];
+}
+
 @end

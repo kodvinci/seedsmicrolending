@@ -135,6 +135,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = furnName; //Title of view
+    
     [furnitureName becomeFirstResponder];
     
     [furnitureImage setImage:furnImage];

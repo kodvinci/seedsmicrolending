@@ -90,7 +90,7 @@
   //  [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
     
     //Number of floors in the citadel
-    numOfFloors = 2;
+    numOfFloors = 5;
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     
     //Farm Plot
@@ -149,7 +149,7 @@
 
 -(void)displayFloors:(NSInteger)howmany
 {
-    NSLog(@"One floor %@", self.navigationController);
+    NSLog(@"displayFloor %@", self.navigationController);
     
     if (howmany == 1) {
         NSLog(@"One floor %@", @"in..");
@@ -160,7 +160,6 @@
     
     if (howmany == 2) {
         NSLog(@"Two floors %@", @"in..");
-        
         FloorViewController *CVmyFloor2 = [[FloorViewController alloc]initWithNibName:@"TwoFloorsViewController" bundle:nil];
         [self.navigationController pushViewController:CVmyFloor2 animated:YES];
         [CVmyFloor2 release];
@@ -169,7 +168,6 @@
     if (howmany == 3) {
         NSLog(@"Three floors %@", @"in..");
         FloorViewController *CVmyFloor3 = [[FloorViewController alloc]initWithNibName:@"ThreeFloorsViewController" bundle:nil];
-
         [self.navigationController pushViewController:CVmyFloor3 animated:YES];
         [CVmyFloor3 release];
     }
@@ -177,18 +175,45 @@
     if (howmany == 4) {
         NSLog(@"Four floors %@", @"in..");
         FloorViewController *CVmyFloor4 = [[FloorViewController alloc]initWithNibName:@"FourFloorsViewController" bundle:nil];
-        
         [self.navigationController pushViewController:CVmyFloor4 animated:YES];
         [CVmyFloor4 release];
     }
     if (howmany == 5) {
         NSLog(@"Five floors %@", @"in..");
         FloorViewController *CVmyFloor5 = [[FloorViewController alloc]initWithNibName:@"FiveFloorsViewController" bundle:nil];
-        
         [self.navigationController pushViewController:CVmyFloor5 animated:YES];
         [CVmyFloor5 release];
     }
-
+    if (howmany == 6) {
+        NSLog(@"Six floors %@", @"in..");
+        FloorViewController *CVmyFloor6 = [[FloorViewController alloc]initWithNibName:@"SixFloorsViewController" bundle:nil];
+        [self.navigationController pushViewController:CVmyFloor6 animated:YES];
+        [CVmyFloor6 release];
+    }
+    if (howmany == 7) {
+        NSLog(@"Seven floors %@", @"in..");
+        FloorViewController *CVmyFloor7 = [[FloorViewController alloc]initWithNibName:@"SevenFloorsViewController" bundle:nil];
+        [self.navigationController pushViewController:CVmyFloor7 animated:YES];
+        [CVmyFloor7 release];
+    }
+    if (howmany == 8) {
+        NSLog(@"Eight floors %@", @"in..");
+        FloorViewController *CVmyFloor8 = [[FloorViewController alloc]initWithNibName:@"EightFloorsViewController" bundle:nil];
+        [self.navigationController pushViewController:CVmyFloor8 animated:YES];
+        [CVmyFloor8 release];
+    }
+    if (howmany == 9) {
+        NSLog(@"Nine floors %@", @"in..");
+        FloorViewController *CVmyFloor9 = [[FloorViewController alloc]initWithNibName:@"NineFloorsViewController" bundle:nil];
+        [self.navigationController pushViewController:CVmyFloor9 animated:YES];
+        [CVmyFloor9 release];
+    }
+    if (howmany == 10) {
+        NSLog(@"Ten floors %@", @"in..");
+        FloorViewController *CVmyFloor10 = [[FloorViewController alloc]initWithNibName:@"TenFloorsViewController" bundle:nil];
+        [self.navigationController pushViewController:CVmyFloor10 animated:YES];
+        [CVmyFloor10 release];
+    }
 }
 
 - (void)viewDidLoad
