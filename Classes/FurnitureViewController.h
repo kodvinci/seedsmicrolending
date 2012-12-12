@@ -45,6 +45,7 @@
     IBOutlet UILabel *coins;
     IBOutlet UILabel *leaves;
     IBOutlet UILabel *level;
+    
 }
 
 @property(nonatomic, assign) Class className;
@@ -78,7 +79,6 @@
 @property(nonatomic, retain) UILabel *level;
 
 -(IBAction) segmentedControlIndexChanged;
--(IBAction)buyFurniture;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name;
 
 @end

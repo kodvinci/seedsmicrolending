@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"plot"];
-    self.itemName = @"plot";
+    self.itemName = @"Plot";
     self.xPos = 40;
     self.yPos = 330;
 }

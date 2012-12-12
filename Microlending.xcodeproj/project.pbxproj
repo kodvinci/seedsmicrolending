@@ -458,7 +458,7 @@
 		31258B5E164E09B1007D32C3 /* citadel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = citadel1.png; sourceTree = "<group>"; };
 		312B89C21642A9FE00452356 /* FurnitureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FurnitureViewController.h; sourceTree = "<group>"; };
 		312B89C31642A9FE00452356 /* FurnitureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FurnitureViewController.m; sourceTree = "<group>"; };
-		312B89C41642A9FE00452356 /* FurnitureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FurnitureViewController.xib; path = Classes/FurnitureViewController.xib; sourceTree = "<group>"; };
+		312B89C41642A9FE00452356 /* FurnitureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FurnitureViewController.xib; sourceTree = "<group>"; };
 		313489C1164CB85200E12D3F /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
 		313489C2164CB85200E12D3F /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
 		313489C5164CBB4C00E12D3F /* LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizedPrice.h; sourceTree = "<group>"; };
@@ -1225,7 +1225,6 @@
 				CD308BAD144E5FB0000A44C8 /* icon_credit_card.png */,
 				CD308BAE144E5FB0000A44C8 /* icon_hat.png */,
 				CD308BAF144E5FB0000A44C8 /* icon_user.png */,
-				312B89C41642A9FE00452356 /* FurnitureViewController.xib */,
 				31BBF93D1641CEF2008B5D2F /* BuyFurnitureViewController.xib */,
 				3107B8021617809B00F61B50 /* CitadelViewController.xib */,
 				CD308A8A144E3916000A44C8 /* ProfileViewController.xib */,
@@ -1983,6 +1982,7 @@
 				31BBF93C1641CEF2008B5D2F /* BuyFurnitureViewController.m */,
 				312B89C21642A9FE00452356 /* FurnitureViewController.h */,
 				312B89C31642A9FE00452356 /* FurnitureViewController.m */,
+				312B89C41642A9FE00452356 /* FurnitureViewController.xib */,
 				3191F7CD161E864F005EEF4A /* Furniture.h */,
 				3191F7CE161E864F005EEF4A /* Furniture.m */,
 				3187E07F162FADB2000996F2 /* ViewFurniture.h */,

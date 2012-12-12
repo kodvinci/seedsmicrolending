@@ -243,7 +243,7 @@ else {
         UIImage *furnitureImage = [[myfurniture objectAtIndex:k]furnPic];
         
         //Non-plot Furniture
-        if (![[[myfurniture objectAtIndex:k]itemName] isEqualToString:@"plot"]) {
+        if (![[[myfurniture objectAtIndex:k]itemName] isEqualToString:@"Plot"]) {
             NSLog(@"My Furniture: %@", [[myfurniture objectAtIndex:k]itemName]);
             NSLog(@"My Furn desire1: %@", [[myfurniture objectAtIndex:k] desire1]);
             NSLog(@"My Furn desire2: %@", [[myfurniture objectAtIndex:k] desire2]);

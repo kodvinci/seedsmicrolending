@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"waterbed.gif"];
-    self.itemName = @"waterbed";
+    self.itemName = @"WaterBed";
     self.users = 1;
     self.useTime = 30;
     self.itemWidth = 2;

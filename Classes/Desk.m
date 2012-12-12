@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"desk"];
-    self.itemName = @"desk";
+    self.itemName = @"Desk";
     self.users = 1;
     self. useTime = 30;
     self.itemWidth = 1;

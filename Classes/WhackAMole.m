@@ -12,7 +12,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"whackamole"];
-    self.itemName = @"whackamole";
+    self.itemName = @"WhackAMole";
     self.useTime = 30;
     self.itemWidth = 2;
     self.desire1 = @"strength";

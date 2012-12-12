@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"magmahottub"];
-    self.itemName = @"magmahottub";
+    self.itemName = @"MagmaHotTub";
     self. useTime = 30;
     self.itemWidth = 2;
     self.desire1 = @"water";

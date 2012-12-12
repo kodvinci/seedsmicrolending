@@ -16,7 +16,7 @@
     NSLog(@" %@", @"initializing pool");
 
     self.furnPic = [UIImage imageNamed:@"pool"];
-    self.itemName = @"pool"; 
+    self.itemName = @"Pool";
     self.users = 2;
     self. useTime = 30; 
     self.itemWidth = 2; 

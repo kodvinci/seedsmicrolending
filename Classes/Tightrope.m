@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"tightrope"];
-    self.itemName = @"tightrope";
+    self.itemName = @"Tightrope";
     self. useTime = 30;
     self.itemWidth = 3;
     self.desire1 = @"acrobatic";

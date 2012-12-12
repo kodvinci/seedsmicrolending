@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"karaokemachine"];
-    self.itemName = @"karaokemachine";
+    self.itemName = @"KaraokeMachine";
     self. useTime = 30;
     self.itemWidth = 1;
     self.desire1 = @"musical";
