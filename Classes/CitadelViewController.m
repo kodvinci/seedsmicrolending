@@ -90,7 +90,7 @@
     [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
     
     //Number of floors in the citadel
-    numOfFloors = 1;
+    numOfFloors = 3;
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     
     //Farm Plot

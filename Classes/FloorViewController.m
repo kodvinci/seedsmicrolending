@@ -25,7 +25,6 @@
 @synthesize myseedlings;
 @synthesize mySeedlingView;
 @synthesize myTime;
-@synthesize des1, des2;
 @synthesize scrollView;
 @synthesize nibFileName;
 @synthesize citadelView;
@@ -216,6 +215,7 @@ else {
     }
 }
 
+//This method adds the farm plot as a subView of the main citadel view. The famr plot is fixed in one position in the citadel and does not allow the player to interact with it through touches.
 -(void)displayFarm
 {
     NSData *myFarm = [appDelegate.citadelData objectForKey:@"plot"];
@@ -224,7 +224,6 @@ else {
     myFarmView = [[ViewFurniture alloc]initWithImage:farmImage];
     myFarmView.center = CGPointMake([[mydic objectForKey:@"1"] xPos],[[mydic objectForKey:@"1"] yPos]);
     [self.myFarmView setUserInteractionEnabled:NO];
-    // [self.view addSubview:myFarmView];
     [self.citadelView addSubview:myFarmView];
     [mydic release];
 }
@@ -260,7 +259,7 @@ else {
             [panRecognizerF setMinimumNumberOfTouches:1];
             [panRecognizerF setMaximumNumberOfTouches:1];
             panRecognizerF.cancelsTouchesInView = NO;
-            panRecognizerF.delegate = self;
+           // panRecognizerF.delegate = self;
             [self.myFurnitureView addGestureRecognizer:panRecognizerF];
             
             [furnitureViews addObject:myFurnitureView];
@@ -398,34 +397,34 @@ else {
         //Floors are named from the top with the top most floor being called
         //floorOne and the one below it being called floorTwo and so on.
         if (recognizer.view.center.y > 0 && recognizer.view.center.y < 110) {
-            floorOne = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine = NO;
+            floorOne = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 110 && recognizer.view.center.y < 240) {
-            floorTwo = YES; floorOne=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine = NO;
+            floorTwo = YES; floorOne=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 240 && recognizer.view.center.y < 370) {
-            floorThree = YES; floorOne=floorFour=floorTwo=floorFive=floorSix=floorSeven=floorEight=floorNine = NO;
+            floorThree = YES; floorOne=floorFour=floorTwo=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 370 && recognizer.view.center.y < 500) {
-            floorFour = YES; floorOne=floorTwo=floorThree = NO;
+            floorFour = YES; floorOne=floorTwo=floorThree=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 500 && recognizer.view.center.y < 630) {
-            floorFive = YES; floorOne=floorTwo=floorThree=floorFour = NO;
+            floorFive = YES; floorOne=floorTwo=floorThree=floorFour=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 630 && recognizer.view.center.y < 760) {
-            floorSix = YES; floorOne=floorTwo=floorThree=floorFour=floorFive = NO;
+            floorSix = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 760 && recognizer.view.center.y < 890) {
-            floorSeven = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix = NO;
+            floorSeven = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 890 && recognizer.view.center.y < 1020) {
-            floorEight = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven = NO;
+            floorEight = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 1020 && recognizer.view.center.y < 1150) {
-            floorNine = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight = NO;
+            floorNine = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
         if (recognizer.view.center.y > 1150 && recognizer.view.center.y < 1280) {
-            floorTen = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine = NO;
+            floorTen = YES; floorOne=floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
         }
     }
     
@@ -465,7 +464,7 @@ else {
         
         //add double tap gesture to seedling
         UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-        doubleTapGestureRecognizer.delegate = self;
+        //doubleTapGestureRecognizer.delegate = self;
         doubleTapGestureRecognizer.numberOfTapsRequired = 2;
         doubleTapGestureRecognizer.cancelsTouchesInView = NO; //Allow other touches to be detected and delivered to their respective views e.g. on UIButtons
         [mySeedlingView addGestureRecognizer:doubleTapGestureRecognizer];
@@ -475,13 +474,14 @@ else {
         panRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)] autorelease];
         [panRecognizer setMinimumNumberOfTouches:1];
         [panRecognizer setMaximumNumberOfTouches:1];
-        [panRecognizer setDelegate:self];
+        //[panRecognizer setDelegate:self];
         panRecognizer.cancelsTouchesInView = NO;
         [self.mySeedlingView addGestureRecognizer:panRecognizer];
         
-        //  self.scrollView.subViewRect = self.mySeedlingView.frame;
+        //Determine the initial floor of the seedling if there are more than one floor in the citadel
+        [self seedlingInitialFloor];
+        
         [self.scrollView setSubViewRect:self.mySeedlingView.frame];
-        //   [self.view addSubview:mySeedlingView];
         [self.citadelView addSubview:mySeedlingView];
         //make seedling move
         [self moveSeedlingTimer];
@@ -496,6 +496,53 @@ else {
         
     }
     
+}
+
+//Determine the initial floor where the seedling is located when the game is started so that movement of the seedling can be restricted to that floor alone. Once it is touched and moved around, the restriction floor is determined by the method handlePan.
+
+-(void)seedlingInitialFloor
+{
+    if ([appDelegate.citadelData integerForKey:@"floors"] == 2) {
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 200) {
+            floorTwo = YES; floorOne = NO;
+        }
+        else {
+            floorOne = YES; floorTwo = NO;
+        }
+    }
+    if ([appDelegate.citadelData integerForKey:@"floors"] > 2) {
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 0 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 110) {
+            floorOne = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 110 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 240) {
+            floorTwo = YES; floorOne=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 240 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 370) {
+            floorThree = YES; floorTwo=floorOne=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 370 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 500) {
+            floorFour = YES; floorTwo=floorThree=floorOne=floorFive=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 500 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 630) {
+            floorFive = YES; floorTwo=floorThree=floorFour=floorOne=floorSix=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 630 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 760) {
+            floorSix = YES; floorTwo=floorThree=floorFour=floorFive=floorOne=floorSeven=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 760 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 890) {
+            floorSeven = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorOne=floorEight=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 890 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 1020) {
+            floorEight = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorOne=floorNine=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 1020 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 1150) {
+            floorNine = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorOne=floorTen = NO;
+        }
+        if ([[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y > 1150 && [[myseedlings objectAtIndex:mySeedlingView.tag]seedlingPosition].y < 1280) {
+            floorTen = YES; floorTwo=floorThree=floorFour=floorFive=floorSix=floorSeven=floorEight=floorNine=floorOne = NO;
+        }
+
+    }
 }
 
 -(void)moveSeedlingTimer
@@ -611,7 +658,7 @@ else {
         //floor 2 / first floor
         if (floorTwo) {
             NSLog(@"first floor");
-            if (mySeedlingView.center.y > 420 || mySeedlingView.center.y < 250) {
+            if (mySeedlingView.center.y > 400 || mySeedlingView.center.y < 250) {
                 pos.y = -pos.y;
             }
         }
@@ -706,55 +753,55 @@ else {
     }
     //floor 2
     if (floorTwo) {
-        if (mySeedlingView.center.y > 210 || mySeedlingView.center.y < 155) {
+        if (mySeedlingView.center.y > 220 || mySeedlingView.center.y < 155) {
             pos.y = -pos.y;
         }
     }
     //floor 3
     if (floorThree) {
-        if (mySeedlingView.center.y > 340 || mySeedlingView.center.y < 285) {
+        if (mySeedlingView.center.y > 350 || mySeedlingView.center.y < 285) {
             pos.y = -pos.y;
         }
     }
     //floor 4
     if (floorFour) {
-        if (mySeedlingView.center.y > 470 || mySeedlingView.center.y < 415) {
+        if (mySeedlingView.center.y > 480 || mySeedlingView.center.y < 415) {
             pos.y = -pos.y;
         }
     }
     //floor 5
     if (floorFive) {
-        if (mySeedlingView.center.y > 600 || mySeedlingView.center.y < 545) {
+        if (mySeedlingView.center.y > 610 || mySeedlingView.center.y < 545) {
             pos.y = -pos.y;
         }
     }
     //floor 6
     if (floorSix) {
-        if (mySeedlingView.center.y > 730 || mySeedlingView.center.y < 675) {
+        if (mySeedlingView.center.y > 740 || mySeedlingView.center.y < 675) {
             pos.y = -pos.y;
         }
     }
     //floor 7
     if (floorSeven) {
-        if (mySeedlingView.center.y > 860 || mySeedlingView.center.y < 805) {
+        if (mySeedlingView.center.y > 870 || mySeedlingView.center.y < 805) {
             pos.y = -pos.y;
         }
     }
     //floor 8
     if (floorEight) {
-        if (mySeedlingView.center.y > 990 || mySeedlingView.center.y < 935) {
+        if (mySeedlingView.center.y > 1000 || mySeedlingView.center.y < 935) {
             pos.y = -pos.y;
         }
     }
     //floor 9
     if (floorNine) {
-        if (mySeedlingView.center.y > 1120 || mySeedlingView.center.y < 1065) {
+        if (mySeedlingView.center.y > 1130 || mySeedlingView.center.y < 1065) {
             pos.y = -pos.y;
         }
     }
     //floor 10
     if (floorTen) {
-        if (mySeedlingView.center.y > 1250 || mySeedlingView.center.y < 1195) {
+        if (mySeedlingView.center.y > 1260 || mySeedlingView.center.y < 1195) {
             pos.y = -pos.y;
         }
     }

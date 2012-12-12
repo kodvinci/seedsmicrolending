@@ -39,9 +39,6 @@
     
     NSMutableArray *furnitureViews;
     
-    //temp variables
-    NSString *des1;
-    NSString *des2;
     int furniturePos;
     
     //scrollview
@@ -82,9 +79,6 @@
 @property(nonatomic, retain) NSMutableArray *myfurniture;
 @property(nonatomic, retain) NSMutableArray *myseedlings;
 @property(nonatomic, retain) NSMutableArray *furnitureViews;
-
-@property(nonatomic,retain) NSString *des1;
-@property(nonatomic,retain) NSString *des2;
 
 @property(nonatomic, strong) ScrollSubClass *scrollView;
 @property(nonatomic, retain) NSString *nibFileName;
