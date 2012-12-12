@@ -2,7 +2,7 @@
 //  CrystalViewController.m
 //  Microlending
 //
-//  Created by guest user on 12/11/12.
+//  Created by Leonard Ng'eno on 12/11/12.
 //
 //
 
@@ -47,6 +47,7 @@
 
 #pragma mark - Table view data source
 
+//Increase the row height for better display
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
@@ -68,11 +69,15 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
+        //Use a style that allows for subtitles in cells
+        //Enable words to wrap around
+        //setting the number of lines to 0 enables the words to use as many lines as is neccessary
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.detailTextLabel.numberOfLines = 0;
     }
-    //Configure the cell
+    
+    //Configure the cell - display the title, description & image
   
     if ([[crystals objectAtIndex:indexPath.row]isEqualToString:@"Blue crystal"]) {
         [cell.textLabel setText:[crystals objectAtIndex:indexPath.row]];

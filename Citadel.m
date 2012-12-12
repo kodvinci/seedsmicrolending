@@ -22,10 +22,19 @@
 @synthesize citadelDelegate;
 @synthesize playerXP, playerLeaves, playerCoins, playerLevel;
 
+-(id)init
+{
+    if (self = [super init]) {
+        //return something
+        appDelegate = [[UIApplication sharedApplication] delegate];
+    }
+    return self;
+}
+
 -(void)initialize
 {
     NSLog(@"%@", @"citadel initialize");
-    appDelegate = [[UIApplication sharedApplication] delegate];
+  //  appDelegate = [[UIApplication sharedApplication] delegate];
     
     // Retrieve stored data from NSUserDefaults before the view loads
 
@@ -45,6 +54,167 @@
 
 }
 
+//returns a boolean value to indicate that the floor has been purchased.
+//If the player has enough coins and is at the required level, then they can buy the floor using coins. However, if the player does not have enough coins and the required level, they can use the early unlock option and buy the floor using leaves if they have the required number of leaves.
+
+-(BOOL)addFloor:(NSInteger)newNumFloors
+{
+    NSLog(@"addFloor called");
+    if (newNumFloors == 2) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 100 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 1) {
+            //can buy floor
+            [self recordFloorPurchase:100];
+            NSLog(@"Return YES");
+            return YES;
+        }
+        else {
+            NSLog(@"Return NO");
+            return NO;
+        }
+    }
+    if (newNumFloors == 3) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 1000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 3) {
+            //can buy floor
+            NSLog(@"Regular purchase");
+            [self recordFloorPurchase:1000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 10) {
+            //early unlock cost
+            NSLog(@"Early Unlock");
+            [self recordEarlyUnlockFloorPurchase:10];
+            return YES;
+        }
+        else {
+            NSLog(@"Return No");
+            return NO;
+        }
+    }
+    if (newNumFloors == 4) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 2000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 6) {
+            //can buy floor
+            [self recordFloorPurchase:2000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 25) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:25];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 5) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 3000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 9) {
+            //can buy floor
+            [self recordFloorPurchase:3000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 50) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:50];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 6) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 5000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 12) {
+            //can buy floor
+            [self recordFloorPurchase:5000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 75) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:75];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 7) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 8000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 15) {
+            //can buy floor
+            [self recordFloorPurchase:8000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 100) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:100];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 8) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 13000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 18) {
+            //can buy floor
+            [self recordFloorPurchase:13000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 125) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:125];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 9) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 21000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 21) {
+            //can buy floor
+            [self recordFloorPurchase:21000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 150) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:150];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }
+    if (newNumFloors == 10) {
+        if ([appDelegate.citadelData integerForKey:@"coins"] >= 34000 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 24) {
+            //can buy floor
+            [self recordFloorPurchase:34000];
+            return YES;
+        }
+        else if ([appDelegate.citadelData integerForKey:@"leaves"] >= 175) {
+            //early unlock cost
+            [self recordEarlyUnlockFloorPurchase:175];
+            return YES;
+        }
+        else {
+            return NO;
+        }
+    }    
+    return NO; //If none of the above if statements is true, then just return NO
+}
+
+//Subtract the coins cost of the floor and save the balance of coins
+-(void)recordFloorPurchase:(NSInteger) cost
+{
+    NSInteger oldCoins = [appDelegate.citadelData integerForKey:@"coins"];
+    NSInteger newCoins = oldCoins - cost;
+    [appDelegate.citadelData setInteger:newCoins forKey:@"coins"];
+    [appDelegate.citadelData synchronize];
+}
+
+//Subtract the early unlock cost and record the balance of the leaves
+-(void)recordEarlyUnlockFloorPurchase:(NSInteger)cost
+{
+    NSInteger oldLeaves = [appDelegate.citadelData integerForKey:@"leaves"];
+    NSInteger newLeaves = oldLeaves - cost;
+    [appDelegate.citadelData setInteger:newLeaves forKey:@"leaves"];
+    [appDelegate.citadelData synchronize];
+}
 
 -(void)addSeedling
 {

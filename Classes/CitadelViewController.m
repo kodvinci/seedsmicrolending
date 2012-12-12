@@ -87,10 +87,10 @@
     [appDelegate.citadelData setInteger:playerXP forKey:@"experience"];
     [appDelegate.citadelData setInteger:playerLevel forKey:@"playerLevel"];
     [appDelegate.citadelData setInteger:playerCoins forKey:@"coins"];
-  //  [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
+    [appDelegate.citadelData setInteger:playerLeaves forKey:@"leaves"];
     
     //Number of floors in the citadel
-    numOfFloors = 5;
+    numOfFloors = 1;
     [appDelegate.citadelData setInteger:numOfFloors forKey:@"floors"];
     
     //Farm Plot

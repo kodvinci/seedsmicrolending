@@ -13,6 +13,7 @@
 @class ViewFurniture;
 @class SeedlingV2View;
 @class SeedlingDataViewController;
+@class Citadel;
 
 @implementation FloorViewController
 
@@ -29,6 +30,7 @@
 @synthesize nibFileName;
 @synthesize citadelView;
 @synthesize panRecognizer;
+@synthesize floorGrowing;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,44 +44,148 @@
     return self;
 }
 
+//This method is called by a scheduled NSTimer once the required wait time elapses. The method calls the CitadelViewController's displayFloors method with the new number of floors to display in the citadel. It also sets the BOOL floorGrowing to NO so that the player can be able to buy another floor if they have the means to do so.
 
 -(void)floorGrowTimer
 {
-    int numFloor = [appDelegate.citadelData integerForKey:@"floors"];
+    NSInteger numFloor = [appDelegate.citadelData integerForKey:@"floors"];
     numFloor +=1;
     NSLog(@"numFloor: %d", numFloor);
     CitadelViewController *OFmyCitadel = [[CitadelViewController alloc] init];
     [self.navigationController initWithRootViewController:OFmyCitadel];
     [OFmyCitadel displayFloors:numFloor];
     [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
-    NSLog(@"floors: %d", [appDelegate.citadelData integerForKey:@"floors"]);
+    [appDelegate.citadelData synchronize];
+   
+    floorGrowing = NO; //to enable purchase of new floor later
+    
     [OFmyCitadel release];
 }
 
-//add a new floor
+//add a new floor to the citadel. This method is called when the button with + on the top right hand side is pressed. The calculations for the cost of the new floor is done in the Citadel class. If the floor is bought, a timer is scheduled to avail the new floors once the grow time for the floor elapses.
+
 -(IBAction)buyFloor
 {
     NSLog(@"buyFloor pressed");
-    if ([appDelegate.citadelData integerForKey:@"coins"] >= 100 && [appDelegate.citadelData integerForKey:@"playerLevel"] >= 1) {
-        //can buy a new floor
-        int newCoins = [appDelegate.citadelData integerForKey:@"coins"] - 100;
-        [appDelegate.citadelData setInteger:newCoins forKey:@"coins"];
-        [NSTimer scheduledTimerWithTimeInterval:(300.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
-        [self viewWillAppear:YES];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor!" message:@"Your new floor will take 5 minutes to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        alert.tag=2;
-        [alert show];
-        [alert release];
+    
+if (floorGrowing == NO) {
+    NSInteger currentNumFloors = [appDelegate.citadelData integerForKey:@"floors"];
+    NSInteger newNumFloors = currentNumFloors + 1;
+    
+    //Purchase of the floor is done in the citadel class. If the floor is successfully bought, the return value is YES, if not, the return value is NO
+    Citadel *newFloor = [[Citadel alloc]init];
+    BOOL result = [newFloor addFloor:(newNumFloors)];
+    
+     //Floor bought
+    if (result == YES) {
+        NSLog(@"YES");
+        floorGrowing = YES;
+        //Two floors
+        if (newNumFloors == 2) {
+            [NSTimer scheduledTimerWithTimeInterval:(300.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 5 minutes to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Three floors
+        if (newNumFloors == 3) {
+            [NSTimer scheduledTimerWithTimeInterval:(3600.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 1 hour to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Four floors
+        if (newNumFloors == 4) {
+            [NSTimer scheduledTimerWithTimeInterval:(14400.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 4 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Five floors
+        if (newNumFloors == 5) {
+            [NSTimer scheduledTimerWithTimeInterval:(28800.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 8 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Six floors
+        if (newNumFloors == 6) {
+            [NSTimer scheduledTimerWithTimeInterval:(57600.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 16 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Seven floors
+        if (newNumFloors == 7) {
+            [NSTimer scheduledTimerWithTimeInterval:(115200.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 32 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Eight floors
+        if (newNumFloors == 8) {
+            [NSTimer scheduledTimerWithTimeInterval:(230400.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 64 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        // Nine floors
+        if (newNumFloors == 9) {
+            [NSTimer scheduledTimerWithTimeInterval:(460800.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 128 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+        //Ten floors
+        if (newNumFloors == 10) {
+            [NSTimer scheduledTimerWithTimeInterval:(921600.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
+            [self viewWillAppear:YES];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Floor Added!" message:@"Your new floor will take 256 hours to grow" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            alert.tag=2;
+            [alert show];
+            [alert release];
+        }
+
     }
-    else {
-        //alert that not enough coins or experience
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You don't have enough coins!" message:@"If your seedling has 100 happiness, drag it to the farm plot to earn more coins. Or help the seedling interact with a piece of furniture that can increase its happiness." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    //Floor not bought. Send an alert to the player with suggestions on what they can do to be able to buy a new floor
+    else if (result == NO) {
+        NSLog(@"NO");
+        //Unable to buy floor
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to add new floor!" message:@"Drag seedling to farm plot to earn more coins or to any furniture to increase its happiness. You can also buy new floor using leaves." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         alert.tag=1;
         [alert show];
         [alert release];
     }
+    
+    [newFloor release];
+}
+    //Another floor is currently growing
+else {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Floor Currently Growing!" message:@"A new floor is currently growing. You cannot buy another floor until that floor is fully grown." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    alert.tag=3;
+    [alert show];
+    [alert release];
+}
+    
 }
 
+//Handles alert Views based on the tag on the alert
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	if (alertView.tag==1) {
@@ -99,7 +205,14 @@
         else {
             
         }
-        
+    }
+    else if(alertView.tag==3) {
+        if (buttonIndex == 0) {
+            
+        }
+        else {
+            
+        }
     }
 }
 

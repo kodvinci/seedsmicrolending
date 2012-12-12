@@ -15,6 +15,7 @@
 #import "SeedlingV2View.h"
 #import "SeedlingDataViewController.h"
 #import "ScrollSubClass.h"
+#import "Citadel.h"
 
 @interface FloorViewController : UIViewController <UIScrollViewDelegate>
 {
@@ -51,7 +52,7 @@
     //Gestures
     UIPanGestureRecognizer *panRecognizer;
     
-    //Floors
+    //Floor where the seedling is dragged to
     BOOL floorOne;
     BOOL floorTwo;
     BOOL floorThree;
@@ -63,6 +64,8 @@
     BOOL floorNine;
     BOOL floorTen;
     
+    //A new floor is currently growing
+    BOOL floorGrowing;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
@@ -87,6 +90,7 @@
 @property(nonatomic, retain) NSString *nibFileName;
 @property (nonatomic, strong) UIView *citadelView;
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+@property(nonatomic, assign) BOOL floorGrowing;
 
 -(IBAction)buyFloor;
 -(void)displayFurniture;

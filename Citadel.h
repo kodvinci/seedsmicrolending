@@ -52,8 +52,12 @@
 @property(nonatomic, assign) NSInteger playerLeaves;
 
 -(void)initialize;
+-(BOOL)addFloor:(NSInteger)newNumFloors;
+
 -(void)addSeedling;
 -(void)addFurniture;
+
+
 -(void)saveChanges:(NSString *)thisChanged;
 
 -(void) findHappyObj:(Seedling *)seed;
