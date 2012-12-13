@@ -59,12 +59,11 @@
         num.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
 
         //purchase button
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button addTarget:self action:@selector(buy:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:@"Buy Leaves" forState:UIControlStateNormal];
-        
-        button.frame = CGRectMake(230.0, 10.0, 90.0, 30.0);
+        [button setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
+        button.frame = CGRectMake(200.0, 10.0, 110.0, 45.0);
         [self.view addSubview:button];
     }
     else if ([furnitureName isEqualToString:@"crystal"]) {

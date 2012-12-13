@@ -43,7 +43,7 @@
 //GAME DEFAULTS
 - (IBAction)begin
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING!" message:@"Setting game to beginner level!" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"CONTINUE", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Setting game to beginner level" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"CONTINUE", nil];
     alert.tag=1;
     [alert show];
     [alert release];
@@ -119,7 +119,7 @@
     NSLog(@"Data saved");
     
     //inform user that the game defaults have been set and that they can now hit the 'PLAY' button to start playing the game
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WELCOME!" message:@"Press the PLAY button to begin game!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WELCOME" message:@"Press the PLAY button to begin game" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     alert.tag=2;
     [alert show];
     [alert release];
@@ -150,6 +150,14 @@
 -(void)displayFloors:(NSInteger)howmany
 {
     NSLog(@"displayFloor %@", self.navigationController);
+    NSLog(@"howMany: %d", howmany);
+    
+    if (howmany == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"SUGGESTION" message:@"Please press the RESTART button to set the game defaults" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=3;
+        [alert show];
+        [alert release];
+    }
     
     if (howmany == 1) {
         NSLog(@"One floor %@", @"in..");
