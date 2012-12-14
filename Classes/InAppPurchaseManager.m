@@ -10,6 +10,7 @@
 
 @class MicrolendingAppDelegate;
 @class ResourceViewController;
+@class ResoCurrencyViewController;
 
 @implementation InAppPurchaseManager
 
@@ -108,8 +109,7 @@
     [appDelegate.citadelData setInteger:numLeaves forKey:@"leaves"];
    
     [appDelegate.citadelData synchronize];
-    ResourceViewController *refresh = [[ResourceViewController alloc]init];
-    [refresh viewDidLoad];
+
 }
 
 // removes the transaction from the queue and posts a notification with the transaction result
@@ -121,13 +121,24 @@
     NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:transaction, @"transaction" , nil];
     if (wasSuccessful)
     {
+        NSLog(@"success notification");
         // send out a notification that we’ve finished the transaction
         [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerTransactionSucceededNotification object:self userInfo:userInfo];
+       
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NOTIFICATION" message:@"Purchase Successful." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=1;
+        [alert show];
+        [alert release];
     }
     else
     {
         // send out a notification for the failed transaction
         [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerTransactionFailedNotification object:self userInfo:userInfo];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NOTIFICATION" message:@"Purchase NOT Successful." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=2;
+        [alert show];
+        [alert release];
     }
 }
 
@@ -144,6 +155,11 @@
 // called when a transaction has been restored and and successfully completed
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NOTIFICATION" message:@"Previous Purchase being Restored." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    alert.tag=3;
+    [alert show];
+    [alert release];
+    
     [self recordTransaction:transaction.originalTransaction];
     [self addLeaves:transaction.originalTransaction.payment.quantity];
     [self finishTransaction:transaction wasSuccessful:YES];
@@ -187,5 +203,27 @@
         }
     }
 }
+
+//uialertviews
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (alertView.tag==1) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+            NSLog(@"buttonIndex 0");
+        }
+    }
+    if (alertView.tag==2) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+        }
+    }
+}
+
 
 @end

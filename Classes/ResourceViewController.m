@@ -65,6 +65,9 @@
         [button setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
         button.frame = CGRectMake(200.0, 10.0, 110.0, 45.0);
         [self.view addSubview:button];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(actionRefresh:)];
+        
     }
     else if ([furnitureName isEqualToString:@"crystal"]) {
         furnImage = [UIImage imageNamed:@"crystal"];
@@ -76,11 +79,17 @@
   
 }
 
+-(void)actionRefresh:(id)sender {
+    
+	[self viewWillAppear:YES];
+	
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"viewWillAppear");
     [super viewWillAppear:animated];
-    [self viewDidLoad];
-
+    num.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
 }
 
 -(void)buy:(id)sender

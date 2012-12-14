@@ -93,7 +93,7 @@
     [super dealloc];
 }
 
-- (void) generateNewSeedlingCharacteristics{
+-(void) generateNewSeedlingCharacteristics{
     NameGenerator *namer = [[NameGenerator alloc]init];
     EyeDice *eye = [[EyeDice alloc]init];
     FaceDice *face = [[FaceDice alloc]init];

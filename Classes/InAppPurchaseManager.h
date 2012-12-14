@@ -15,6 +15,7 @@
 #import <StoreKit/StoreKit.h>
 #import "MicrolendingAppDelegate.h"
 #import "ResourceViewController.h"
+#import "ResoCurrencyViewController.h"
 
 //Notifications
 #define kInAppPurchaseManagerProductsFetchedNotification @"kInAppPurchaseManagerProductsFetchedNotification"

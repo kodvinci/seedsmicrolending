@@ -53,6 +53,14 @@
     [myCrstal release];
 }
 
+-(void)fromInAppPurchase
+{
+    NSLog(@"fromInAppPurchase");
+    ResourceViewController *myReso1 = [[ResourceViewController alloc] initWithNibName:@"ResourceViewController" bundle:nil resourceName:@"leaf"];
+    
+    [self.navigationController pushViewController:myReso1 animated:YES];
+    [myReso1 release];
+}
 
 - (void)viewDidLoad
 {

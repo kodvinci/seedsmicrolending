@@ -20,5 +20,6 @@
 -(IBAction)coin;
 -(IBAction)leaf;
 -(IBAction)crystal;
+-(void)fromInAppPurchase;
 
 @end

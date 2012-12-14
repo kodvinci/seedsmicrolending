@@ -17,13 +17,15 @@
     return [super initWithFrame:frame];
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
     [self.nextResponder touchesBegan:touches withEvent:event];
     
 }
 
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
     // if youre not dragging, sends the touch to the next responder, into the touchedEnded method.
     if (!self.dragging){
@@ -34,7 +36,8 @@
         [super touchesEnded:touches withEvent:event];
 }
 
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     if (!self.dragging) {
         [self.nextResponder touchesMoved:touches withEvent:event];
     }

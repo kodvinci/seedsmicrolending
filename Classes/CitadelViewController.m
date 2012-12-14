@@ -70,7 +70,6 @@
             // Do whatever "YES" is
         }
     }
-    
 }
 
 -(void)reset

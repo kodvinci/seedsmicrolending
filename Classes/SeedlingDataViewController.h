@@ -5,6 +5,9 @@
 //  Created by Leonard Ng'eno on 11/21/12.
 //
 //
+/*
+ This is the view controller that displays the various characteristics of the Seedling object.
+ */
 
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
@@ -35,6 +38,12 @@
     IBOutlet UILabel *bodyTypeL;
     IBOutlet UILabel *bodyColorL;
     IBOutlet UILabel *faceTypeL;
+    
+    //EDITS
+    IBOutlet UIButton *editname;
+    IBOutlet UIButton *edithair;
+    IBOutlet UIButton *editbody;
+    IBOutlet UIButton *editface;
 }
 
 @property(nonatomic, retain) NSArray *myseedlings;
@@ -60,5 +69,15 @@
 @property(nonatomic, retain) UILabel *bodyTypeL;
 @property(nonatomic, retain) UILabel *bodyColorL;
 @property(nonatomic, retain) UILabel *faceTypeL;
+@property(nonatomic, retain) UIButton *editname;
+@property(nonatomic, retain) UIButton *edithair;
+@property(nonatomic, retain) UIButton *editbody;
+@property(nonatomic, retain) UIButton *editface;
+
+
+-(IBAction)editName;
+-(IBAction)editHair;
+-(IBAction)editBody;
+-(IBAction)editFace;
 
 @end
