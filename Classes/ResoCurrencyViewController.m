@@ -2,16 +2,16 @@
 //  ResoCurrencyViewController.m
 //  Microlending
 //
-//  Created by guest user on 11/4/12.
+//  Created by Leonard Ng'eno on 11/4/12.
 //
 //
 
 #import "ResoCurrencyViewController.h"
 
 @class ResourceViewController;
+@class CrystalViewController;
 
 @implementation ResoCurrencyViewController
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,7 +48,9 @@
 
 -(IBAction)crystal
 {
-    
+    CrystalViewController *myCrstal = [[CrystalViewController alloc]initWithStyle:UITableViewCellStyleSubtitle]; //allow for subtitles
+    [self.navigationController pushViewController:myCrstal animated:YES];
+    [myCrstal release];
 }
 
 
@@ -56,6 +58,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title = @"Currency Resources";
 }
 
 - (void)viewDidUnload

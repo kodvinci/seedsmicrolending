@@ -2,7 +2,7 @@
 //  SeedlingDataViewController.m
 //  Microlending
 //
-//  Created by guest user on 11/21/12.
+//  Created by Leonard Ng'eno on 11/21/12.
 //
 //
 
@@ -33,7 +33,7 @@
     myseedlings = [[NSMutableArray alloc]initWithArray:myarray];
     
     for (int k=0; k < myseedlings.count; k++) {
-        seedlingImage = [UIImage imageNamed:@"seedling.png"];  //[[myseedlings objectAtIndex:k] myImage];
+        seedlingImage = [UIImage imageNamed:@"seedlingcolored.png"];  //[[myseedlings objectAtIndex:k] myImage];
         [seedImage setImage:seedlingImage];
         seedlingName = [[NSString alloc]initWithString:[[myseedlings objectAtIndex:k] myName]];
         seedlingNameL.text = seedlingName;

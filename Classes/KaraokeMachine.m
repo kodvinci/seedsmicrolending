@@ -2,7 +2,7 @@
 //  KaraokeMachine.m
 //  Microlending
 //
-//  Created by guest user on 10/16/12.
+//  Created by Leonard Ng'eno on 10/16/12.
 //
 //
 
@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"karaokemachine"];
-    self.itemName = @"karaokemachine";
+    self.itemName = @"KaraokeMachine";
     self. useTime = 30;
     self.itemWidth = 1;
     self.desire1 = @"musical";

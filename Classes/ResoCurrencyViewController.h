@@ -2,12 +2,13 @@
 //  ResoCurrencyViewController.h
 //  Microlending
 //
-//  Created by guest user on 11/4/12.
+//  Created by Leonard Ng'eno on 11/4/12.
 //
 //
 
 #import <UIKit/UIKit.h>
 #import "ResourceViewController.h"
+#import "CrystalViewController.h"
 
 @interface ResoCurrencyViewController : UIViewController
 {

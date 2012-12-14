@@ -2,7 +2,7 @@
 //  FurnitureViewController.m
 //  Microlending
 //
-//  Created by guest user on 11/1/12.
+//  Created by Leonard Ng'eno on 11/1/12.
 //
 //
 
@@ -27,6 +27,7 @@
 @synthesize desire1, desire2, reward1, reward2, numUsers;
 @synthesize level1, level2, level3;
 @synthesize furnitureArray;
+@synthesize coins, leaves, level;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name
 {
@@ -52,6 +53,16 @@
         self.level2 = NO;
         self.level3 = NO;
         NSLog(@"furnCost: %d", furnCost);
+        
+        //Buy button
+        UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button3 addTarget:self action:@selector(buyFurniture:) forControlEvents:UIControlEventTouchUpInside];
+        [button3 setTitle:@"Purchase" forState:UIControlStateNormal];
+        [button3 setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+        [button3 setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
+        button3.frame = CGRectMake(90.0, 315.0, 90.0, 45.0);
+        [self.view addSubview:button3];
+        
         [self viewWillAppear:YES];
     }
     return self;
@@ -82,8 +93,18 @@
             self.level2 = NO;
             self.level3 = NO;
             NSLog(@"furnCost: %d", furnCost);
-            [self viewDidLoad];
           
+            //Buy button
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button addTarget:self action:@selector(buyFurniture:) forControlEvents:UIControlEventTouchUpInside];
+            [button setTitle:@"Purchase" forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
+            button.frame = CGRectMake(90.0, 315.0, 90.0, 45.0);
+            [self.view addSubview:button];
+            
+            [self viewDidLoad];
+            
             break;
 
         case 1:
@@ -101,7 +122,16 @@
             self.level2 = YES;
             self.level3 = NO;
             NSLog(@"upgradeLeaves: %d", upgradeLeaves);
+            
             [self viewDidLoad];
+            
+            UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button1 addTarget:self action:@selector(upgradeFurniture:) forControlEvents:UIControlEventTouchUpInside];
+            [button1 setTitle:@"UpgradeF" forState:UIControlStateNormal];
+            [button1 setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+            [button1 setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
+            button1.frame = CGRectMake(90.0, 315.0, 90.0, 45.0);
+            [self.view addSubview:button1];
             
             break;
         
@@ -122,6 +152,14 @@
             NSLog(@"upgradeLeaves: %d", upgradeLeaves);
             [self viewDidLoad];
             
+            UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button2 addTarget:self action:@selector(upgradeFurniture:) forControlEvents:UIControlEventTouchUpInside];
+            [button2 setTitle:@"UpgradeF" forState:UIControlStateNormal];
+            [button2 setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+            [button2 setBackgroundImage:[UIImage imageNamed:@"NavBarImage.png"] forState:UIControlStateNormal];
+            button2.frame = CGRectMake(90.0, 315.0, 90.0, 45.0);
+            [self.view addSubview:button2];
+            
             break;
             
         default:
@@ -134,6 +172,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = furnName; //Title of view
+    
     [furnitureName becomeFirstResponder];
     
     [furnitureImage setImage:furnImage];
@@ -146,9 +187,14 @@
     reward1.text = [NSString stringWithFormat:@"%d", furnReward1];
     reward2.text = [NSString stringWithFormat:@"%d", furnReward2];
     numUsers.text = [NSString stringWithFormat:@"%d", users];
+    
+    //HUD variables
+    coins.text = [NSString stringWithFormat:@"%d",[appDelegate.citadelData integerForKey:@"coins"]];
+    leaves.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"leaves"]];
+    level.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"playerLevel"]];
 }
 
--(IBAction)buyFurniture
+-(void)buyFurniture:(id)sender
 {
     if (level1 == YES) {
         //Buy level 1 furniture
@@ -170,6 +216,8 @@
             myCoins = myCoins - [furniture1 purchaseCost];
             [appDelegate.citadelData setInteger:myCoins forKey:@"coins"];
 
+            [appDelegate.citadelData synchronize];
+            
             //Display the bought furniture on floor
             CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
             [self.navigationController initWithRootViewController:FVmyCitadel];
@@ -184,18 +232,143 @@
             [alert show];
             [alert release];
         }
+    }    
+}
+
+-(void)upgradeFurniture:(id)sender
+{
+    //Check if I have this furniture in my furniture array first
+    NSData *myFurniture1 = [appDelegate.citadelData objectForKey:@"furniture"];
+    NSMutableArray *myArray = [[NSMutableArray alloc]initWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:myFurniture1]];
+    int furnitureToRemove;
+    
+    NSLog(@"myArray Size, %d", [myArray count]);
+    
+    BOOL IhaveHaveIt = NO;
+    
+    for (int k=0; k<[myArray count] ; k++) {
+        if ([[[myArray objectAtIndex:k]itemName] isEqualToString:furnName]) {
+            NSLog(@"I have this furniture");
+            IhaveHaveIt = YES;
+            furnitureToRemove = k;
+            break;
+        }
     }
     
-    if (level2 == YES) {
-        //Upgrade furniture to level 2
-        id furniture2 = [[NSClassFromString(furnName) alloc] init];
-        [furniture2 initWithLevel:2];
+    if (IhaveHaveIt == YES) {
+        NSLog(@"Can upgrade it");
+        
+        NSInteger myOriginalCoins = [appDelegate.citadelData integerForKey:@"coins"];
+        NSInteger myOriginalLeaves = [appDelegate.citadelData integerForKey:@"leaves"];
+        
+        if (level2 == YES) {
+            //Upgrade furniture to level 2
+            id furniture2 = [[NSClassFromString(furnName) alloc] init];
+            [furniture2 initWithLevel:2];
+            
+            //check if I have enough upgrade coins
+            if (myOriginalCoins >= [furniture2 coinsCost]) {
+                //upgrade using coins
+                [myArray removeObjectAtIndex:furnitureToRemove];
+                [myArray addObject:furniture2];
+                NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myArray];
+                [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+
+                NSInteger newCoins = myOriginalCoins - [furniture2 coinsCost];
+                [appDelegate.citadelData setInteger:newCoins forKey:@"coins"];
+                [appDelegate.citadelData synchronize];
+                
+                //Display the upgraded furniture on floor
+                CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+                [self.navigationController initWithRootViewController:FVmyCitadel];
+                [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+                [FVmyCitadel release];
+            }
+            else if (myOriginalCoins < [furniture2 coinsCost] && myOriginalLeaves >= [furniture2 leavesCost]) {
+                //upgrade using leaves
+                [myArray removeObjectAtIndex:furnitureToRemove];
+                [myArray addObject:furniture2];
+                NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myArray];
+                [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+                
+                NSInteger newLeaves = myOriginalLeaves - [furniture2 leavesCost];
+                [appDelegate.citadelData setInteger:newLeaves forKey:@"leaves"];
+                [appDelegate.citadelData synchronize];
+                
+                //Display the upgraded furniture on floor
+                CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+                [self.navigationController initWithRootViewController:FVmyCitadel];
+                [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+                [FVmyCitadel release];
+            }
+            else {
+                //Not enough currency for an upgrade
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upgrade Not Possible!" message:@"You do not have enough coins or leaves to upgrade the furniture." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                alert.tag=3;
+                [alert show];
+                [alert release];
+            }
+        }
+        else if (level3 == YES) {
+            //Upgrade furniture to level 3
+            id furniture3 = [[NSClassFromString(furnName) alloc] init];
+            [furniture3 initWithLevel:3];
+            //check if I have enough upgrade coins
+            if (myOriginalCoins >= [furniture3 coinsCost]) {
+                //upgrade using coins
+                [myArray removeObjectAtIndex:furnitureToRemove];
+                [myArray addObject:furniture3];
+                NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myArray];
+                [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+                
+                NSInteger newCoins = myOriginalCoins - [furniture3 coinsCost];
+                [appDelegate.citadelData setInteger:newCoins forKey:@"coins"];
+                [appDelegate.citadelData synchronize];
+                
+                //Display the upgraded furniture on floor
+                CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+                [self.navigationController initWithRootViewController:FVmyCitadel];
+                [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+                [FVmyCitadel release];
+
+            }
+            else if (myOriginalCoins < [furniture3 coinsCost] && myOriginalLeaves >= [furniture3 leavesCost]) {
+                //upgrade using leaves
+                [myArray removeObjectAtIndex:furnitureToRemove];
+                [myArray addObject:furniture3];
+                NSData *furnData = [NSKeyedArchiver archivedDataWithRootObject:myArray];
+                [appDelegate.citadelData setObject:furnData forKey:@"furniture"];
+                
+                NSInteger newLeaves = myOriginalLeaves - [furniture3 leavesCost];
+                [appDelegate.citadelData setInteger:newLeaves forKey:@"leaves"];
+                [appDelegate.citadelData synchronize];
+                
+                //Display the upgraded furniture on floor
+                CitadelViewController *FVmyCitadel = [[CitadelViewController alloc] init];
+                [self.navigationController initWithRootViewController:FVmyCitadel];
+                [FVmyCitadel displayFloors:[appDelegate.citadelData integerForKey:@"floors"]];
+                [FVmyCitadel release];
+            }
+            else {
+                //Not enough currency for an upgrade
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upgrade Not Possible!" message:@"You do not have enough coins or leaves to upgrade the furniture." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                alert.tag=4;
+                [alert show];
+                [alert release];
+            }
+
+        }
     }
-    else if (level3 == YES) {
-        //Upgrade furniture to level 3
-        id furniture3 = [[NSClassFromString(furnName) alloc] init];
-        [furniture3 initWithLevel:1];
+    
+    else {
+        NSLog(@"I haven't bought this type of furniture before");
+        //Inform player they can't upgrade a furniture they don't have
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upgrade Not Possible!" message:@"You need to buy level 1 of this furniture before you can be able to upgrade it." delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        alert.tag=2;
+        [alert show];
+        [alert release];
     }
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -209,6 +382,21 @@
             // Do whatever "YES" is
         }
     }
+    if (alertView.tag==2) {
+        // NO = 0, YES = 1
+        if(buttonIndex == 0){
+            // DO whatever "NO" is
+        }
+        else {
+            // Do whatever "YES" is
+        }
+    }
+}
+
+//Remove the ugraded furniture from the array of furniture
+-(void)removeFurnitureWithName:(NSString *)furnitureName
+{
+    
 }
 
 - (void)viewDidUnload

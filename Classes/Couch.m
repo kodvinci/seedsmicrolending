@@ -2,7 +2,7 @@
 //  Couch.m
 //  Microlending
 //
-//  Created by guest user on 10/16/12.
+//  Created by Leonard Ng'eno on 10/16/12.
 //
 //
 
@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"couch"];
-    self.itemName = @"couch";
+    self.itemName = @"Couch";
     self.users = 2;
     self. useTime = 30;
     self.itemWidth = 2;

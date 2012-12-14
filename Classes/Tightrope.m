@@ -2,7 +2,7 @@
 //  Tightrope.m
 //  Microlending
 //
-//  Created by guest user on 10/16/12.
+//  Created by Leonard Ng'eno on 10/16/12.
 //
 //
 
@@ -13,7 +13,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"tightrope"];
-    self.itemName = @"tightrope";
+    self.itemName = @"Tightrope";
     self. useTime = 30;
     self.itemWidth = 3;
     self.desire1 = @"acrobatic";

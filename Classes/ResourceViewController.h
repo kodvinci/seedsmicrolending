@@ -2,12 +2,13 @@
 //  ResourceViewController.h
 //  Microlending
 //
-//  Created by guest user on 11/4/12.
+//  Created by Leonard Ng'eno on 11/4/12.
 //
 //
 
 #import <UIKit/UIKit.h>
 #import "InAppPurchaseManager.h"
+#import "MicrolendingAppDelegate.h"
 
 @interface ResourceViewController : UIViewController 
 {
@@ -19,6 +20,7 @@
     IBOutlet UILabel *furnName;
     NSString *description;
     IBOutlet UILabel *furnDesc;
+    MicrolendingAppDelegate *appDelegate;
 }
 
 @property(nonatomic, retain) UIImageView *furnitureImage;
@@ -31,5 +33,7 @@
 @property(nonatomic, retain) UILabel *furnDesc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil resourceName:(NSString *) name;
+-(void)viewDidLoad;
+-(void)viewWillAppear:(BOOL)animated;
 
 @end

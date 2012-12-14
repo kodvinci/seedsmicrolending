@@ -2,7 +2,7 @@
 //  Plot.m
 //  Microlending
 //
-//  Created by guest user on 11/13/12.
+//  Created by Leonard Ng'eno on 11/13/12.
 //
 //
 
@@ -13,9 +13,9 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"plot"];
-    self.itemName = @"plot";
+    self.itemName = @"Plot";
     self.xPos = 40;
-    self.yPos = 300;
+    self.yPos = 330;
 }
 
 

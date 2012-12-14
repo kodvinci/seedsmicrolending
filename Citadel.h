@@ -2,7 +2,7 @@
 //  Citadel.h
 //  Microlending
 //
-//  Created by guest user on 9/29/12.
+//  Created by Leonard Ng'eno on 9/29/12.
 //
 //
 
@@ -17,8 +17,6 @@
 #import "Seedling.h"
 #import "Furniture.h"
 #import "FloorViewController.h"
-#import "SingleFloor.h"
-#import "Floor.h"
 
 @interface Citadel : NSObject
 {
@@ -54,9 +52,12 @@
 @property(nonatomic, assign) NSInteger playerLeaves;
 
 -(void)initialize;
--(void)addFloor:(NSInteger)floorNumber;
+-(BOOL)addFloor:(NSInteger)newNumFloors;
+
 -(void)addSeedling;
 -(void)addFurniture;
+
+
 -(void)saveChanges:(NSString *)thisChanged;
 
 -(void) findHappyObj:(Seedling *)seed;

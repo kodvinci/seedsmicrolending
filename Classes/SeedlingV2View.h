@@ -2,7 +2,7 @@
 //  SeedlingV2View.h
 //  Microlending
 //
-//  Created by guest user on 11/19/12.
+//  Created by Leonard Ng'eno on 11/19/12.
 //
 //
 

@@ -2,7 +2,7 @@
 //  LocalizedPrice.m
 //  Microlending
 //
-//  Created by guest user on 11/8/12.
+//  Created by Leonard Ng'eno on 11/8/12.
 //
 //
 

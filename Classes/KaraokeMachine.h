@@ -2,7 +2,7 @@
 //  KaraokeMachine.h
 //  Microlending
 //
-//  Created by guest user on 10/16/12.
+//  Created by Leonard Ng'eno on 10/16/12.
 //
 //
 

@@ -2,7 +2,7 @@
 //  BorrowerSingleViewController.h
 //  Microlending
 //
-//  Created by guest user on 10/18/11.
+//  Created by Leonard Ng'eno on 10/18/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 

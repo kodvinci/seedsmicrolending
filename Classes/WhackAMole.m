@@ -2,7 +2,7 @@
 //  WhackAMole.m
 //  Microlending
 //
-//  Created by guest user on 10/16/12.
+//  Created by Leonard Ng'eno on 10/16/12.
 //
 //
 
@@ -12,7 +12,7 @@
 -(void)initWithLevel:(NSInteger)furnitureLevel
 {
     self.furnPic = [UIImage imageNamed:@"whackamole"];
-    self.itemName = @"whackamole";
+    self.itemName = @"WhackAMole";
     self.useTime = 30;
     self.itemWidth = 2;
     self.desire1 = @"strength";

@@ -2,7 +2,7 @@
 //  FurnitureViewController.h
 //  Microlending
 //
-//  Created by guest user on 11/1/12.
+//  Created by Leonard Ng'eno on 11/1/12.
 //
 //
 
@@ -41,6 +41,11 @@
     BOOL level3;
     NSMutableArray *furnitureArray;
     
+    //HUD variables
+    IBOutlet UILabel *coins;
+    IBOutlet UILabel *leaves;
+    IBOutlet UILabel *level;
+    
 }
 
 @property(nonatomic, assign) Class className;
@@ -69,9 +74,11 @@
 @property(nonatomic, assign) BOOL level2;
 @property(nonatomic, assign) BOOL level3;
 @property(nonatomic, retain) NSMutableArray *furnitureArray;
+@property(nonatomic, retain) UILabel *coins;
+@property(nonatomic, retain) UILabel *leaves;
+@property(nonatomic, retain) UILabel *level;
 
 -(IBAction) segmentedControlIndexChanged;
--(IBAction)buyFurniture;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name;
 
 @end
