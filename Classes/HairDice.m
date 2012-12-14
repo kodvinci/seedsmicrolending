@@ -30,7 +30,7 @@
         NSString * inheritedHair = [hairPassedDicitonary valueForKey:hair];
         NSString * inheritedHair2 = [hairPassedDicitonary valueForKey:hair2];
         
-        NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"HairTypeInheritence" ofType:@"plist"];
+        NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"HairTypeInheritance" ofType:@"plist"];
         NSDictionary *hairDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath2];
         if( [inheritedHair compare: inheritedHair2] == NSOrderedSame || [inheritedHair compare: inheritedHair2]==NSOrderedAscending ){
             inheritedHair = [inheritedHair stringByAppendingString:inheritedHair2];

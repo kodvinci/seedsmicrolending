@@ -30,14 +30,6 @@
     NSString * inheritedBody = [bodyPassedDicitonary valueForKey:body];
     NSString * inheritedBody2 = [bodyPassedDicitonary valueForKey:body2];
     
-    NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"BodyTypeInheritence" ofType:@"plist"];
-    NSDictionary *bodyDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath2];
-    if( [inheritedBody compare: inheritedBody2] == NSOrderedSame || [inheritedBody compare: inheritedBody2]==NSOrderedAscending ){
-        inheritedBody = [inheritedBody stringByAppendingString:inheritedBody2];
-    }
-    else{
-        inheritedBody = [inheritedBody2 stringByAppendingString: inheritedBody];
-    }
-    return [bodyDictionary valueForKey: inheritedBody];
+     return [self traitFromTrait: inheritedBody andTrait: inheritedBody2 usingPath: @"BodyTypeInheritance"];
 }
 @end

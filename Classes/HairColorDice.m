@@ -21,7 +21,7 @@
     return self;
 }
 
-//Determines the hair color that is inherited from two parents. For inheritence list see HairColors.plist in Resources. 
+//Determines the hair color that is inherited from two parents. For inheritance list see HairColors.plist in Resources. 
 -(NSString *) hairColorFromDad:(NSString *) hair andMom: (NSString *) hair2{
     NSString* plistPath =[[NSBundle mainBundle] pathForResource:@"HairColors" ofType:@"plist"];
     NSDictionary *hairDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath];

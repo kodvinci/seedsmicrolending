@@ -27,7 +27,7 @@
     NSString * inheritedFace = [facePassedDicitonary valueForKey:face];
     NSString * inheritedFace2 = [facePassedDicitonary valueForKey:face2];
     
-    NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"FaceTypeInheritence" ofType:@"plist"];
+    NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"FaceTypeInheritance" ofType:@"plist"];
     NSDictionary *faceDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath2];
     if( [inheritedFace compare: inheritedFace2] == NSOrderedSame || [inheritedFace compare: inheritedFace2]==NSOrderedAscending ){
         inheritedFace = [inheritedFace stringByAppendingString:inheritedFace2];
