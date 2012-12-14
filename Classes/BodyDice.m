@@ -9,6 +9,9 @@
 #import "BodyDice.h"
 
 @implementation BodyDice
+
+//populates the body dice dictionary with the correct number of each trait
+//Sets up the inheritence dictionary with the corresponding inherited trait for each body type.
 -(id) init{
     if(self == [super init]){
     [self addNumber:3 ofTrait:@"Plain"];
@@ -27,6 +30,7 @@
 
 }
 
+//returns a new body type that is inherited from the combination of the mother and father's body types.
 -(NSString *) bodyFromDad:(NSString *) body andMom: (NSString *) body2{
     NSString *dadsBody = [inheritance objectForKey: body];
     NSString *momsBody = [inheritance objectForKey: body2];

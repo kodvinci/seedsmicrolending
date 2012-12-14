@@ -9,6 +9,7 @@
 #import "EyeDice.h"
 
 @implementation EyeDice
+//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice.
 -(id) init{
     if(self == [super init]){
     [self addNumber:3 ofTrait:@"Light Brown"];
@@ -19,6 +20,7 @@
     return self;
 }
 
+//Used to determine the inherited eye color from the mother and father seedlings. Uses EyeColors.plist in the Resources folder to determine the inerhited color. 
 -(NSString *) eyesFromDadsEyes:(NSString *) eye andMomsEyes: (NSString *) eye2;
     {
         NSString* plistPath =[[NSBundle mainBundle] pathForResource:@"EyeColors" ofType:@"plist"];

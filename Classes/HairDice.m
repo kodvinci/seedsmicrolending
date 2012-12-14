@@ -10,6 +10,7 @@
 
 @implementation HairDice
 
+//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice. Also populated inheritence with the inherited hair types. 
 -(id) init{
     if(self = [super init]){
     [self addNumber:1 ofTrait:@"Tulip"];
@@ -39,6 +40,7 @@
     return self;
 }
 
+//Determines the hair type from the mother and father seedling. 
 -(NSString *) hairFromDadsHair:(NSString *) hair andMomsHair: (NSString *) hair2
     {
         NSString *hairType = @"Branches";

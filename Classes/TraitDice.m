@@ -21,6 +21,7 @@
     return self;
 }
 
+//Used to add a trait and weight of the trait to the dice
 -(void) addNumber:(int)number ofTrait:(NSString *)trait {
     for (int i= number; i>0; i--)
     {
@@ -28,12 +29,15 @@
     }
 }
 
+//Called to randomly select a trait
 -(NSString *) rollDice
 {
     int random = arc4random() % ([traits count]);
     return [traits objectAtIndex:random];
     
 }
+
+//Used to check if a string contains two other strings. 
 - (BOOL) doesString: (NSString *) original containOne: (NSString *) one andTwo: (NSString *) two{
     NSRange rng = [original rangeOfString: one];
     NSRange rng2 = [original rangeOfString: two];

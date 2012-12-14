@@ -9,8 +9,10 @@
 #import "stdlib.h"
 #import <Foundation/Foundation.h>
 
+//Trait dice are used to randomly generate a new seedling or to determine the inheritence of certain traits. 
 @interface TraitDice : NSObject
 {
+    //trait characteristics
     NSString *traitName;
     NSMutableArray *traits;
     NSMutableDictionary *inheritance;

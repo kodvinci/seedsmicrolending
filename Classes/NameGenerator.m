@@ -13,6 +13,7 @@
 
 @synthesize nameParts;
 
+//All the possible parts of a name
 -(id) init{
     nameParts = [[NSMutableArray alloc]init];
     if(self == [super init]){
@@ -128,6 +129,7 @@
     return self;
 }
 
+//Method used to randomly generate a new name. It takes bewteen 2 and 4 parts from nameParts and puts them together in a randomly gnerated order. 
 -(NSString *) generateName{
     
     NSMutableString *name = [[NSMutableString alloc]init];
@@ -141,6 +143,7 @@
     return finalName;
 }
 
+//Capitalizes the name
 -(NSString *) capitalize: (NSString *)string
 {
     return [NSString stringWithFormat:@"%@%@",[[string substringToIndex:1]capitalizedString], [string substringFromIndex:1]];

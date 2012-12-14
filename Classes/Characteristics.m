@@ -12,6 +12,8 @@
 @implementation Characteristics
 @synthesize seedlingCharacteristics = seedlingCharacteristics_;
 
+//Creates a new seedling characteristics object that has a random name, eye type, face, body, hair color, hair type, skin color, and desires.
+
 - (void) generateNewSeedlingCharacteristics{
     NameGenerator *namer;
     EyeDice *eye;

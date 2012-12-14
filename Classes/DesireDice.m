@@ -10,6 +10,7 @@
 
 @implementation DesireDice
 
+//the desires used to decide what 3 desires each seedling will have. 
 -(id) init{
     if(self = [super init]){
         [self addNumber:1 ofTrait:@"water"];

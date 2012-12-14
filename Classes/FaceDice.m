@@ -9,6 +9,7 @@
 #import "FaceDice.h"
 
 @implementation FaceDice
+//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice. As well it populates inheritence with the inheritence used to determine the characteristics of a child.
 -(id) init{
     if(self == [super init]){
     [self addNumber:5 ofTrait:@"Gentle eyes"];
@@ -27,6 +28,7 @@
 
 }
 
+//Determines the interhited face type from the combination of the mother and father. 
 -(NSString *) faceFromDadsHair:(NSString *) face andMomsFace: (NSString *) face2{
         NSString *dadsFace = [inheritance objectForKey: face];
         NSString *momsFace = [inheritance objectForKey: face2];

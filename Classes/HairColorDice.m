@@ -10,6 +10,7 @@
 
 @implementation HairColorDice
 
+//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice. 
 -(id) init{
     if(self == [super init]){
     [self addNumber:3 ofTrait:@"Red"];
@@ -19,6 +20,8 @@
     }
     return self;
 }
+
+//Determines the hair color that is inherited from two parents. For inheritence list see HairColors.plist in Resources. 
 -(NSString *) hairColorFromDad:(NSString *) hair andMom: (NSString *) hair2{
     NSString* plistPath =[[NSBundle mainBundle] pathForResource:@"HairColors" ofType:@"plist"];
     NSDictionary *hairDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath];

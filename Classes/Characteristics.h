@@ -17,8 +17,9 @@
 #import "DesireDice.h"
 #import "Seedling.h"
 
-@class Seedling;
 
+@class Seedling;
+//Characteristics objects are used to keep track of all the characteristics of a new seedling. To create a new seedling you must generate a new characteristics object. To update a seedling you just have to change the info within the characteristics object.
 @interface Characteristics : NSObject{
     NSMutableDictionary *seedlingCharacteristics;
     
