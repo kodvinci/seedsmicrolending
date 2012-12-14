@@ -44,6 +44,6 @@
 - (void) updateXP: (int) xpDifference;
 - (id) init;
 -(void) generateNewSeedlingCharacteristics;
-//-(void) birthFrom: (Seedling*) Dad andFrom:(Seedling* ) Mom;
+//-(void) birthFrom: (SeedlingV2*) Dad andFrom:(SeedlingV2* ) Mom;
 
 @end
