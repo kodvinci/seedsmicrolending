@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Plain</key>
+	<string>Normal</string>
+	<key>Spotted</key>
+	<string>Spotted</string>
+	<key>Striped</key>
+	<string>Striped</string>
+	<key>Thick Solid</key>
+	<string>Thick</string>
+	<key>Thick Spotted</key>
+	<string>Thick</string>
+	<key>Thick Striped</key>
+	<string>Thick</string>
+	<key>Colorful</key>
+	<string>Striped</string>
+</dict>
+</plist>

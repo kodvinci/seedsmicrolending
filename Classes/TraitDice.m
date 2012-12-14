@@ -11,7 +11,6 @@
 @implementation TraitDice
 @synthesize traitName;
 @synthesize traits;
-@synthesize inheritance;
 
 -(id)init
 {
@@ -45,6 +44,19 @@
         return true;
     }
     return false;
+}
+
+-(NSString *) traitFromTrait:(NSString *) trait andTrait: (NSString *) trait2 usingPath: (NSString *) path{
+    
+    NSString* plistPath =[[NSBundle mainBundle] pathForResource:path ofType:@"plist"];
+    NSDictionary *traitDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath];
+    if( [trait compare: trait2] == NSOrderedSame || [trait compare: trait2]==NSOrderedAscending ){
+        trait = [trait stringByAppendingString:trait2];
+    }
+    else{
+        trait = [trait2 stringByAppendingString: trait];
+    }
+    return [traitDictionary valueForKey: trait];
 }
 
 @end

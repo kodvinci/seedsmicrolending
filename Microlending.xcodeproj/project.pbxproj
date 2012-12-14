@@ -326,6 +326,12 @@
 		B521896F167ABE9C00CA2F82 /* BodyColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = B521896E167ABE9C00CA2F82 /* BodyColors.plist */; };
 		B5218971167ABEB200CA2F82 /* leafITC.png in Resources */ = {isa = PBXBuildFile; fileRef = B5218970167ABEB200CA2F82 /* leafITC.png */; };
 		B5218973167ABED100CA2F82 /* SeedlingSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = B5218972167ABED100CA2F82 /* SeedlingSheet.png */; };
+		B5218975167AD86B00CA2F82 /* BodyTypeInheritance.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5218974167AD86B00CA2F82 /* BodyTypeInheritance.plist */; };
+		B5218977167AD9B700CA2F82 /* BodyTypePassedDown.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5218976167AD9B700CA2F82 /* BodyTypePassedDown.plist */; };
+		B5218979167ADD6500CA2F82 /* FaceTypeInheritance.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5218978167ADD6500CA2F82 /* FaceTypeInheritance.plist */; };
+		B521897B167ADE0200CA2F82 /* FaceTypePassedDown.plist in Resources */ = {isa = PBXBuildFile; fileRef = B521897A167ADE0100CA2F82 /* FaceTypePassedDown.plist */; };
+		B521897D167ADF9800CA2F82 /* HairTypeInheritance.plist in Resources */ = {isa = PBXBuildFile; fileRef = B521897C167ADF9700CA2F82 /* HairTypeInheritance.plist */; };
+		B521897F167AE10E00CA2F82 /* HairTypePassedDown.plist in Resources */ = {isa = PBXBuildFile; fileRef = B521897E167AE10E00CA2F82 /* HairTypePassedDown.plist */; };
 		B521E11116548F1600521E3C /* BodyDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11016548F1600521E3C /* BodyDice.m */; };
 		B521E11416548F2C00521E3C /* Characteristics.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11316548F2C00521E3C /* Characteristics.m */; };
 		B521E11D16548F3900521E3C /* DesireDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11616548F3900521E3C /* DesireDice.m */; };
@@ -975,6 +981,12 @@
 		B521896E167ABE9C00CA2F82 /* BodyColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyColors.plist; sourceTree = "<group>"; };
 		B5218970167ABEB200CA2F82 /* leafITC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leafITC.png; sourceTree = "<group>"; };
 		B5218972167ABED100CA2F82 /* SeedlingSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeedlingSheet.png; sourceTree = "<group>"; };
+		B5218974167AD86B00CA2F82 /* BodyTypeInheritance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyTypeInheritance.plist; sourceTree = "<group>"; };
+		B5218976167AD9B700CA2F82 /* BodyTypePassedDown.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyTypePassedDown.plist; sourceTree = "<group>"; };
+		B5218978167ADD6500CA2F82 /* FaceTypeInheritance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FaceTypeInheritance.plist; sourceTree = "<group>"; };
+		B521897A167ADE0100CA2F82 /* FaceTypePassedDown.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FaceTypePassedDown.plist; sourceTree = "<group>"; };
+		B521897C167ADF9700CA2F82 /* HairTypeInheritance.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HairTypeInheritance.plist; sourceTree = "<group>"; };
+		B521897E167AE10E00CA2F82 /* HairTypePassedDown.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HairTypePassedDown.plist; sourceTree = "<group>"; };
 		B521E10F16548F1600521E3C /* BodyDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyDice.h; sourceTree = "<group>"; };
 		B521E11016548F1600521E3C /* BodyDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyDice.m; sourceTree = "<group>"; };
 		B521E11216548F2C00521E3C /* Characteristics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Characteristics.h; sourceTree = "<group>"; };
@@ -1249,6 +1261,12 @@
 				CD308C6D144E7C47000A44C8 /* InvestmentTableViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Microlending-Info.plist */,
+				B5218974167AD86B00CA2F82 /* BodyTypeInheritance.plist */,
+				B5218976167AD9B700CA2F82 /* BodyTypePassedDown.plist */,
+				B5218978167ADD6500CA2F82 /* FaceTypeInheritance.plist */,
+				B521897A167ADE0100CA2F82 /* FaceTypePassedDown.plist */,
+				B521897C167ADF9700CA2F82 /* HairTypeInheritance.plist */,
+				B521897E167AE10E00CA2F82 /* HairTypePassedDown.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -2280,6 +2298,12 @@
 				B521896F167ABE9C00CA2F82 /* BodyColors.plist in Resources */,
 				B5218971167ABEB200CA2F82 /* leafITC.png in Resources */,
 				B5218973167ABED100CA2F82 /* SeedlingSheet.png in Resources */,
+				B5218975167AD86B00CA2F82 /* BodyTypeInheritance.plist in Resources */,
+				B5218977167AD9B700CA2F82 /* BodyTypePassedDown.plist in Resources */,
+				B5218979167ADD6500CA2F82 /* FaceTypeInheritance.plist in Resources */,
+				B521897B167ADE0200CA2F82 /* FaceTypePassedDown.plist in Resources */,
+				B521897D167ADF9800CA2F82 /* HairTypeInheritance.plist in Resources */,
+				B521897F167AE10E00CA2F82 /* HairTypePassedDown.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
