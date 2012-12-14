@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
-#import "Seedling.h"
-#import "Citadel.h"
 #import "Furniture.h"
 #import "Plot.h"
 #import "StoreViewController.h"
@@ -17,6 +15,7 @@
 #import "NameGenerator.h"
 #import "SeedlingV2.h"
 #import "SeedlingV2View.h"
+#import "Citadel.h"
 
 @interface CitadelViewController : UIViewController<CitadelDelegate> {
     MicrolendingAppDelegate *appDelegate;
@@ -29,7 +28,7 @@
     NSMutableArray *seedlings;
     NSUserDefaults *defaults;
     Plot *plot1;
-    Seedling *myFirstSeedling;
+    SeedlingV2 *myFirstSeedling;
     
     //Player variables
     NSInteger playerXP;
@@ -46,7 +45,7 @@
 @property(nonatomic, retain) NSMutableArray *seedlings;
 @property(nonatomic, retain) NSUserDefaults *defaults;
 @property(nonatomic, retain) Plot *plot1;
-@property(nonatomic, retain) Seedling *myFirstSeedling;
+@property(nonatomic, retain) SeedlingV2 *myFirstSeedling;
 @property(nonatomic, retain) NSMutableDictionary *plots;
 @property(nonatomic, assign) NSInteger playerXP;
 @property(nonatomic, assign) NSInteger playerLevel;

@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MicrolendingAppDelegate.h"
-#import "Seedling.h"
+#import "SeedlingV2.h"
 #import "Furniture.h"
 #import "FloorViewController.h"
 #import "CitadelViewController.h"
@@ -61,5 +61,5 @@
 
 -(void)saveChanges:(NSString *)thisChanged;
 
--(void) findHappyObj:(Seedling *)seed;
+-(void) findHappyObj:(SeedlingV2 *)seed;
 @end

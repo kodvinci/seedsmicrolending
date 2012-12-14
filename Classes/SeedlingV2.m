@@ -76,12 +76,12 @@
 }
 
 // FINISH THIS METHOD
-- (void) makeNewFriend: (Seedling *)newFriend {
+- (void) makeNewFriend: (SeedlingV2 *)newFriend {
     [myRelationships setObject: newFriend forKey: 0];
 }
 
 // FINISH THIS METHOD
-- (void) updateRelationshipPoints: (Seedling *) acquaintance: (int) pointChange {
+- (void) updateRelationshipPoints: (SeedlingV2 *) acquaintance: (int) pointChange {
 }
 
 -(void)dealloc

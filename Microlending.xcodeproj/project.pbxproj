@@ -71,7 +71,6 @@
 		318EC6681675284F0048FF03 /* TenFloorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318EC6661675284F0048FF03 /* TenFloorsViewController.xib */; };
 		318EC66A167555590048FF03 /* seedlingcolored.png in Resources */ = {isa = PBXBuildFile; fileRef = 318EC669167555590048FF03 /* seedlingcolored.png */; };
 		3191F7CF161E864F005EEF4A /* Furniture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7CE161E864F005EEF4A /* Furniture.m */; };
-		3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3191F7E916208AC3005EEF4A /* Seedling.m */; };
 		3191F7ED16208CB8005EEF4A /* seedling.png in Resources */ = {isa = PBXBuildFile; fileRef = 3191F7EC16208CB8005EEF4A /* seedling.png */; };
 		31980295165C54FA00FEFCA2 /* EyeColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980293165C54FA00FEFCA2 /* EyeColors.plist */; };
 		31980296165C54FA00FEFCA2 /* HairColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31980294165C54FA00FEFCA2 /* HairColors.plist */; };
@@ -490,8 +489,6 @@
 		318EC669167555590048FF03 /* seedlingcolored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedlingcolored.png; sourceTree = "<group>"; };
 		3191F7CD161E864F005EEF4A /* Furniture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Furniture.h; sourceTree = "<group>"; };
 		3191F7CE161E864F005EEF4A /* Furniture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Furniture.m; sourceTree = "<group>"; };
-		3191F7E816208AC3005EEF4A /* Seedling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seedling.h; sourceTree = "<group>"; };
-		3191F7E916208AC3005EEF4A /* Seedling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seedling.m; sourceTree = "<group>"; };
 		3191F7EC16208CB8005EEF4A /* seedling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seedling.png; sourceTree = "<group>"; };
 		31980293165C54FA00FEFCA2 /* EyeColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EyeColors.plist; sourceTree = "<group>"; };
 		31980294165C54FA00FEFCA2 /* HairColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HairColors.plist; sourceTree = "<group>"; };
@@ -1303,8 +1300,6 @@
 				3186CE30165B13B40037766A /* SeedlingV2.m */,
 				3186CE33165B1F700037766A /* SeedlingV2View.h */,
 				3186CE34165B1F700037766A /* SeedlingV2View.m */,
-				3191F7E816208AC3005EEF4A /* Seedling.h */,
-				3191F7E916208AC3005EEF4A /* Seedling.m */,
 				31980298165C98D200FEFCA2 /* SeedlingDataViewController.h */,
 				31980299165C98D200FEFCA2 /* SeedlingDataViewController.m */,
 				3198029A165C98D200FEFCA2 /* SeedlingDataViewController.xib */,
@@ -2345,7 +2340,6 @@
 				3107B8031617809B00F61B50 /* CitadelViewController.m in Sources */,
 				31CB22A516179B8A005C97D5 /* Citadel.m in Sources */,
 				3191F7CF161E864F005EEF4A /* Furniture.m in Sources */,
-				3191F7EA16208AC4005EEF4A /* Seedling.m in Sources */,
 				31E641CB162DF89D004974DD /* Pool.m in Sources */,
 				31E641CE162E0B52004974DD /* WaterBed.m in Sources */,
 				31E641D1162E296E004974DD /* Hammock.m in Sources */,

@@ -239,7 +239,7 @@
     //TO_DO
     //Do the magic of generating the name for my seedling here...then use that name to initialize it
     
-    Seedling *mySeedling = [[Seedling alloc]initWithImage:@"nameGenerated"];
+    SeedlingV2 *mySeedling = [[SeedlingV2 alloc]initWithImage:@"nameGenerated"];
     [citSeedlings addObject:mySeedling];
     [self saveChanges:@"SEEDLING"];
 }
@@ -278,7 +278,7 @@
 
 }
 
--(void)findHappyObj:(Seedling *)seed
+-(void)findHappyObj:(SeedlingV2 *)seed
 {
     
 }

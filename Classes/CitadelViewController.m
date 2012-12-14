@@ -9,7 +9,6 @@
 #import "CitadelViewController.h"
 
 @class MicrolendingAppDelegate;
-@class Seedling;
 @class Citadel;
 @class Furniture;
 @class Plot;

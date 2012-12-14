@@ -7,7 +7,7 @@
 //
 
 #import "Characteristics.h"
-#import "Seedling.h"
+#import "SeedlingV2.h"
 
 @implementation Characteristics
 @synthesize seedlingCharacteristics = seedlingCharacteristics_;
@@ -54,7 +54,7 @@
     [seedlingCharacteristics setObject: thirdDesireType forKey: @"Third Desire"];
 }
 
--(void) birthFrom:(Seedling *)Dad andFrom:(Seedling *)Mom{
+-(void) birthFrom:(SeedlingV2 *)Dad andFrom:(SeedlingV2 *)Mom{
     
 }
 @end
