@@ -56,7 +56,6 @@
 		313489C7164CBB4C00E12D3F /* LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 313489C6164CBB4C00E12D3F /* LocalizedPrice.m */; };
 		313B395E1642C0C300602E7D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B395D1642C0C300602E7D /* libiconv.dylib */; };
 		313B39631642C15300602E7D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B39621642C15300602E7D /* libc++.dylib */; };
-		313B39651642C26000602E7D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 313B39641642C26000602E7D /* CMakeLists.txt */; };
 		315650FF1667D01000848860 /* window.png in Resources */ = {isa = PBXBuildFile; fileRef = 315650FE1667D01000848860 /* window.png */; };
 		315651051667D3B900848860 /* FourFloorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315651031667D3B800848860 /* FourFloorsViewController.xib */; };
 		3186CE31165B13B40037766A /* SeedlingV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3186CE30165B13B40037766A /* SeedlingV2.m */; };
@@ -325,6 +324,9 @@
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
 		B521896A167AB5A800CA2F82 /* LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B5218969167AB5A800CA2F82 /* LICENSE.rtf */; };
 		B521896D167AB77200CA2F82 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B521896C167AB77200CA2F82 /* README.rtf */; };
+		B521896F167ABE9C00CA2F82 /* BodyColors.plist in Resources */ = {isa = PBXBuildFile; fileRef = B521896E167ABE9C00CA2F82 /* BodyColors.plist */; };
+		B5218971167ABEB200CA2F82 /* leafITC.png in Resources */ = {isa = PBXBuildFile; fileRef = B5218970167ABEB200CA2F82 /* leafITC.png */; };
+		B5218973167ABED100CA2F82 /* SeedlingSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = B5218972167ABED100CA2F82 /* SeedlingSheet.png */; };
 		B521E11116548F1600521E3C /* BodyDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11016548F1600521E3C /* BodyDice.m */; };
 		B521E11416548F2C00521E3C /* Characteristics.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11316548F2C00521E3C /* Characteristics.m */; };
 		B521E11D16548F3900521E3C /* DesireDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11616548F3900521E3C /* DesireDice.m */; };
@@ -467,7 +469,6 @@
 		313489C6164CBB4C00E12D3F /* LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizedPrice.m; sourceTree = "<group>"; };
 		313B395D1642C0C300602E7D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		313B39621642C15300602E7D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		313B39641642C26000602E7D /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = "../../../cocos2d-iphone-2.0/external/Chipmunk/src/CMakeLists.txt"; sourceTree = "<group>"; };
 		315650FE1667D01000848860 /* window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window.png; sourceTree = "<group>"; };
 		315651031667D3B800848860 /* FourFloorsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourFloorsViewController.xib; sourceTree = "<group>"; };
 		3186CE2F165B13B40037766A /* SeedlingV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedlingV2.h; sourceTree = "<group>"; };
@@ -974,6 +975,9 @@
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B5218969167AB5A800CA2F82 /* LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LICENSE.rtf; sourceTree = "<group>"; };
 		B521896C167AB77200CA2F82 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		B521896E167ABE9C00CA2F82 /* BodyColors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyColors.plist; sourceTree = "<group>"; };
+		B5218970167ABEB200CA2F82 /* leafITC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leafITC.png; sourceTree = "<group>"; };
+		B5218972167ABED100CA2F82 /* SeedlingSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SeedlingSheet.png; sourceTree = "<group>"; };
 		B521E10F16548F1600521E3C /* BodyDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyDice.h; sourceTree = "<group>"; };
 		B521E11016548F1600521E3C /* BodyDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyDice.m; sourceTree = "<group>"; };
 		B521E11216548F2C00521E3C /* Characteristics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Characteristics.h; sourceTree = "<group>"; };
@@ -1162,6 +1166,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5218972167ABED100CA2F82 /* SeedlingSheet.png */,
+				B5218970167ABEB200CA2F82 /* leafITC.png */,
+				B521896E167ABE9C00CA2F82 /* BodyColors.plist */,
 				31B9720C16784F330097F18C /* bluecrystal.png */,
 				31B9720D16784F330097F18C /* greencrystal.png */,
 				31B9720E16784F330097F18C /* lovingheart.png */,
@@ -1875,7 +1882,6 @@
 		31B7FC4616333C7C00B808FD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				313B39641642C26000602E7D /* CMakeLists.txt */,
 				31B7FC4716333C7C00B808FD /* chipmunk.c */,
 				31B7FC4916333C7C00B808FD /* constraints */,
 				31B7FC5516333C7C00B808FD /* cpArbiter.c */,
@@ -2226,7 +2232,6 @@
 				31B7FC8816333C7D00B808FD /* kazmath_neon.patch in Resources */,
 				31BBF93F1641CEF2008B5D2F /* BuyFurnitureViewController.xib in Resources */,
 				312B89C61642A9FE00452356 /* FurnitureViewController.xib in Resources */,
-				313B39651642C26000602E7D /* CMakeLists.txt in Resources */,
 				31AB3B2E16438B92001F2DD3 /* bookshelf.png in Resources */,
 				31AB3B2F16438B92001F2DD3 /* easel.png in Resources */,
 				31AB3B3016438B92001F2DD3 /* hammock.png in Resources */,
@@ -2277,6 +2282,9 @@
 				31B9721516784F330097F18C /* yellowcrystal.png in Resources */,
 				B521896A167AB5A800CA2F82 /* LICENSE.rtf in Resources */,
 				B521896D167AB77200CA2F82 /* README.rtf in Resources */,
+				B521896F167ABE9C00CA2F82 /* BodyColors.plist in Resources */,
+				B5218971167ABEB200CA2F82 /* leafITC.png in Resources */,
+				B5218973167ABED100CA2F82 /* SeedlingSheet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
