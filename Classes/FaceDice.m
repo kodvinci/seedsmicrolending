@@ -9,20 +9,12 @@
 #import "FaceDice.h"
 
 @implementation FaceDice
-//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice. As well it populates inheritence with the inheritence used to determine the characteristics of a child.
+//Populates a dictionary with the starting characteristics for a new seedling that will be selcted randomly using the rollDice method in trait dice. 
 -(id) init{
     if(self == [super init]){
     [self addNumber:5 ofTrait:@"Gentle eyes"];
     [self addNumber:3 ofTrait:@"Vibrant eyes"];
     [self addNumber:1 ofTrait:@"Scruffy face"];
-        
-    [inheritance setObject:@"Passive" forKey:@"Gentle Eyes"];
-    [inheritance setObject:@"Hair" forKey:@"Unibrow"];
-    [inheritance setObject:@"Passive" forKey:@"Sleepy Eyes"];
-    [inheritance setObject:@"Awake" forKey:@"Vibrant Eyes"];
-    [inheritance setObject:@"Hair" forKey:@"Scruffy Face"];
-    [inheritance setObject:@"Awake" forKey:@"Branch Nose"];
-
     }
     return self;
 
@@ -30,29 +22,21 @@
 
 //Determines the interhited face type from the combination of the mother and father. 
 -(NSString *) faceFromDadsHair:(NSString *) face andMomsFace: (NSString *) face2{
-        NSString *dadsFace = [inheritance objectForKey: face];
-        NSString *momsFace = [inheritance objectForKey: face2];
-        NSString *combinedFace = [dadsFace stringByAppendingString: momsFace];
-    if( [dadsFace isEqualToString:@"Passive"] && [momsFace isEqualToString:@"Passive"]){
-        return @"Sleepy Eyes";
+    NSString* plistPath =[[NSBundle mainBundle] pathForResource:@"FaceTypePassedDown" ofType:@"plist"];
+    NSDictionary *facePassedDicitonary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    NSString * inheritedFace = [facePassedDicitonary valueForKey:face];
+    NSString * inheritedFace2 = [facePassedDicitonary valueForKey:face2];
+    
+    NSString* plistPath2 =[[NSBundle mainBundle] pathForResource:@"FaceTypeInheritence" ofType:@"plist"];
+    NSDictionary *faceDictionary = [NSDictionary dictionaryWithContentsOfFile: plistPath2];
+    if( [inheritedFace compare: inheritedFace2] == NSOrderedSame || [inheritedFace compare: inheritedFace2]==NSOrderedAscending ){
+        inheritedFace = [inheritedFace stringByAppendingString:inheritedFace2];
     }
-    else if( [dadsFace isEqualToString:@"Awake"] && [momsFace isEqualToString:@"Awake"]){
-        return @"Vibrant Eyes";
+    else{
+        inheritedFace = [inheritedFace2 stringByAppendingString: inheritedFace];
     }
-    else if( [dadsFace isEqualToString:@"Hair"] && [momsFace isEqualToString:@"Hair"]){
-        return @"Scruffy Face";
-    }
-    else if( [self doesString: combinedFace containOne: @"Passive" andTwo: @"Hair" ]){
-        return @"Unibrow";
-    }
-    else if( [self doesString: combinedFace containOne: @"Passive" andTwo: @"Awake" ]){
-        return @"Gentle Eyes";
-    }
-    else if( [self doesString: combinedFace containOne: @"Passive" andTwo: @"Awake" ]){
-        return @"Branch Nose";
-    }
+    return [faceDictionary valueForKey: inheritedFace];
 }
-
 
 
 @end

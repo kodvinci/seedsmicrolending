@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Gentle Eyes</key>
+	<string>Passive</string>
+	<key>Unibrow</key>
+	<string>Hair</string>
+	<key>Sleepy Eyes</key>
+	<string>Passive</string>
+	<key>Vibrant Eyes</key>
+	<string>Awake</string>
+	<key>Scruffy Face</key>
+	<string>Hair</string>
+	<key>Branch Nose</key>
+	<string>Awake</string>
+</dict>
+</plist>

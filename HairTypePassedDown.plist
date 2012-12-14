@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bamboo</key>
+	<string>Leaves</string>
+	<key>Tulip</key>
+	<string>Soft</string>
+	<key>Branches</key>
+	<string>Bark</string>
+	<key>Cactus</key>
+	<string>Spikes</string>
+	<key>Silk Tree</key>
+	<string>Spikes</string>
+	<key>Cherry Blossom</key>
+	<string>Bark</string>
+	<key>Venus Flytrap</key>
+	<string>Spikes</string>
+	<key>Pitcher Plant</key>
+	<string>Deep</string>
+	<key>Black Trumpet Mushroom</key>
+	<string>Deep</string>
+	<key>Fern</key>
+	<string>Leaves</string>
+	<key>Narcissus</key>
+	<string>Soft</string>
+	<key>Carnation</key>
+	<string>Soft</string>
+	<key>Bird of Paradise</key>
+	<string>Deep</string>
+	<key>Calla Lilly</key>
+	<string>Deep</string>
+	<key>Lotus White</key>
+	<string>Leaves</string>
+</dict>
+</plist>
