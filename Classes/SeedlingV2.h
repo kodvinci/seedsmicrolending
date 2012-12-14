@@ -5,6 +5,9 @@
 //  Created by Leonard Ng'eno on 11/19/12.
 //
 //
+/*
+ This class assigns values to all the property items that the Seedling has. These property items are mostly assigned by creating instances of the relevant Dice classes that then generate the required properties.
+ */
 
 #import <Foundation/Foundation.h>
 #import <Characteristics.h>
@@ -17,7 +20,7 @@
 #import "SkinColorDice.h"
 #import "DesireDice.h"
 
-@interface SeedlingV2 : NSObject
+@interface SeedlingV2 : NSObject <NSCoding>
 {
     NSString *myName;
     UIImage *myImage;

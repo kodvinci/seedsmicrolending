@@ -29,7 +29,9 @@
 @synthesize furnitureArray;
 @synthesize coins, leaves, level;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name
+//Initialization method. The name parameter determines what furniture class item the view controller was initialized with.
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil className:(NSString *) name
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -74,6 +76,7 @@
     [super viewWillAppear:animated];
 }
 
+//This method uses switch statements to determine which level of furniture the player pressed. The values of the various property items of the furniture are then displayed for the corresponding level.
 -(IBAction)segmentedControlIndexChanged
 {
     switch (self.segmentedControl.selectedSegmentIndex) {
@@ -194,6 +197,9 @@
     level.text = [NSString stringWithFormat:@"%@",[appDelegate.citadelData objectForKey:@"playerLevel"]];
 }
 
+/*
+This is the method that is called when the purchase button is pressed for level 1 furniture. The method handles the purchase of the furniture. If the purchase is successful, a instance of the CitadelViewController is called which then loads the citadel floors to display the seedlings and furniture the player owns.
+ */
 -(void)buyFurniture:(id)sender
 {
     if (level1 == YES) {
@@ -234,6 +240,8 @@
         }
     }    
 }
+
+//This method handles furniture upgrades. It checks to make sure that the player actually has level one of the furniture before it can upgrade to other levels.
 
 -(void)upgradeFurniture:(id)sender
 {

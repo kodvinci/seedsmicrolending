@@ -6,6 +6,10 @@
 //
 //
 
+/*
+ This view controller displays the furniture items that exist in the store. The class can be used to display all the types of the furniture items in the store. 
+ */
+
 #import <UIKit/UIKit.h>
 #import "MicrolendingAppDelegate.h"
 #import "CitadelViewController.h"

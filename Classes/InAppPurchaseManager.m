@@ -14,7 +14,7 @@
 @implementation InAppPurchaseManager
 
 //"SEEDSLEAFV1" is the Product ID. The Product is created in and resides in iTunes Connect where the Provisioning Profile and the App ID used by the Microlending Application was created.
-- (void)requestleafProductData
+-(void)requestleafProductData
 {
     //Checks if some previous purchase didn't show up because purchase was interrupted & finishes it
   //  [self loadStore];
@@ -27,7 +27,7 @@
     [productsRequest start];
 }
 
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+-(void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
     NSArray *products = response.products;
     leafProduct = [products count] == 1 ? [[products firstObject] retain] : nil;
@@ -74,7 +74,7 @@
 
 
 // kick off the purchase transaction
-- (void)purchaseLeaf
+-(void)purchaseLeaf
 {
     SKPayment *payment = [SKPayment paymentWithProduct:leafProduct];
     NSLog(@"Number of leaves bought: %d", payment.quantity);

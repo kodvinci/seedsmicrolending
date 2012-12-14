@@ -12,6 +12,7 @@
 
 @synthesize desire1, desire2, itemName = itemName_, itemLevel = itemLevel_, users = users_, useTime = useTime_, itemWidth = itemWidth_, happinessReward1 = happinessReward1_, happinessReward2 = happinessReward2_, purchaseCost = purchaseCost_, coinsCost = coinsCost_, leavesCost = leavesCost_, furnPic = furnPic_, currentOccupants = currentOccupancy_;
 @synthesize xPos, yPos;
+
 /*
 //Make it illegal to initialize the class
 - (id)init
@@ -21,7 +22,8 @@
     return nil;
 } */
 
-- (id)initWithCoder:(NSCoder *)decoder {
+-(id)initWithCoder:(NSCoder *)decoder
+{
     if (self = [super init]) {
         self.xPos = [decoder decodeIntegerForKey:@"xPosition"];
         self.yPos = [decoder decodeIntegerForKey:@"yPosition"];
@@ -43,7 +45,8 @@
     return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)encoder {
+-(void)encodeWithCoder:(NSCoder *)encoder
+{
     [encoder encodeObject:self.itemName forKey:@"itemName"];
     [encoder encodeObject:self.desire1 forKey:@"desire1"];
     [encoder encodeObject:self.desire2 forKey:@"desire2"];
