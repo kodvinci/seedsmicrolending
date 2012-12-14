@@ -323,6 +323,8 @@
 		31F4E5FB1646FE39002A3892 /* ResourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F4E5F91646FE38002A3892 /* ResourceViewController.xib */; };
 		31FC41DE1633232F0042278D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC41DD1633232F0042278D /* OpenGLES.framework */; };
 		488A48AB145CABB900225D47 /* api.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 488A48AA145CABB900225D47 /* api.rtf */; };
+		B521896A167AB5A800CA2F82 /* LICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B5218969167AB5A800CA2F82 /* LICENSE.rtf */; };
+		B521896D167AB77200CA2F82 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B521896C167AB77200CA2F82 /* README.rtf */; };
 		B521E11116548F1600521E3C /* BodyDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11016548F1600521E3C /* BodyDice.m */; };
 		B521E11416548F2C00521E3C /* Characteristics.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11316548F2C00521E3C /* Characteristics.m */; };
 		B521E11D16548F3900521E3C /* DesireDice.m in Sources */ = {isa = PBXBuildFile; fileRef = B521E11616548F3900521E3C /* DesireDice.m */; };
@@ -970,6 +972,8 @@
 		32CA4F630368D1EE00C91783 /* Microlending_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Microlending_Prefix.pch; sourceTree = "<group>"; };
 		488A48AA145CABB900225D47 /* api.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = api.rtf; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Microlending-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Microlending-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B5218969167AB5A800CA2F82 /* LICENSE.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LICENSE.rtf; sourceTree = "<group>"; };
+		B521896C167AB77200CA2F82 /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		B521E10F16548F1600521E3C /* BodyDice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyDice.h; sourceTree = "<group>"; };
 		B521E11016548F1600521E3C /* BodyDice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyDice.m; sourceTree = "<group>"; };
 		B521E11216548F2C00521E3C /* Characteristics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Characteristics.h; sourceTree = "<group>"; };
@@ -1131,6 +1135,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B521896C167AB77200CA2F82 /* README.rtf */,
 				488A48AA145CABB900225D47 /* api.rtf */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -1139,6 +1144,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				3187E088163066F0000996F2 /* PayPal */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				B5218969167AB5A800CA2F82 /* LICENSE.rtf */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 			);
 			name = CustomTemplate;
@@ -2269,6 +2275,8 @@
 				31B9721316784F330097F18C /* lovingheart.png in Resources */,
 				31B9721416784F330097F18C /* redcrystal.png in Resources */,
 				31B9721516784F330097F18C /* yellowcrystal.png in Resources */,
+				B521896A167AB5A800CA2F82 /* LICENSE.rtf in Resources */,
+				B521896D167AB77200CA2F82 /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
