@@ -11,7 +11,7 @@
 @class MicrolendingAppDelegate;
 @class Seedling;
 @class FloorViewController;
-
+@class CitadelViewController;
 
 @implementation Citadel
 
@@ -214,6 +214,24 @@
     NSInteger newLeaves = oldLeaves - cost;
     [appDelegate.citadelData setInteger:newLeaves forKey:@"leaves"];
     [appDelegate.citadelData synchronize];
+}
+
+//This method is called by a scheduled NSTimer once the required wait time elapses. The method calls the CitadelViewController's displayFloors method with the new number of floors to display in the citadel. It also sets the BOOL floorGrowing to NO so that the player can be able to buy another floor if they have the means to do so.
+
+-(void)floorGrowTimer
+{
+    NSInteger numFloor = [appDelegate.citadelData integerForKey:@"floors"];
+    numFloor +=1;
+    NSLog(@"numFloor: %d", numFloor);
+    CitadelViewController *OFmyCitadel = [[CitadelViewController alloc] init];
+ //   [self.navigationController initWithRootViewController:OFmyCitadel];
+    [OFmyCitadel displayFloors:numFloor];
+    [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
+    [appDelegate.citadelData synchronize];
+    
+    appDelegate.floorGrowing = NO; //to enable purchase of new floor later
+    
+    [OFmyCitadel release];
 }
 
 -(void)addSeedling

@@ -17,6 +17,7 @@
 #import "Seedling.h"
 #import "Furniture.h"
 #import "FloorViewController.h"
+#import "CitadelViewController.h"
 
 @interface Citadel : NSObject
 {

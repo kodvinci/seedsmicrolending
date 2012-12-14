@@ -29,9 +29,9 @@
 @synthesize nibFileName;
 @synthesize citadelView;
 @synthesize panRecognizer;
-@synthesize floorGrowing;
+//@synthesize floorGrowing;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -56,7 +56,7 @@
     [appDelegate.citadelData setInteger:numFloor forKey:@"floors"];
     [appDelegate.citadelData synchronize];
    
-    floorGrowing = NO; //to enable purchase of new floor later
+    appDelegate.floorGrowing = NO; //to enable purchase of new floor later
     
     [OFmyCitadel release];
 }
@@ -67,7 +67,7 @@
 {
     NSLog(@"buyFloor pressed");
     
-if (floorGrowing == NO) {
+if (appDelegate.floorGrowing == NO) {
     NSInteger currentNumFloors = [appDelegate.citadelData integerForKey:@"floors"];
     NSInteger newNumFloors = currentNumFloors + 1;
     
@@ -78,7 +78,7 @@ if (floorGrowing == NO) {
      //Floor bought
     if (result == YES) {
         NSLog(@"YES");
-        floorGrowing = YES;
+        appDelegate.floorGrowing = YES;
         //Two floors
         if (newNumFloors == 2) {
             [NSTimer scheduledTimerWithTimeInterval:(300.0) target:self selector:@selector(floorGrowTimer) userInfo:nil repeats:NO];
@@ -361,7 +361,7 @@ else {
 }
 
 //Handles the dragging of a Seedling to a new location
-- (void)handlePan:(UIPanGestureRecognizer *)recognizer
+-(void)handlePan:(UIPanGestureRecognizer *)recognizer
 {
     NSLog(@"handlePan");
     //This returns a point identifying the new location of the seedling in the coordinate system of its designated superview
@@ -436,16 +436,38 @@ else {
             //put Seedling at center of Farm
             //Disable further interaction with Seedling & further seedling movement
             //set a timer to fire after an hour
-            mySeedlingView.center = myFarmView.center;
+          
             [mySeedlingView setUserInteractionEnabled:NO];
+
+            mySeedlingView.center = myFarmView.center;
             if ([myTime isValid]) {
                 NSLog(@"Valid");
                 [myTime invalidate];
                 myTime = nil;
-            }
+            }            
+            //Schedule a timer that will release the seedling after one hour
             [NSTimer scheduledTimerWithTimeInterval:(10.0) target:self selector:@selector(happinessCollectedTimer) userInfo:nil repeats:NO];
+            
+            //Show alert that happiness harvesting is on
+            [self performSelector:@selector(happinessHarvestingHappening) withObject:nil afterDelay:3];
         }
     }
+}
+
+-(void)happinessHarvestingHappening
+{
+	//harvestingAlert = [[[UIAlertView alloc] initWithTitle:@"\n\nHarvesting Happiness\nPlease Wait..." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
+    
+    harvestingAlert = [[[UIAlertView alloc] initWithTitle:@"HARVESTING HAPPINESS" message:@"Seedling will remain afixed to the farm plot for an hour as its energy is harvested" delegate:self cancelButtonTitle:nil otherButtonTitles:nil]autorelease];
+
+	[harvestingAlert show];
+    //Dismiss the alert after 5 seconds
+    [self performSelector:@selector(dismissAlertView:) withObject:harvestingAlert afterDelay:5];
+}
+
+- (void)dismissAlertView:(UIAlertView *)alertView
+{
+	[alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 -(void)displaySeedlings
@@ -837,6 +859,7 @@ else {
     [furnitureViews release];
     [myTime release];
     [scrollView release];
+   // [harvestingAlert release];
 }
 
 @end

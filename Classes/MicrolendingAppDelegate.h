@@ -35,8 +35,9 @@
     int *credit;
     
     NSUserDefaults *citadelData;
-
     CLLocationManager *myLocation;
+    //A new floor is currently growing
+    BOOL floorGrowing;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -57,6 +58,7 @@
 @property (nonatomic, retain) NSString *uid;
 @property (nonatomic, assign) int *credit;
 @property (nonatomic, retain) NSUserDefaults *citadelData;
+@property(nonatomic, assign) BOOL floorGrowing;
 
 @end
 

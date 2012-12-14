@@ -37,6 +37,7 @@
 @synthesize totalXP;
 @synthesize uid;
 @synthesize citadelData;
+@synthesize floorGrowing;
 
 #pragma mark -
 #pragma mark Application lifecycle

@@ -40,6 +40,7 @@
     NSMutableArray *furnitureViews;
     
     int furniturePos;
+    UIAlertView *harvestingAlert;
     
     //scrollview
     IBOutlet ScrollSubClass *scrollView;
@@ -62,7 +63,7 @@
     BOOL floorTen;
     
     //A new floor is currently growing
-    BOOL floorGrowing;
+ //   BOOL floorGrowing;
 }
 
 @property(nonatomic, retain) UIButton *addFloor;
@@ -84,7 +85,7 @@
 @property(nonatomic, retain) NSString *nibFileName;
 @property (nonatomic, strong) UIView *citadelView;
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
-@property(nonatomic, assign) BOOL floorGrowing;
+//@property(nonatomic, assign) BOOL floorGrowing;
 
 -(IBAction)buyFloor;
 -(void)displayFurniture;
